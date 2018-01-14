@@ -1,4 +1,4 @@
-/* ag-mk-IOCMain.cpp */
+/* ag-mk-iocMain.cpp */
 /* Author:  Marty Kraimer Date:    17MAR2000 */
 
 #include <stddef.h>

@@ -1,14 +1,14 @@
-$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-IOC
+$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-ioc
 
 cd ${INSTALL}
 
 ## Register all support components
-dbLoadDatabase("dbd/ag-mk-IOC.dbd")
+dbLoadDatabase("dbd/ag-mk-ioc.dbd")
 ag_mk_IOC_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
-#dbLoadTemplate("db/ag-mk-IOC.substitutions")
-#dbLoadRecords("db/ag-mk-IOC.db", "user=rcardene")
+#dbLoadTemplate("db/ag-mk-ioc.substitutions")
+#dbLoadRecords("db/ag-mk-ioc.db", "user=rcardene")
 
 iocInit
 
