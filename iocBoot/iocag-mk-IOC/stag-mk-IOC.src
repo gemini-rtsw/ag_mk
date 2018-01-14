@@ -1,0 +1,16 @@
+$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-IOC
+
+cd ${INSTALL}
+
+## Register all support components
+dbLoadDatabase("dbd/ag-mk-IOC.dbd")
+ag_mk_IOC_registerRecordDeviceDriver(pdbbase)
+
+## Load record instances
+#dbLoadTemplate("db/ag-mk-IOC.substitutions")
+#dbLoadRecords("db/ag-mk-IOC.db", "user=rcardene")
+
+iocInit
+
+## Start any sequence programs
+#seq(sncxxx, "user=rcardene")
