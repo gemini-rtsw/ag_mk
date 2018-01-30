@@ -21,6 +21,13 @@
 # Variables may be used before their values have been set.
 # Build variables that are NOT used in paths should be set in
 # the CONFIG_SITE file.
+#
+EPICS_RELEASE=R3.14.12.7
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+PRODSUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
+WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
 
 # Variables and paths to dependent modules:
 #MODULES = /path/to/modules
@@ -28,6 +35,8 @@
 
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
+
+AUTOSAVE = $(PRODSUPP)/autosave/5-7-1-2
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
 EPICS_BASE = /gem_sw/epics/R3.14.12.7/base
