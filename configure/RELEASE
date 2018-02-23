@@ -36,7 +36,14 @@ WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
-AUTOSAVE = $(PRODSUPP)/autosave/5-7-1-2
+IOCSTATS=$(PRODSUPP)/iocStats/3-1-14-4
+SNCSEQ=$(PRODSUPP)/seq/2-2-3-2
+GEMREC=$(PRODSUPP)/geminiRec/4-1-6
+AUTOSAVE=$(PRODSUPP)/autosave/5-7-1-2
+PMAC=$(PRODSUPP)/pmaclib/1-1-5
+TIMELIB=$(PRODSUPP)/timelib/1-9-13
+SLALIB=$(PRODSUPP)/slalib/1-9-7
+BANCOMM=$(PRODSUPP)/bancomm/1-6-8
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
 EPICS_BASE = /gem_sw/epics/R3.14.12.7/base
