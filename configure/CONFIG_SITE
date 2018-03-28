@@ -21,7 +21,7 @@ CHECK_RELEASE = YES
 #   that Base is built for.
 #CROSS_COMPILER_TARGET_ARCHS = vxWorks-ppc32
 # NOTE: Only for early development. Remove when PMACLIB is available for 3100
-CROSS_COMPILER_TARGET_ARCHS = RTEMS-beatnik
+CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme3100
 
 # To install files into a location other than $(TOP) define
 #   INSTALL_LOCATION here.
