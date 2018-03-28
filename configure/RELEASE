@@ -28,6 +28,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 PRODSUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
 WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
+TESTSUPP=/home/rcardene/work/support
 
 # Variables and paths to dependent modules:
 #MODULES = /path/to/modules
@@ -36,17 +37,20 @@ WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
+BANCOMM=$(PRODSUPP)/bancomm/1-6-8
 IOCSTATS=$(PRODSUPP)/iocStats/3-1-14-4
-SNCSEQ=$(PRODSUPP)/seq/2-2-3-2
 GEMREC=$(PRODSUPP)/geminiRec/4-1-6
+SNCSEQ=$(PRODSUPP)/seq/2-2-3-2
+GEMUTILS=$(PRODSUPP)/gemUtil/1-5
 AUTOSAVE=$(PRODSUPP)/autosave/5-7-1-2
-PMAC=$(PRODSUPP)/pmaclib/1-1-5
+# PMAC=$(PRODSUPP)/pmaclib/1-1-5
 TIMELIB=$(PRODSUPP)/timelib/1-9-13
 SLALIB=$(PRODSUPP)/slalib/1-9-7
-BANCOMM=$(PRODSUPP)/bancomm/1-6-8
+TCSLIB=$(PRODSUPP)/tcslib/1-0-6
+PMAC=$(TESTSUPP)/pmaclib
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
-EPICS_BASE = /gem_sw/epics/R3.14.12.7/base
+EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
@@ -54,6 +58,5 @@ EPICS_BASE = /gem_sw/epics/R3.14.12.7/base
 
 # These allow developers to override the RELEASE variable settings
 # without having to modify the configure/RELEASE file itself.
--include $(TOP)/../RELEASE.local
--include $(TOP)/configure/RELEASE.local
-
+#-include $(TOP)/../RELEASE.local
+#-include $(TOP)/configure/RELEASE.local
