@@ -25,10 +25,12 @@
  *  ------
  *  Steven Beard  (smb@roe.ac.uk)
  *  Janet Tvedt   (tvedt@noao.edu)
+ *  Ricardo Cardenes (rcardenes@gemini.edu)
  *
  *  HISTORY
  *  -------
  *  30.1.98	routines moved to this file from cicsLib.c	(ocf)
+ *  26.2.18     changes to adapt the code to RTEMS/OSI          (rcardenes)
  *
  */
 /* *INDENT-OFF* */
@@ -58,14 +60,11 @@
 
 /* Global Constants */
 
-#include  <vxWorks.h>
-#include  <semLib.h>
-#include  <types.h>
 #include  <math.h>
 #include  <time.h>
-#include  <stdlib.h>
-#include  <stdioLib.h>
 #include  <string.h>
+#include  <epicsStdlib.h>
+#include  <epicsStdio.h>
 
 #include  <dbDefs.h>
 #include  <dbCommon.h>

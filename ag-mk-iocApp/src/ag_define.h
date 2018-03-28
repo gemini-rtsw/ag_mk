@@ -13,29 +13,28 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth (ocf)
+ *  Olaf Frischmuth  (ocf)
+ *  Ricardo Cardenes (rjc)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
  *  08-Dec-2000:        Remove all unnecessary declarations     (cjm)
+ *  22-Feb-2018:        Made changes adapting to RTEMS/OSI      (rjc)
  */
 
 /* ===================================================================== */
 
-#include  <vxWorks.h>
-#include  <types.h>
 #include  <ctype.h>
 #include  <math.h>
-#include  <rebootLib.h>
-#include  <stdlib.h>
-#include  <stdioLib.h>
-#include  <ioLib.h>
 #include  <string.h>
-#include  <sysLib.h>
-#include  <taskLib.h>
-#include  <tickLib.h>
+// #include  <taskLib.h>
+// #include  <tickLib.h>
 #include  <time.h>
+#include  <epicsExit.h>
+#include  <epicsStdlib.h>
+#include  <epicsStdio.h>
+#include  <devLibVME.h>
 
 #include  <dbEvent.h>
 #include  <dbDefs.h>
@@ -55,11 +54,18 @@
 #include  <slamac.h>
 #include  <timesys.h>
 #include  <bc635.h>
-#include  <drvTS.h>
+#ifdef ERROR
+# undef ERROR
+# undef OK
+#endif
 #include  <drvPmac.h>
+#ifdef ERROR
+# undef ERROR
+# undef OK
+#endif
 
-#include  <usrLib.h>
-#include  <dbgLib.h>
+#define ERROR (-1)
+#define OK    0
 
 /* ===================================================================== */
 /* The following are compiler switches used in different a&G files to control
@@ -94,6 +100,14 @@ struct	logsource {
 	char 	logmsgbuf [100]; /* for messages & local vars of logfiletask  */
 };
 
+/* ===================================================================== */
+/*
+ * Declare this in advance, to be able to declare logfiletask.
+ *
+ * TODO: Not sure if we really need to export that function. Study...
+ */
+struct logfiletaskargs;
+
 extern struct logsource   	logsrcs[NRLOGSYS];
 
 /* ===================================================================== */
@@ -121,7 +135,7 @@ long 	prepare_log 	(char *filename, int logset, struct logsource *Plogsrc);
 long 	flushlogfile 	(char *filename, char* mode, struct logsource *Plogsrc);
 long	writelogsrc 	(struct logsource *logsrc, long param, char type, char * header);
 long 	writelogbuf 	(struct genSubRecord *pgsub, struct logsource *logsrc);
-long 	logfiletask 	(char *filename, char* mode, struct logsource *logsrc, int wrtype);
+long 	logfiletask 	(struct logfiletaskargs *args);
 long 	writelogfile 	(char *filename, char* mode, struct logsource *logsrc, int oldlogbufpos);
 long 	logging 	(struct genSubRecord *pgsub );
 
@@ -514,7 +528,7 @@ extern long  pmacRamGetD    ( volatile short * pDpram, double*pVal);
 
 #define ag_PA3AO_sadstr		"ag:PA3AO"
 
-#define dummy_str		"dummy"		
+#define dummy_str		"dummy"
 
 
 /* ===================================================================== */
@@ -608,17 +622,17 @@ extern long  pmacRamGetD    ( volatile short * pDpram, double*pVal);
 #define GIS_str(state)		((state==GIS_OFF)? GISOFF_str : ((state==GIS_ON)? GISON_str : GISUNDEF_str))
 
 /* ===================================================================== */
-#if (CPU_FAMILY == PPC)
-  #define bcBase	0xfbff4000	/* bancomm base address 	*/
-#else 					/* MC680X0 */
-  #define bcBase	0xffff4000	
-#endif
-
-#define	bcstr1	(*(word*)(bcBase+0x18))	/* strobe reg 1	*/
-#define	bcstr2	(*(word*)(bcBase+0x1A))	/* strobe reg 2	*/
-#define	bcstr3	(*(word*)(bcBase+0x1C))	/* strobe reg 3	*/
-#define	bcmask	(*(word*)(bcBase+0x28))	/* interr. mask	*/
-#define	bcstat	(*(word*)(bcBase+0x2A))	/* interr. stat	*/
+// #if (CPU_FAMILY == PPC)
+//   #define bcBase	0xfbff4000	/* bancomm base address 	*/
+// #else 					/* MC680X0 */
+//   #define bcBase	0xffff4000	
+// #endif
+// 
+// #define	bcstr1	(*(word*)(bcBase+0x18))	/* strobe reg 1	*/
+// #define	bcstr2	(*(word*)(bcBase+0x1A))	/* strobe reg 2	*/
+// #define	bcstr3	(*(word*)(bcBase+0x1C))	/* strobe reg 3	*/
+// #define	bcmask	(*(word*)(bcBase+0x28))	/* interr. mask	*/
+// #define	bcstat	(*(word*)(bcBase+0x2A))	/* interr. stat	*/
 
 
 #define GPS_TO_TAI	19		/* TAI = GPS + 19 Sec.	*/

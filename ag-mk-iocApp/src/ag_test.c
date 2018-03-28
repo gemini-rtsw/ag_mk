@@ -1,5 +1,5 @@
 
-#include  <ag_define.h>		
+#include  <ag_define.h>
 /* #include  <usrLib.h> */
 /* #include  <dbgLib.h> */
 
@@ -21,7 +21,7 @@ void writeMbox (long card, char *str)
    return ;
  } else {
    terminator = drvPmacMbxWriteRead (card, str, response, errmsg);
-   if (errmsg[0]) { 
+   if (errmsg[0]) {
      printf ("Write failed: response was %s\n", errmsg);
    } else {
      printf ("Write succeeded: response was %s\n", response);

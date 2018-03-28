@@ -54,7 +54,8 @@
  *
  *  AUTHOR
  *  ------
- *  Steven Beard  (smb@roe.ac.uk)
+ *  Steven Beard     (smb@roe.ac.uk)
+ *  Ricardo Cardenes (rcardenes@gemini.edu)
  *
  *  HISTORY
  *  -------
@@ -102,6 +103,7 @@
  *  16-Apr-1997: Second input argument of CAD records used to
  *               sense whether the instrument is busy and the
  *               sequence command should be rejected.               (smb)
+ *  27-Feb-2018: Adapted to RTEMS/OSI                               (rcardenes)
 */
 /* *INDENT-OFF* */
 /*
@@ -128,6 +130,8 @@
 /* *INDENT-ON* */
 
 #include  <ag_define.h>
+// To include "reboot"
+#include  <devIocStatsOSD.h>
 
 /* ===================================================================== */
 
@@ -795,7 +799,7 @@ long CADreboot( struct cadRecord *pcad )
 /* CAD PRESET directive detected. Check that a reboot is allowed at this time.
  * AT THE MOMENT IT IS ASSUMED A REBOOT IS ALWAYS ALLOWED.
  */
-    break;    
+    break;
 
     case menuDirectiveSTART:
 /* Note that "reboot()" is not called here. It is assumed a subroutine record

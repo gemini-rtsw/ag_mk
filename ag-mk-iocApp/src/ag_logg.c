@@ -13,11 +13,13 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth (ocf)
+ *  Olaf Frischmuth  (ocf)
+ *  Ricardo Cardenes (rjc)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
+ *  26-Feb-2018:        Adapted to RTEMS/OSI			(rjc)
  *
  */
 
@@ -66,6 +68,15 @@ struct logsource   	logsrcs[NRLOGSYS];
 #define P1_OFS		7					/* probe offsets*/
 #define P2_OFS		8		
 #define SF_ENG		9					/* incl. AO/HW	*/
+
+/* ====================================================================	*/
+
+struct logfiletaskargs {
+	char *filename;
+	char *mode;
+	struct logsource *logsrc;
+	int wrtype;
+};
 
 /* ====================================================================	*/
 
@@ -526,11 +537,16 @@ long writelogbuf (struct genSubRecord *pgsub, struct logsource *Plogsrc)
  **/
 
 /* ====================================================================	*/
-long logfiletask (char* filename, char* mode, struct logsource *logsrc, int wrtype)
+long logfiletask (struct logfiletaskargs *args)
 {
+  char *filename           = args->filename;
+  char *mode               = args->mode;
+  struct logsource *logsrc = args->logsrc;
+  int wrtype               = args->wrtype;
+
   logsrc->taskretval = WRITTEN;
 
-  if ((logsrc->stream = fopen(filename, mode)) != NULL) 
+  if ((logsrc->stream = fopen(filename, mode)) != NULL)
     switch (wrtype)
     {
       case FLUSH_TOP: fwrite((logsrc->logbuf)+(LOGBUFSIZE>>1), 1, (logsrc->logbufpos)   - (LOGBUFSIZE>>1), logsrc->stream ); break;
@@ -550,6 +566,10 @@ long logfiletask (char* filename, char* mode, struct logsource *logsrc, int wrty
   agLogMessage( ag_cc, DEB_FULL, logsrc->logmsgbuf);
   #endif
 
+  // Make sure to deallocate the memory taken to keep the arguments
+  free(args->filename);
+  free(args);
+
   return (logsrc->taskretval);
 }
 
@@ -559,11 +579,13 @@ long writelogfile (char* filename, char* mode, struct logsource *logsrc,
                    int oldlogbufpos)
 {
   int  retval = 0;
+  struct logfiletaskargs *args;
   char taskname[30];
 #if EXTRADEBUG
   char messages[80];
 #endif
-  int  wrtype, taskId;
+  int  wrtype;
+  epicsThreadId taskId;
 
   if (((logsrc->logbufpos >= LOGBUFSIZE>>1) && (oldlogbufpos < LOGBUFSIZE>>1)) ||
        (logsrc->logbufpos <  oldlogbufpos))		/* wrapped	 */
@@ -578,11 +600,25 @@ long writelogfile (char* filename, char* mode, struct logsource *logsrc,
 
     sprintf (taskname, "write_%s", filename);
 
-		/* EPICS = priority 55, so pri 75 is a background task	*/
-    taskId = taskSpawn( taskname, 75, VX_FP_TASK, 8000, (FUNCPTR)logfiletask,
-		(int)filename, (int)mode, (int)logsrc, wrtype, 0,0,0,0,0,0 );
-    /* taskwdInsert (taskId, NULL, 0L);		*/
-    retval = WRITTEN;			
+    args = (struct logfiletaskargs*)malloc(sizeof(struct logfiletaskargs));
+    if (!args) {
+	    fputs("writelogfile: Can't initialize args struct to create a logfiletask thread!", stderr);
+	    return retval;
+    }
+    args->filename = strdup(filename);
+    args->mode = mode;
+    args->logsrc = logsrc;
+    args->wrtype = wrtype;
+
+    taskId = epicsThreadCreate(
+		    taskname,
+		    priorityLow, // In vxWorks this was 75, and they intend it as a background task
+		    epicsThreadGetStackSize(epicsThreadStackSmall),
+		    (EPICSTHREADFUNC)logfiletask,
+		    args);
+
+
+    retval = WRITTEN;
 
     #if EXTRADEBUG
     sprintf (messages, "\t%s\t- %s \"%s\" commanded, task=%d", "writelogfile", WRTYPESTRS(wrtype), filename, taskId);

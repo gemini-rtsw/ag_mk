@@ -23,14 +23,16 @@
  *
  *  AUTHOR
  *  ------
- *  Steven Beard  (smb@roe.ac.uk)
- *  Janet Tvedt   (tvedt@noao.edu)
+ *  Steven Beard     (smb@roe.ac.uk)
+ *  Janet Tvedt      (tvedt@noao.edu)
+ *  Ricardo Cardenes (rcardenes@gemini.edu)
  *
  *  HISTORY
  *  -------
  *  04-Dec-1996: Original version, split off from cicsLib.c because
  *               it was not possible to include "dbAccess.h" and
  *               "cadefs.h" in the same file.                         (smb)
+ *  26-Feb-2018: Changes to adapt the code to RTEMS/OSI               (rcardenes)
  */
 /* *INDENT-OFF* */
 /*
@@ -56,12 +58,10 @@
 
 /* Global Constants */
 
-#include  <vxWorks.h>
-#include  <types.h>
 #include  <math.h>
 #include  <time.h>
-#include  <stdlib.h>
-#include  <stdioLib.h>
+#include  <epicsStdlib.h>
+#include  <epicsStdio.h>
 #include  <string.h>
 
 #include  <cadef.h>
@@ -225,6 +225,7 @@ long cicsCaGet(char *fieldName, char *errMess, unsigned short type, void *outVal
  *  19-Mar-1997  Original version as putDbInfo.			Janet Tvedt
  *  17-Jun-1997  Imported into cicsLib				Steven Beard
  *  26-Jun-1997  Channel access version.                         Steven Beard
+ *  26-Feb-2018: Changes to adapt to RTEMS/OSI.                 Ricardo Cardenes
  *-
  */
 

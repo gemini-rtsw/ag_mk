@@ -1,14 +1,15 @@
-#include <vxWorks.h>
-#include <stdio.h>
-#include <sysLib.h>
-#include <ioLib.h>
-#include <types.h>
+#include <epicsStdio.h>
 #include <math.h>
 #include <time.h>
-#include <stdlib.h>
-#include <stdioLib.h>
+#include <epicsStdlib.h>
 #include <ctype.h>
 #include <string.h>
+
+// TODO: POSIX, but... portable?
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #include <dbEvent.h>
 #include <dbDefs.h>
@@ -16,6 +17,8 @@
 #include <recSup.h>
 #include <genSubRecord.h>
 #include <menuCarstates.h>
+
+#include <ag_define.h>
 
 #define SMALL_BUF             16
 #define MEDIUM_BUF            64
@@ -250,21 +253,24 @@ long UpDownEnd( struct genSubRecord *pgsub )
     else
     {
       strncpy(str, pgsub->f, MAX_STRING_SIZE);
+      cprev = NULL;
       c   = (char *)strtok(str, "/");
       while( c )
       {
         cprev = c;
         c     = (char *)strtok(NULL, "/");
       }
-      if( *(cprev+4) == 'A' )
-        sprintf(buf, 
-          "Azimuth PMAC %s Program No. %ld", (char *)pgsub->i, *(long *)pgsub->j);
-      else if( *(cprev+4) == 'E' )
-        sprintf(buf, 
-          "Elevation PMAC %s Program No. %ld", (char *)pgsub->i, *(long *)pgsub->j);
-      else
-        sprintf(buf, 
-          "SWC PMAC %s Program No. %ld", (char *)pgsub->i, *(long *)pgsub->j);
+      if (cprev) {
+        if( *(cprev+4) == 'A' )
+          sprintf(buf, 
+            "Azimuth PMAC %s Program No. %ld", (char *)pgsub->i, *(long *)pgsub->j);
+        else if( *(cprev+4) == 'E' )
+          sprintf(buf, 
+            "Elevation PMAC %s Program No. %ld", (char *)pgsub->i, *(long *)pgsub->j);
+        else
+          sprintf(buf, 
+            "SWC PMAC %s Program No. %ld", (char *)pgsub->i, *(long *)pgsub->j);
+      }
       error = createScript( saveDir, pgsub->f, buf );
       if( !error )
       {

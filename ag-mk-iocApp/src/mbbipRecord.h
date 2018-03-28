@@ -1,7 +1,5 @@
-#include <vxWorks.h>
-#include <semLib.h>
+#include "epicsMutex.h"
 #include "ellLib.h"
-#include "fast_lock.h"
 #include "link.h"
 #include "tsDefs.h"
 #ifndef INCmbbiH
@@ -20,7 +18,7 @@ typedef struct mbbipRecord {
 	short		disv;	/*Disable Value*/
 	short		disa;	/*Disable*/
 	DBLINK		sdis;	/*Scanning Disable*/
-	FAST_LOCK	mlok;	/*Monitor fastlock*/
+	epicsMutexId	mlok;	/*Monitor fastlock*/
 	ELLLIST		mlis;	/*Monitor List*/
 	unsigned char	disp;	/*Disable putField*/
 	unsigned char	proc;	/*Force Processing*/

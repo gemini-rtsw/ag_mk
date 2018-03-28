@@ -12,6 +12,9 @@
 *   agMechSimulate - simulate an A&G mechanism
 *   agSimCommand   - set a demand and command for a simulated mechanism
 *
+*   HISTORY
+*   -------
+*   26-Feb-2018:       Migrated mutex to OSI                   (rjc)
 */
 /* *INDENT-OFF* */
 /*
@@ -45,7 +48,7 @@
 #define PLC_MOVE_IN_PROG  104
 #define PLC_FOLLOW_ON     205
 
-static SEM_ID agSimSemId ;
+static epicsMutexId agSimSemId ;
 static int agSimInit = FALSE ;
 
 /* Initialise default values for all the mechanisms servos 
@@ -292,9 +295,7 @@ long agMechSimInit (struct genSubRecord *pgsub)
 {
 
   if (!agSimInit) {
-    agSimSemId = semMCreate (SEM_Q_PRIORITY |
-                             SEM_DELETE_SAFE |
-                             SEM_INVERSION_SAFE ) ;
+    agSimSemId = epicsMutexMustCreate();
     agSimInit = TRUE ;
   }
 
@@ -547,11 +548,11 @@ long agMechSimulate (struct genSubRecord *pgsub)
   timeNow(&now) ;
 
 /* Fetch the latest data from the simulation structure */
-  (void)semTake(agSimSemId, WAIT_FOREVER) ;
+  epicsMutexMustLock(agSimSemId);
     newState = agMechSims[mech].state ;
     newDemand = agMechSims[mech].target ;
     newCommand = agMechSims[mech].command ;
-  (void)semGive(agSimSemId) ;
+  epicsMutexUnlock(agSimSemId);
 
 /* Compute the new position of the mechanism based on its state */
   if (newState == SIM_MOVING) {
@@ -676,12 +677,12 @@ void agSimCommand (int mechindex, long command, long posn)
     demState = SIM_STOPPED ;
   }
 
-  (void)semTake(agSimSemId, WAIT_FOREVER) ;
+  epicsMutexMustLock(agSimSemId);
      agMechSims[mechindex].command = command ;
      agMechSims[mechindex].state = demState ;
-     if (command != C_Foll && command != C_Crude) 
+     if (command != C_Foll && command != C_Crude)
        agMechSims[mechindex].target = posn ;
-  (void)semGive(agSimSemId) ;
+  epicsMutexUnlock(agSimSemId);
 
 }
 

@@ -20,7 +20,7 @@
  *  HISTORY
  *  -------
  *  25-Apr-1998:   Original version                       (ocf)
- *  02-Aug-2000:   Check for presence of XYCOM card       (cjm)     
+ *  02-Aug-2000:   Check for presence of XYCOM card       (cjm)
  *
  */
 
@@ -141,7 +141,7 @@ long setXYCOM (void)
 
   outport = 	(gis_event == GIS_ON)	? GIS_SET : GIS_CLEAR;
 
-  if (vxMemProbe ((char *)xycomBase, VX_READ, sizeof(char), &dummy) != OK) {
+  if (devReadProbe (sizeof(char), (void *)xycomBase, &dummy) != OK) {
     if (first) {
       printf ("*** WARNING: Failed to detect XYCOM card ***\n") ;
       first = 0 ;

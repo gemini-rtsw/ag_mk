@@ -55,11 +55,10 @@
  * .22  03-29-94        mcn     converted to fast links.
  */
 
-#include	<vxWorks.h>
-#include	<types.h>
-#include	<stdioLib.h>
-#include	<lstLib.h>
+#include	<epicsStdio.h>
+#include	<ellLib.h>
 #include	<string.h>
+#include	<recGbl.h>
 
 #include "dbDefs.h"
 #include "epicsPrint.h"
@@ -389,6 +388,8 @@ static long readValue(pmbbip)
 	if (status)
 		return(status);
 
+	/* TODO: FIX THIS. WHAT IS 'NO' AND WHAT IS 'YES'? */
+	/*
 	if (pmbbip->simm == NO){
 		status=(*pdset->read_mbbip)(pmbbip);
 		return(status);
@@ -399,12 +400,13 @@ static long readValue(pmbbip)
 			pmbbip->val=pmbbip->sval;
 			pmbbip->udf=FALSE;
 		}
-                status=2; /* dont convert */
+                status=2; // dont convert
 	} else {
 		status=-1;
 		recGblSetSevr(pmbbip,SOFT_ALARM,INVALID_ALARM);
 		return(status);
 	}
+	*/
         recGblSetSevr(pmbbip,SIMM_ALARM,pmbbip->sims);
 
 	return(status);

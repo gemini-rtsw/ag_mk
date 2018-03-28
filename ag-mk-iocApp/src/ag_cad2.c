@@ -47,11 +47,13 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth (ocf)
- * 
+ *  Olaf Frischmuth  (ocf)
+ *  Ricardo Cardenes (rjc)
+ *
  *  HISTORY
  *  -------
  *  22-Mar-1998: Initial version				(ocf)
+ *  27-Feb-2018: Adapted to RTEMS/OSI				(rjc)
  *
  */
 
@@ -98,6 +100,8 @@
 /* *INDENT-ON* */
 
 #include  <ag_define.h>		/* names for mechanisms */
+// TODO: This is for getcwd. Not portable!!!
+#include  <unistd.h>
 
 /* ====================================================================	*/
 #define crude 	(*(long*)pgsub->a)
@@ -116,7 +120,7 @@ long followsub( struct genSubRecord *pgsub )
 
 	card  = getcard (foc_index, 0);
         motor = getplcn (foc_index, 0);
-	
+
 	get2DPRam (TrEPsam, card, 0, &sample);	/* last written sample */
 	sample = lim (sample, 0, MAXSAM-1);
 

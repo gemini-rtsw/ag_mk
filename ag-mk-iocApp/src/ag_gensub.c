@@ -44,10 +44,12 @@
  *  AUTHOR
  *  ------
  *  Olaf Frischmuth
+ *  Ricardo Cardenes
  *
  *  HISTORY
  *  -------
  *  24-June-1997: Original version 			(ocf)
+ *  27-Feb-2018: Adapted to RTEMS/OSI			(rjc)
  */
 /* *INDENT-OFF* */
 /*
@@ -145,8 +147,9 @@
  */
 /* *INDENT-ON* */
 
-#include  <ag_define.h>		
+#include <ag_define.h>
 #include "agSimulate.h"
+#include <cadef.h>
 
 /* LUT's */
 char lutstring[26][MAX_STRING_SIZE] =
@@ -573,7 +576,7 @@ long convfault ( long fault, char * message)
 
 long macfault ( struct genSubRecord *pgsub )
 {
-  long fault[3];
+  long fault[3] = {-1, -1, -1};
 
   if (getsimu(ag_cc) == SIM_NONE)
   {
@@ -1526,7 +1529,7 @@ long managelutinit( struct genSubRecord *pgsub )
 long managelut( struct genSubRecord *pgsub )
 {
   char messages[80];                             /* Message buffer */
-  int  taskId;
+  epicsThreadId taskId;
   long mechindex = query_cadname (pgsub->name);
 
   *(long*) pgsub->vale = 0;
@@ -1550,10 +1553,14 @@ long managelut( struct genSubRecord *pgsub )
 
     case 1:
       asklut(pgsub);                             /* ask lut, put strings */
-	 	  
-      taskId = taskSpawn( pgsub->name, 45, VX_FP_TASK, 8000,
-                         (FUNCPTR)updatemenustr,
-                         (int)mechindex,0, 0, 0, 0,0,0,0,0,0 );
+
+      taskId = epicsThreadCreate(
+		      pgsub->name,
+		      priorityMedium, // In vxWorks this was 45
+		      epicsThreadGetStackSize(epicsThreadStackSmall),
+		      (EPICSTHREADFUNC)updatemenustr,
+		      (void *)mechindex
+		      );
       taskwdInsert (taskId, NULL, 0L);       /* updatemenustr (mechindex); */
       break;
     case 0:
@@ -1667,12 +1674,12 @@ long CalParm( struct genSubRecord *pgsub )
     ForPar[mechindex][6] = *(double*) pgsub->u;
 
 /* Set limits for +X, -X, +Y, -Y, +Z, -Z */  
-    Limits[mechindex][0] = max(*(double*)pgsub->l, *(double*)pgsub->m); 
-    Limits[mechindex][1] = min(*(double*)pgsub->l, *(double*)pgsub->m);
-    Limits[mechindex][2] = max(*(double*)pgsub->n, *(double*)pgsub->o);
-    Limits[mechindex][3] = min(*(double*)pgsub->n, *(double*)pgsub->o);
-    Limits[mechindex][4] = max(*(double*)pgsub->p, *(double*)pgsub->q);
-    Limits[mechindex][5] = min(*(double*)pgsub->p, *(double*)pgsub->q);
+    Limits[mechindex][0] = fmax(*(double*)pgsub->l, *(double*)pgsub->m); 
+    Limits[mechindex][1] = fmin(*(double*)pgsub->l, *(double*)pgsub->m);
+    Limits[mechindex][2] = fmax(*(double*)pgsub->n, *(double*)pgsub->o);
+    Limits[mechindex][3] = fmin(*(double*)pgsub->n, *(double*)pgsub->o);
+    Limits[mechindex][4] = fmax(*(double*)pgsub->p, *(double*)pgsub->q);
+    Limits[mechindex][5] = fmin(*(double*)pgsub->p, *(double*)pgsub->q);
 
   } else if (mechindex == p1_focus) {
    
@@ -1731,12 +1738,12 @@ long CalParm( struct genSubRecord *pgsub )
 
     ForPar[mechindex][5] = *(double*) pgsub->t; 
 
-    Limits[mechindex][0] = max(*(double*)pgsub->l, *(double*)pgsub->m); 
-    Limits[mechindex][1] = min(*(double*)pgsub->l, *(double*)pgsub->m);
-    Limits[mechindex][2] = max(*(double*)pgsub->n, *(double*)pgsub->o);
-    Limits[mechindex][3] = min(*(double*)pgsub->n, *(double*)pgsub->o);
-    Limits[mechindex][4] = max(*(double*)pgsub->p, *(double*)pgsub->q);
-    Limits[mechindex][5] = min(*(double*)pgsub->p, *(double*)pgsub->q);
+    Limits[mechindex][0] = fmax(*(double*)pgsub->l, *(double*)pgsub->m); 
+    Limits[mechindex][1] = fmin(*(double*)pgsub->l, *(double*)pgsub->m);
+    Limits[mechindex][2] = fmax(*(double*)pgsub->n, *(double*)pgsub->o);
+    Limits[mechindex][3] = fmin(*(double*)pgsub->n, *(double*)pgsub->o);
+    Limits[mechindex][4] = fmax(*(double*)pgsub->p, *(double*)pgsub->q);
+    Limits[mechindex][5] = fmin(*(double*)pgsub->p, *(double*)pgsub->q);
   }
 
   status = CalParmInit(pgsub);

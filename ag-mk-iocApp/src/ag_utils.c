@@ -37,22 +37,28 @@
  *  record properties
  *
  *  AUTHOR
- *  Olaf (Claus) Frischmuth (ocf)
+ *  Olaf (Claus) Frischmuth   (ocf)
+ *  Ricardo (Javier) Cardenes (rjc)
  *
  *  HISTORY
  *  24-Feb-1998: Original version, some functions taken from the CICS.   (ocf)
+ *  26-Feb-2018: Changes to adapt to RTEMS/OSI. Modified some commented
+ *               code in doPLCcomm to include it conditionally, instead  (rjc)
  */
 
 
 #include  <ag_define.h>		/* names for mechanisms */
 #include  "agSimulate.h"
 #include  <slalib.h>
+#include  <dbAccess.h>
 
 static int gemAb2xy (double a, double b, double d, double h, double rp,
                      double ra, double *x, double *y) ;
 static int gemXy2ab (double x, double y, double d, double h, double rp,
                      double ra, double *a1, double *b1, double *a2,
                      double *b2);
+
+long  putlogstr (int mechindex, char *recordstr, char *valuestr, int i);
 
 /* ==================================================================== */
 
@@ -118,7 +124,10 @@ long agAb2xy(long mechindex, double alpha_rot, double beta_arm,
   double hp ;                            /* probe height (mm)           */
   double d ;                             /* M1 image to focal plane     */
 
-			/* calculation Orient re-inserted ocf 26.1.2000	*/
+  /* Initialize a couple of variables to remove warnings */
+  xp = yp = 0;
+
+  /* calculation Orient re-inserted ocf 26.1.200 */
   RT_ORIENT = (alpha_rot < 0) ?	CW : CCW;	/* CW means: Angle < 0	*/	
   PA_ORIENT = (beta_arm  < 0) ?	CW : CCW;	
 
@@ -198,6 +207,10 @@ long agXy2ab (long mechindex, long new_track_id, double xtr, double ytr, double 
   double hp ;                   /* height of probe above focal plane    */
   double d ;                    /* M1 image to focal plane (mm)         */
 
+  /* Initialize a handful of variables to 0 to remove warnings. */
+  alpha = alpha1 = gamma = gamma1 = 0;
+  distCCW = 0;
+
   x = xtr * X_SCALE + X_OFFSET;		/* Translation of FOR	*/
   y = ytr * Y_SCALE + Y_OFFSET;		/* (Frame of reference)	*/
 
@@ -238,6 +251,7 @@ long agXy2ab (long mechindex, long new_track_id, double xtr, double ytr, double 
     *alpha_rot  = CurrRTAngle * DD2R ;
 
   } else {
+
 
     d = M1TOFPLANE ;
     if (mechindex == p1_probe)
@@ -434,9 +448,6 @@ long getpos (int mechindex, double current[3], double target[3], double demand[3
 long doPLCcomm (int mechindex, long command, long *Pos)
 {
   int card, motor;
-  long terminator ;
-  char response[MAX_STRING_SIZE];
-  char errmsg[MAX_STRING_SIZE];
 
 /* Save the last command. This is needed in some cases so that special
 *  demands can be sent through the PMAC mailboxes when a mechanism 
@@ -469,8 +480,12 @@ long doPLCcomm (int mechindex, long command, long *Pos)
 *  following section before installing there.
 */
 
-/*
+#ifdef GEMINI_NORTH
     if (command) {
+      long terminator ;
+      char response[MAX_STRING_SIZE];
+      char errmsg[MAX_STRING_SIZE];
+
       if (mechindex == ag_sf || mechindex == ag_Tilt) {
        terminator = drvPmacMbxWriteRead (card, "#4K I430=4000", response, errmsg);
        if (errmsg[0]) {
@@ -478,7 +493,7 @@ long doPLCcomm (int mechindex, long command, long *Pos)
        }
       }
     }
-*/
+#endif
 
     motor = getplcn (mechindex, 0);
     putDPRam  (FlagStart+motor, command, card, 0);	/* give Command	*/
@@ -613,11 +628,12 @@ long query_cadname (char *string)
     if (strncmp (string, mechstrs[i], strlen(mechstrs[i])) == 0)
       break;					/* stop for-loop */
 
-  if (i >= MAX_INDEX)
+  if (i >= MAX_INDEX) {
     if (strncmp (string, ag_p1_str, strlen(ag_p1_str)) == 0)
       i=p1_probe;
     else if (strncmp (string, ag_p2_str, strlen(ag_p2_str)) == 0)
       i=p2_probe;
+  }
 
   #if 0
   if (i < MAX_INDEX)	;			/* name recognised */
@@ -642,11 +658,12 @@ long query_sadname (char *string)
     if (strncmp (string, sadstrs[i], strlen(sadstrs[i])) == 0)
       break;				/* stop for-loop */
 
-  if (i >= MAX_INDEX)
+  if (i >= MAX_INDEX) {
     if (strncmp (string, ag_p1_sadstr, strlen(ag_p1_sadstr)) == 0)
       i=p1_probe;
     else if (strncmp (string, ag_p2_sadstr, strlen(ag_p2_sadstr)) == 0)
       i=p2_probe;
+  }
 
   #if 0
   if (i < MAX_INDEX)				/* name recognised */
@@ -1688,7 +1705,7 @@ void encoderSwitch( long onOff )
     case 0:
       if( response != 203 )  /* Encoder on, so switch off */
       {
-        taskDelay( sysClkRateGet()/2.0 );   /* Wait 0.5 second */
+        epicsThreadSleep(0.5);              /* Wait 0.5 second */
         doLowPLCcomm(1, 28, C_Stop,  NULL);
       }
 /*      printf("Encoder is off\n"); */
@@ -1701,7 +1718,7 @@ void encoderSwitch( long onOff )
         doLowPLCcomm(1, 28, C_Datum, NULL);
         while( response == 203 )
         {
-          taskDelay( sysClkRateGet()/2.0 );   /* Wait 0.5 second */
+          epicsThreadSleep(0.5);              /* Wait 0.5 second */
           response = (long)( (short)getDPRam(FlagStart+28, 1, 0) );
         }
       }

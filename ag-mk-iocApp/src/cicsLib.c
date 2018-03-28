@@ -15,7 +15,6 @@
  *  cicsCheckIdle     - Check if character string contains CAD IDLE code
  *  cicsCheckMarked   - Check if character string contains CAD "marked" value
  *  cicsCheckPaused   - Check if character string contains CAR PAUSED code
- *  cicsInitLogging   - Create semaphore for CICS logging (optional)
  *  cicsLogMessage    - Log a message.
  *  cicsGetTop        - Get top level prefixes for EPICS database.
  *  cicsSetTop        - Set top level prefixes for EPICS database.
@@ -40,8 +39,9 @@
  *
  *  AUTHOR
  *  ------
- *  Steven Beard  (smb@roe.ac.uk)
- *  Janet Tvedt   (tvedt@noao.edu)
+ *  Steven Beard      (smb@roe.ac.uk)
+ *  Janet Tvedt       (tvedt@noao.edu)
+ *  Ricardo Cardenes  (rcardenes@gemini.edu)
  *
  *  HISTORY
  *  -------
@@ -75,6 +75,7 @@
  *               "cadefs.h" in the same file..                       (smb)
  *  12-Aug-1997: Added check functions used by CAD functions.        (smb)
  *  30-Jan-1998: DBPut and DBGet moved to "DBLib.c"                  (ocf)
+ *  22-Feb-2018: Refactor for RTEMS/EPICS-3.14   S                   (rcardenes)
  */
 /* *INDENT-OFF* */
 /*
@@ -106,14 +107,12 @@
 
 /* Global Constants */
 
-#include  <vxWorks.h>
-#include  <semLib.h>
-#include  <types.h>
 #include  <math.h>
 #include  <time.h>
-#include  <stdlib.h>
-#include  <stdioLib.h>
 #include  <string.h>
+#include  <stdlib.h>
+#include  <epicsStdio.h>
+#include  <errlog.h>
 
 #include  <dbDefs.h>
 #include  <dbCommon.h>
@@ -124,28 +123,86 @@
 #include  <cicsConst.h>
 #include  <cicsLib.h>
 
-/*
- * The cicsLogMessage() function uses a ring buffer to help prevent messages
- * displayed on the console by logMsg() being overwritten. This constant
- * defines the number of messages in the ring buffer.
- */
-
-#define MESSAGE_BUFFERS   64
-
 /* Global Variables */
 
 static char cicsTop[MAX_STRING_SIZE] = "cics:";      /* Top level prefix */
 static char cicsSadtop[MAX_STRING_SIZE] = "cics::";  /* Top level SAD prefix */
 
-SEM_ID semMutex;    /* Mutual exclusion semaphore to prevent more than
-		       a single task from accessing the static message
-		       array in cicsLogMessage */
-
-static short useSem = 0;        /* Flag set to 1 if semaphore is to be used */
-
 
 /* ===================================================================== */
 
+/*+
+ * Function name:
+ * ciscCheckCadCarCode
+ *
+ * Purpose:
+ * Read an input string looking for a specific code.
+ *
+ * Invocation:
+ * status = ciscCheckCadCarCode( string, expected, altExpected);
+ *
+ * or
+ *
+ * code = ciscCheckCadCarCode( string, expected, NULL);
+ *
+ * Parameters in:
+ *    string          *string        string containing a CAR/CAD value.
+ *    expected        long           an integer value to be compared with string
+ *    altExpected     *string        if not NULL, this will be compared against
+ *                                   string, if the original value cannot be
+ *                                   converted to a singled digit integer
+ *
+ * Parameters out:
+ *
+ * Return value:
+ *    < status        unsigned int   = 1 if the given string can be converted
+ *                                     to an integer equal to "expected" or,
+ *                                     if it cannot, if it's equal to
+ *                                     "altExpected" (in case it is not NULL)
+ *                                   = 0 otherwise
+ *
+ *   Globals:
+ *      External functions:
+ *      None
+ *
+ *      External variables:
+ *      None
+ *
+ *   Requirements:
+ *
+ *   Author:
+ *   Ricardo Cardenes  (rcardenes@gemini.edu)
+ *
+ *   History:
+ *   23-Feb-2018: Original version                         (rcardenes)
+ *-
+ */
+unsigned int ciscCheckCadCarCode(const char *string, long expected, const char *altExpected)
+{
+	long ivalue;           /* Argument converted to integer */
+	unsigned status = 0;   /* return value */
+	char *endptr;
+
+	if ( string != NULL ) {
+		/* Try to convert to integer */
+		ivalue = strtol( string, &endptr, 10);
+
+		if ( (*endptr) == 0 ) {
+			/*
+			 * Successful conversion.
+			 * Check if the argument translates to "expected"
+			 */
+			if ( ivalue == expected )
+				status = 1;
+		}
+		/* More than one character in the string. Check for the "BUSY". */
+		else if ( altExpected && (strncmp( string, altExpected, MAX_STRING_SIZE ) == 0) )
+		{
+			status = 1;
+		}
+	}
+	return status;
+}
 
 /* ===================================================================== */
 
@@ -183,59 +240,22 @@ static short useSem = 0;        /* Flag set to 1 if semaphore is to be used */
  *   Requirements:
  *
  *   Author:
- *   Steven Beard  (smb@roe.ac.uk)
+ *   Steven Beard      (smb@roe.ac.uk)
+ *   Ricardo Cardenes  (rcardenes@gemini.edu)
  *
  *   History:
  *   16-Apr-1997: Original version.                        (smb)
  *   11-Aug-1997: Modified to take string argument.        (smb)
+ *   23-Feb-2018: Refactored to use ciscCheckCadCarCode    (rcardenes)
  *-
  */
 
 long cicsCheckBusy( char *string ) 
 {
-  long cvstat;         /* conversion status */
-  long ivalue;         /* Argument converted to integer */
-  long busyFlag;       /* busy flag = return value */
-
-/* Initialise return value */
-
-  busyFlag = 0;
-
-/* Convert the input argument to an integer. */
-
-  cvstat = sscanf( string, "%ld", &ivalue );
-
-/*
- * Check the input argument was successfully converted. (cvstat contains the
- * number of items that "sscanf" has successfully converted, and there
- * should be 1).
- * If the argument cannot be converted check for the string "BUSY".
- */
-
-  if ( cvstat == 1 )
-  {
-
 /*
  * Check if the argument translates to "menuCarstatesBUSY".
  */
-
-    if ( ivalue == menuCarstatesBUSY )
-    {
-
-      busyFlag = 1;
-    }
-  }
-  else
-  {
-
-    if ( strncmp( string, "BUSY", MAX_STRING_SIZE ) == 0 )
-    {
-
-      busyFlag = 1;
-    }
-  }
-
-  return busyFlag;
+  return ciscCheckCadCarCode(string, menuCarstatesBUSY, "BUSY");
 }
 
 
@@ -275,58 +295,21 @@ long cicsCheckBusy( char *string )
  *   Requirements:
  *
  *   Author:
- *   Steven Beard  (smb@roe.ac.uk)
+ *   Steven Beard      (smb@roe.ac.uk)
+ *   Ricardo Cardenes  (rcardenes@gemini.edu)
  *
  *   History:
  *   11-Aug-1997: Original version.                        (smb)
+ *   23-Feb-2018: Refactored to use ciscCheckCadCarCode    (rcardenes)
  *-
  */
 
-long cicsCheckIdle( char *string ) 
+long cicsCheckIdle( char *string )
 {
-  long cvstat;         /* conversion status */
-  long ivalue;         /* Argument converted to integer */
-  long idleFlag;       /* idle flag = return value */
-
-/* Initialise return value */
-
-  idleFlag = 0;
-
-/* Convert the input argument to an integer. */
-
-  cvstat = sscanf( string, "%ld", &ivalue );
-
-/*
- * Check the input argument was successfully converted. (cvstat contains the
- * number of items that "sscanf" has successfully converted, and there
- * should be 1).
- * If the argument cannot be converted check for the string "IDLE".
- */
-
-  if ( cvstat == 1 )
-  {
-
 /*
  * Check if the argument translates to "menuCarstatesIDLE".
  */
-
-    if ( ivalue == menuCarstatesIDLE )
-    {
-
-      idleFlag = 1;
-    }
-  }
-  else
-  {
-
-    if ( strncmp( string, "IDLE", MAX_STRING_SIZE ) == 0 )
-    {
-
-      idleFlag = 1;
-    }
-  }
-
-  return idleFlag;
+  return ciscCheckCadCarCode(string, menuCarstatesIDLE, "IDLE");
 }
 
 
@@ -367,48 +350,21 @@ long cicsCheckIdle( char *string )
  *
  *   Author:
  *   Steven Beard  (smb@roe.ac.uk)
+ *   Ricardo Cardenes  (rcardenes@gemini.edu)
  *
  *   History:
  *   16-Apr-1997: Original version.                        (smb)
  *   11-Aug-1997: Modified to take string argument.        (smb)
+ *   23-Feb-2018: Refactored to use ciscCheckCadCarCode    (rcardenes)
  *-
  */
 
-long cicsCheckMarked( char *string ) 
+long cicsCheckMarked( char *string )
 {
-  long cvstat;         /* conversion status */
-  long ivalue;         /* Argument converted to integer */
-  long markedFlag;     /* marked flag = return value */
-
-/* Initialise return value */
-
-  markedFlag = 0;
-
-/* Convert the input argument to an integer. */
-
-  cvstat = sscanf( string, "%ld", &ivalue );
-
 /*
- * Check the input argument was successfully converted. (cvstat contains the
- * number of items that "sscanf" has successfully converted, and there
- * should be 1).
+ * Check if the argument translates to the CAD status "MARKED" (which is integer 1)
  */
-
-  if ( cvstat == 1 )
-  {
-
-/*
- * Check if the argument translates to "marked".
- */
-
-    if ( ivalue == 1 )
-    {
-
-     markedFlag = 1;
-    }
-  }
-
-  return markedFlag;
+  return ciscCheckCadCarCode(string, 1, NULL);
 }
 
 /* ===================================================================== */
@@ -448,122 +404,21 @@ long cicsCheckMarked( char *string )
  *   Requirements:
  *
  *   Author:
- *   Steven Beard  (smb@roe.ac.uk)
+ *   Steven Beard      (smb@roe.ac.uk)
+ *   Ricardo Cardenes  (rcardenes@gemini.edu)
  *
  *   History:
  *   11-Aug-1997: Original version.                        (smb)
+ *   23-Feb-2018: Refactored to use ciscCheckCadCarCode    (rcardenes)
  *-
  */
 
 long cicsCheckPaused( char *string ) 
 {
-  long cvstat;         /* conversion status */
-  long ivalue;         /* Argument converted to integer */
-  long pausedFlag;     /* paused flag = return value */
-
-/* Initialise return value */
-
-  pausedFlag = 0;
-
-/* Convert the input argument to an integer. */
-
-  cvstat = sscanf( string, "%ld", &ivalue );
-
-/*
- * Check the input argument was successfully converted. (cvstat contains the
- * number of items that "sscanf" has successfully converted, and there
- * should be 1).
- * If the argument cannot be converted check for the string "PAUSED".
- */
-
-  if ( cvstat == 1 )
-  {
-
 /*
  * Check if the argument translates to "menuCarstatesPAUSED".
  */
-
-    if ( ivalue == menuCarstatesPAUSED )
-    {
-
-      pausedFlag = 1;
-    }
-  }
-  else
-  {
-
-    if ( strncmp( string, "PAUSED", MAX_STRING_SIZE ) == 0 )
-    {
-
-      pausedFlag = 1;
-    }
-  }
-
-  return pausedFlag;
-}
-
-/* ===================================================================== */
-
-/*+
- *   Function name:
- *   cicsInitLogging
- *
- *   Purpose:
- *   Initialise mutual exclusion semaphore used by cicsLogMessage.
- *
- *   Purpose:
- *   This routine should be invoked from the VxWorks startup script
- *   if there is a need to use a mutual exclusion semaphore in the
- *   CICS logging. If the routine is not executed, the semaphore will
- *   not be used.
- *
- *   Invocation:
- *   cicsInitLogging(  );
- *
- *   Parameters in:
- *      < debug        long       Debug level associated with message.
- *                                0 means message is always logged.
- *                                1 is used for important log messages.
- *                                2 is used for supplemental messages.
- *                                3 is used for unimportant messages.
- *                                In general, messages are only logged
- *                                if debug <= debugLevel.
- *      < message     char*       Message to be logged.
- *
- *   Parameters out:
- *
- *   Return value:
- *      This is a void function. It has no status value.
- *
- *   Globals:
- *      External functions:
- *
- *      External variables:
- *      > useSem  short     Flag indicating whether to use a semaphore.
- *      > semMutex SEM_ID   ID of semaphore created.
- *
- *   Requirements:
- *
- *   Limitations:
- *
- *   Author:
- *   Janet Tvedt  (tvedt@naoo.edu)
- *   Steven Beard (smb@roe.ac.uk)
- *
- *   History:
- *   XX-Apr-1997: Original version as initCicsLogging.              (tvedt)
- *   17-Jun-1997: Comment prologue added. Renamed to
- *                cicsInitLogging to obey Gemini programming
- *                standards (which recommends that all library
- *                functions begin with the same prefix). Set
- *                "useSem" variable.                                (smb)
- *-
- */
-
-void cicsInitLogging(void)
-{
-    semMutex = semBCreate(SEM_Q_FIFO, SEM_FULL);
-    useSem = 1;
+  return ciscCheckCadCarCode(string, menuCarstatesPAUSED, "PAUSED");
 }
 
 
@@ -582,7 +437,7 @@ void cicsInitLogging(void)
  *   routine it should be possible to redirect the messages easily,
  *   for example through the "historyLog" record monitored by the Data
  *   Handling System. For the moment the messages are passed to the
- *   EPICS "LogMsg" function.
+ *   EPICS "errorPrintf" function.
  *
  *   Invocation:
  *   long debug;
@@ -598,7 +453,7 @@ void cicsInitLogging(void)
  *
  *   Globals:
  *      External functions:
- *      cicsLogMsg        VxWorks function for logging a message.
+ *      errlogPrintf      EPICS function for logging a message
  *
  *      External variables:
  *
@@ -614,18 +469,10 @@ void cicsInitLogging(void)
  *   MAX_STRING_SIZE characters of the message, so history log messages
  *   might be truncated.
  *
- *   The VxWorks logMsg() function returns before the message you have given
- *   it has been displayed. On the one hand this means the function does not
- *   delay real-time code. On the other hand this means that if logMsg() is
- *   given a message buffer, that message buffer can be overwritten before
- *   the message is displayed. The symptoms are some messages getting lost
- *   while others are repeated. I have used a ring buffer in cicsLogMessage()
- *   as a means of alleviating the problem, but it will still happen if
- *   there are sufficient messages to fill the ring buffer
- *
  *   Author:
- *   Steven Beard  (smb@roe.ac.uk)
- *   Janet Tvedt  (tvedt@naoo.edu)
+ *   Steven Beard      (smb@roe.ac.uk)
+ *   Janet Tvedt       (tvedt@naoo.edu)
+ *   Ricardo Cardenes  (rcardenes@gemini.edu)
  *
  *   History:
  *   03-Dec-1996: Original version.                                 (smb)
@@ -642,28 +489,23 @@ void cicsInitLogging(void)
  *   27-Jun-1997: Code to write history log added (but commented
  *                out, since it still needs testing).               (smb)
  *   30-Jan-1998: debuglevel and debug removed for instanciation    (ocf)
+ *   23-Feb-2018: Refactored for RTEMS/EPICS 3.14
+ *                It seems like EPICS OSI logger does not suffer
+ *                from the same problem as vxWorks logMsg. It
+ *                will save the logged messages to an internal
+ *                list and print them in a separate thread, meaning
+ *                that there's no need for a ring buffer. As a side
+ *                effect, there's no need for the mutex any longer  (rcardenes)
  *-
  */
 
 void cicsLogMessage ( const char * message )
 {
-    void logMsg();                   /* External logMsg function */
-
-    static char buffer[MESSAGE_BUFFERS][CICS_MESSAGE_LENGTH];
-                                     /* Ring buffer */
-
-    static long next=0;              /* Index into ring buffer */
-
  /* char fieldName[MAX_STRING_SIZE]; <--- COMMENTED OUT FOR NOW */
                                      /* Field name of history log record */
 
     char histMsg[MAX_STRING_SIZE];   /* Message to be written to history log */
 
-/* If a semaphore is being used, wait until the semaphore is available,
- * then continue with the logging.
- */
-
-    if ( useSem == 1 ) semTake(semMutex, WAIT_FOREVER);
 
 /* Only display the message if the debug value associated with it is less
  * than or equal to the current debug level.
@@ -682,6 +524,7 @@ void cicsLogMessage ( const char * message )
 
 /* Copy the message to the history log using Channel Access. */
 
+// TODO: Test this and uncomment
 /* NOTE: THE FOLLOWING LINES ARE COMMENTED OUT, AS THEY HAVEN'T BEEN TESTED YET.
  */
 #if 0
@@ -689,26 +532,9 @@ void cicsLogMessage ( const char * message )
    status = cicsCaPut( fieldName, errMess, DBF_STRING, histMsg );
 #endif
 
-/* Copy the message to the next available location in the ring buffer. */
-
-      strncpy(  buffer[next], message, CICS_MESSAGE_LENGTH );
-
-/* Give this location in the ring buffer to logMsg() */
-
-      logMsg( "%s\n", buffer[next] );
-
-/*
- * Increment the ring buffer pointer, resetting it to the start if greater
- * than the buffer size.
- */
-
-      if( ++next >= MESSAGE_BUFFERS ) next = 0;
+      errlogPrintf( "%s\n", message);
 
  /*   } */
-
-/* If a semaphore is being used, make it available to the next task */
-
-    if ( useSem == 1 ) semGive(semMutex);
 
 }
 

@@ -57,9 +57,10 @@
  *
  *   AUTHOR
  *   ------
- *   Steven Beard    (smb, smb@roe.ac.uk)
- *   Olaf Frischmuth (ocf, frischmuth@goepel.com)
- * 
+ *   Steven Beard     (smb, smb@roe.ac.uk)
+ *   Olaf Frischmuth  (ocf, frischmuth@goepel.com)
+ *   Ricardo Cardenes (rjc, rcardenes@gemini.edu)
+ *
  *   HISTORY
  *   -------
  *   28-Mar-1996: Original version with just CADSelect.              (smb)
@@ -103,6 +104,7 @@
  *		  but without LUT-access			     (ocf)
  *   22-Jul-1997: Several CAD routines added and changed.
  *		  Utility routines added.			     (ocf)
+ *   27-Feb-2018: Adapted to RTEMS/OSI				     (rjc)
  *
  */
 
@@ -503,19 +505,19 @@ long CADMove( struct cadRecord *pcad )
   long mechindex = CAD_default(pcad, &status);	/* does all default actions */
   long new_track_id = 0; /* new track ID flag. */
 
-  int dims  = getdims (mechindex);	
+  int dims  = getdims (mechindex);
 
-  messages[0] = 0;                              /* clear logmessage */	
+  messages[0] = 0;                              /* clear logmessage */
 
-  if (status == CAD_ACCEPT)		
+  if (status == CAD_ACCEPT)
   switch (pcad->dir)
   {
 
 	/* CAD PRESET directive detected. Check the command arguments and, if
 	 * acceptable, copy them to the CAD outputs.
 	 *
-	 * Check the input argument was successfully converted. (cvstat 
-	 * contains the number of items that "sscanf" has successfully  
+	 * Check the input argument was successfully converted. (cvstat
+	 * contains the number of items that "sscanf" has successfully
 	 * converted, and there should be 1).
 	 */
 
@@ -682,8 +684,8 @@ long CADMove( struct cadRecord *pcad )
     break;
 
     case menuDirectiveCLEAR:
-	*(long*)pcad->c	= 0;        /* strings are now "empty strings" */
-	*(long*)pcad->d	= 0;        /* doubles are not completely cleared */
+        pcad->c[0] = '\0';          /* strings are now "empty strings" */
+        pcad->d[0] = '\0';          /* doubles are not completely cleared */
 	*(long*)pcad->valc = 0;     /* smaller data than longs could be */
 	*(long*)pcad->vald = 0;     /* dangerous                        */
 	db_post_events( pcad, &pcad->c, 1) ;
@@ -694,7 +696,7 @@ long CADMove( struct cadRecord *pcad )
 
     default:
        *(long*)pcad->vald = 0;     /* reset EngCad mark */
-    break;	
+    break;
 
   }
   return status;
@@ -1010,8 +1012,8 @@ long CADEng( struct cadRecord *pcad )
  
 
     case menuDirectiveCLEAR:
-	*(long*)pcad->c 	= 0;	/* strings are now "empty strings" */
-	*(long*)pcad->d 	= 0;	/* doubles are not completely cleared */
+        pcad->c[0] = '\0';          /* strings are now "empty strings" */
+        pcad->d[0] = '\0';          /* doubles are not completely cleared */
 	*(long*)pcad->valc 	= 0;	/* smaller data than longs could be   */
 	*(long*)pcad->vald 	= 0;	/* dangerous                          */
 	db_post_events( pcad, &pcad->c,   1 );	
@@ -1084,7 +1086,7 @@ long CADDefine( struct cadRecord *pcad )
   char messages[80];     /* Message buffer */
   long status = CAD_ACCEPT;         /* Initialise return status */
   long count;
-  int  taskId;
+  epicsThreadId  taskId;
 
   long mechindex = CAD_default(pcad, &status);	/* does all default actions */
 
@@ -1126,8 +1128,14 @@ long CADDefine( struct cadRecord *pcad )
 	    LUTplusPos[mechindex][count][1] = currpos[mechindex][1];
 	    LUTplusPos[mechindex][count][2] = currpos[mechindex][2];
 	    LUTpluscount [mechindex]++;
-	    taskId = taskSpawn( pcad->name, 45, VX_FP_TASK, 8000, (FUNCPTR)updatemenustr,
-			(int)mechindex,0, 0, 0, 0,0,0,0,0,0 );
+
+	    taskId = epicsThreadCreate(
+			    pcad->name,
+			    priorityMedium, // In vxWorks this was 45
+			    epicsThreadGetStackSize(epicsThreadStackSmall),
+			    (EPICSTHREADFUNC)updatemenustr,
+			    (void *)mechindex
+			    );
     	    taskwdInsert (taskId, NULL, 0L);		/* updatemenustr (mechindex);	*/
 	  }
 
@@ -1701,8 +1709,8 @@ long CAD_default (struct cadRecord  *pcad, long *pstatus)
       	agLogMessage( mechindex, DEB_FULL, messages);
 	/* strcpy( pcad->mess, "\0");	*/
 					/* only 2 In/Outputs are cleared, since some CADs have only 2	*/
-	*(long*)pcad->a 	= 0;				/* strings are now "empty strings"	*/
-	*(long*)pcad->b 	= 0;				/* doubles are not completely cleared	*/
+        pcad->a[0]		= '\0';          		/* strings are now "empty strings" */
+        pcad->b[0]		= '\0';          				/* doubles are not completely cleared */
 	*(long*)pcad->vala 	= 0;				/* smaller data than longs could be 	*/
 	*(long*)pcad->valb 	= 0;				/*   dangerous.				*/
 	/* strcpy ( pcad->a,    "\0");

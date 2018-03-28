@@ -16,12 +16,14 @@
  *  AUTHOR
  *  ------
  *  Olaf Frischmuth (ocf)
- *  Karsten Ottow (ko) 
+ *  Karsten Ottow (ko)
+ *  Ricardo Cardenes (rjc)
  *
  *  HISTORY
  *  -------
- *  24-June-1997: Original version 			(ocf)
- *  25-Dec-97:	complete renewed			(ocf)
+ *  24-June-1997:     Original version 			(ocf)
+ *  25-Dec-97:	      complete renewed			(ocf)
+ *  25-February-2018: Removed some warnings             (rjc)
  */
 
 #include <float.h>
@@ -443,7 +445,7 @@ long followA( struct genSubRecord *pgsub )
     /* AWE need to check the validity of coefficients and ZD, RMA */
     sinZen = sin(ZD * DEG_TO_RAD);
     if (FLEX_DEBUG) {
-      printf("P%d Flexure sinZen: %f \n",P1P2MARK, sinZen);
+      printf("P%ld Flexure sinZen: %f \n",P1P2MARK, sinZen);
       printf("C0: %f, C1: %f, C2: %f, C3: %f, C4: %f, C5: %f \n",C0, C1, C2, C3, C4, C5);
       printf("RMA+C1: %f in rad: %f, sin(RMA+C1): %f\n",(RMA+C1), (RMA+C1)*DEG_TO_RAD, sin((RMA+C1)*DEG_TO_RAD));
     }
@@ -459,8 +461,8 @@ long followA( struct genSubRecord *pgsub )
     y=y+YSHIFT;
 
     if (FLEX_DEBUG) {
-      printf("P%d Flexure X: %f XSHIFT: %f newX: %f\n",P1P2MARK, XNEW, XSHIFT, x);
-      printf("P%d Flexure Y: %f YSHIFT: %f newY: %f\n\n",P1P2MARK, YNEW, YSHIFT, y);
+      printf("P%ld Flexure X: %f XSHIFT: %f newX: %f\n",P1P2MARK, XNEW, XSHIFT, x);
+      printf("P%ld Flexure Y: %f YSHIFT: %f newY: %f\n\n",P1P2MARK, YNEW, YSHIFT, y);
     }
 
   } else {
@@ -751,6 +753,9 @@ long interpol( struct genSubRecord *pgsub )
   double x,y,z,vx,vy,vz;			
   char   messages[380];			/* Message buffer 		*/
   long   new_track_id;
+
+  /* Initialize error to remove warnings */
+  error = 0;
 
   /* ------------------------------------------	*/
   mechindex = (P1P2MARK  ==        1) ? p1_probe : p2_probe;

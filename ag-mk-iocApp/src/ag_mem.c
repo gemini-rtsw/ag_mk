@@ -13,11 +13,13 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth (ocf)
+ *  Olaf Frischmuth  (ocf)
+ *  Ricardo Cardenes (rjc)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
+ *  23-Feb-2018:        Fix some warnings                       (rjc)
  *
  */
 
@@ -28,14 +30,12 @@
 
 char *strntoupper( char *str , int length)
 {
-int i;
+	int i;
 
-for  (i=0; i<length; i++)
-/*if ( *str  != '\0')	str[i] = toupper (str[i]);	(old version)	*/
-  if (str[i] != '\0')	str[i] = toupper (str[i]);
-  else break;
+	for  (i=0; (i<length) || (str[i] == '\0'); i++)
+		str[i] = toupper ((int)str[i]);
 
-return str;
+	return str;
 }
 
 /* ===================================================================== */
@@ -50,7 +50,13 @@ char * movestring (char *buf, char *str, char *bufend, char *srcstr, int max_siz
 {
   int i, help;
 
-  if (bufend<buf) {i=(long)buf; buf=bufend; bufend=(char*)i;}
+  if (bufend < buf) {
+  	char *tmp = buf;
+
+	buf = bufend;
+	bufend = tmp;
+  }
+
   help = (str-buf) % (bufend-buf+1);
   if (str<buf)	str = bufend+1 + help;
   else		str = buf      + help;
@@ -127,7 +133,7 @@ long check_numeric( char *buf )
   ret     = 0;
   len     = strlen(buf);
   c       = buf;
-  while( isspace(*c) )
+  while( isspace((int)*c) )
   {
     c++;
     istart++;
@@ -141,7 +147,7 @@ long check_numeric( char *buf )
   { 
     /* At this point istart refers to the first non-space character */
     iend = istart;
-    while( !isspace(*c) && iend<len )
+    while( !isspace((int)*c) && iend<len )
     {
       c++;
       iend++;
@@ -154,7 +160,7 @@ long check_numeric( char *buf )
       if( i == istart )
       {
         /* Allow '+' and '-' and '.' as first character */
-        if( !isdigit(*(c+i)) && (*(c+i) != '-') && (*(c+i) != '+') && (*(c+i) != '.') )
+        if( !isdigit((int)*(c+i)) && (*(c+i) != '-') && (*(c+i) != '+') && (*(c+i) != '.') )
         {
           ret = SYNTAX_ERROR;
           break;
@@ -168,7 +174,7 @@ long check_numeric( char *buf )
       }
       else
       {
-        if( !isdigit(*(c+i)) && (*(c+i) != '.') &&
+        if( !isdigit((int)*(c+i)) && (*(c+i) != '.') &&
              (*(c+i) != 'E') && (*(c+i) != 'e') && 
              (*(c+i) != '+') && (*(c+i) != '-') )
         {
@@ -195,7 +201,7 @@ long check_numeric( char *buf )
         }
         if( *(c+i) == '.' )
         {
-          if( (*(c+i-1) != '+') && (*(c+i-1) != '-') && !isdigit(*(c+i-1)) )
+          if( (*(c+i-1) != '+') && (*(c+i-1) != '-') && !isdigit((int)*(c+i-1)) )
           {
             ret = SYNTAX_ERROR;
             break;
@@ -203,7 +209,7 @@ long check_numeric( char *buf )
         }
         if( (*(c+i) == 'E') || (*(c+i) == 'e') )
         {
-          if( (*(c+i-1) != '.') && !isdigit(*(c+i-1)) )
+          if( (*(c+i-1) != '.') && !isdigit((int)*(c+i-1)) )
           {
             ret = SYNTAX_ERROR;
             break;
