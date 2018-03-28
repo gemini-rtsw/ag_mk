@@ -1,0 +1,10 @@
+[symbol2]
+bbox -416 160 -256 352
+uniq 5
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 7 0 -352 176 ccSysCad
+r 0 -416 160 -256 352
+[comments]

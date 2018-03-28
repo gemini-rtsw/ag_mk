@@ -1,0 +1,13 @@
+[symbol2]
+bbox -448 96 -272 320
+uniq 6
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 6 0 -432 112 comp2
+l 75 0 0 -432 160 generic
+l 75 0 0 -432 144 component)
+l 75 0 0 -432 176 (2 axis
+r 0 -448 96 -272 320
+[comments]

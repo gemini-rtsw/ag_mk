@@ -1,0 +1,18 @@
+[symbol2]
+bbox 384 384 544 576
+port 528 512 100 2048 CVEL symbol 2 544 512 0
+port 528 544 100 2048 MOV symbol 2 544 544 0
+port 400 480 100 1536 ENBL symbol 1 384 480 0
+port 400 512 100 1536 MVEL symbol 1 384 512 0
+port 400 544 100 1536 DMND symbol 1 384 544 0
+port 400 448 100 1536 DSCH symbol 1 384 448 0
+port 528 480 100 2048 CURR symbol 2 544 480 0
+uniq 2
+[tools]
+[attributes]
+[layers]
+<symbol>
+a 0 512 416 528 416 360
+l 100 0 0 416 400 motor
+r 0 384 384 544 576
+[comments]

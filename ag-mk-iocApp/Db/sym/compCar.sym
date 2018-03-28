@@ -1,0 +1,14 @@
+[symbol2]
+bbox -416 192 -256 352
+port -304 320 100 2048 PLC_RESP symbol 1 -416 320 0
+port -354 288 100 2048 SDIS symbol 1 -416 288 0
+uniq 2
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 6 0 -400 208 compCar
+l 75 0 0 -400 256 (component
+l 75 0 0 -400 240 CAR record)
+r 0 -416 192 -256 352
+[comments]

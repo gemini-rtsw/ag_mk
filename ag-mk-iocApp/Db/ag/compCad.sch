@@ -1,0 +1,1161 @@
+[schematic2]
+uniq 81
+[tools]
+[detail]
+w -374 2827 100 0 n#1 embbis.Menu.FLNK -400 2816 -288 2816 -288 2800 -224 2800 estringouts.MenuStr.SLNK
+w -342 2571 100 0 n#2 embbis.Menu2.VAL -400 2512 -400 2560 -224 2560 estringouts.MenuStr2.DOL
+w -318 2843 100 0 n#3 estringouts.MenuStr.DOL -224 2832 -352 2832 -352 2784 -400 2784 embbis.Menu.VAL
+w -326 2539 100 0 n#4 embbis.Menu2.FLNK -400 2544 -368 2544 -368 2528 -224 2528 estringouts.MenuStr2.SLNK
+w 970 427 100 0 n#5 elutouts.lut.OUTD 1008 1344 1072 1344 1072 416 928 416 928 368 976 368 hwout.hwout#854.outp
+w -702 1579 100 0 n#6 elutouts.lut2.OUTD -768 1568 -576 1568 -576 1856 -480 1856 hwout.hwout#852.outp
+w 1682 1355 100 0 n#7 ecad8.ecad8#835.SPLK 1600 1344 1824 1344 1824 1952 1944 1952 cadPlus.EngP.SPIN
+w 1666 1387 100 0 n#8 ecad8.ecad8#835.STLK 1600 1376 1792 1376 1792 1984 1944 1984 cadPlus.EngP.STIN
+w 1402 1291 100 0 n#9 egenSubB.DPRead.K 1408 816 1184 816 1184 1280 1680 1280 1680 1824 1632 1824 1632 1888 1600 1888 ecad8.ecad8#835.OUTC
+w 1430 1275 100 0 n#10 egenSubB.DPRead.I 1408 880 1208 880 1208 1264 1712 1264 1712 1856 1664 1856 1664 1952 1600 1952 ecad8.ecad8#835.OUTB
+w 1446 1251 100 0 n#11 egenSubB.DPRead.E 1408 1008 1224 1008 1224 1240 1728 1240 1728 1888 1696 1888 1696 2016 1600 2016 ecad8.ecad8#835.OUTA
+w 1806 1931 100 0 n#12 ecad8.ecad8#835.VAL 1600 2240 1728 2240 1728 1920 1944 1920 cadPlus.EngP.STAT
+w 506 315 100 0 n#13 ecad4.Move.OUTD 496 304 576 304 576 1840 496 1840 ecad2.Sel.OUTB
+w 866 1851 100 0 n#13 junction 576 1840 1216 1840 1216 1856 1280 1856 ecad8.ecad8#835.D
+w 1082 555 100 0 n#14 elongouts.EngV3.OUT 1056 544 1168 544 1168 1920 1280 1920 ecad8.ecad8#835.C
+w 1186 1995 100 0 n#15 elongouts.EngV2.OUT 1056 752 1152 752 1152 1984 1280 1984 ecad8.ecad8#835.B
+w 1178 2059 100 0 n#16 elongouts.EngV1.OUT 1056 976 1136 976 1136 2048 1280 2048 ecad8.ecad8#835.A
+w 1170 2251 100 0 n#17 link2Dir.link2Dir#140.OUT 992 2080 1120 2080 1120 2240 1280 2240 ecad8.ecad8#835.DIR
+w 1306 2467 100 0 n#18 ecad2.Test.STLK 1280 2464 1392 2464 cad2car.cad2car#657.SLNK
+w 714 2379 100 0 n#18 ecad2.Define.STLK 496 2368 992 2368 992 2272 1248 2272 1248 2304 1312 2304 1312 2464 junction
+w 2242 2155 100 0 n#18 junction 1312 2304 1888 2304 1888 2144 2656 2144 2656 2400 2592 2400 cadPlus.StopP.STOUT
+w 882 2955 100 0 n#19 elongouts.testlo.OUT 832 2848 864 2848 864 2944 960 2944 ecad2.Test.DIR
+w -110 -53 100 0 n#20 egenSubB.CalParm.FLNK -288 -32 -160 -32 -160 -64 0 -64 outhier.FLNK.p
+w -694 11 100 0 n#21 inhier.SLNK.P -752 0 -576 0 egenSubB.CalParm.SLNK
+w -1382 2907 100 0 n#22 egenSub.manlut.OUTA -1392 2896 -1312 2896 hwout.hwout#674.outp
+w -1382 2843 100 0 n#23 egenSub.manlut.OUTB -1392 2832 -1312 2832 hwout.hwout#676.outp
+w -494 2331 100 0 n#24 egenSub.manlut.OUTF -1392 2576 -1008 2576 -1008 2320 80 2320 80 1472 752 1472 elutouts.lut.LOAD
+w -1382 2779 100 0 n#25 egenSub.manlut.OUTC -1392 2768 -1312 2768 hwout.hwout#678.outp
+w -1382 2523 100 0 n#26 egenSub.manlut.OUTG -1392 2512 -1312 2512 hwout.hwout#672.outp
+w -1246 2651 100 0 n#27 egenSub.manlut.OUTE -1392 2640 -1040 2640 -1040 1696 -1024 1696 elutouts.lut2.LOAD
+w -1076 1299 100 0 n#28 cadPlus.DatumP.STOUT -1088 976 -1072 976 -1072 1632 junction
+w -1076 1723 100 0 n#28 cadPlus.ParkP.STOUT -1104 1824 -1072 1824 -1072 1632 -1024 1632 elutouts.lut2.SLNK
+w -1732 1051 100 0 n#29 elongouts.parklo.OUT -960 -32 -944 -32 -944 288 -1728 288 -1728 1824 -1696 1824 ecad4.Park.DIR
+w 2130 1963 100 0 n#30 cadPlus.EngP.SPOUT 2104 1952 2216 1952 junction
+w 2220 1867 100 0 n#30 cadPlus.EngP.STOUT 2104 1984 2216 1984 2216 1760 2328 1760 cad2car2.cad2car2#817.SLNK
+w 2394 1891 100 0 n#31 hwout.hwout#818.outp 2328 1920 2328 1888 2520 1888 2520 1824 2488 1824 cad2car2.cad2car2#817.OVAL
+w 2594 843 100 0 n#32 compCar.compCar#804.SDIS 2704 1616 2656 1616 2656 832 2592 832 egenSub.xlat.OUTJ
+w 2642 1659 100 0 n#33 egenSub.xlat.VALE 2592 1184 2640 1184 2640 1648 2704 1648 compCar.compCar#804.PLC_RESP
+w 2378 2347 100 0 n#34 cadPlus.StopP.STAT 2432 2336 2384 2336 2384 2784 2336 2784 ecad2.ecad2#688.VAL
+w 2346 2283 100 0 n#35 cadPlus.StopP.SPIN 2432 2368 2416 2368 2416 2272 2336 2272 ecad2.ecad2#688.SPLK
+w 2338 2315 100 0 n#36 ecad2.ecad2#688.STLK 2336 2304 2400 2304 2400 2400 2432 2400 cadPlus.StopP.STIN
+w -1150 91 100 0 n#37 hwin.hwin#785.in -1024 112 -1024 80 -1216 80 -1216 32 elongouts.parklo.DOL
+w -1582 91 100 0 n#38 elongouts.datmlo.DOL -1648 32 -1648 80 -1456 80 -1456 112 hwin.hwin#784.in
+w -1542 251 100 0 n#39 ecad4.Datum.DIR -1680 976 -1696 976 -1696 240 -1328 240 -1328 -32 -1392 -32 elongouts.datmlo.OUT
+w 580 2907 100 2 n#40 hwin.hwin#779.in 576 2912 576 2912 elongouts.testlo.DOL
+w 1706 923 100 0 n#41 hwout.hwout#765.outp 1792 320 1776 320 1776 912 1696 912 egenSubB.DPRead.OUTH
+w 1714 955 100 0 n#42 egenSubB.DPRead.OUTG 1696 944 1792 944 1792 352 hwout.hwout#764.outp
+w 2668 1099 100 0 n#43 hwout.hwout#766.outp 2704 1184 2672 1184 2672 1024 2592 1024 egenSub.xlat.OUTG
+w 2618 1219 100 0 n#44 egenSub.xlat.OUTD 2592 1216 2704 1216 hwout.hwout#768.outp
+w 2668 1291 100 0 n#45 hwout.hwout#767.outp 2704 1248 2672 1248 2672 1344 2592 1344 egenSub.xlat.OUTB
+w 1898 411 100 0 n#46 egenSubB.DPRead.FLNK 1696 400 2160 400 2160 736 2304 736 egenSub.xlat.SLNK
+w 1930 987 100 0 n#47 egenSubB.DPRead.OUTF 1696 976 2224 976 2224 1312 2304 1312 egenSub.xlat.C
+w 1922 1019 100 0 n#48 egenSubB.DPRead.OUTE 1696 1008 2208 1008 2208 1376 2304 1376 egenSub.xlat.B
+w 1914 1051 100 0 n#49 egenSubB.DPRead.OUTD 1696 1040 2192 1040 2192 1440 2304 1440 egenSub.xlat.A
+w -1310 923 100 0 n#50 cadPlus.DatumP.STAT -1248 912 -1312 912 -1312 976 -1360 976 ecad4.Datum.VAL
+w 1682 1147 100 0 n#51 hwout.hwout#704.outp 1744 1216 1728 1216 1728 1136 1696 1136 egenSubB.DPRead.OUTA
+w -254 683 100 0 n#52 hwout.hwout#696.outp -96 960 -160 960 -160 672 -288 672 egenSubB.CalParm.OUTB
+w -262 715 100 0 n#53 hwout.hwout#695.outp -96 992 -176 992 -176 704 -288 704 egenSubB.CalParm.OUTA
+w -246 651 100 0 n#54 hwout.hwout#694.outp -96 1024 -144 1024 -144 640 -288 640 egenSubB.CalParm.OUTC
+w 2586 715 100 0 n#55 egenSub.xlat.FLNK 2592 704 2640 704 hwout.hwout#683.outp
+w -1708 2315 100 0 n#56 hwin.hwin#680.in -1456 1968 -1456 2000 -1712 2000 -1712 2640 -1680 2640 egenSub.manlut.INPE
+w -1246 1603 100 0 n#57 elutouts.lut2.VAL -1024 1760 -1056 1760 -1056 1600 -1376 1600 ecad4.Park.OUTA
+w -1052 1171 100 0 n#57 ecad4.Datum.OUTA -1360 752 -1056 752 -1056 1600 junction
+w -1060 2227 100 0 n#57 egenSub.manlut.OUTD -1392 2704 -1056 2704 -1056 1760 junction
+w 330 1131 100 0 n#58 egenSub.PDsub.OUTC -224 1504 16 1504 16 1120 704 1120 junction
+w 866 667 100 0 n#58 ecad4.Move.OUTC 496 368 704 368 704 656 1088 656 1088 576 1056 576 elongouts.EngV3.VAL
+w 874 1131 100 0 n#58 elutouts.lut.OUTC 1008 1408 1104 1408 1104 1120 704 1120 704 656 junction
+w 330 1147 100 0 n#59 egenSub.PDsub.OUTB -224 1568 32 1568 32 1136 688 1136 junction
+w 858 875 100 0 n#59 ecad4.Move.OUTB 496 432 688 432 688 864 1088 864 1088 784 1056 784 elongouts.EngV2.VAL
+w 874 1147 100 0 n#59 elutouts.lut.OUTB 1008 1472 1120 1472 1120 1136 688 1136 688 864 junction
+w 330 1163 100 0 n#60 egenSub.PDsub.OUTA -224 1632 48 1632 48 1152 672 1152 junction
+w 850 1163 100 0 n#60 ecad4.Move.OUTA 496 496 672 496 672 1152 1088 1152 1088 1008 1056 1008 elongouts.EngV1.VAL
+w 1018 1547 100 0 n#60 elutouts.lut.OUTA 1008 1536 1088 1536 1088 1152 junction
+w 1458 2595 100 0 n#61 hwout.hwout#658.outp 1392 2624 1392 2592 1584 2592 1584 2528 1552 2528 cad2car.cad2car#657.OVAL
+w -974 1483 100 0 n#62 ecad4.Park.OUTC -1376 1472 -512 1472 egenSub.PDsub.D
+w -692 1043 100 0 n#62 ecad4.Datum.OUTC -1360 624 -688 624 -688 1472 junction
+w -974 1419 100 0 n#63 ecad4.Park.OUTD -1376 1408 -512 1408 egenSub.PDsub.E
+w -676 979 100 0 n#63 ecad4.Datum.OUTD -1360 560 -672 560 -672 1408 junction
+w -628 1531 100 0 n#64 elutouts.lut2.NVAL -768 1824 -624 1824 -624 1248 -512 1248 egenSub.PDsub.INPG
+w -614 1667 100 0 n#65 elutouts.lut2.OUTA -768 1760 -656 1760 -656 1664 -512 1664 egenSub.PDsub.A
+w -596 1403 100 0 n#66 elutouts.lut2.FLNK -768 1856 -592 1856 -592 960 -512 960 egenSub.PDsub.SLNK
+w -630 1539 100 0 n#67 elutouts.lut2.OUTC -768 1632 -688 1632 -688 1536 -512 1536 egenSub.PDsub.C
+w -622 1603 100 0 n#68 elutouts.lut2.OUTB -768 1696 -672 1696 -672 1600 -512 1600 egenSub.PDsub.B
+w -1316 1515 100 0 n#69 ecad4.Park.STLK -1376 1216 -1312 1216 -1312 1824 -1264 1824 cadPlus.ParkP.STIN
+w -1292 1483 100 0 n#70 cadPlus.ParkP.SPIN -1264 1792 -1296 1792 -1296 1184 -1376 1184 ecad4.Park.SPLK
+w -1326 1771 100 0 n#71 cadPlus.ParkP.STAT -1264 1760 -1328 1760 -1328 1824 -1376 1824 ecad4.Park.VAL
+w -1358 379 100 0 n#72 cadPlus.DatumP.STIN -1248 976 -1296 976 -1296 368 -1360 368 ecad4.Datum.STLK
+w -1350 347 100 0 n#73 ecad4.Datum.SPLK -1360 336 -1280 336 -1280 944 -1248 944 cadPlus.DatumP.SPIN
+w 690 2027 100 0 n#74 link2Dir.link2Dir#140.STLK 800 2016 640 2016 640 112 496 112 ecad4.Move.STLK
+w 538 1659 100 0 n#74 ecad2.Sel.STLK 496 1648 640 1648 junction
+w 546 1627 100 0 n#75 ecad2.Sel.SPLK 496 1616 656 1616 junction
+w 546 91 100 0 n#75 link2Dir.link2Dir#140.SPLK 800 1984 656 1984 656 80 496 80 ecad4.Move.SPLK
+w 530 1691 100 0 n#76 ecad2.Sel.PLNK 496 1680 624 1680 junction
+w 682 2059 100 0 n#76 ecad4.Move.PLNK 496 144 624 144 624 2048 800 2048 link2Dir.link2Dir#140.PLNK
+w 522 1723 100 0 n#77 ecad2.Sel.CLNK 496 1712 608 1712 junction
+w 674 2091 100 0 n#77 link2Dir.link2Dir#140.CLNK 800 2080 608 2080 608 176 496 176 ecad4.Move.CLNK
+w 514 1755 100 0 n#78 ecad2.Sel.MLNK 496 1744 592 1744 junction
+w 666 2123 100 0 n#78 ecad4.Move.MLNK 496 208 592 208 592 2112 800 2112 link2Dir.link2Dir#140.MLNK
+w 554 1915 100 0 n#79 ecad2.Sel.OUTA 496 1904 672 1904 672 1536 752 1536 elutouts.lut.VAL
+w 42 2818 -100 0 n#80 estringouts.MenuStr.FLNK 32 2816 112 2816 112 1936 176 1936 ecad2.Sel.A
+s -256 1808 100 0 by science fold
+s -256 1824 100 0 Dummy 4th coord used
+s 1792 2960 100 0 $Id: compCad.sch,v 1.11 2013/11/04 22:05:57 gemvx Exp $
+s 2112 1152 100 0 (OUTC)
+s 2768 1376 100 0 PLC Flags in
+s 2768 1440 100 0 MSW1/2 in
+s 2768 784 100 0 MSW1/2 [0] out
+s 2768 816 100 0 PLC# string
+s 2768 880 100 0 follow on/off (for SIR)
+s 32 -16 100 0 eng.scr.)
+s 32 16 100 0 from
+s 16 48 100 0 (Input
+s -128 -16 100 0 Tolerance3
+s -128 16 100 0 Tolerance2
+s -128 48 100 0 Tolerance1
+s 2768 1344 100 0 mechindex
+s -144 320 100 0 U:
+s -112 320 100 0 ForPar[6]
+s -144 352 100 0 T:
+s -112 352 100 0 Tolerance
+s 2768 1040 100 0 translated value
+s 2768 1408 100 0 PLC responses
+s -128 80 100 0 index
+s -112 544 100 0 Y Limit+
+s -112 448 100 0 Z Limit-
+s -112 480 100 0 Z Limit+
+s -112 512 100 0 Y Limit-
+s -128 176 100 0 Limits
+s -112 576 100 0 RT Limit-
+s -112 608 100 0 RT Limit+
+s -128 208 100 0 FOR parms
+s -112 736 100 0 Rad Rot
+s 1904 640 100 0 MSW1/2
+s 1904 448 100 0 PLC number, card
+s 1904 480 100 0 PLC demPos
+s 1904 976 100 0 Demand pos. Z
+s 1904 1008 100 0 Demand pos. Y
+s 1904 1040 100 0 Demand pos. X
+s 1904 1136 100 0 simul. pos. X
+s 1904 1072 100 0 simul. pos. Z
+s 1904 1104 100 0 simul. pos. Y
+s 2064 528 100 0 (SAD)
+s 2064 928 100 0 (SNL)
+s 1904 544 100 0 Datumed flag
+s 1904 512 100 0 Parked flag
+s 1904 576 100 0 PLC flags
+s 1904 704 100 0 demanded pos.
+s 1904 608 100 0 PLC responses
+s 1904 672 100 0 target pos.
+s 1904 736 100 0 act pos.
+s 832 240 100 0 the longouts convert the longs into strings
+s 832 272 100 0 CAD accepts only strings.
+s -1280 1616 100 0 name
+s -496 3056 100 0 Reads argument from eng. screen field
+s -208 2880 100 0 Reads position to define
+s 704 1680 100 0 to eng. positions
+s 704 1712 100 0 converts named positions
+s 704 1744 100 0 This "lutout" record
+s 752 144 100 0 simply connecting all OUTs to the CAD will not work.
+s 752 176 100 0 values from different source to converge on the CAD inputs.
+s 752 208 100 0 These "longout" records are necessary to allow
+s 688 -48 100 0 header files on compilation time
+s 688 -16 100 0 The conversin parametres (factors, offset) are read from
+s 688 16 100 0 and can't be done in a simple calc record.
+s 688 48 100 0 For more dimensional mechanisms, this is a complicated task
+s 688 80 100 0 units is done inside the "Move" CAD record.
+s 688 112 100 0 Conversion from real world coordinates to engineering
+s -512 3104 200 0 Position selection Menu
+s 1928 2048 100 0 counters in the "cadPlus" schematic below.
+s 1928 2080 100 0 The state notation code monitors the
+s -1248 1936 100 0 when activated.
+s -1248 1984 100 0 by generating the string "park"
+s -1248 2032 100 0 This CAD record parks the component
+s 3296 320 500 512 compCad.sch
+s 336 1952 100 0 (1)
+s 880 1408 100 0 (2)
+s 880 2080 100 0 (3)
+s -1248 576 100 0 command (datum/park)
+s -1264 640 100 0 status (acception/rejection)
+s 1904 944 100 0 Datumed flag
+s 1904 912 100 0 Parked flag
+s -112 928 100 0 scale[0]
+s -112 864 100 0 scale[1]
+s -112 800 100 0 scale[2]
+s -112 896 100 0 offset[0]
+s -112 832 100 0 offset[1]
+s -112 768 100 0 offset[2]
+s -128 272 100 0 scales
+s -128 240 100 0 offsets
+s -112 704 100 0 Trans FOR x
+s -112 672 100 0 Trans FOR y
+s -144 608 100 0 L:
+s -144 448 100 0 Q:
+s -128 144 100 0 # of dims
+s -128 112 100 0 # of dims (0,-1,1)
+s -144 928 100 0 A:
+s -144 672 100 0 I:
+s -144 640 100 0 J: CA/pvload trigger
+s -144 384 100 0 S:
+s -144 416 100 0 R:
+s -112 416 100 0 Scale FOR x
+s -112 384 100 0 Scale FOR y
+s 2768 1008 100 0 inPosition
+s -736 1936 100 0 wire used by asklut
+s 2208 512 100 0 This triggers the SAD records.
+s 2576 512 100 0 If one wants the SAD be triggered the old way
+s 2208 480 100 0 (Scan-task 1 Hz), then $(sadtop)$(mech)EngPosA.SCAN can be switched to
+s 2208 448 100 0 the preferred configuration. If SCAN is not Passive, this trigger is ignored.
+s 1904 848 100 0 mechindex
+s 2768 944 100 0 inPosMode bit
+s 2768 976 100 0 mechindex
+s 1232 1120 100 0 3 values
+s 1232 1088 100 0 pushed in
+s 1232 1056 100 0 by "current"
+s 1232 1024 100 0 (simulation)
+s 2768 848 100 0 flags [0] out
+s 2768 912 100 0 PLC resp [0] out
+s 1216 752 100 0 2 values
+s 1216 720 100 0 pushed in by
+s 1216 688 100 0 SNL (simulation)
+s 1216 592 100 0 values from
+s 1216 560 100 0 eng.screen
+s 1216 528 100 0 and loc. var.
+s 2768 752 100 0 1=Update CAR!
+s 1792 1296 100 0 may have caused task crashes
+s 1792 1264 100 0 therefore connection cut.
+s 2096 1264 100 0 (OUTC)
+n 2816 2464 3186 2800 100
+This schematic contains all the
+CADrecords responsible for moving
+amechanism. All commandsare channeled
+through the "MoveEng" CADrecord. The
+"Sel" and "Park" records passtheir
+output to the "lutout record,
+whichconverts it to engineering
+coordinatesand passes it to the
+"MoveEng" record..The "longout"
+records are present sothat appropriate
+values can be writteninto the DIR
+field of the "MoveEng"record whenever
+the "Sel" or "Park"forward links are
+activated.
+_
+[cell use]
+use egenSubB 1408 343 100 0 DPRead
+xform 0 1552 768
+p 1456 288 100 0 1 DESC:PMAC DPRAM reader
+p 1488 1136 100 0 1 FTA:LONG
+p 1488 1104 100 0 1 FTB:LONG
+p 1488 1072 100 0 1 FTC:LONG
+p 1488 1040 100 0 1 FTD:LONG
+p 1488 1008 100 0 1 FTE:LONG
+p 1488 976 100 0 1 FTF:LONG
+p 1488 944 100 0 1 FTG:LONG
+p 1488 912 100 0 1 FTH:LONG
+p 1488 880 100 0 1 FTI:LONG
+p 1488 848 100 0 1 FTJ:LONG
+p 1488 816 100 0 1 FTK:LONG
+p 1488 720 100 0 1 FTVA:LONG
+p 1488 688 100 0 1 FTVB:LONG
+p 1488 656 100 0 1 FTVC:LONG
+p 1488 624 100 0 1 FTVD:LONG
+p 1488 592 100 0 1 FTVE:LONG
+p 1488 560 100 0 1 FTVF:LONG
+p 1488 528 100 0 1 FTVG:LONG
+p 1488 496 100 0 1 FTVH:LONG
+p 1488 464 100 0 1 FTVI:LONG
+p 1488 432 100 0 1 FTVJ:LONG
+p 1185 -139 100 0 0 FTVK:LONG
+p 1456 192 100 0 1 INAM:DPR_Ini
+p 1600 1136 100 0 -1 NOA:1
+p 1600 1104 100 0 -1 NOB:1
+p 1600 1072 100 0 -1 NOC:1
+p 1600 1040 100 0 -1 NOD:1
+p 1600 1008 100 0 -1 NOE:1
+p 1600 976 100 0 -1 NOF:1
+p 1600 944 100 0 -1 NOG:1
+p 1600 912 100 0 -1 NOH:1
+p 1600 880 100 0 -1 NOI:1
+p 1600 848 100 0 -1 NOJ:1
+p 1600 816 100 0 -1 NOK:1
+p 1616 720 100 0 -1 NOVA:3
+p 1616 688 100 0 -1 NOVB:3
+p 1616 656 100 0 -1 NOVC:3
+p 1616 624 100 0 -1 NOVD:4
+p 1616 592 100 0 -1 NOVE:4
+p 1616 560 100 0 -1 NOVF:4
+p 1616 528 100 0 -1 NOVG:1
+p 1616 496 100 0 -1 NOVH:1
+p 1616 464 100 0 -1 NOVI:4
+p 1616 432 100 0 -1 NOVJ:8
+p 1648 320 100 0 1 PREC:2
+p 1456 256 100 0 1 PV:$(top)$(mech)
+p 1456 320 100 0 1 SCAN:2 second
+p 1456 224 100 0 1 SNAM:DPRead
+use egenSubB -480 -48 100 0 CalParm
+xform 0 -432 336
+p -864 446 100 0 0 BRSV:NO_ALARM
+p -512 -96 100 0 1 DESC:Holds Scale/Offset
+p -864 446 100 0 0 DISS:NO_ALARM
+p -864 478 100 0 0 DISV:1
+p -864 350 100 0 0 EFLG:ALWAYS
+p -864 542 100 0 0 EVNT:0
+p -480 704 100 0 1 FTA:DOUBLE
+p -480 672 100 0 1 FTB:DOUBLE
+p -480 640 100 0 1 FTC:DOUBLE
+p -480 608 100 0 1 FTD:DOUBLE
+p -480 576 100 0 1 FTE:DOUBLE
+p -480 544 100 0 1 FTF:DOUBLE
+p -480 512 100 0 1 FTG:DOUBLE
+p -480 480 100 0 1 FTH:DOUBLE
+p -480 448 100 0 1 FTI:DOUBLE
+p -480 416 100 0 1 FTJ:DOUBLE
+p -799 -571 100 0 0 FTK:DOUBLE
+p -799 -571 100 0 0 FTL:DOUBLE
+p -799 -571 100 0 0 FTM:DOUBLE
+p -799 -571 100 0 0 FTN:DOUBLE
+p -799 -571 100 0 0 FTO:DOUBLE
+p -799 -571 100 0 0 FTP:DOUBLE
+p -799 -571 100 0 0 FTQ:DOUBLE
+p -799 -571 100 0 0 FTR:DOUBLE
+p -799 -571 100 0 0 FTS:DOUBLE
+p -799 -571 100 0 0 FTT:DOUBLE
+p -799 -571 100 0 0 FTU:DOUBLE
+p -496 288 100 0 1 FTVA:DOUBLE
+p -496 256 100 0 1 FTVB:DOUBLE
+p -496 224 100 0 1 FTVC:DOUBLE
+p -496 192 100 0 1 FTVD:DOUBLE
+p -496 160 100 0 1 FTVE:LONG
+p -496 128 100 0 1 FTVF:LONG
+p -496 96 100 0 1 FTVG:LONG
+p -496 64 100 0 1 FTVH:DOUBLE
+p -496 32 100 0 1 FTVI:DOUBLE
+p -496 0 100 0 1 FTVJ:DOUBLE
+p -799 -571 100 0 0 FTVK:DOUBLE
+p -799 -571 100 0 0 FTVL:DOUBLE
+p -799 -571 100 0 0 FTVM:DOUBLE
+p -799 -571 100 0 0 FTVN:DOUBLE
+p -799 -571 100 0 0 FTVO:DOUBLE
+p -799 -571 100 0 0 FTVP:DOUBLE
+p -799 -571 100 0 0 FTVQ:DOUBLE
+p -799 -571 100 0 0 FTVR:DOUBLE
+p -799 -571 100 0 0 FTVS:DOUBLE
+p -799 -571 100 0 0 FTVT:DOUBLE
+p -799 -571 100 0 0 FTVU:DOUBLE
+p -512 -128 100 0 1 INAM:CalParmInit
+p -864 350 100 0 0 LFLG:IGNORE
+p -224 704 100 0 1 NOA:1
+p -224 672 100 0 1 NOB:1
+p -224 640 100 0 1 NOC:1
+p -224 608 100 0 1 NOD:1
+p -224 576 100 0 1 NOE:1
+p -224 544 100 0 1 NOF:1
+p -224 512 100 0 1 NOG:1
+p -224 480 100 0 1 NOH:1
+p -224 448 100 0 1 NOI:1
+p -224 416 100 0 1 NOJ:1
+p -224 416 100 0 1 NOK:1
+p -224 416 100 0 1 NOL:1
+p -224 416 100 0 1 NOM:1
+p -224 416 100 0 1 NON:1
+p -224 416 100 0 1 NOO:1
+p -224 416 100 0 1 NOP:1
+p -224 416 100 0 1 NOQ:1
+p -224 416 100 0 1 NOR:1
+p -224 416 100 0 1 NOS:1
+p -224 416 100 0 1 NOT:1
+p -224 416 100 0 1 NOU:1
+p -224 272 100 0 1 NOVA:3
+p -224 240 100 0 1 NOVB:3
+p -224 208 100 0 1 NOVC:7
+p -224 176 100 0 1 NOVD:6
+p -224 144 100 0 1 NOVE:1
+p -224 112 100 0 1 NOVF:1
+p -224 80 100 0 1 NOVG:1
+p -224 48 100 0 1 NOVH:1
+p -224 16 100 0 1 NOVI:1
+p -224 -16 100 0 1 NOVJ:1
+p -224 -16 100 0 1 NOVK:1
+p -224 -16 100 0 1 NOVL:1
+p -224 -16 100 0 1 NOVM:1
+p -224 -16 100 0 1 NOVN:1
+p -224 -16 100 0 1 NOVO:1
+p -224 -16 100 0 1 NOVP:1
+p -224 -16 100 0 1 NOVQ:1
+p -224 -16 100 0 1 NOVR:1
+p -224 -16 100 0 1 NOVS:1
+p -224 -16 100 0 1 NOVT:1
+p -224 -16 100 0 1 NOVU:1
+p -864 574 100 0 0 PHAS:0
+p -864 510 100 0 0 PINI:NO
+p -336 -192 100 0 1 PREC:4
+p -864 414 100 0 0 PRIO:LOW
+p -512 -224 100 0 1 PV:$(top)$(mech)
+p -512 -192 100 0 1 SCAN:Passive
+p -512 -160 100 0 1 SNAM:CalParm
+p -464 366 100 0 -1 Type:genSub
+p -799 -315 100 0 0 UFA:
+p -799 -315 100 0 0 UFB:
+p -799 -315 100 0 0 UFC:
+p -799 -315 100 0 0 UFD:
+p -799 -315 100 0 0 UFE:
+p -799 -315 100 0 0 UFF:
+p -799 -315 100 0 0 UFG:
+p -799 -315 100 0 0 UFH:
+p -799 -315 100 0 0 UFI:
+p -799 -315 100 0 0 UFJ:
+p -799 -315 100 0 0 UFK:
+p -799 -315 100 0 0 UFL:
+p -799 -315 100 0 0 UFM:
+p -799 -315 100 0 0 UFN:
+p -799 -315 100 0 0 UFO:
+p -799 -315 100 0 0 UFP:
+p -799 -315 100 0 0 UFQ:
+p -799 -315 100 0 0 UFR:
+p -799 -315 100 0 0 UFS:
+p -799 -315 100 0 0 UFT:
+p -799 -315 100 0 0 UFU:
+p -799 -315 100 0 0 UFVA:
+p -799 -315 100 0 0 UFVB:
+p -799 -315 100 0 0 UFVC:
+p -799 -315 100 0 0 UFVD:
+p -799 -315 100 0 0 UFVE:
+p -799 -315 100 0 0 UFVF:
+p -799 -315 100 0 0 UFVG:
+p -799 -315 100 0 0 UFVH:
+p -799 -315 100 0 0 UFVI:
+p -799 -315 100 0 0 UFVJ:
+p -799 -315 100 0 0 UFVK:
+p -799 -315 100 0 0 UFVL:
+p -799 -315 100 0 0 UFVM:
+p -799 -315 100 0 0 UFVN:
+p -799 -315 100 0 0 UFVO:
+p -799 -315 100 0 0 UFVP:
+p -799 -315 100 0 0 UFVQ:
+p -799 -315 100 0 0 UFVR:
+p -799 -315 100 0 0 UFVS:
+p -799 -315 100 0 0 UFVT:
+p -799 -315 100 0 0 UFVU:
+p -799 101 100 0 0 def(FLNK):0.000000000000000e+00
+p -864 510 100 0 0 def(INPB):0.000000000000000e+00
+p -864 446 100 0 0 def(INPD):0.000000000000000e+00
+p -864 382 100 0 0 def(INPF):0.0000000000000000e+00
+p -864 318 100 0 0 def(INPH):0.0000000000000000e+00
+p -864 254 100 0 0 def(INPJ):0.0000000000000000e+00
+p -864 254 100 0 0 def(INPL):0.0000000000000000e+00
+p -864 254 100 0 0 def(INPN):0.0000000000000000e+00
+p -864 254 100 0 0 def(INPP):0.0000000000000000e+00
+p -864 254 100 0 0 def(INPR):0.0000000000000000e+00
+p -864 254 100 0 0 def(INPT):0.0000000000000000e+00
+p -799 37 100 0 0 def(OUTB):0.000000000000000e+00
+p -799 -27 100 0 0 def(OUTD):0.000000000000000e+00
+p -799 -91 100 0 0 def(OUTF):0.000000000000000e+00
+p -799 -155 100 0 0 def(OUTH):0.000000000000000e+00
+p -799 -219 100 0 0 def(OUTJ):0.000000000000000e+00
+p -799 -219 100 0 0 def(OUTL):0.000000000000000e+00
+p -799 -219 100 0 0 def(OUTN):0.000000000000000e+00
+p -799 -219 100 0 0 def(OUTP):0.000000000000000e+00
+p -799 -219 100 0 0 def(OUTR):0.000000000000000e+00
+p -799 -219 100 0 0 def(OUTT):0.000000000000000e+00
+p -864 369 100 0 0 def(SDIS):0.0000000000000000e+00
+p -864 254 100 0 0 def(SUBL):0.0000000000000000e+00
+p -464 -96 100 1024 0 name:$(top)$(I)
+p -592 682 75 0 -1 palrm(INPB):NMS
+p -592 618 75 0 -1 palrm(INPD):NMS
+p -592 554 75 0 -1 palrm(INPF):NMS
+p -592 490 75 0 -1 palrm(INPH):NMS
+p -592 426 75 0 -1 palrm(INPJ):NMS
+p -592 362 75 0 -1 palrm(INPL):NMS
+p -592 298 75 0 -1 palrm(INPN):NMS
+p -592 234 75 0 -1 palrm(INPP):NMS
+p -592 170 75 0 -1 palrm(INPR):NMS
+p -592 106 75 0 -1 palrm(INPT):NMS
+p -256 682 75 0 -1 palrm(OUTB):NMS
+p -256 618 75 0 -1 palrm(OUTD):NMS
+p -256 554 75 0 -1 palrm(OUTF):NMS
+p -256 490 75 0 -1 palrm(OUTH):NMS
+p -256 426 75 0 -1 palrm(OUTJ):NMS
+p -256 362 75 0 -1 palrm(OUTL):NMS
+p -256 298 75 0 -1 palrm(OUTN):NMS
+p -256 234 75 0 -1 palrm(OUTP):NMS
+p -256 170 75 0 -1 palrm(OUTR):NMS
+p -256 106 75 0 -1 palrm(OUTT):NMS
+p -592 -22 75 0 -1 palrm(SDIS):NMS
+p -592 42 75 0 -1 palrm(SUBL):NMS
+p -624 682 75 0 -1 pproc(INPB):NPP
+p -624 618 75 0 -1 pproc(INPD):NPP
+p -624 554 75 0 -1 pproc(INPF):NPP
+p -624 490 75 0 -1 pproc(INPH):NPP
+p -624 426 75 0 -1 pproc(INPJ):NPP
+p -624 362 75 0 -1 pproc(INPL):NPP
+p -624 298 75 0 -1 pproc(INPN):NPP
+p -624 234 75 0 -1 pproc(INPP):NPP
+p -624 170 75 0 -1 pproc(INPR):NPP
+p -624 106 75 0 -1 pproc(INPT):NPP
+p -288 682 75 0 -1 pproc(OUTB):NPP
+p -288 618 75 0 -1 pproc(OUTD):NPP
+p -288 554 75 0 -1 pproc(OUTF):NPP
+p -288 490 75 0 -1 pproc(OUTH):NPP
+p -288 426 75 0 -1 pproc(OUTJ):NPP
+p -288 362 75 0 -1 pproc(OUTL):NPP
+p -288 298 75 0 -1 pproc(OUTN):NPP
+p -288 234 75 0 -1 pproc(OUTP):NPP
+p -288 170 75 0 -1 pproc(OUTR):NPP
+p -288 106 75 0 -1 pproc(OUTT):NPP
+p -624 -22 75 0 -1 pproc(SDIS):NPP
+p -624 42 75 0 -1 pproc(SUBL):NPP
+p -688 734 100 0 0 primitive:egenSub
+p -799 102 100 0 0 typ(FLNK):path
+p -864 511 100 0 0 typ(INPB):path
+p -864 447 100 0 0 typ(INPD):path
+p -864 383 100 0 0 typ(INPF):path
+p -864 319 100 0 0 typ(INPH):path
+p -864 255 100 0 0 typ(INPJ):path
+p -864 255 100 0 0 typ(INPL):path
+p -864 255 100 0 0 typ(INPN):path
+p -864 255 100 0 0 typ(INPP):path
+p -864 255 100 0 0 typ(INPR):path
+p -864 255 100 0 0 typ(INPT):path
+p -799 38 100 0 0 typ(OUTB):path
+p -799 -26 100 0 0 typ(OUTD):path
+p -799 -90 100 0 0 typ(OUTF):path
+p -799 -154 100 0 0 typ(OUTH):path
+p -799 -218 100 0 0 typ(OUTJ):path
+p -799 -218 100 0 0 typ(OUTL):path
+p -799 -218 100 0 0 typ(OUTN):path
+p -799 -218 100 0 0 typ(OUTP):path
+p -799 -218 100 0 0 typ(OUTR):path
+p -799 -218 100 0 0 typ(OUTT):path
+p -864 368 100 0 0 typ(SDIS):path
+p -864 254 100 0 0 typ(SUBL):path
+use estringouts -224 2727 100 0 MenuStr
+xform 0 -96 2800
+p -208 2640 100 0 1 OMSL:closed_loop
+p -208 2688 100 0 1 PV:$(top)$(mech)
+use estringouts -224 2455 100 0 MenuStr2
+xform 0 -96 2528
+p -208 2368 100 0 1 OMSL:closed_loop
+p -208 2416 100 0 1 PV:$(top)$(mech)
+use hwout 976 327 100 0 hwout#854
+xform 0 1072 368
+p 1072 359 100 0 -1 val(outp):$(sadtop)$(mech)EngPosA.G
+use hwout -480 1815 100 0 hwout#852
+xform 0 -384 1856
+p -384 1847 100 0 -1 val(outp):$(sadtop)$(mech)EngPosA.G
+use hwout 2328 1879 100 0 hwout#818
+xform 0 2424 1920
+p 2328 1952 100 0 -1 val(outp):$(top)$(mech)C.IVAL PP NMS
+use hwout 1744 1143 100 0 hwout#705
+xform 0 1840 1184
+p 1840 1175 100 0 -1 val(outp):$(sadtop)$(mech)EngPosA.E
+use hwout 1744 1175 100 0 hwout#704
+xform 0 1840 1216
+p 1840 1207 100 0 -1 val(outp):$(sadtop)$(mech)EngPosA.D
+use hwout -1312 2471 100 0 hwout#672
+xform 0 -1216 2512
+p -1312 2544 100 0 -1 val(outp):$(sadtop)$(mech)relut.LOAD
+use hwout 1392 2583 100 0 hwout#658
+xform 0 1488 2624
+p 1392 2656 100 0 -1 val(outp):$(top)$(mech)C.IVAL PP NMS
+use hwout -1312 2791 100 0 hwout#676
+xform 0 -1216 2832
+p -1104 2816 100 0 -1 val(outp):$(top)$(mech)lut2.FNAM
+use hwout -1312 2727 100 0 hwout#678
+xform 0 -1216 2768
+p -1104 2752 100 0 -1 val(outp):$(sadtop)$(mech)relut.FNAM
+use hwout 2640 663 100 0 hwout#683
+xform 0 2736 704
+p 2736 695 100 0 -1 val(outp):$(sadtop)$(mech)EngPosA.VAL PP NMS
+use hwout -96 983 100 0 hwout#694
+xform 0 0 1024
+p 0 1015 100 0 -1 val(outp):$(sadtop)$(mech)PosA.H
+use hwout -96 951 100 0 hwout#695
+xform 0 0 992
+p 0 983 100 0 -1 val(outp):$(sadtop)$(mech)PosA.I
+use hwout -96 919 100 0 hwout#696
+xform 0 0 960
+p 0 951 100 0 -1 val(outp):$(sadtop)$(mech)PosA.J
+use hwout 1792 311 100 0 hwout#764
+xform 0 1888 352
+p 1888 343 100 0 -1 val(outp):$(sadtop)$(mech)Datumed.VAL
+use hwout 1792 279 100 0 hwout#765
+xform 0 1888 320
+p 1888 311 100 0 -1 val(outp):$(sadtop)$(mech)Parked.VAL
+use hwout 2704 1143 100 0 hwout#766
+xform 0 2800 1184
+p 2800 1175 100 0 -1 val(outp):$(sadtop)$(mech)flags.VAL
+use hwout 2704 1207 100 0 hwout#767
+xform 0 2800 1248
+p 2800 1239 100 0 -1 val(outp):$(sadtop)$(mech)inPosition.VAL
+use hwout 2704 1175 100 0 hwout#768
+xform 0 2800 1216
+p 2800 1207 100 0 -1 val(outp):$(sadtop)$(mech)inPosMode.VAL
+use hwout -1312 2855 100 0 hwout#674
+xform 0 -1216 2896
+p -1104 2880 100 0 -1 val(outp):$(top)$(mech)lut.FNAM
+use embbis -576 2496 100 0 Menu2
+xform 0 -528 2528
+p -640 2416 100 0 1 NOBT:4
+p -544 2448 100 256 1 PV:$(top)$(mech)
+p -640 2384 100 0 1 SHFT:0
+p -640 2352 100 0 1 ZRST:no_menu
+use embbis -576 2768 100 0 Menu
+xform 0 -528 2800
+p -640 2688 100 0 1 NOBT:4
+p -544 2720 100 256 1 PV:$(top)$(mech)
+p -640 2656 100 0 1 SHFT:0
+p -640 2624 100 0 1 ZRST:no_menu
+use egenSub -1584 2176 100 0 manlut
+xform 0 -1536 2560
+p -1632 2128 100 0 1 DESC:LUT management rout.
+p -1584 2928 100 0 1 FTA:LONG
+p -1584 2896 100 0 1 FTB:LONG
+p -1584 2864 100 0 1 FTC:LONG
+p -1584 2832 100 0 1 FTD:LONG
+p -1584 2800 100 0 1 FTE:STRING
+p -1584 2768 100 0 1 FTF:STRING
+p -1584 2736 100 0 1 FTG:LONG
+p -1584 2704 100 0 1 FTH:LONG
+p -1584 2672 100 0 1 FTI:LONG
+p -1584 2640 100 0 1 FTJ:LONG
+p -1600 2528 100 0 1 FTVA:STRING
+p -1600 2496 100 0 1 FTVB:STRING
+p -1600 2464 100 0 1 FTVC:STRING
+p -1600 2432 100 0 1 FTVD:STRING
+p -1600 2400 100 0 1 FTVE:LONG
+p -1600 2368 100 0 1 FTVF:LONG
+p -1600 2336 100 0 1 FTVG:LONG
+p -1600 2304 100 0 1 FTVH:DOUBLE
+p -1600 2272 100 0 1 FTVI:DOUBLE
+p -1600 2240 100 0 1 FTVJ:DOUBLE
+p -1424 2096 100 0 1 INAM:managelutinit
+p -1424 2160 100 0 1 INAMsic:asklut
+p -1456 2064 100 0 1 PREC:1
+p -1632 2032 100 0 1 PV:$(top)$(mech)
+p -1632 2064 100 0 1 SCAN:Passive
+p -1632 2096 100 0 1 SNAM:managelut
+p -1568 2590 100 0 -1 Type:genSub
+p -1728 2906 75 0 -1 pproc(INPA):NPP
+p -1392 2906 75 0 -1 pproc(OUTA):NPP
+p -1392 2842 75 0 -1 pproc(OUTB):NPP
+p -1392 2778 75 0 -1 pproc(OUTC):NPP
+use egenSub -416 912 100 0 PDsub
+xform 0 -368 1296
+p -464 864 100 0 1 DESC:Park/Datum Subrout.
+p -416 1664 100 0 1 FTA:LONG
+p -416 1632 100 0 1 FTB:LONG
+p -416 1600 100 0 1 FTC:LONG
+p -416 1568 100 0 1 FTD:LONG
+p -416 1536 100 0 1 FTE:LONG
+p -416 1504 100 0 1 FTF:STRING
+p -416 1472 100 0 1 FTG:LONG
+p -416 1440 100 0 1 FTH:LONG
+p -416 1408 100 0 1 FTI:LONG
+p -416 1376 100 0 1 FTJ:LONG
+p -432 1264 100 0 1 FTVA:LONG
+p -432 1232 100 0 1 FTVB:LONG
+p -432 1200 100 0 1 FTVC:LONG
+p -432 1168 100 0 1 FTVD:STRING
+p -432 1136 100 0 1 FTVE:DOUBLE
+p -432 1104 100 0 1 FTVF:DOUBLE
+p -432 1072 100 0 1 FTVG:DOUBLE
+p -432 1040 100 0 1 FTVH:DOUBLE
+p -432 1008 100 0 1 FTVI:DOUBLE
+p -432 976 100 0 1 FTVJ:DOUBLE
+p -288 832 100 0 1 INAM:
+p -288 800 100 0 1 PREC:1
+p -464 768 100 0 1 PV:$(top)$(mech)
+p -464 800 100 0 1 SCAN:Passive
+p -464 832 100 0 1 SNAM:PDsub
+p -400 1326 100 0 -1 Type:genSub
+p -888 1336 100 0 1 def(INPF):hrwfs:encoderMode
+p -560 1642 75 0 -1 pproc(INPA):NPP
+p -224 1642 75 0 -1 pproc(OUTA):PP
+p -224 1578 75 0 -1 pproc(OUTB):PP
+p -224 1514 75 0 -1 pproc(OUTC):PP
+use egenSub 2400 688 100 0 xlat
+xform 0 2448 1072
+p 2368 608 100 0 1 DESC:PLC-response xlator
+p 2016 1086 100 0 0 EFLG:ALWAYS
+p 2384 1440 100 0 1 FTA:LONG
+p 2384 1408 100 0 1 FTB:LONG
+p 2384 1376 100 0 1 FTC:LONG
+p 2384 1344 100 0 1 FTD:LONG
+p 2384 1312 100 0 1 FTE:STRING
+p 2384 1280 100 0 1 FTF:LONG
+p 2384 1248 100 0 1 FTG:LONG
+p 2384 1216 100 0 1 FTH:LONG
+p 2384 1184 100 0 1 FTI:LONG
+p 2384 1152 100 0 1 FTJ:LONG
+p 2384 1040 100 0 1 FTVA:STRING
+p 2384 1008 100 0 1 FTVB:LONG
+p 2384 976 100 0 1 FTVC:LONG
+p 2384 944 100 0 1 FTVD:LONG
+p 2384 912 100 0 1 FTVE:LONG
+p 2384 880 100 0 1 FTVF:LONG
+p 2384 848 100 0 1 FTVG:LONG
+p 2384 816 100 0 1 FTVH:STRING
+p 2384 784 100 0 1 FTVI:LONG
+p 2384 752 100 0 1 FTVJ:LONG
+p 2544 544 100 0 1 INAM:xlatinit
+p 2688 1440 100 0 1 NOA:4
+p 2688 1408 100 0 1 NOB:4
+p 2688 1376 100 0 1 NOC:4
+p 2688 1344 100 0 1 NOD:1
+p 2688 1312 100 0 1 NOE:1
+p 2688 1280 100 0 1 NOF:1
+p 2688 1248 100 0 1 NOG:1
+p 2688 1216 100 0 1 NOH:1
+p 2688 1184 100 0 1 NOI:1
+p 2688 1152 100 0 1 NOJ:1
+p 2688 1040 100 0 1 NOVA:1
+p 2688 1008 100 0 1 NOVB:1
+p 2688 976 100 0 1 NOVC:1
+p 2688 944 100 0 1 NOVD:1
+p 2688 912 100 0 1 NOVE:1
+p 2688 880 100 0 1 NOVF:1
+p 2688 848 100 0 1 NOVG:1
+p 2688 816 100 0 1 NOVH:1
+p 2688 784 100 0 1 NOVI:1
+p 2688 752 100 0 1 NOVJ:1
+p 2560 640 100 0 1 PREC:2
+p 2368 576 100 0 1 PV:$(top)$(mech)
+p 2368 640 100 0 1 SCAN:Passive
+p 2368 544 100 0 1 SNAM:xlatmain
+p 2416 1102 100 0 -1 Type:genSub
+p 2144 1496 100 0 1 def(INPE):hrwfs:encoderMode
+p 2592 1162 75 0 -1 pproc(OUTE):PP
+p 2592 842 75 0 -1 pproc(OUTJ):PP
+use egenSub 3008 1648 100 0 egenSub#856
+xform 0 3056 2032
+p 2976 1568 100 0 1 DESC:PMAC DPRAM Memory variable reader
+p 3088 1472 100 0 0 DISV:1
+p 2624 2046 100 0 0 EFLG:ALWAYS
+p 2992 2400 100 0 0 FTA:LONG
+p 2992 2368 100 0 0 FTB:LONG
+p 2992 2336 100 0 0 FTC:LONG
+p 2992 2304 100 0 0 FTD:LONG
+p 2992 2272 100 0 0 FTE:LONG
+p 2992 2240 100 0 0 FTF:LONG
+p 2992 2208 100 0 0 FTG:LONG
+p 2992 2176 100 0 0 FTH:LONG
+p 2992 2144 100 0 0 FTI:LONG
+p 2992 2112 100 0 0 FTJ:LONG
+p 2992 2000 100 0 0 FTVA:STRING
+p 2992 1968 100 0 0 FTVB:STRING
+p 2992 1936 100 0 0 FTVC:LONG
+p 2992 1904 100 0 0 FTVD:LONG
+p 2992 1872 100 0 0 FTVE:LONG
+p 2992 1840 100 0 0 FTVF:LONG
+p 2992 1808 100 0 0 FTVG:LONG
+p 2992 1776 100 0 0 FTVH:LONG
+p 2992 1744 100 0 0 FTVI:LONG
+p 2992 1712 100 0 0 FTVJ:LONG
+p 2976 1472 100 0 1 INAM:DPR_Ini
+p 3296 2400 100 0 0 NOA:1
+p 3296 2368 100 0 0 NOB:1
+p 3296 2336 100 0 0 NOC:1
+p 3296 2304 100 0 0 NOD:1
+p 3296 2272 100 0 0 NOE:1
+p 3296 2240 100 0 0 NOF:1
+p 3296 2208 100 0 0 NOG:1
+p 3296 2176 100 0 0 NOH:1
+p 3296 2144 100 0 0 NOI:1
+p 3296 2112 100 0 0 NOJ:1
+p 3296 2000 100 0 0 NOVA:1
+p 3296 1968 100 0 0 NOVB:1
+p 3296 1936 100 0 0 NOVC:1
+p 3296 1904 100 0 0 NOVD:4
+p 3296 1872 100 0 0 NOVE:4
+p 3296 1840 100 0 0 NOVF:4
+p 3296 1808 100 0 0 NOVG:1
+p 3296 1776 100 0 0 NOVH:1
+p 3296 1744 100 0 0 NOVI:4
+p 3296 1712 100 0 0 NOVJ:8
+p 2624 2270 100 0 0 PHAS:0
+p 3168 1600 100 0 1 PREC:2
+p 2976 1536 100 0 1 PV:$(top)$(mech)DPRMem
+p 2976 1600 100 0 1 SCAN:10 second
+p 2976 1504 100 0 1 SNAM:DPReadMem
+p 3024 2062 100 0 -1 Type:genSub
+use ecad8 1280 1287 100 0 ecad8#835
+xform 0 1440 1792
+p 1384 2040 100 0 1 FTVA:LONG
+p 1384 2000 100 0 1 FTVB:LONG
+p 1384 1960 100 0 1 FTVC:LONG
+p 1384 1920 100 0 1 FTVD:LONG
+p 1376 1864 100 0 1 SNAM:CADEng
+p 904 1792 100 0 1 def(INPE):hrwfs:encoderMode
+p 1392 1280 100 1024 -1 name:$(top)$(mech)Eng
+use outhier -32 -105 100 0 FLNK
+xform 0 -16 -64
+use inhier -768 -41 100 0 SLNK
+xform 0 -752 0
+use cad2car2 2328 1671 100 0 cad2car2#817
+xform 0 2408 1784
+p 2328 1664 100 0 1 set1:cad Eng
+use elongouts 656 2832 100 0 testlo
+xform 0 704 2880
+p 640 2752 100 0 1 EVNT:$(testevnr)
+p 640 2688 100 0 1 OMSL:closed_loop
+p 640 2784 100 0 1 PV:$(top)$(mech)
+p 640 2720 100 0 1 SCAN:Event
+p 832 2848 75 768 -1 pproc(OUT):PP
+use elongouts 880 960 100 0 EngV1
+xform 0 928 1008
+p 864 912 100 0 1 EGU:eng.units
+p 864 880 100 0 1 PV:$(top)$(mech)
+use elongouts 880 736 100 0 EngV2
+xform 0 928 784
+p 832 672 100 0 1 EGU:eng.units
+p 820 700 100 0 1 PV:$(top)$(mech)
+use elongouts 880 528 100 0 EngV3
+xform 0 928 576
+p 832 464 100 0 1 EGU:eng.units
+p 820 492 100 0 1 PV:$(top)$(mech)
+use elongouts -1568 -48 100 0 datmlo
+xform 0 -1520 0
+p -1584 -128 100 0 1 EVNT:$(datmevnr)
+p -1584 -192 100 0 1 OMSL:closed_loop
+p -1584 -96 100 0 1 PV:$(top)$(mech)
+p -1584 -160 100 0 1 SCAN:Event
+p -1392 -32 75 768 -1 pproc(OUT):PP
+use elongouts -1136 -48 100 0 parklo
+xform 0 -1088 0
+p -1152 -128 100 0 1 EVNT:$(parkevnr)
+p -1152 -192 100 0 1 OMSL:closed_loop
+p -1152 -96 100 0 1 PV:$(top)$(mech)
+p -1152 -160 100 0 1 SCAN:Event
+p -960 -32 75 768 -1 pproc(OUT):PP
+use compCar 2704 1495 100 0 compCar#804
+xform 0 2784 1600
+use cad2car 1392 2375 100 0 cad2car#657
+xform 0 1472 2488
+p 1392 2368 100 0 1 set1:cad Test
+p 1392 2336 100 0 1 set2:delay 1.5
+use cadPlus -1248 823 100 0 DatumP
+xform 0 -1168 928
+p -1248 800 100 0 1 set:cad DatumP
+use cadPlus 1944 1831 100 0 EngP
+xform 0 2024 1936
+p 1944 1792 100 0 1 set:cad EngP
+use cadPlus -1248 1664 100 0 ParkP
+xform 0 -1184 1776
+p -1248 1632 100 0 1 set:cad ParkP
+use cadPlus 2432 2247 100 0 StopP
+xform 0 2512 2352
+p 2432 2224 100 0 1 set:cad StopP
+use hwin 384 2871 100 0 hwin#779
+xform 0 480 2912
+p 384 2944 100 0 -1 val(in):$(cctestDIR)
+use hwin -1648 1927 100 0 hwin#680
+xform 0 -1552 1968
+p -1648 1920 100 0 -1 val(in):$(top)$(mech)lut.FNAM
+use hwin -1648 71 100 0 hwin#784
+xform 0 -1552 112
+p -1648 144 100 0 -1 val(in):$(ccdatmDIR)
+use hwin -1216 71 100 0 hwin#785
+xform 0 -1120 112
+p -1216 144 100 0 -1 val(in):$(ccparkDIR)
+use ecad2 2016 2215 100 0 ecad2#688
+xform 0 2176 2528
+p 2080 2208 100 0 1 DESC:Stops mech smoothly
+p 2112 2528 100 0 1 FTVA:LONG
+p 2112 2496 100 0 1 FTVB:LONG
+p 2080 2176 100 0 1 SNAM:CADStop
+p 2176 2256 100 1024 -1 name:$(top)$(mech)Stop
+use ecad2 1040 2416 100 0 Test
+xform 0 1120 2688
+p 1088 2864 100 0 1 CTYP:2
+p 1024 2352 100 0 1 DESC:Test mechanism
+p 1056 2688 100 0 1 FTVA:STRING
+p 1056 2656 100 0 1 FTVB:STRING
+p 1024 2288 100 0 1 PV:$(top)$(mech)
+p 1024 2320 100 0 1 SNAM:CADTest
+p 1280 2720 75 768 -1 pproc(OUTA):NPP
+use ecad2 256 1600 100 0 Sel
+xform 0 336 1872
+p 304 2064 100 0 1 CTYP:2
+p 240 1536 100 0 1 DESC:Select named positions
+p 288 1888 100 0 1 FTVA:STRING
+p 288 1856 100 0 1 FTVB:LONG
+p 416 1504 100 0 1 INAM:
+p 240 1504 100 0 1 SNAM:CADSel
+p 288 1552 100 1024 0 name:$(cadtop)$(mech)$(I)
+p 496 1904 75 768 -1 pproc(OUTA):PP
+use ecad2 256 2320 100 0 Define
+xform 0 336 2592
+p 288 2784 100 0 1 CTYP:2
+p 240 2256 100 0 1 DESC:Define named positions
+p 288 2592 100 0 1 FTVA:STRING
+p 288 2560 100 0 1 FTVB:LONG
+p 240 2192 100 0 1 PV:$(top)$(mech)
+p 240 2224 100 0 1 SNAM:CADDefine
+p 496 2624 75 768 -1 pproc(OUTA):NPP
+use notes -464 1911 100 0 notes#606
+xform 0 -208 2096
+p -432 2224 100 0 -1 COMMENT1:==
+p -436 2190 100 0 -1 COMMENT2:=====
+p -436 2160 100 0 -1 COMMENT3:This record will be triggered once
+p -436 2128 100 0 -1 COMMENT4:at startup by the SNL.
+p -436 2096 100 0 -1 COMMENT5:It will read the LUT contents
+p -436 2064 100 0 -1 COMMENT6:and will write the strings
+p -436 2032 100 0 -1 COMMENT7:to the mbbi record via DBAccess.
+p -436 2000 100 0 -1 COMMENT8:This should replace the use of Pvload
+p -436 1968 100 0 -1 COMMENT9:for filling the screen menus.
+use ecad4 256 64 100 0 Move
+xform 0 336 400
+p 304 656 100 0 1 CTYP:4
+p 240 16 100 0 1 DESC:Move in real world units
+p 112 -48 100 0 0 DISS:NO_ALARM
+p 112 -80 100 0 0 DISV:1
+p 112 -112 100 0 0 ERSV:NO_ALARM
+p 112 -144 100 0 0 EVNT:0
+p 272 432 100 0 1 FTVA:LONG
+p 272 400 100 0 1 FTVB:LONG
+p 272 368 100 0 1 FTVC:LONG
+p 272 336 100 0 1 FTVD:LONG
+p 112 -304 100 0 0 INAM:
+p 112 -336 100 0 0 PHAS:0
+p 112 -368 100 0 0 PINI:NO
+p 112 -400 100 0 0 PREC:0
+p 112 -432 100 0 0 PRIO:LOW
+p 240 -48 100 0 1 PV:$(top)$(mech)
+p 112 -464 100 0 0 SCAN:Passive
+p 112 -496 100 0 0 SIMS:NO_ALARM
+p 240 -16 100 0 1 SNAM:CADMove
+p 336 688 100 256 -1 Type:cad
+p 400 16 100 0 0 def(CLNK):0.0
+p 400 -16 100 0 0 def(FLNK):0.0
+p 400 -48 100 0 0 def(INPA):0.0
+p 400 -80 100 0 0 def(INPB):0.0
+p 400 -176 100 0 0 def(MLNK):0.0
+p 400 -208 100 0 0 def(OUTA):0.0
+p 400 -240 100 0 0 def(OUTB):0.0
+p 400 -336 100 0 0 def(PLNK):0.0
+p 400 -368 100 0 0 def(SDIS):0.0
+p 400 -400 100 0 0 def(SIML):0.0
+p 400 -432 100 0 0 def(SIOL):0.0
+p 400 -464 100 0 0 def(SPLK):0.0
+p 400 -496 100 0 0 def(STLK):0.0
+p 288 0 100 1024 0 name:$(top)$(I)
+p 528 186 75 0 -1 palrm(CLNK):NMS
+p 176 496 75 1280 -1 palrm(INPA):NMS
+p 176 432 75 1280 -1 palrm(INPB):NMS
+p 528 218 75 0 -1 palrm(MLNK):NMS
+p 528 496 75 768 -1 palrm(OUTA):NMS
+p 528 432 75 768 -1 palrm(OUTB):NMS
+p 528 154 75 0 -1 palrm(PLNK):NMS
+p 176 80 75 1280 -1 palrm(SDIS):NMS
+p 176 656 75 1280 -1 palrm(SIML):NMS
+p 176 624 75 1280 -1 palrm(SIOL):NMS
+p 528 80 75 768 -1 palrm(SPLK):NMS
+p 528 122 75 0 -1 palrm(STLK):NMS
+p 496 186 75 0 -1 pproc(CLNK):NPP
+p 144 496 75 1280 -1 pproc(INPA):NPP
+p 144 432 75 1280 -1 pproc(INPB):NPP
+p 496 218 75 0 -1 pproc(MLNK):NPP
+p 496 496 75 768 -1 pproc(OUTA):PP
+p 496 432 75 768 -1 pproc(OUTB):PP
+p 496 368 75 768 -1 pproc(OUTC):PP
+p 496 154 75 0 -1 pproc(PLNK):NPP
+p 144 80 75 1280 -1 pproc(SDIS):NPP
+p 144 656 75 1280 -1 pproc(SIML):NPP
+p 144 624 75 1280 -1 pproc(SIOL):NPP
+p 496 80 75 768 -1 pproc(SPLK):NPP
+p 496 122 75 0 -1 pproc(STLK):NPP
+p 400 -528 100 0 0 primitive:cad
+p 592 16 100 0 0 typ(CLNK):path
+p 592 -16 100 0 0 typ(FLNK):path
+p 592 -48 100 0 0 typ(INPA):path
+p 592 -80 100 0 0 typ(INPB):path
+p 592 -176 100 0 0 typ(MLNK):path
+p 592 -208 100 0 0 typ(OUTA):path
+p 592 -240 100 0 0 typ(OUTB):path
+p 592 -336 100 0 0 typ(PLNK):path
+p 592 -368 100 0 0 typ(SDIS):path
+p 592 -400 100 0 0 typ(SIML):path
+p 592 -432 100 0 0 typ(SIOL):path
+p 592 -464 100 0 0 typ(SPLK):path
+p 592 -496 100 0 0 typ(STLK):path
+use ecad4 -1584 320 100 0 Datum
+xform 0 -1520 656
+p -1552 896 100 0 1 CTYP:4
+p -1600 256 100 0 1 DESC:Datum component
+p -1744 208 100 0 0 DISS:NO_ALARM
+p -1744 176 100 0 0 DISV:1
+p -1744 144 100 0 0 ERSV:NO_ALARM
+p -1744 112 100 0 0 EVNT:0
+p -1584 688 100 0 1 FTVA:STRING
+p -1584 656 100 0 1 FTVB:LONG
+p -1584 624 100 0 1 FTVC:LONG
+p -1584 592 100 0 1 FTVD:LONG
+p -1744 -48 100 0 0 INAM:
+p -1744 -80 100 0 0 PHAS:0
+p -1744 -112 100 0 0 PINI:NO
+p -1744 -144 100 0 0 PREC:0
+p -1744 -176 100 0 0 PRIO:LOW
+p -1744 -208 100 0 0 SCAN:Passive
+p -1744 -240 100 0 0 SIMS:NO_ALARM
+p -1600 208 100 0 1 SNAM:CADDatum
+p -1520 944 100 256 -1 Type:cad
+p -1456 272 100 0 0 def(CLNK):0.0
+p -1456 240 100 0 0 def(FLNK):0.0
+p -1456 208 100 0 0 def(INPA):0.0
+p -1456 176 100 0 0 def(INPB):0.0
+p -1456 80 100 0 0 def(MLNK):0.0
+p -1456 48 100 0 0 def(OUTA):0.0
+p -1456 16 100 0 0 def(OUTB):0.0
+p -1456 -80 100 0 0 def(PLNK):0.0
+p -1456 -112 100 0 0 def(SDIS):0.0
+p -1456 -144 100 0 0 def(SIML):0.0
+p -1456 -176 100 0 0 def(SIOL):0.0
+p -1456 -208 100 0 0 def(SPLK):0.0
+p -1456 -240 100 0 0 def(STLK):0.0
+p -1568 256 100 1024 0 name:$(cadtop)$(mech)$(I)
+p -1328 442 75 0 -1 palrm(CLNK):NMS
+p -1680 752 75 1280 -1 palrm(INPA):NMS
+p -1680 688 75 1280 -1 palrm(INPB):NMS
+p -1328 474 75 0 -1 palrm(MLNK):NMS
+p -1328 752 75 768 -1 palrm(OUTA):NMS
+p -1328 688 75 768 -1 palrm(OUTB):NMS
+p -1328 410 75 0 -1 palrm(PLNK):NMS
+p -1680 336 75 1280 -1 palrm(SDIS):NMS
+p -1680 912 75 1280 -1 palrm(SIML):NMS
+p -1680 880 75 1280 -1 palrm(SIOL):NMS
+p -1328 336 75 768 -1 palrm(SPLK):NMS
+p -1328 378 75 0 -1 palrm(STLK):NMS
+p -1360 442 75 0 -1 pproc(CLNK):NPP
+p -1712 752 75 1280 -1 pproc(INPA):NPP
+p -1712 688 75 1280 -1 pproc(INPB):NPP
+p -1360 474 75 0 -1 pproc(MLNK):NPP
+p -1360 752 75 768 -1 pproc(OUTA):NPP
+p -1360 688 75 768 -1 pproc(OUTB):NPP
+p -1360 410 75 0 -1 pproc(PLNK):NPP
+p -1712 336 75 1280 -1 pproc(SDIS):NPP
+p -1712 912 75 1280 -1 pproc(SIML):NPP
+p -1712 880 75 1280 -1 pproc(SIOL):NPP
+p -1360 336 75 768 -1 pproc(SPLK):NPP
+p -1360 378 75 0 -1 pproc(STLK):NPP
+p -1456 -272 100 0 0 primitive:cad
+p -1264 272 100 0 0 typ(CLNK):path
+p -1264 240 100 0 0 typ(FLNK):path
+p -1264 208 100 0 0 typ(INPA):path
+p -1264 176 100 0 0 typ(INPB):path
+p -1264 80 100 0 0 typ(MLNK):path
+p -1264 48 100 0 0 typ(OUTA):path
+p -1264 16 100 0 0 typ(OUTB):path
+p -1264 -80 100 0 0 typ(PLNK):path
+p -1264 -112 100 0 0 typ(SDIS):path
+p -1264 -144 100 0 0 typ(SIML):path
+p -1264 -176 100 0 0 typ(SIOL):path
+p -1264 -208 100 0 0 typ(SPLK):path
+p -1264 -240 100 0 0 typ(STLK):path
+use ecad4 -1600 1168 100 0 Park
+xform 0 -1536 1504
+p -1568 1728 100 0 1 CTYP:4
+p -1632 1120 100 0 1 DESC:Park component
+p -1600 1552 100 0 1 FTVA:STRING
+p -1600 1520 100 0 1 FTVB:LONG
+p -1600 1488 100 0 1 FTVC:LONG
+p -1600 1456 100 0 1 FTVD:LONG
+p -1632 1088 100 0 1 SNAM:CADPark
+p -1584 1120 100 1024 0 name:$(cadtop)$(mech)$(I)
+p -1376 1600 75 768 -1 pproc(OUTA):NPP
+use elutouts 784 1328 100 0 lut
+xform 0 880 1472
+p 1174 1798 100 0 0 DESC:LUT out record
+p 1120 1566 100 0 0 DISS:NO_ALARM
+p 1120 1502 100 0 0 DISV:1
+p 2076 240 100 0 0 DTYP:Soft Channel
+p 1120 1630 100 0 0 EVNT:0
+p 768 1248 100 0 1 FDIR:./data
+p 768 1216 100 0 1 FNAM:$(ftop)$(mech).lut
+p 832 1632 100 0 1 FTVA:LONG
+p 832 1600 100 0 1 FTVB:LONG
+p 832 1568 100 0 1 FTVC:LONG
+p 832 1536 100 0 1 FTVD:LONG
+p 2576 -260 100 1024 0 LTBL:0
+p 1120 1662 100 0 0 PHAS:0
+p 1120 1598 100 0 0 PINI:NO
+p 2056 260 100 0 0 PREC:2
+p 1120 1534 100 0 0 PRIO:LOW
+p 768 1184 100 0 1 PV:$(top)$(mech)
+p 1120 1694 100 0 0 SCAN:Passive
+p 768 1280 100 0 1 SELB:15
+p 848 1488 100 0 -1 Type:lutout
+p 1056 1278 100 0 0 def(FLNK):0.000000000000000e+00
+p 2536 -220 100 1024 0 def(LLNK):0.000000000000000e+00
+p 2096 220 100 1024 0 def(OUTA):0.000000000000000e+00
+p 2116 200 100 1024 0 def(OUTB):0.000000000000000e+00
+p 2136 180 100 1024 0 def(OUTC):0.000000000000000e+00
+p 2156 160 100 1024 0 def(OUTD):0.000000000000000e+00
+p 816 1296 100 1024 0 name:$(top)$(I)
+p 1056 1536 75 768 -1 palrm(OUTA):NMS
+p 1056 1472 75 768 -1 palrm(OUTB):NMS
+p 1056 1408 75 768 -1 palrm(OUTC):NMS
+p 1056 1344 75 768 -1 palrm(OUTD):NMS
+p 1024 1536 75 768 -1 pproc(OUTA):PP
+p 1024 1472 75 768 -1 pproc(OUTB):PP
+p 1024 1408 75 768 -1 pproc(OUTC):PP
+p 1024 1344 75 768 -1 pproc(OUTD):NPP
+p 1168 1806 100 0 0 primitive:elutins
+p 1056 1260 100 0 0 typ(FLNK):path
+p 2556 -240 100 1024 0 typ(LLNK):path
+p 2336 -20 100 1024 0 typ(OUTA):path
+p 2356 -40 100 1024 0 typ(OUTB):path
+p 2376 -60 100 1024 0 typ(OUTC):path
+p 2396 -80 100 1024 0 typ(OUTD):path
+use elutouts -992 1552 100 0 lut2
+xform 0 -896 1696
+p -602 2022 100 0 0 DESC:LUT out record
+p -656 1790 100 0 0 DISS:NO_ALARM
+p -656 1726 100 0 0 DISV:1
+p 300 464 100 0 0 DTYP:Soft Channel
+p -656 1854 100 0 0 EVNT:0
+p -1008 1472 100 0 1 FDIR:./data
+p -1008 1440 100 0 1 FNAM:$(ftop)$(mech).lut
+p -752 1888 100 0 1 FTVA:LONG
+p -752 1856 100 0 1 FTVB:LONG
+p -752 1824 100 0 1 FTVC:LONG
+p -752 1792 100 0 1 FTVD:LONG
+p 800 -36 100 1024 0 LTBL:0
+p -656 1886 100 0 0 PHAS:0
+p -656 1822 100 0 0 PINI:NO
+p 280 484 100 0 0 PREC:2
+p -656 1758 100 0 0 PRIO:LOW
+p -1008 1408 100 0 1 PV:$(top)$(mech)
+p -656 1918 100 0 0 SCAN:Passive
+p -1008 1376 100 0 1 SELB:15
+p -928 1712 100 0 -1 Type:lutout
+p -720 1502 100 0 0 def(FLNK):0.000000000000000e+00
+p 760 4 100 1024 0 def(LLNK):0.000000000000000e+00
+p 320 444 100 1024 0 def(OUTA):0.000000000000000e+00
+p 340 424 100 1024 0 def(OUTB):0.000000000000000e+00
+p 360 404 100 1024 0 def(OUTC):0.000000000000000e+00
+p 380 384 100 1024 0 def(OUTD):0.000000000000000e+00
+p -960 1520 100 1024 0 name:$(top)$(I)
+p -720 1760 75 768 -1 palrm(OUTA):NMS
+p -720 1696 75 768 -1 palrm(OUTB):NMS
+p -720 1632 75 768 -1 palrm(OUTC):NMS
+p -720 1568 75 768 -1 palrm(OUTD):NMS
+p -752 1760 75 768 -1 pproc(OUTA):NPP
+p -752 1696 75 768 -1 pproc(OUTB):NPP
+p -752 1632 75 768 -1 pproc(OUTC):NPP
+p -752 1568 75 768 -1 pproc(OUTD):NPP
+p -608 2030 100 0 0 primitive:elutins
+p -720 1484 100 0 0 typ(FLNK):path
+p 780 -16 100 1024 0 typ(LLNK):path
+p 560 204 100 1024 0 typ(OUTA):path
+p 580 184 100 1024 0 typ(OUTB):path
+p 600 164 100 1024 0 typ(OUTC):path
+p 620 144 100 1024 0 typ(OUTD):path
+use link2Dir 800 1863 100 0 link2Dir#140
+xform 0 896 2016
+p 816 1872 100 0 1 set1:axis :edir
+[comments]
