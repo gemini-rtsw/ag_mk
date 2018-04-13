@@ -1,40 +1,40 @@
 [schematic2]
-uniq 328
+uniq 25
 [tools]
 [detail]
-w 458 323 100 0 n#326 eseq.dseq.LNK2 544 96 608 96 608 320 368 320 368 544 junction
-w 732 843 100 0 n#326 junction 736 544 736 1152 960 1152 960 1632 1056 1632 ecalcs.done.INPE
-w 498 547 100 0 n#326 ebis.dsearch.VAL 320 544 736 544 736 256 1056 256 ecalcs.change.INPE
-w -110 99 100 0 n#324 hwin.hwin#323.in -128 96 -32 96 eseq.dseq.DOL2
-w -174 595 100 0 n#321 inhier.DSCH.P -352 592 64 592 ebis.dsearch.INP
-w -30 323 100 0 n#322 ebis.dsearch.FLNK 320 576 352 576 352 320 -352 320 -352 -192 -32 -192 eseq.dseq.SLNK
-w 2002 395 100 0 n#309 elongouts.current.OUT 1728 384 2336 384 outhier.CURR.p
-w 1330 547 100 0 n#303 elongouts.curvel.VAL 1728 896 1856 896 1856 544 864 544 864 320 1056 320 ecalcs.change.INPC
-w 2066 899 100 0 n#303 junction 1856 896 2336 896 outhier.CVEL.p
-w 1394 1219 100 0 n#315 ebos.moving.VAL 1728 1536 1856 1536 1856 1216 992 1216 992 960 1056 960 ecalcs.ramp.INPF
-w 2066 1539 100 0 n#315 junction 1856 1536 2336 1536 outhier.MOV.p
-w -174 851 100 0 n#307 inhier.ENBL.P -352 848 64 848 ebis.enable.INP
-w -174 1107 100 0 n#306 inhier.MVEL.P -352 1104 64 1104 elongins.maxvel.INP
-w -174 1347 100 0 n#305 inhier.DMND.P -352 1344 64 1344 elongins.demand.INP
-w 514 854 100 0 n#286 junction 512 1296 512 352 1056 352 ecalcs.change.INPB
-w 508 1507 100 0 n#286 elongins.demand.VAL 320 1296 512 1296 512 1728 544 1728 ecalcs.diff.INPB
-w 860 1339 100 0 n#282 junction 864 1568 864 1120 1056 1120 ecalcs.ramp.INPA
-w 866 1694 100 0 n#282 ecalcs.diff.VAL 832 1568 864 1568 864 1760 1056 1760 ecalcs.done.INPA
-w 476 1099 100 0 n#53 junction 896 448 480 448 480 1760 544 1760 ecalcs.diff.INPA
-w 1112 450 100 0 n#53 ecalcs.change.VAL 1344 192 1376 192 1376 448 896 448 896 384 1056 384 ecalcs.change.INPA
-w 1400 450 100 0 n#53 junction 1376 448 1472 448 elongouts.current.DOL
-w 1378 1570 100 0 n#300 ecalcs.done.VAL 1344 1568 1472 1568 ebos.moving.DOL
-w 1394 1538 100 0 n#299 ecalcs.done.FLNK 1344 1600 1376 1600 1376 1536 1472 1536 ebos.moving.SLNK
-w 924 1419 100 0 n#289 junction 672 1024 672 1184 928 1184 928 1664 1056 1664 ecalcs.done.INPD
-w 676 574 100 0 n#289 junction 672 800 672 288 1056 288 ecalcs.change.INPD
-w 834 1027 100 0 n#289 ebis.enable.VAL 320 800 672 800 672 1024 1056 1024 ecalcs.ramp.INPD
-w 1442 350 100 0 n#296 ecalcs.change.FLNK 1344 224 1440 224 1440 416 1472 416 elongouts.current.SLNK
-w 658 1059 100 0 n#287 elongins.maxvel.VAL 320 1056 1056 1056 ecalcs.ramp.INPC
-w 1330 515 100 0 n#284 elongouts.curvel.FLNK 1728 928 1888 928 1888 512 832 512 832 0 1056 0 ecalcs.change.SLNK
-w 1426 1187 100 0 n#283 ebos.moving.FLNK 1728 1568 1888 1568 1888 1184 1024 1184 1024 736 1056 736 ecalcs.ramp.SLNK
-w 898 1518 100 0 n#281 ecalcs.diff.FLNK 832 1600 896 1600 896 1376 1056 1376 ecalcs.done.SLNK
-w 1394 898 100 0 n#258 ecalcs.ramp.FLNK 1344 960 1376 960 1376 896 1472 896 elongouts.curvel.SLNK
-w 1378 930 100 0 n#249 ecalcs.ramp.VAL 1344 928 1472 928 elongouts.curvel.DOL
+w 739 848 100 0 n#1 junction 736 544 736 1152 960 1152 960 1632 1056 1632 ecalcs.done.INPE
+w 528 547 100 0 n#1 ebis.dsearch.VAL 320 544 736 544 736 256 1056 256 ecalcs.change.INPE
+w -80 99 100 0 n#2 hwin.hwin#323.in -128 96 -32 96 eseq.dseq.DOL2
+w -144 595 100 0 n#3 inhier.DSCH.P -352 592 64 592 ebis.dsearch.INP
+w 336 579 100 0 n#4 ebis.dsearch.FLNK 320 576 352 576 352 320 -352 320 -352 -192 -32 -192 eseq.dseq.SLNK
+w 2032 387 100 0 n#5 elongouts.current.OUT 1728 384 2336 384 outhier.CURR.p
+w 1792 899 100 0 n#6 elongouts.curvel.VAL 1728 896 1856 896 1856 544 864 544 864 320 1056 320 ecalcs.change.INPC
+w 2096 899 100 0 n#6 junction 1856 896 2336 896 outhier.CVEL.p
+w 1792 1539 100 0 n#7 ebos.moving.VAL 1728 1536 1856 1536 1856 1216 992 1216 992 960 1056 960 ecalcs.ramp.INPF
+w 2096 1539 100 0 n#7 junction 1856 1536 2336 1536 outhier.MOV.p
+w -144 851 100 0 n#8 inhier.ENBL.P -352 848 64 848 ebis.enable.INP
+w -144 1107 100 0 n#9 inhier.MVEL.P -352 1104 64 1104 elongins.maxvel.INP
+w -144 1347 100 0 n#10 inhier.DMND.P -352 1344 64 1344 elongins.demand.INP
+w 515 824 100 0 n#11 junction 512 1296 512 352 1056 352 ecalcs.change.INPB
+w 416 1299 100 0 n#11 elongins.demand.VAL 320 1296 512 1296 512 1728 544 1728 ecalcs.diff.INPB
+w 867 1344 100 0 n#12 junction 864 1568 864 1120 1056 1120 ecalcs.ramp.INPA
+w 848 1571 100 0 n#12 ecalcs.diff.VAL 832 1568 864 1568 864 1760 1056 1760 ecalcs.done.INPA
+w 688 451 100 0 n#13 junction 896 448 480 448 480 1760 544 1760 ecalcs.diff.INPA
+w 1360 195 100 0 n#13 ecalcs.change.VAL 1344 192 1376 192 1376 448 896 448 896 384 1056 384 ecalcs.change.INPA
+w 1424 451 100 0 n#13 junction 1376 448 1472 448 elongouts.current.DOL
+w 1408 1571 100 0 n#14 ecalcs.done.VAL 1344 1568 1472 1568 ebos.moving.DOL
+w 1360 1603 100 0 n#15 ecalcs.done.FLNK 1344 1600 1376 1600 1376 1536 1472 1536 ebos.moving.SLNK
+w 675 1104 100 0 n#16 junction 672 1024 672 1184 928 1184 928 1664 1056 1664 ecalcs.done.INPD
+w 675 544 100 0 n#16 junction 672 800 672 288 1056 288 ecalcs.change.INPD
+w 496 803 100 0 n#16 ebis.enable.VAL 320 800 672 800 672 1024 1056 1024 ecalcs.ramp.INPD
+w 1392 227 100 0 n#17 ecalcs.change.FLNK 1344 224 1440 224 1440 416 1472 416 elongouts.current.SLNK
+w 688 1059 100 0 n#18 elongins.maxvel.VAL 320 1056 1056 1056 ecalcs.ramp.INPC
+w 1808 931 100 0 n#19 elongouts.curvel.FLNK 1728 928 1888 928 1888 512 832 512 832 0 1056 0 ecalcs.change.SLNK
+w 1808 1571 100 0 n#20 ebos.moving.FLNK 1728 1568 1888 1568 1888 1184 1024 1184 1024 736 1056 736 ecalcs.ramp.SLNK
+w 864 1603 100 0 n#21 ecalcs.diff.FLNK 832 1600 896 1600 896 1376 1056 1376 ecalcs.done.SLNK
+w 1360 963 100 0 n#22 ecalcs.ramp.FLNK 1344 960 1376 960 1376 896 1472 896 elongouts.curvel.SLNK
+w 1408 931 100 0 n#23 ecalcs.ramp.VAL 1344 928 1472 928 elongouts.curvel.DOL
+w 554 98 -100 0 n#24 eseq.dseq.LNK2 544 96 640 96 640 -192 680 -192 hwoutl.hwoutl#328.outp
 s 640 1312 100 0 1 second/2 second
 s 144 -208 100 0 Wait 10 seconds
 s 2144 448 100 0 Current position
@@ -55,10 +55,10 @@ s 1216 1072 100 0 (4)
 s 1568 1616 100 0 (3)
 s 1216 1728 100 0 (2)
 s 688 1728 100 0 (1)
-s 1792 -320 500 512 motor.sch
+s 1792 -320 500 0 motor.sch
 s 384 1856 500 0 CICS Motor Simulator
 s 160 1856 100 0 SCAN 0.2 second
-n -128 1424 352 1776 100
+n -128 1440 232 1776 100
 This database simulates the behaviour
 of an instrument motor. It strives
 to make the current position the same
@@ -72,9 +72,17 @@ by activating the "dsearch" binary input.
 The search stops after 10 seconds. The
 current position, velocity and
 movement flag are made available to
-the outside world. 
+the outside world.
 _
 [cell use]
+use bc200tr -688 -488 -100 0 frame
+xform 0 992 816
+p 1888 -320 100 0 1 author:S.M.Beard
+p 2112 -336 100 0 -1 border:C
+p 1888 -352 100 0 1 checked:B.Goodrich
+p 2144 -336 100 0 -1 date:18 Jul 97
+p 2128 -208 100 0 -1 project:A&G Unit
+p 2128 -272 100 0 -1 title:A&G motor simulator
 use notes 1952 -89 100 0 notes#327
 xform 0 2208 96
 p 1980 222 100 0 -1 COMMENT1:ICD14
@@ -82,7 +90,7 @@ p 1980 190 100 0 -1 COMMENT2:=====
 p 1980 160 100 0 -1 COMMENT3:To interface easily to the CICS, low level
 p 1980 128 100 0 -1 COMMENT4:motor control should operate through the
 p 1980 96 100 0 -1 COMMENT5:interface shown here. Compulsory inputs are
-p 1980 64 100 0 -1 COMMENT6:demand position, enable and datum, and 
+p 1980 64 100 0 -1 COMMENT6:demand position, enable and datum, and
 p 1980 32 100 0 -1 COMMENT7:compulsory outputs are the current position
 p 1980 0 100 0 -1 COMMENT8:and moving flag. Variations are possible
 p 1980 -32 100 0 -1 COMMENT9:if the SNL is edited - e.g. see NIRI.
@@ -94,14 +102,6 @@ xform 0 256 16
 p 288 126 100 0 1 DLY2:4.0
 p 32 -320 100 0 1 PV:$(top)$(mech)$(motor)
 p 544 96 75 768 -1 pproc(LNK2):PP
-use bc200tr -688 -488 -100 0 frame
-xform 0 992 816
-p 1888 -320 100 0 1 author:S.M.Beard
-p 2112 -336 100 0 -1 border:C
-p 1888 -352 100 0 1 checked:B.Goodrich
-p 2144 -336 100 0 -1 date:18 Jul 97
-p 2128 -208 100 0 -1 project:A&G Unit
-p 2128 -272 100 0 -1 title:A&G motor simulator
 use outhier 2328 1496 100 0 MOV
 xform 0 2320 1536
 use outhier 2328 856 100 0 CVEL
@@ -197,4 +197,7 @@ p 1536 1408 100 0 1 OMSL:closed_loop
 p 1536 1344 100 0 1 ONAM:moving
 p 1536 1312 100 0 1 PV:$(top)$(mech)$(motor)
 p 1536 1376 100 0 1 ZNAM:stopped
+use hwoutl 680 -264 100 0 hwoutl#328
+xform 0 872 -216
+p 778 -201 100 0 -1 val(outp):$(top)$(mech)$(motor)dsearch
 [comments]

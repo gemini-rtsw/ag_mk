@@ -23,6 +23,7 @@ ag-mk-ioc_DBD += tcslib.dbd
 ag-mk-ioc_DBD += timelib.dbd
 ag-mk-ioc_DBD += slalib.dbd
 ag-mk-ioc_DBD += listAlarmRecords.dbd
+ag-mk-ioc_DBD += pmaclib.dbd
 ag-mk-ioc_DBD += menuScan.dbd
 # ag-mk-ioc_DBD += mbbipRecord.dbd
 
@@ -63,7 +64,7 @@ ag-mk-ioc_SRCS += ag_gensub.c
 ag-mk-ioc_SRCS += ag_sad.c
 # TODO: ag_test deals with dbgLib. There's no direct translation for that...
 # ag-mk-ioc_SRCS += ag_test.c
-ag-mk-ioc_SRCS += pmacUpDown.c
+# ag-mk-ioc_SRCS += pmacUpDown.c
 ag-mk-ioc_SRCS += mbbipRecord.c
 
 # Build the main IOC entry point on workstation OSs.

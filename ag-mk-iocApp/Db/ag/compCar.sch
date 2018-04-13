@@ -1,17 +1,17 @@
 [schematic2]
-uniq 892
+uniq 9
 [tools]
 [detail]
 w -224 1619 100 0 PLC_RESP inhier.PLC_RESP.P -256 1616 -96 1616 egenSub.carh.INPJ
-w -246 1171 100 0 c#886 inhier.SDIS.P -256 1168 -176 1168 hwout.hwout#889.outp
-w 1194 1723 100 0 n#880 estringouts.sirso.DOL 1584 1712 864 1712 864 2160 192 2160 egenSub.carh.VALB
-w 1810 1675 100 0 n#879 hwout.hwout#875.outp 1840 1664 1840 1664 estringouts.sirso.OUT
-w 1810 2267 100 0 n#874 hwout.hwout#471.outp 1840 2256 1840 2256 elongouts.carl.OUT
-w 1810 2331 100 0 n#873 hwout.hwout#872.outp 1840 2320 1840 2320 elongouts.carl.FLNK
-w 1554 2011 100 0 n#871 hwin.hwin#870.in 1584 2000 1584 2000 eevents.carev.INP
-w 586 2195 100 0 n#839 egenSub.carh.OUTA 192 2192 1040 2192 junction
-w 1282 2323 100 0 n#839 elongouts.carl.DOL 1584 2320 1040 2320 1040 2192 ecars.C.IVAL
-w 1442 1971 100 0 n#473 ecars.C.FLNK 1360 1968 1584 1968 eevents.carev.SLNK
+w -246 1171 100 0 c inhier.SDIS.P -256 1168 -176 1168 hwout.hwout#889.outp
+w 1194 1723 100 0 n#1 estringouts.sirso.DOL 1584 1712 864 1712 864 2160 192 2160 egenSub.carh.VALB
+w 1810 1675 100 0 n#2 hwout.hwout#875.outp 1840 1664 1840 1664 estringouts.sirso.OUT
+w 1810 2267 100 0 n#3 hwout.hwout#471.outp 1840 2256 1840 2256 elongouts.carl.OUT
+w 1810 2331 100 0 n#4 hwout.hwout#872.outp 1840 2320 1840 2320 elongouts.carl.FLNK
+w 1554 2011 100 0 n#5 hwin.hwin#870.in 1584 2000 1584 2000 eevents.carev.INP
+w 1442 1971 100 0 n#6 ecars.C.FLNK 1360 1968 1584 1968 eevents.carev.SLNK
+w 202 2234 -100 0 n#7 egenSub.carh.VALA 192 2224 864 2224 864 2320 1584 2320 elongouts.carl.DOL
+w 202 2194 -100 0 n#8 egenSub.carh.OUTA 192 2192 1040 2192 ecars.C.IVAL
 s -256 2352 100 0 In that case, the CAR doesn't have to be updated.
 s -256 2384 100 0 This record is disabled if the PLC-Response didn't change.
 s 3296 320 500 512 compCar.sch
