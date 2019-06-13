@@ -1,0 +1,15 @@
+[symbol2]
+bbox -496 -160 80 416
+uniq 0
+[tools]
+[attributes]
+p -384 112 100 0 1 FNAM:file name
+p -384 80 100 0 1 SS:State set name
+[layers]
+<symbol>
+a 0 -208 128 32 -16 360
+l 100 0 0 -384 192 State Notation Language (SNL)
+v 0 -480 160
+64 160
+_
+[comments]

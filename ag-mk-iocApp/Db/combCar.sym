@@ -1,0 +1,12 @@
+[symbol2]
+bbox -416 160 -256 320
+port -288 288 100 2048 OUTA symbol 2 -272 288 0
+port -288 256 100 2048 FLNK symbol 2 -272 256 0
+uniq 2
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 7 0 -352 176 combCar
+r 0 -416 160 -272 320
+[comments]

@@ -1,0 +1,412 @@
+[schematic2]
+uniq 39
+[tools]
+[detail]
+w -734 1131 100 0 n#1 hwout.hwout#274.outp -704 1120 -704 1120 sir2link.sir2link#161.FLNK
+w -1782 -533 100 0 n#2 hwin.hwin#266.in -1840 -544 -1664 -544 egenSubD.egenSubD#273.INPN
+w -1782 -501 100 0 n#3 hwin.hwin#265.in -1840 -512 -1664 -512 egenSubD.egenSubD#273.INPM
+w -1782 -469 100 0 n#4 hwin.hwin#263.in -1840 -480 -1664 -480 egenSubD.egenSubD#273.INPL
+w -1782 -437 100 0 n#5 hwin.hwin#264.in -1840 -448 -1664 -448 egenSubD.egenSubD#273.INPK
+w -1782 -405 100 0 n#6 hwin.hwin#262.in -1840 -416 -1664 -416 egenSubD.egenSubD#273.INPJ
+w -1782 -373 100 0 n#7 hwin.hwin#261.in -1840 -384 -1664 -384 egenSubD.egenSubD#273.INPI
+w -1782 -341 100 0 n#8 hwin.hwin#259.in -1840 -352 -1664 -352 egenSubD.egenSubD#273.INPH
+w -1782 -309 100 0 n#9 hwin.hwin#260.in -1840 -320 -1664 -320 egenSubD.egenSubD#273.INPG
+w -1782 -277 100 0 n#10 hwin.hwin#258.in -1840 -288 -1664 -288 egenSubD.egenSubD#273.INPF
+w -1782 -245 100 0 n#11 hwin.hwin#257.in -1840 -256 -1664 -256 egenSubD.egenSubD#273.INPE
+w -1782 -213 100 0 n#12 hwin.hwin#221.in -1840 -224 -1664 -224 egenSubD.egenSubD#273.INPD
+w -1782 -181 100 0 n#13 hwin.hwin#220.in -1840 -192 -1664 -192 egenSubD.egenSubD#273.INPC
+w -1782 -149 100 0 n#14 hwin.hwin#217.in -1840 -160 -1664 -160 egenSubD.egenSubD#273.INPB
+w -1782 -117 100 0 n#15 hwin.hwin#215.in -1840 -128 -1664 -128 egenSubD.egenSubD#273.INPA
+w -62 -605 100 0 n#16 esirs.esirs#205.SLNK -976 -288 -1024 -288 -1024 -608 960 -608 960 -768 esirs.esirs#206.FLNK
+w -1302 -853 100 0 n#17 egenSubD.egenSubD#273.FLNK -1376 -864 -1168 -864 -1168 -928 -1136 -928 esirs.esirs#209.SLNK
+w 428 -853 100 0 n#18 esirs.esirs#207.FLNK 384 -768 432 -768 432 -928 544 -928 esirs.esirs#206.SLNK
+w -382 -629 100 0 n#19 egenSubD.egenSubD#273.OUTJ -1376 -736 -1232 -736 -1232 -640 528 -640 528 -800 544 -800 esirs.esirs#206.IMSS
+w -382 -613 100 0 n#20 egenSubD.egenSubD#273.VALI -1376 -640 -1248 -640 -1248 -624 544 -624 544 -768 esirs.esirs#206.INP
+w -918 -693 100 0 n#21 egenSubD.egenSubD#273.OUTF -1376 -480 -1184 -480 -1184 -704 -592 -704 -592 -800 -576 -800 esirs.esirs#208.IMSS
+w -662 -661 100 0 n#22 egenSubD.egenSubD#273.OUTH -1376 -608 -1216 -608 -1216 -672 -48 -672 -48 -800 -32 -800 esirs.esirs#207.IMSS
+w -646 -645 100 0 n#23 egenSubD.egenSubD#273.VALG -1376 -512 -1200 -512 -1200 -656 -32 -656 -32 -768 esirs.esirs#207.INP
+w -902 -677 100 0 n#24 egenSubD.egenSubD#273.VALE -1376 -384 -1168 -384 -1168 -688 -576 -688 -576 -768 esirs.esirs#208.INP
+w -1294 -341 100 0 n#25 egenSubD.egenSubD#273.OUTD -1376 -352 -1152 -352 -1152 -800 -1136 -800 esirs.esirs#209.IMSS
+w -1286 -245 100 0 n#26 egenSubD.egenSubD#273.VALC -1376 -256 -1136 -256 -1136 -768 esirs.esirs#209.INP
+w -116 -853 100 0 n#27 esirs.esirs#208.FLNK -160 -768 -112 -768 -112 -928 -32 -928 esirs.esirs#207.SLNK
+w -676 -853 100 0 n#28 esirs.esirs#209.FLNK -720 -768 -672 -768 -672 -928 -576 -928 esirs.esirs#208.SLNK
+w -894 1091 100 0 n#29 esirs.esirs#159.VAL -864 1088 -864 1088 sir2link.sir2link#161.VALA
+w -894 1059 100 0 n#30 esirs.esirs#159.OMSS -864 1056 -864 1056 sir2link.sir2link#161.VALB
+w -734 1091 100 0 n#31 sir2link.sir2link#161.OUTA -704 1088 -704 1088 hwout.hwout#164.outp
+w -734 1059 100 0 n#32 sir2link.sir2link#161.OUTB -704 1056 -704 1056 hwout.hwout#163.outp
+w -894 1123 100 0 n#33 esirs.esirs#159.FLNK -864 1120 -864 1120 sir2link.sir2link#161.SLNK
+w -1376 1123 100 0 n#34 egenSubA.egenSubA#157.VALA -1424 1120 -1280 1120 esirs.esirs#159.INP
+w -1364 667 100 0 n#35 esirs.esirs#159.SLNK -1280 960 -1360 960 -1360 384 -1424 384 egenSubA.egenSubA#157.FLNK
+w -1382 1091 100 0 n#36 egenSubA.egenSubA#157.OUTB -1424 1088 -1280 1088 esirs.esirs#159.IMSS
+w -1206 -125 100 0 n#37 egenSubD.egenSubD#273.VALA -1376 -128 -976 -128 esirs.esirs#205.INP
+w -1286 -213 100 0 n#38 egenSubD.egenSubD#273.OUTB -1376 -224 -1136 -224 -1136 -160 -976 -160 esirs.esirs#205.IMSS
+s -2320 -688 100 0 so that they are unconnected here.
+s -2320 -656 100 0 the remaining inputs O..U,
+s -2320 -624 100 0 None of HRWFS, GBD or PWFS1/2 uses
+s -448 -160 100 0 values pulled out by top level combination
+s -2064 1072 100 0 message 1
+s -2064 1120 100 0 health value 1
+s -1216 1216 100 0 index of winner
+s -1216 1264 100 0 winning message
+s -1216 1312 100 0 winning health
+s -1824 592 100 2048 --->
+s -1824 656 100 2048 --->
+s -1824 720 100 2048 --->
+s -1824 784 100 2048 --->
+s -1824 848 100 2048 --->
+s -1824 912 100 2048 --->
+s -1824 992 100 2048 --->
+s -1824 1056 100 2048 --->
+s -1824 1120 100 2048 --->
+s -2080 912 100 0 health records.
+s -2080 944 100 0 from component
+s -2080 976 100 0 Channel access puts
+s -1904 1376 100 0 Processing is triggered each time a new health value is written to an input.
+s 2608 -1008 500 512 sircomb.sch
+s -1904 1440 100 0 These "genSub" records determine the overall instrument health. The inputs
+s -1904 1408 100 0 on the left are written by the component health records via channel access
+s -2064 1232 100 0 more than the visible gensub inputs are used!!
+s -2160 -48 100 0 F: Flag, S: String (IMSS)
+s -1664 -1152 100 0 OUTU gives the resulting index
+n 1104 -992 1488 -656 100
+This schematic contains the systemwide
+Status/Alarm Database for the A&G.
+It contains these universal records:
+.
+name   - Name of instrument (defaulted
+to "A&G".
+.
+state  - State of instrument (BOOTING,
+INITIALISING or RUNNING).
+.
+health - Health of instrument (GOOD,
+WARNING or BAD).
+.
+plus others as shown.
+_
+[cell use]
+use bd200tr -2496 -1640 -100 0 frame
+xform 0 144 64
+p 1136 -1408 200 0 1 author:O.Frischmuth
+p 1136 -1488 200 0 1 checked:O.Frischmuth
+p 1712 -1424 200 0 -1 date:18 Apr 1998
+p 1632 -1152 200 0 -1 project:A&G unit
+p 1632 -1280 200 0 -1 title:A&G system SAD SIR combination records
+use hwout -704 1079 100 0 hwout#274
+xform 0 -608 1120
+p -608 1120 100 0 -1 val(outp):$(trgtop2).VAL PP NMS
+use hwout -704 1047 100 0 hwout#164
+xform 0 -608 1088
+p -608 1088 100 0 -1 val(outp):$(hindex2)
+use hwout -704 1015 100 0 hwout#163
+xform 0 -608 1056
+p -608 1056 100 0 -1 val(outp):$(mindex2)
+use egenSubD -1664 -921 100 0 egenSubD#273
+xform 0 -1520 -496
+p -1600 -1072 100 0 1 DESC:calculates \"inPosition\"
+p -1472 -1040 100 0 1 EVNT:
+p -1584 -128 100 0 1 FTA:LONG
+p -1584 -160 100 0 1 FTB:STRING
+p -1584 -192 100 0 1 FTC:LONG
+p -1584 -224 100 0 1 FTD:STRING
+p -1584 -256 100 0 1 FTE:LONG
+p -1584 -288 100 0 1 FTF:STRING
+p -1584 -320 100 0 1 FTG:LONG
+p -1584 -352 100 0 1 FTH:STRING
+p -1584 -384 100 0 1 FTI:LONG
+p -1584 -416 100 0 1 FTJ:STRING
+p -1872 -592 100 0 1 FTK:LONG
+p -1872 -624 100 0 1 FTL:STRING
+p -1872 -656 100 0 1 FTM:LONG
+p -1872 -688 100 0 1 FTN:STRING
+p -1872 -720 100 0 1 FTO:LONG
+p -1872 -752 100 0 1 FTP:STRING
+p -1872 -784 100 0 1 FTQ:LONG
+p -1872 -816 100 0 1 FTR:STRING
+p -1872 -848 100 0 1 FTS:LONG
+p -1872 -880 100 0 1 FTT:STRING
+p -1872 -912 100 0 1 FTU:LONG
+p -1584 -512 100 0 1 FTVA:LONG
+p -1584 -544 100 0 1 FTVB:STRING
+p -1584 -576 100 0 1 FTVC:LONG
+p -1584 -608 100 0 1 FTVD:STRING
+p -1584 -640 100 0 1 FTVE:LONG
+p -1584 -672 100 0 1 FTVF:STRING
+p -1584 -704 100 0 1 FTVG:LONG
+p -1584 -736 100 0 1 FTVH:STRING
+p -1584 -768 100 0 1 FTVI:LONG
+p -1584 -800 100 0 1 FTVJ:STRING
+p -1584 -832 100 0 1 FTVK:DOUBLE
+p -2000 -960 100 0 1 FTVL:DOUBLE
+p -1980 -980 100 0 1 FTVM:DOUBLE
+p -1960 -1000 100 0 1 FTVN:DOUBLE
+p -1940 -1020 100 0 1 FTVO:DOUBLE
+p -1920 -1040 100 0 1 FTVP:DOUBLE
+p -1900 -1060 100 0 1 FTVQ:DOUBLE
+p -1880 -1080 100 0 1 FTVR:DOUBLE
+p -1860 -1100 100 0 1 FTVS:DOUBLE
+p -1840 -1120 100 0 1 FTVT:DOUBLE
+p -1584 -864 100 0 1 FTVU:LONG
+p -1600 -1008 100 0 1 INAM:inposCombInit
+p -1600 -1040 100 0 1 PREC:2
+p -1600 -944 100 0 1 SCAN:.5 second
+p -1600 -976 100 0 1 SNAM:inposCombine
+p -1488 -928 100 1024 1 name:$(sadtop)Cinp
+use hwin -2032 -169 100 0 hwin#215
+xform 0 -1936 -128
+p -2029 -136 100 0 -1 val(in):$(f1)
+use hwin -2032 -201 100 0 hwin#217
+xform 0 -1936 -160
+p -2029 -168 100 0 -1 val(in):$(s1)
+use hwin -2032 -233 100 0 hwin#220
+xform 0 -1936 -192
+p -2029 -200 100 0 -1 val(in):$(f2)
+use hwin -2032 -265 100 0 hwin#221
+xform 0 -1936 -224
+p -2029 -232 100 0 -1 val(in):$(s2)
+use hwin -2032 -297 100 0 hwin#257
+xform 0 -1936 -256
+p -2029 -264 100 0 -1 val(in):$(f3)
+use hwin -2032 -329 100 0 hwin#258
+xform 0 -1936 -288
+p -2029 -296 100 0 -1 val(in):$(s3)
+use hwin -2032 -393 100 0 hwin#259
+xform 0 -1936 -352
+p -2029 -360 100 0 -1 val(in):$(s4)
+use hwin -2032 -361 100 0 hwin#260
+xform 0 -1936 -320
+p -2029 -328 100 0 -1 val(in):$(f4)
+use hwin -2032 -425 100 0 hwin#261
+xform 0 -1936 -384
+p -2029 -392 100 0 -1 val(in):$(f5)
+use hwin -2032 -457 100 0 hwin#262
+xform 0 -1936 -416
+p -2029 -424 100 0 -1 val(in):$(s5)
+use hwin -2032 -521 100 0 hwin#263
+xform 0 -1936 -480
+p -2029 -488 100 0 -1 val(in):$(s6)
+use hwin -2032 -489 100 0 hwin#264
+xform 0 -1936 -448
+p -2029 -456 100 0 -1 val(in):$(f6)
+use hwin -2032 -553 100 0 hwin#265
+xform 0 -1936 -512
+p -2029 -520 100 0 -1 val(in):$(f7)
+use hwin -2032 -585 100 0 hwin#266
+xform 0 -1936 -544
+p -2029 -552 100 0 -1 val(in):$(s7)
+use esirs -1040 -976 100 0 esirs#209
+xform 0 -928 -864
+p -1040 -1040 100 0 1 DESC:inPosition bit
+p -1185 -1440 100 0 0 EGU:
+p -1040 -1072 100 0 1 FDSC:inPosition
+p -1040 -1104 100 0 1 FTVL:LONG
+p -1040 -1168 100 0 1 HHSV:MAJOR
+p -1040 -1200 100 0 1 HIGH:2
+p -1040 -1232 100 0 1 HIHI:2
+p -1040 -1264 100 0 1 HSV:NO_ALARM
+p -832 -1168 100 0 1 LLSV:MAJOR
+p -832 -1200 100 0 1 LOLO:-1
+p -832 -1232 100 0 1 LOW:0
+p -832 -1264 100 0 1 LSV:NO_ALARM
+p -1160 -1704 100 0 0 NELM:1
+p -1180 -1684 100 0 0 NORD:1
+p -1040 -1136 100 0 1 SNAM:
+p -912 -976 100 1024 1 name:$(sadtop)inPosition
+use esirs -480 -976 100 0 esirs#208
+xform 0 -368 -864
+p -480 -1040 100 0 1 DESC:Datumed bit
+p -625 -1440 100 0 0 EGU:
+p -480 -1072 100 0 1 FDSC:Datumed
+p -480 -1104 100 0 1 FTVL:LONG
+p -480 -1168 100 0 1 HHSV:MAJOR
+p -480 -1200 100 0 1 HIGH:2
+p -480 -1232 100 0 1 HIHI:2
+p -480 -1264 100 0 1 HSV:NO_ALARM
+p -272 -1168 100 0 1 LLSV:MAJOR
+p -272 -1200 100 0 1 LOLO:-1
+p -272 -1232 100 0 1 LOW:0
+p -272 -1264 100 0 1 LSV:NO_ALARM
+p -600 -1704 100 0 0 NELM:1
+p -620 -1684 100 0 0 NORD:1
+p -480 -1136 100 0 1 SNAM:
+p -352 -976 100 1024 1 name:$(sadtop)Datumed
+use esirs 64 -976 100 0 esirs#207
+xform 0 176 -864
+p 64 -1040 100 0 1 DESC:Parked bit
+p -81 -1440 100 0 0 EGU:
+p 64 -1072 100 0 1 FDSC:Parked
+p 64 -1104 100 0 1 FTVL:LONG
+p 64 -1168 100 0 1 HHSV:MAJOR
+p 64 -1200 100 0 1 HIGH:2
+p 64 -1232 100 0 1 HIHI:2
+p 64 -1264 100 0 1 HSV:NO_ALARM
+p 272 -1168 100 0 1 LLSV:MAJOR
+p 272 -1200 100 0 1 LOLO:-1
+p 272 -1232 100 0 1 LOW:0
+p 272 -1264 100 0 1 LSV:NO_ALARM
+p -56 -1704 100 0 0 NELM:1
+p -76 -1684 100 0 0 NORD:1
+p 64 -1136 100 0 1 SNAM:
+p 192 -976 100 1024 1 name:$(sadtop)Parked
+use esirs 640 -976 100 0 esirs#206
+xform 0 752 -864
+p 640 -1040 100 0 1 DESC:inPosMode bit
+p 495 -1440 100 0 0 EGU:
+p 640 -1072 100 0 1 FDSC:inPosMode
+p 640 -1104 100 0 1 FTVL:LONG
+p 640 -1168 100 0 1 HHSV:MAJOR
+p 640 -1200 100 0 1 HIGH:2
+p 640 -1232 100 0 1 HIHI:2
+p 640 -1264 100 0 1 HSV:NO_ALARM
+p 848 -1168 100 0 1 LLSV:MAJOR
+p 848 -1200 100 0 1 LOLO:-1
+p 848 -1232 100 0 1 LOW:0
+p 848 -1264 100 0 1 LSV:NO_ALARM
+p 520 -1704 100 0 0 NELM:1
+p 500 -1684 100 0 0 NORD:1
+p 640 -1136 100 0 1 SNAM:
+p 768 -976 100 1024 1 name:$(sadtop)inPosMode
+use esirs -880 -336 100 0 esirs#205
+xform 0 -768 -224
+p -880 -400 100 0 1 DESC:flagbits for system
+p -1025 -800 100 0 0 EGU:
+p -880 -432 100 0 1 FDSC:flagbits
+p -880 -464 100 0 1 FTVL:LONG
+p -880 -528 100 0 1 HHSV:MAJOR
+p -880 -560 100 0 1 HIGH:255
+p -880 -592 100 0 1 HIHI:255
+p -880 -624 100 0 1 HSV:NO_ALARM
+p -672 -528 100 0 1 LLSV:MAJOR
+p -672 -560 100 0 1 LOLO:-1
+p -672 -592 100 0 1 LOW:0
+p -672 -624 100 0 1 LSV:NO_ALARM
+p -1000 -1064 100 0 0 NELM:1
+p -1020 -1044 100 0 0 NORD:1
+p -880 -496 100 0 1 SNAM:
+p -752 -336 100 1024 1 name:$(sadtop)flags
+use esirs -1184 912 100 0 esirs#159
+xform 0 -1072 1024
+p -1184 848 100 0 1 DESC:PWFS health
+p -1329 448 100 0 0 EGU:
+p -1184 816 100 0 1 FDSC:PWFS health
+p -1184 784 100 0 1 FTVL:STRING
+p -1184 720 100 0 1 HHSV:MAJOR
+p -1184 688 100 0 1 HIGH:1
+p -1184 656 100 0 1 HIHI:2
+p -1184 624 100 0 1 HSV:MINOR
+p -976 720 100 0 1 LLSV:MAJOR
+p -976 688 100 0 1 LOLO:0
+p -976 656 100 0 1 LOW:0
+p -976 624 100 0 1 LSV:MINOR
+p -1304 184 100 0 0 NELM:1
+p -1324 204 100 0 0 NORD:1
+p -1184 752 100 0 1 SNAM:
+p -928 832 100 0 1 VAL:GOOD
+p -1056 912 100 1024 1 name:$(sadtop)health
+use sir2link -864 967 100 0 sir2link#161
+xform 0 -784 1072
+p -864 928 100 0 1 set1:sir Hlth
+p -864 960 100 0 1 set2:mech sys
+use egenSubA -1616 368 100 0 egenSubA#157
+xform 0 -1568 752
+p -1632 288 100 0 1 DESC:calculates health
+p -1440 320 100 0 1 EVNT:
+p -1632 1120 100 0 1 FTA:STRING
+p -1632 1088 100 0 1 FTB:STRING
+p -1632 1056 100 0 1 FTC:STRING
+p -1632 1024 100 0 1 FTD:STRING
+p -1632 992 100 0 1 FTE:STRING
+p -1632 960 100 0 1 FTF:STRING
+p -1632 928 100 0 1 FTG:STRING
+p -1632 896 100 0 1 FTH:STRING
+p -1632 864 100 0 1 FTI:STRING
+p -1632 832 100 0 1 FTJ:STRING
+p -1664 -320 100 0 0 FTK:STRING
+p -1664 -352 100 0 0 FTL:STRING
+p -1664 -256 100 0 0 FTM:STRING
+p -1872 640 100 0 0 FTN:STRING
+p -1664 -256 100 0 0 FTO:STRING
+p -1664 -256 100 0 0 FTP:STRING
+p -1664 -256 100 0 0 FTQ:STRING
+p -1664 -256 100 0 0 FTR:STRING
+p -1664 -256 100 0 0 FTS:STRING
+p -1664 -256 100 0 0 FTT:STRING
+p -1664 -256 100 0 0 FTU:STRING
+p -1632 720 100 0 1 FTVA:STRING
+p -1632 688 100 0 1 FTVB:STRING
+p -1632 656 100 0 1 FTVC:LONG
+p -1632 624 100 0 1 FTVD:DOUBLE
+p -1632 592 100 0 1 FTVE:DOUBLE
+p -1632 560 100 0 1 FTVF:DOUBLE
+p -1632 528 100 0 1 FTVG:DOUBLE
+p -1632 496 100 0 1 FTVH:DOUBLE
+p -1632 464 100 0 1 FTVI:DOUBLE
+p -1632 432 100 0 1 FTVJ:DOUBLE
+p -1504 -160 100 0 0 FTVK:DOUBLE
+p -1504 -160 100 0 0 FTVL:DOUBLE
+p -1504 -160 100 0 0 FTVM:DOUBLE
+p -1504 -160 100 0 0 FTVN:DOUBLE
+p -1504 -160 100 0 0 FTVO:DOUBLE
+p -1504 -160 100 0 0 FTVP:DOUBLE
+p -1504 -160 100 0 0 FTVQ:DOUBLE
+p -1504 -160 100 0 0 FTVR:DOUBLE
+p -1504 -160 100 0 0 FTVS:DOUBLE
+p -1504 -160 100 0 0 FTVT:DOUBLE
+p -1504 -160 100 0 0 FTVU:DOUBLE
+p -1632 224 100 0 1 INAM:HealthCombInit
+p -1840 1120 100 0 1 NOA:1
+p -1840 1088 100 0 1 NOB:1
+p -1840 1056 100 0 1 NOC:1
+p -1840 1024 100 0 1 NOD:1
+p -1840 992 100 0 1 NOE:1
+p -1840 960 100 0 1 NOF:1
+p -1840 928 100 0 1 NOG:1
+p -1840 896 100 0 1 NOH:1
+p -1840 864 100 0 1 NOI:1
+p -1840 832 100 0 1 NOJ:1
+p -1840 784 100 0 0 NOK:1
+p -1840 736 100 0 0 NOL:1
+p -1840 736 100 0 0 NOM:1
+p -1840 736 100 0 0 NON:1
+p -1840 736 100 0 0 NOO:1
+p -1840 736 100 0 0 NOP:1
+p -1840 736 100 0 0 NOQ:1
+p -1840 736 100 0 0 NOR:1
+p -1840 736 100 0 0 NOS:1
+p -1840 736 100 0 0 NOT:1
+p -1840 736 100 0 0 NOU:1
+p -1344 720 100 0 1 NOVA:1
+p -1344 688 100 0 1 NOVB:1
+p -1344 656 100 0 1 NOVC:1
+p -1344 624 100 0 1 NOVD:1
+p -1344 592 100 0 1 NOVE:1
+p -1344 560 100 0 1 NOVF:1
+p -1344 528 100 0 1 NOVG:1
+p -1344 496 100 0 1 NOVH:1
+p -1344 464 100 0 1 NOVI:1
+p -1344 432 100 0 1 NOVJ:1
+p -1344 384 100 0 0 NOVK:1
+p -1344 384 100 0 0 NOVL:1
+p -1344 384 100 0 0 NOVM:1
+p -1344 384 100 0 0 NOVN:1
+p -1344 384 100 0 0 NOVO:1
+p -1344 384 100 0 0 NOVP:1
+p -1344 384 100 0 0 NOVQ:1
+p -1344 384 100 0 0 NOVR:1
+p -1344 384 100 0 0 NOVS:1
+p -1344 384 100 0 0 NOVT:1
+p -1344 384 100 0 0 NOVU:1
+p -1632 192 100 0 1 PREC:2
+p -1632 320 100 0 1 SCAN:Passive
+p -1632 256 100 0 1 SNAM:HealthCombine
+p -1600 352 100 1024 1 name:$(sadtop)CHlt
+p -1424 842 75 0 -1 pproc(OUTJ):NPP
+p -1424 714 75 0 -1 pproc(OUTN):NPP
+use notes -1040 135 100 0 notes#140
+xform 0 -784 320
+p -1012 446 100 0 -1 COMMENT1:Attention!
+p -1012 414 100 0 -1 COMMENT2:to use the "name" field of a record,
+p -1012 384 100 0 -1 COMMENT3:PV must not be defined.
+p -1012 352 100 0 -1 COMMENT4:If "PV" is defined, EPICS uses $(PV)$(I)
+p -1012 320 100 0 -1 COMMENT5:instead of $(PV)$(name)!
+[comments]

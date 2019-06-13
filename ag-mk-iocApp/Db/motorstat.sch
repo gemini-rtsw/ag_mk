@@ -1,0 +1,258 @@
+[schematic2]
+uniq 190
+[tools]
+[detail]
+w 2530 2203 100 0 n#189 ebis.amperr.INP 2816 2240 2752 2240 2752 2192 2368 2192 2368 2208 2272 2208 estatus.stat2.BI03
+w 2498 2179 100 0 n#188 estatus.stat2.LK03 2272 2176 2784 2176 2784 2208 2816 2208 ebis.amperr.SLNK
+w 2482 2315 100 0 n#182 estatus.stat2.LK01 2272 2304 2752 2304 ebis.wfe.SLNK
+w 2490 2331 100 0 n#181 ebis.wfe.INP 2752 2336 2672 2336 2672 2320 2368 2320 2368 2336 2272 2336 estatus.stat2.BI01
+w 2482 2123 100 0 n#178 estatus.stat2.LK04 2272 2112 2752 2112 ebis.backl.SLNK
+w 2482 2139 100 0 n#185 ebis.backl.INP 2752 2144 2672 2144 2672 2128 2352 2128 2352 2144 2272 2144 estatus.stat2.BI04
+w 2482 1995 100 0 n#174 ebis.FollErr.SLNK 2752 1984 2272 1984 estatus.stat2.LK06
+w 2514 2011 100 0 n#173 estatus.stat2.BI06 2272 2016 2400 2016 2400 2000 2688 2000 2688 2016 2752 2016 ebis.FollErr.INP
+w 2338 2059 100 0 n#171 estatus.stat2.LK05 2272 2048 2464 2048 ebis.Ierr.SLNK
+w 2338 2091 100 0 n#170 estatus.stat2.BI05 2272 2080 2464 2080 ebis.Ierr.INP
+w 2490 1643 100 0 n#162 ebis.PosLim.SLNK 2672 1632 2368 1632 2368 1664 2272 1664 estatus.stat2.LK11
+w 2506 1675 100 0 n#161 estatus.stat2.BI11 2272 1696 2400 1696 2400 1664 2672 1664 ebis.PosLim.INP
+w 2330 907 100 0 n#157 estatus.stat2.LK23 2272 896 2448 896 ebis.assign.SLNK
+w 2330 939 100 0 n#156 estatus.stat2.BI23 2272 928 2448 928 ebis.assign.INP
+w 1202 1211 100 0 n#148 estatus.stat1.BI20 992 1200 1472 1200 ebis.EnHand.INP
+w 1202 1179 100 0 n#147 ebis.EnHand.SLNK 1472 1168 992 1168 estatus.stat1.LK20
+w 1042 1723 100 0 n#140 ebis.LimDec.INP 1152 1712 992 1712 estatus.stat1.BI12
+w 1042 1691 100 0 n#139 estatus.stat1.LK12 992 1680 1152 1680 ebis.LimDec.SLNK
+w 1202 1627 100 0 n#136 ebis.dvz.SLNK 1472 1616 992 1616 estatus.stat1.LK13
+w 1202 1643 100 0 n#135 estatus.stat1.BI13 992 1648 1088 1648 1088 1632 1376 1632 1376 1648 1472 1648 ebis.dvz.INP
+w 1202 1499 100 0 n#131 estatus.stat1.LK15 992 1488 1472 1488 ebis.dip.SLNK
+w 1194 1515 100 0 n#130 ebis.dip.INP 1472 1520 1360 1520 1360 1504 1088 1504 1088 1520 992 1520 estatus.stat1.BI15
+w 1042 1563 100 0 n#129 estatus.stat1.LK14 992 1552 1152 1552 ebis.DatErr.SLNK
+w 1042 1595 100 0 n#128 ebis.DatErr.INP 1152 1584 992 1584 estatus.stat1.BI14
+w 1202 1371 100 0 n#124 estatus.stat1.LK17 992 1360 1472 1360 ebis.runmove.SLNK
+w 1242 1387 100 0 n#123 estatus.stat1.BI17 992 1392 1104 1392 1104 1376 1440 1376 1440 1392 1472 1392 ebis.runmove.INP
+w 1250 1035 100 0 n#121 estatus.stat1.LK22 992 1040 1088 1040 1088 1024 1472 1024 ebis.negLm.SLNK
+w 1266 1059 100 0 n#118 ebis.negLm.INP 1472 1056 1120 1056 1120 1072 992 1072 estatus.stat1.BI22
+w 938 2627 100 0 n#115 estatus.stat1.INP 576 2544 576 2624 1360 2624 1360 2528 1312 2528 hwin.hwin#2.in
+w 2338 1923 100 0 n#113 ebis.trigmove.SLNK 2464 1920 2272 1920 estatus.stat2.LK07
+w 2338 1955 100 0 n#112 estatus.stat2.BI07 2272 1952 2464 1952 ebis.trigmove.INP
+w 1042 1819 100 0 n#108 ebis.hip.SLNK 1152 1808 992 1808 estatus.stat1.LK10
+w 1042 1851 100 0 n#106 estatus.stat1.BI10 992 1840 1152 1840 ebis.hip.INP
+w 1042 1435 100 0 n#104 ebis.intmode.SLNK 1152 1424 992 1424 estatus.stat1.LK16
+w 1042 1467 100 0 n#101 estatus.stat1.BI16 992 1456 1152 1456 ebis.intmode.INP
+w 1080 971 100 0 n#99 ebis.mactive.SLNK 1152 960 1056 960 1056 976 992 976 estatus.stat1.LK23
+w 1008 1019 100 0 n#119 estatus.stat1.BI23 992 1008 1072 1008 1072 992 1152 992 ebis.mactive.INP
+w 2344 1730 100 0 n#80 estatus.stat2.LK10 2272 1728 2464 1728 ebis.hmcmpl.SLNK
+w 2344 1762 100 0 n#79 estatus.stat2.BI10 2272 1760 2464 1760 ebis.hmcmpl.INP
+w 1048 1106 100 0 n#77 estatus.stat1.LK21 992 1104 1152 1104 ebis.posLm.SLNK
+w 1048 1138 100 0 n#76 estatus.stat1.BI21 992 1136 1152 1136 ebis.posLm.INP
+w 2344 2243 100 0 n#74 estatus.stat2.LK02 2272 2240 2464 2240 ebis.ffe.SLNK
+w 2344 2275 100 0 n#73 estatus.stat2.BI02 2272 2272 2464 2272 ebis.ffe.INP
+w 2344 1474 100 0 n#71 estatus.stat2.LK14 2272 1472 2464 1472 ebis.amp.SLNK
+w 2344 1506 100 0 n#70 estatus.stat2.BI14 2272 1504 2464 1504 ebis.amp.INP
+w 3344 2179 100 0 n#67 egenSub.carsub.OUTA 3536 2048 3584 2048 3584 2176 3152 2176 3152 2528 3232 2528 ecars.activeC.IVAL
+w 3036 1875 100 0 n#66 ebis.inpos.FLNK 2720 2384 3040 2384 3040 1376 3248 1376 egenSub.carsub.SLNK
+w 2888 2355 100 0 n#65 ebis.inpos.VAL 2720 2352 3104 2352 3104 2048 3248 2048 egenSub.carsub.INPA
+w 1800 2467 100 0 n#63 hwin.hwin#41.in 1792 2464 1856 2464 estatus.stat2.INP
+w 2344 2371 100 0 n#45 estatus.stat2.LK00 2272 2368 2464 2368 ebis.inpos.SLNK
+w 2344 2403 100 0 n#44 estatus.stat2.BI00 2272 2400 2464 2400 ebis.inpos.INP
+w 1048 1330 100 0 n#34 estatus.stat1.BI18 992 1328 1152 1328 ebis.loop.INP
+w 1048 1298 100 0 n#33 estatus.stat1.LK18 992 1296 1152 1296 ebis.loop.SLNK
+s 3616 560 500 512 motorstat.sch
+s 672 2528 100 0 MOTOR STATUS WORD 1
+s 736 2480 100 0 MOTOR 1
+s 1952 2432 100 0 MOTOR STATUS WORD 2
+s 2000 2400 100 0 MOTOR 1
+[cell use]
+use bc200tr 384 200 -100 0 frame
+xform 0 2064 1504
+p 2960 368 100 0 1 author:O.Frischmuth
+p 3184 352 100 0 -1 border:C
+p 2960 336 100 0 1 checked:O.Frischmuth
+p 3216 352 100 0 -1 date:22 Jul 97
+p 3184 480 100 0 -1 project:A&G unit
+p 3184 416 100 0 -1 title:PMAC Motorstatus records
+use ebis 2912 2176 100 0 amperr
+xform 0 2944 2208
+p 2592 2046 100 0 0 ONAM:1-Amp Error
+p 2612 1804 100 0 0 PV:$(top)
+p 2592 2078 100 0 0 ZNAM:No Amp Error
+p 2592 1824 100 1024 0 name:$(I)
+use ebis 2848 2272 100 0 wfe
+xform 0 2880 2304
+p 2528 2142 100 0 0 ONAM:1-Warn Follow Error
+p 2548 1900 100 0 0 PV:$(top)
+p 2528 2174 100 0 0 ZNAM:No Warn Follow Error
+p 2528 1920 100 1024 0 name:$(I)
+use ebis 2832 2080 100 0 backl
+xform 0 2880 2112
+p 2640 2238 100 0 0 DTYP:Soft Channel
+p 2528 1950 100 0 0 ONAM:1-Backlash neg.
+p 2548 1708 100 0 0 PV:$(top)
+p 2528 1982 100 0 0 ZNAM:Backlash pos.
+p 2528 1728 100 1024 0 name:$(I)
+use ebis 2544 2016 100 0 Ierr
+xform 0 2592 2048
+p 2352 2174 100 0 0 DTYP:Soft Channel
+p 2240 1886 100 0 0 ONAM:1-IT Error
+p 2260 1644 100 0 0 PV:$(top)
+p 2240 1918 100 0 0 ZNAM:No IT Error
+p 2240 1664 100 1024 0 name:$(I)
+use ebis 2832 1952 100 0 FollErr
+xform 0 2880 1984
+p 2640 2110 100 0 0 DTYP:Soft Channel
+p 2528 1822 100 0 0 ONAM:1-Foll.Error
+p 2548 1580 100 0 0 PV:$(top)
+p 2528 1854 100 0 0 ZNAM:No Foll. Error
+p 2528 1600 100 1024 0 name:$(I)
+use ebis 2752 1600 100 0 PosLim
+xform 0 2800 1632
+p 2448 1470 100 0 0 ONAM:1-Stopped on Lim
+p 2468 1228 100 0 0 PV:$(top)
+p 2448 1502 100 0 0 ZNAM:not on Pos Lim.
+p 2448 1248 100 1024 0 name:$(I)
+use ebis 2528 864 100 0 assign
+xform 0 2576 896
+p 2224 734 100 0 0 ONAM:1-Cha assigned
+p 2244 268 100 0 0 PV:$(top)
+p 2224 766 100 0 0 ZNAM:Cha not assigned
+p 2224 512 100 1024 0 name:$(I)
+use ebis 1552 1136 100 0 EnHand
+xform 0 1600 1168
+p 1248 1006 100 0 0 ONAM:1-Handwheel ena.
+p 1268 764 100 0 0 PV:$(top)
+p 1248 1038 100 0 0 ZNAM:Handwheel disab.
+p 1248 784 100 1024 0 name:$(I)
+use ebis 1232 1648 100 0 LimDec
+xform 0 1280 1680
+p 928 1518 100 0 0 ONAM:1-No limit decel.
+p 948 1276 100 0 0 PV:$(top)
+p 928 1550 100 0 0 ZNAM:Abort Decelaration
+p 928 1296 100 1024 0 name:$(I)
+use ebis 1552 1456 100 0 dip
+xform 0 1600 1488
+p 1248 1326 100 0 0 ONAM:1-Dwell in progress
+p 1268 1084 100 0 0 PV:$(top)
+p 1248 1358 100 0 0 ZNAM:No Dwell
+p 1248 1104 100 1024 0 name:$(I)
+use ebis 1216 1520 100 0 DatErr
+xform 0 1280 1552
+p 928 1390 100 0 0 ONAM:1-Data Block Error
+p 948 1148 100 0 0 PV:$(top)
+p 928 1422 100 0 0 ZNAM:No Data Error
+p 928 1168 100 1024 0 name:$(I)
+use ebis 1552 1328 100 0 runmove
+xform 0 1600 1360
+p 1248 1198 100 0 0 ONAM:1-Move is running
+p 1268 956 100 0 0 PV:$(top)
+p 1248 1230 100 0 0 ZNAM:Move is stopped
+p 1248 976 100 1024 0 name:$(I)
+use ebis 1552 992 100 0 negLm
+xform 0 1600 1024
+p 1248 862 100 0 0 ONAM:1-Neg.Lim reached
+p 1268 620 100 0 0 PV:$(top)
+p 1248 894 100 0 0 ZNAM:Neg.Lim not reached
+p 1248 640 100 1024 0 name:$(I)
+use ebis 2544 1696 100 0 hmcmpl
+xform 0 2592 1728
+p 2240 1566 100 0 0 ONAM:1-Home Complete
+p 2260 1324 100 0 0 PV:$(top)
+p 2240 1598 100 0 0 ZNAM:Home not complete
+p 2240 1344 100 1024 0 name:$(I)
+use ebis 1232 1072 100 0 posLm
+xform 0 1280 1104
+p 928 942 100 0 0 ONAM:1-Pos.Lim reached
+p 948 700 100 0 0 PV:$(top)
+p 928 974 100 0 0 ZNAM:Pos.Lim not reached
+p 928 720 100 1024 0 name:$(I)
+use ebis 1232 1264 100 0 loop
+xform 0 1280 1296
+p 928 1134 100 0 0 ONAM:1-Open Loop Mode
+p 948 892 100 0 0 PV:$(top)
+p 928 1166 100 0 0 ZNAM:Loop is closed
+p 928 912 100 1024 0 name:$(I)
+use ebis 1552 1584 100 0 dvz
+xform 0 1600 1616
+p 1248 1454 100 0 0 ONAM:1-Desired Velo.0
+p 1268 1212 100 0 0 PV:$(top)
+p 1248 1486 100 0 0 ZNAM:Des.Velo. non 0
+p 1248 1232 100 1024 0 name:$(I)
+use ebis 2544 2336 100 0 inpos
+xform 0 2592 2368
+p 2240 2206 100 0 0 ONAM:1-In Position
+p 2260 1964 100 0 0 PV:$(top)
+p 2240 2238 100 0 0 ZNAM:Not In Position
+p 2240 1984 100 1024 0 name:$(I)
+use ebis 2544 1440 100 0 amp
+xform 0 2592 1472
+p 2240 1310 100 0 0 ONAM:1-Amp. Enabled
+p 2260 1068 100 0 0 PV:$(top)
+p 2240 1342 100 0 0 ZNAM:Amp. Disabled
+p 2240 1088 100 1024 0 name:$(I)
+use ebis 2560 2208 100 0 ffe
+xform 0 2592 2240
+p 2352 2366 100 0 0 DTYP:Soft Channel
+p 2240 2078 100 0 0 ONAM:1-Fatal Follow Error
+p 2260 1836 100 0 0 PV:$(top)
+p 2240 2110 100 0 0 ZNAM:No Fatal Follow Error
+p 2240 1856 100 1024 0 name:$(I)
+use ebis 1232 928 100 0 mactive
+xform 0 1280 960
+p 928 798 100 0 0 ONAM:1-Motor activated
+p 948 556 100 0 0 PV:$(top)
+p 928 830 100 0 0 ZNAM:Motor deactivated
+p 928 576 100 1024 0 name:$(I)
+use ebis 1216 1392 100 0 intmode
+xform 0 1280 1424
+p 928 1262 100 0 0 ONAM:1-Integration Mode
+p 948 1020 100 0 0 PV:$(top)
+p 928 1294 100 0 0 ZNAM:No Integration Mode
+p 928 1040 100 1024 0 name:$(I)
+use ebis 1248 1776 100 0 hip
+xform 0 1280 1808
+p 928 1646 100 0 0 ONAM:1-Home Search in Progress
+p 948 1404 100 0 0 PV:$(top)
+p 928 1678 100 0 0 ZNAM:No Home Search
+p 928 1424 100 1024 0 name:$(I)
+use ebis 2544 1888 100 0 trigmove
+xform 0 2592 1920
+p 2240 1758 100 0 0 ONAM:1-Trigger Move
+p 2260 1516 100 0 0 PV:$(top)
+p 2240 1790 100 0 0 ZNAM:No Trigger Move
+p 2240 1536 100 1024 0 name:$(I)
+use estatus 848 448 100 0 stat1
+xform 0 784 1504
+p 672 512 100 0 1 DTYP:PMAC-VME DPRAM
+p 768 2174 100 0 0 PINI:YES
+p 672 448 100 0 1 PV:$(top)
+p 672 544 100 0 1 SCAN:I/O Intr
+p 960 1296 75 1280 0 def(LK18):0.0
+p 672 480 100 0 1 name:$(I)
+p 1056 1296 75 1280 -1 palrm(LK18):MS
+p 1024 1296 75 1280 -1 pproc(LK18):NPP
+use estatus 2144 368 100 0 stat2
+xform 0 2064 1424
+p 1952 464 100 0 1 DTYP:PMAC-VME DPRAM
+p 2048 2094 100 0 0 PINI:YES
+p 1952 368 100 0 1 PV:$(top)
+p 1952 432 100 0 1 SCAN:I/O Intr
+p 2240 1216 75 1280 0 def(LK18):0.0
+p 1952 400 100 0 1 name:$(I)
+p 2336 1216 75 1280 -1 palrm(LK18):MS
+p 2304 1216 75 1280 -1 pproc(LK18):NPP
+use ecars 3328 2304 100 0 activeC
+xform 0 3392 2416
+p 3328 2208 100 0 1 PV:$(top)
+p 3328 2238 100 0 1 name:$(I)
+use egenSub 3344 1328 100 0 carsub
+xform 0 3392 1712
+p 3025 1061 100 0 0 FTA:LONG
+p 3025 1061 100 0 0 FTVA:LONG
+p 3312 1184 100 0 1 PV:$(top)
+p 3312 1248 100 0 1 SNAM:carsub
+p 3312 1216 100 0 1 name:$(I)
+p 3536 2058 75 0 -1 pproc(OUTA):PP
+use hwin 1144 2488 100 0 hwin#2
+xform 0 1216 2528
+p 1120 2560 100 0 -1 val(in):#C$(c) S0 @X:$D01B
+use hwin 1624 2424 100 0 hwin#41
+xform 0 1696 2464
+p 1584 2496 100 0 -1 val(in):#C$(c) S0 @Y:$D097
+[comments]

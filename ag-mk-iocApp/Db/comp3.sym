@@ -1,0 +1,21 @@
+[symbol2]
+bbox -544 96 -224 384
+port -336 176 100 0 FLNK symbol 2 -224 160 0
+port -480 176 100 0 SLNK symbol 1 -544 160 0
+uniq 6
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 75 0 0 -416 336 (3 axis
+l 75 0 0 -416 304 component)
+l 75 0 0 -416 320 generic
+l 100 6 0 -432 112 comp3
+r 0 -480 96 -288 384
+v 0 -288 160
+-224 160
+_
+v 0 -544 160
+-480 160
+_
+[comments]
