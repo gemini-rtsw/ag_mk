@@ -25,12 +25,10 @@
  *  ------
  *  Steven Beard  (smb@roe.ac.uk)
  *  Janet Tvedt   (tvedt@noao.edu)
- *  Ricardo Cardenes (rcardenes@gemini.edu)
  *
  *  HISTORY
  *  -------
  *  30.1.98	routines moved to this file from cicsLib.c	(ocf)
- *  26.2.18     changes to adapt the code to RTEMS/OSI          (rcardenes)
  *
  */
 /* *INDENT-OFF* */
@@ -62,9 +60,13 @@
 
 #include  <math.h>
 #include  <time.h>
-#include  <string.h>
+#include  <epicsStdioRedirect.h>
+#include  <registryFunction.h>
+#include  <epicsExport.h>
 #include  <epicsStdlib.h>
-#include  <epicsStdio.h>
+#include  <epicsEvent.h>
+#include  <epicsPrint.h>
+#include  <string.h>
 
 #include  <dbDefs.h>
 #include  <dbCommon.h>

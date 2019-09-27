@@ -12,14 +12,14 @@ long testLanProc2( void )
   FILE          *fd;
   double        numSecs;
   double        transRate;
-  unsigned long tickStart, tickEnd;
-  unsigned long sysclk;
   char   messages[80];		/* Message buffer */
 
   int  len;
   int  pos;
   int  space;
   char tempBuf[64];
+  epicsTimeStamp startTime;           /* system time at start of task     */
+  epicsTimeStamp currentTime;         /* system time right now            */
 
   pos = 0;
   for(;;)
@@ -35,17 +35,16 @@ long testLanProc2( void )
   }
 
   fd        = fopen("adda", "w+");
-  tickStart = tickGet();
+  epicsTimeGetCurrent(&startTime);
   fwrite( buf, 1, TRANSFER_FILE_SIZE, fd);
-  tickEnd   = tickGet();
+  epicsTimeGetCurrent(&currentTime);
   fclose(fd);
 
-  sysclk = sysClkRateGet();
+  numSecs = epicsTimeDiffInSeconds(&currentTime, &startTime); 
 
-  numSecs   = ((double)(tickEnd - tickStart))/sysclk;
   transRate = TRANSFER_FILE_SIZE/(1024.0 * numSecs);
 
-  sprintf(messages, "tickst=%ld, end=%ld, clk=%ld, sec=%6.3e, rate=%6.3e \n", tickStart, tickEnd, sysclk, numSecs, transRate); 
+  sprintf(messages, "sec=%6.3e, rate=%6.3e \n", numSecs, transRate); 
   printf ( messages);
 
   return (long)transRate;

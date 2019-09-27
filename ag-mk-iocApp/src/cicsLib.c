@@ -39,9 +39,8 @@
  *
  *  AUTHOR
  *  ------
- *  Steven Beard      (smb@roe.ac.uk)
- *  Janet Tvedt       (tvedt@noao.edu)
- *  Ricardo Cardenes  (rcardenes@gemini.edu)
+ *  Steven Beard  (smb@roe.ac.uk)
+ *  Janet Tvedt   (tvedt@noao.edu)
  *
  *  HISTORY
  *  -------
@@ -75,7 +74,6 @@
  *               "cadefs.h" in the same file..                       (smb)
  *  12-Aug-1997: Added check functions used by CAD functions.        (smb)
  *  30-Jan-1998: DBPut and DBGet moved to "DBLib.c"                  (ocf)
- *  22-Feb-2018: Refactor for RTEMS/EPICS-3.14   S                   (rcardenes)
  */
 /* *INDENT-OFF* */
 /*
@@ -107,12 +105,17 @@
 
 /* Global Constants */
 
+#include  <epicsStdioRedirect.h>
+#include  <registryFunction.h>
+#include  <epicsExport.h>
+#include  <epicsStdioRedirect.h>
+#include  <epicsStdlib.h>
+#include  <epicsEvent.h>
+#include  <epicsPrint.h>
 #include  <math.h>
 #include  <time.h>
 #include  <string.h>
 #include  <stdlib.h>
-#include  <epicsStdio.h>
-#include  <errlog.h>
 
 #include  <dbDefs.h>
 #include  <dbCommon.h>

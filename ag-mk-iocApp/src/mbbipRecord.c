@@ -55,8 +55,13 @@
  * .22  03-29-94        mcn     converted to fast links.
  */
 
-#include	<epicsStdio.h>
-#include	<ellLib.h>
+
+#include  <epicsStdioRedirect.h>
+#include  <registryFunction.h>
+#include  <epicsExport.h>
+#include  <epicsStdioRedirect.h>
+#include  <epicsStdlib.h>
+#include  <epicsEvent.h>
 #include	<string.h>
 #include	<recGbl.h>
 
@@ -76,18 +81,18 @@
 /* Create RSET - Record Support Entry Table*/
 #define report NULL
 #define initialize NULL
-static long init_record();
-static long process();
-static long  special();
+static long init_record(mbbipRecord *, int);
+static long process(mbbipRecord *);
+static long  special(DBADDR *, int);
 #define get_value NULL
 #define cvt_dbaddr NULL
 #define get_array_info NULL
 #define put_array_info NULL
 #define get_units NULL
 #define get_precision NULL
-static long get_enum_str();
-static long get_enum_strs();
-static long put_enum_str();
+static long get_enum_str(DBADDR *, char *);
+static long get_enum_strs(DBADDR *, struct dbr_enumStrs *);
+static long put_enum_str(DBADDR *, char *);
 #define get_graphic_double NULL
 #define get_control_double NULL
 #define get_alarm_double NULL
@@ -110,6 +115,7 @@ struct rset mbbipRSET={
 	get_graphic_double,
 	get_control_double,
 	get_alarm_double };
+epicsExportAddress(rset, mbbipRSET);
 
 struct mbbipdset { /* multi bit binary input dset */
 	long		number;
@@ -119,9 +125,9 @@ struct mbbipdset { /* multi bit binary input dset */
 	DEVSUPFUN	get_ioint_info;
 	DEVSUPFUN	read_mbbip;/*(0,2)=>(success, success no convert)*/
 };
-static void alarm();
-static void monitor();
-static long readValue();
+static void alarm(mbbipRecord *);
+static void monitor(mbbipRecord *);
+static long readValue(mbbipRecord *);
 
 static void init_common(pmbbip)
     struct mbbipRecord	*pmbbip;
@@ -388,13 +394,11 @@ static long readValue(pmbbip)
 	if (status)
 		return(status);
 
-	/* TODO: FIX THIS. WHAT IS 'NO' AND WHAT IS 'YES'? */
-	/*
-	if (pmbbip->simm == NO){
+	if (pmbbip->simm == FALSE){
 		status=(*pdset->read_mbbip)(pmbbip);
 		return(status);
 	}
-	if (pmbbip->simm == YES){
+	if (pmbbip->simm == TRUE){
 		status=dbGetLink(&(pmbbip->siol),DBR_USHORT,&(pmbbip->sval),0,0);
 		if (status==0){
 			pmbbip->val=pmbbip->sval;
@@ -406,7 +410,6 @@ static long readValue(pmbbip)
 		recGblSetSevr(pmbbip,SOFT_ALARM,INVALID_ALARM);
 		return(status);
 	}
-	*/
         recGblSetSevr(pmbbip,SIMM_ALARM,pmbbip->sims);
 
 	return(status);

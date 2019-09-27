@@ -13,13 +13,11 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth  (ocf)
- *  Ricardo Cardenes (rjc)
+ *  Olaf Frischmuth (ocf)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
- *  26-Feb-2018:        Adapted to RTEMS/OSI			(rjc)
  *
  */
 
@@ -610,7 +608,7 @@ long writelogfile (char* filename, char* mode, struct logsource *logsrc,
     args->logsrc = logsrc;
     args->wrtype = wrtype;
 
-    taskId = epicsThreadCreate(
+    taskId = epicsThreadMustCreate(
 		    taskname,
 		    priorityLow, // In vxWorks this was 75, and they intend it as a background task
 		    epicsThreadGetStackSize(epicsThreadStackSmall),
@@ -666,3 +664,22 @@ long testlog (int system)
       agprintf ("      &globstr = %d (%x) \n", (long)&globstr, (long)&globstr);
 */
 /* ====================================================================	*/
+epicsRegisterFunction(logging);
+
+static const iocshArg *agInitLogglobsArgs[] = { NULL };
+static const iocshFuncDef agInitLogglobsFuncDef = 
+         {"init_logglobs", 0, agInitLogglobsArgs};
+static void agInitLogglobsCallFunc(const iocshArgBuf *args)
+{
+   init_logglobs();
+}
+
+static void agRegisterInitLogglobsCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agInitLogglobsFuncDef, agInitLogglobsCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterInitLogglobsCommands);
+

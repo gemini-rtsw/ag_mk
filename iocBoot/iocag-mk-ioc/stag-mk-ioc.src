@@ -1,16 +1,127 @@
 $(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-ioc
 
-cd ${INSTALL}
+cd ${INSTALL_LOCATION}
+
+epicsEnvSet("IOCSH_PS1","$(IOCPROMPT)> ")
 
 ## Register all support components
 dbLoadDatabase("dbd/ag-mk-ioc.dbd")
-ag_mk_IOC_registerRecordDeviceDriver(pdbbase)
+ag_mk_ioc_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
 #dbLoadTemplate("db/ag-mk-ioc.substitutions")
 #dbLoadRecords("db/ag-mk-ioc.db", "user=rcardene")
+dbLoadRecords("db/iocAdminRTEMS.db"," IOC=$(AGTOP):iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
+dbLoadRecords("db/timeProbe.db","top=$(AGTOP):")
+dbLoadRecords("db/ag_top.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)")
+dbLoadRecords("db/ag_sadtop.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)")
+
+# Configure BANCOMM card
+# - set the bc635 Time Provider priority to something other than the default
+# or set it to a negative value to disable the bc635 Time Provider
+# Must be called before BCconfigure
+bc635TimeSetTpPrio (50)
+# - Master ? Simulate ? intPerSecond, intPerTick, timeOffset (microsec)
+BCconfigure (0, 1, 80, 1, 0)
+
+# configure pmac card:
+var drvPmacDebug 0
+# pmacConfig( cardNumber, addrBase, addrDpram, irqVector, irqLevel)
+pmacConfig(0, 0x7fa000, 0x700000, 0xa1, 6)
+pmacConfig(1, 0x7fa200, 0x704000, 0xa5, 6)
+
+#initialize A&G global variables
+init_globvars
+init_logglobs
+
+setsimuHRWFS(3)
+setsimuAG(3)
+#setdebugHRWFS(0)
+#setdebugAG(0)
+
+# Must be called after the setting of the preferred simu-level
+init_DPRam
+
+
+# Load the A&G sequencer records into this IOC
+dbLoadRecords("db/agSeqTop.db","ag=$(AGTOP):")
+dbLoadRecords("db/agSeqSadTop.db","ag=$(AGTOP):")
+
+# Load the OIWFS Gateway records into this IOC
+## Commented out because we don't use it (yet?) at MK
+dbLoadRecords("db/oiwfsgwTop.db","ag=$(AGTOP):")
+
+traceIocInit
 
 iocInit
 
+pvload "$(CFGFILE)/hrwfs.pv", "top=$(HRWFS):,    sadtop=$(HRWFS):"
+pvload "$(CFGFILE)/gbd.pv",   "top=$(AGTOP):,    sadtop=$(AGTOP):"
+pvload "$(CFGFILE)/pwfs1.pv", "top=$(AGTOP):p1:, sadtop=$(AGTOP):p1:"
+pvload "$(CFGFILE)/pwfs2.pv", "top=$(AGTOP):p2:, sadtop=$(AGTOP):p2:"
+
+pvload "$(AgSeqCFGFILE)/agSeq.pv",      "top=$(AGTOP):,    sadtop=$(AGTOP):"
+pvload "$(AgSeqCFGFILE)/agSeqPorts.pv", "top=$(AGTOP):,    sadtop=$(AGTOP):"
+pvload "$(AgSeqCFGFILE)/agSeqF2.pv",  "top=f2Sim:wfs:"
+pvload "$(AgSeqCFGFILE)/agSeqNici.pv",  "top=niciSim:wfs:"
+## NOTE, relevant at 2019/06/27 (rjc)
+##       The following is GNIRS. It's simulated in the legacy A&G.
+##       It probably never stopped being simulated when the
+##       instrument moved to MK. Leaving it like that because
+##       it's never used! (And to reproduce current behavior)
+pvload "$(AgSeqCFGFILE)/agSeqNirs.pv",  "top=nirsSim:wfs:"
+
+
+putmenustr
+
 ## Start any sequence programs
-#seq(sncxxx, "user=rcardene")
+#seq(sncxxx, "user=rrojas")
+
+seq &agcc, "top=$(HRWFS):cc:,   sadtop=$(HRWFS):cc:,  sys=sys"
+seq &agcc, "top=$(AGTOP):cc:,   sadtopb=$(AGTOP):cc:,  sys=sys"
+
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=cal"
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=fldstop"
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=ndfilter"
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=clfilter"
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=lens"
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=pimg"
+seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=focus"
+
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=ao"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=hw"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=sf"
+
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p1:fldstop"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p1:filter"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p1:focus"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p1:probe"
+
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p2:fldstop"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p2:filter"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p2:focus"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p2:probe"
+
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=RT2"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=Tilt"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=Lin2"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=PA3AO"
+
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p1:RT34"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p2:RT34"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p1:PA34"
+seq &comp1, "top=$(AGTOP):,  sadtop=$(AGTOP):,   sys=cc:, mech=p2:PA34"
+
+seq &timeSeq "sys=$(HRWFS):cc:"
+
+# Disables the mechanisms not connected to the system, which are contained
+# in the following script
+pvload "$(CFGFILE)/disa_mech.pv", "top=$(HRWFS):, top1=$(HRWFS):cc:, mech=pimg"
+
+putsadlims
+
+dbpf "$(AGTOP):selectOiwfs.SELN","1"
+
+# Trigger setup of Flexure Coefficients
+dbpf "$(AGTOP):p1:flex.PROC","1"
+dbpf "$(AGTOP):p2:flex.PROC","1"

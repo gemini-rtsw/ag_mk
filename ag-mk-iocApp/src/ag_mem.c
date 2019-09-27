@@ -13,13 +13,11 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth  (ocf)
- *  Ricardo Cardenes (rjc)
+ *  Olaf Frischmuth (ocf)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
- *  23-Feb-2018:        Fix some warnings                       (rjc)
  *
  */
 

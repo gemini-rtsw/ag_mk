@@ -47,13 +47,11 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth  (ocf)
- *  Ricardo Cardenes (rjc)
- *
+ *  Olaf Frischmuth (ocf)
+ * 
  *  HISTORY
  *  -------
  *  22-Mar-1998: Initial version				(ocf)
- *  27-Feb-2018: Adapted to RTEMS/OSI				(rjc)
  *
  */
 
@@ -821,5 +819,15 @@ long CADlogg( struct cadRecord *pcad )
   return status;
 }				/* CADLogg */
 
-
 /* ====================================================================	*/
+
+epicsRegisterFunction(CADfollow);
+epicsRegisterFunction(CADtolerance);
+epicsRegisterFunction(CADflip);
+epicsRegisterFunction(CADsetOrient);
+epicsRegisterFunction(followsub);
+epicsRegisterFunction(CADunwrap);
+epicsRegisterFunction(CADlogg);
+epicsRegisterFunction(CADtoleranceInit);
+epicsRegisterFunction(CADsetOrientInit);
+epicsRegisterFunction(CADloggInit);

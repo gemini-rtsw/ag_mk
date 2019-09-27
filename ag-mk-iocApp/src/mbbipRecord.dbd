@@ -619,9 +619,9 @@ recordtype(mbbip) {
 }
 device(mbbip,CONSTANT,devMbbiSoft,"Soft Channel")
 device(mbbip,CONSTANT,devMbbiSoftRaw,"Raw Soft Channel")
-device(mbbip,CONSTANT,devMbbiTestAsyn,"Test Asyn")
-device(mbbip,INST_IO,devMbbiSymb,"vxWorks Variable")
-device(mbbip,INST_IO,devMbbiSymbRaw,"Raw vxWorks Variable")
+#device(mbbip,CONSTANT,devMbbiTestAsyn,"Test Asyn")
+#device(mbbip,INST_IO,devMbbiSymb,"vxWorks Variable")
+#device(mbbip,INST_IO,devMbbiSymbRaw,"Raw vxWorks Variable")
 device(mbbip,VME_IO,devMbbiXy240,"XYCOM-240")
 device(mbbip,VME_IO,devPmacMbxMbbi,"PMAC-VME ASCII")
 device(mbbip,VME_IO,devPmacRamMbbi,"PMAC-VME DPRAM")

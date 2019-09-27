@@ -301,7 +301,8 @@ int main(int argc, char *argv[])
 {
   FILE   *fd, *fd2;
   char   *buf;
-  char   *str, str2, *strsic=NULL, *test, *test2;
+  char   *str, *strsic=NULL, *test, *test2;
+  long   str2;
   long   numRead;
   int    i,j;
   int    size, samplesize;
@@ -350,7 +351,7 @@ int main(int argc, char *argv[])
 
         str2 = findstr (str, "types=", 200);     
 	str += (str2 + strlen ("types="));
-	printf("fsize=%ld, 'types=' found before offset %d, str2=%d \n", numRead, str-buf, str2);
+	printf("fsize=%ld, 'types=' found before offset %d, str2=%ld \n", numRead, str-buf, str2);
     
 	samplesize = 0;
     

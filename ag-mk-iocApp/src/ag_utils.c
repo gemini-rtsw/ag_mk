@@ -37,17 +37,15 @@
  *  record properties
  *
  *  AUTHOR
- *  Olaf (Claus) Frischmuth   (ocf)
- *  Ricardo (Javier) Cardenes (rjc)
+ *  Olaf (Claus) Frischmuth (ocf)
  *
  *  HISTORY
  *  24-Feb-1998: Original version, some functions taken from the CICS.   (ocf)
- *  26-Feb-2018: Changes to adapt to RTEMS/OSI. Modified some commented
- *               code in doPLCcomm to include it conditionally, instead  (rjc)
  */
 
 
 #include  <ag_define.h>		/* names for mechanisms */
+#include  <iocsh.h> 
 #include  "agSimulate.h"
 #include  <slalib.h>
 #include  <dbAccess.h>
@@ -624,10 +622,10 @@ long query_cadname (char *string)
   /* char messages[120]; */    /* Message buffer */
   long i;
  
-  for (i = 0; i < MAX_INDEX; i++)
+  for (i = 0; i < MAX_INDEX; i++) {
     if (strncmp (string, mechstrs[i], strlen(mechstrs[i])) == 0)
       break;					/* stop for-loop */
-
+  }
   if (i >= MAX_INDEX) {
     if (strncmp (string, ag_p1_str, strlen(ag_p1_str)) == 0)
       i=p1_probe;
@@ -851,10 +849,11 @@ long  putlogmenustr (void)
   {
     sprintf (recordname, "%slog", (j==0)? ag_p1_str : ag_p2_str);
 
-    for (i=0; i<MAXLOGSET; i++)
-    /* if (logmenustrs [j][i][0] != 0) */
-      putlogstr (((j==0)? p1_probe : p2_probe),  recordname, logmenustrs[j][i], i);
-    /* else  break; */
+    for (i=0; i<MAXLOGSET; i++) {
+      if (logmenustrs [j][i][0] != 0) 
+          putlogstr (((j==0)? p1_probe : p2_probe),  recordname, logmenustrs[j][i], i);
+      /* else  break; */ 
+    }
   }
   return (0);
 }
@@ -985,11 +984,11 @@ long  updatemenustr (int mechindex)
     if ((strcmp (menustrs[mechindex][i], datumstr) != 0) &&
 	(strcmp (menustrs[mechindex][i], parkstr)  != 0) &&
 	(strcmp (menustrs[mechindex][i], hiddenstr)!= 0) &&  
-	(menustrs [mechindex][i][0] 		   != 0) ) 
-      putstr (mechindex, mechstrs[mechindex], menustrs[mechindex][i], j++);
-    else{
+	(menustrs [mechindex][i][0] 		   != 0) ) {
+           putstr (mechindex, mechstrs[mechindex], menustrs[mechindex][i], j++);
+    } else {
         if (menustrs [mechindex][i][0]  == 0) 
-           printf("line 1000, i = %i\n",i);
+           /* printf("updatemenustr: line 1000, i = %i\n",i) */;
     }
 
   for (i=0 ; i<MAX_LUTpcnt; i++)
@@ -1022,21 +1021,18 @@ long  putstr (int mechindex, char *recordstr, char *valuestr, int i)
 {
   char messages[80];     /* Message buffer */
   char errMess[MAX_STRING_SIZE];
-  char putstr [MAX_STRING_SIZE];
+  char putstrBuff [MAX_STRING_SIZE];
   long status=0;
 
 #if 0
   if (valuestr[0]) 	/* non-empty string?  */
   {			/* recordstr = mechstrs[mechindex] ! 	*/
 #endif
-/*      sprintf (putstr, "%sMenu.%s", recordstr, mbbistr(i));*/
 if (i <=15) {
-      sprintf (putstr, "%sMenu.%s", recordstr, mbbistr(i));
-/*      printf("putstr = %s, i = %i \n",putstr, i); */
+      sprintf (putstrBuff, "%sMenu.%s", recordstr, mbbistr(i));
 } else {
-      sprintf (putstr, "%sMenu2.%s", recordstr, mbbistr(i-16));
+      sprintf (putstrBuff, "%sMenu2.%s", recordstr, mbbistr(i-16));
       /* sprintf (putstr, "agTest:sfMenu2.%s", mbbistr(i-16));*/
-      /*printf("putstr = %s, i = %i \n",putstr, i); */
 }
       
 	#if EXTRADEBUG
@@ -1045,9 +1041,9 @@ if (i <=15) {
   	/*  agLogMessage( mechindex, DEB_ERROR,  messages);	*/
 	#endif
 
-      if ((status = cicsDbPut(putstr, errMess, DBF_STRING, valuestr)))
+      if ((status = cicsDbPut(putstrBuff, errMess, DBF_STRING, valuestr)))
       {
-        sprintf( messages, "%14s -\t DBPut %10s \t-> %s failed, i=%d", recordstr, valuestr, putstr, i); 
+        sprintf( messages, "putstr: %14s -\t DBPut %10s \t-> %s failed, i=%d", recordstr, valuestr, putstrBuff, i); 
         agprintf ( "%s\n", messages );
         /* agLogMessage( mechindex, DEB_ERROR,  messages); */
       }
@@ -1755,3 +1751,95 @@ long encoderOff( genSubRecord *pgsub )
     encoderSwitch(0);
   return 0;
 }
+epicsRegisterFunction(encoderStatus);
+epicsRegisterFunction(encoderOff);
+
+static const iocshArg agSetSimuLevelArg0 = {"Simulation level", iocshArgInt };
+static const iocshArg *agSetSimuLevelArgs[] = { &agSetSimuLevelArg0 };
+static const iocshFuncDef agSetSimuLevelFuncDef = 
+         {"setsimuAG", 1, agSetSimuLevelArgs};
+static void agSetSimuLevelCallFunc(const iocshArgBuf *args)
+{
+   setsimuAG(args[0].ival);
+}
+
+static void agRegisterSimCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agSetSimuLevelFuncDef, agSetSimuLevelCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterSimCommands);
+
+
+static const iocshArg *agInitDPRArgs[] = { NULL };
+static const iocshFuncDef agInitDPRFuncDef = 
+         {"init_DPRam", 0, agInitDPRArgs};
+static void agInitDPRCallFunc(const iocshArgBuf *args)
+{
+   init_DPRam();
+}
+
+static void agRegisterInitDPRCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agInitDPRFuncDef, agInitDPRCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterInitDPRCommands);
+
+
+static const iocshArg hrSetSimuLevelArg0 = {"Simulation level", iocshArgInt };
+static const iocshArg *hrSetSimuLevelArgs[] = { &hrSetSimuLevelArg0 };
+static const iocshFuncDef hrSetSimuLevelFuncDef = 
+         {"setsimuHRWFS", 1, hrSetSimuLevelArgs};
+static void hrSetSimuLevelCallFunc(const iocshArgBuf *args)
+{
+   setsimuHRWFS(args[0].ival);
+}
+
+static void hrRegisterSimCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&hrSetSimuLevelFuncDef, hrSetSimuLevelCallFunc);
+   }
+}
+epicsExportRegistrar(hrRegisterSimCommands);
+
+
+static const iocshArg *agPutMenuStrArgs[] = { NULL };
+static const iocshFuncDef agPutMenuStrFuncDef = 
+         {"putmenustr", 0, agPutMenuStrArgs};
+static void agPutMenuStrCallFunc(const iocshArgBuf *args)
+{
+   putmenustr();
+}
+
+static void agRegisterPutMenuStrCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agPutMenuStrFuncDef, agPutMenuStrCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterPutMenuStrCommands);
+
+static const iocshArg *agPutSadLimsArgs[] = { NULL };
+static const iocshFuncDef agPutSadLimsFuncDef = 
+         {"putsadlims", 0, agPutSadLimsArgs};
+static void agPutSadLimsCallFunc(const iocshArgBuf *args)
+{
+   putsadlims();
+}
+
+static void agRegisterPutSadLimsCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agPutSadLimsFuncDef, agPutSadLimsCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterPutSadLimsCommands);

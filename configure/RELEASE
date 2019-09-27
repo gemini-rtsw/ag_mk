@@ -28,7 +28,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 PRODSUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
 WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
-TESTSUPP=/home/rcardene/work/support
+TESTSUPP=/gem_sw/test/rcar/AG/support
 
 # Variables and paths to dependent modules:
 #MODULES = /path/to/modules
@@ -37,17 +37,23 @@ TESTSUPP=/home/rcardene/work/support
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
-BANCOMM=$(PRODSUPP)/bancomm/1-6-8
-IOCSTATS=$(PRODSUPP)/iocStats/3-1-14-4
-GEMREC=$(PRODSUPP)/geminiRec/4-1-6
+BANCOMM=$(TESTSUPP)/bancomm
+IOCSTATS=$(TESTSUPP)/iocStats
+GEMREC=$(TESTSUPP)/geminiRec
 SNCSEQ=$(PRODSUPP)/seq/2-2-3-2
-GEMUTILS=$(PRODSUPP)/gemUtil/1-5
-AUTOSAVE=$(PRODSUPP)/autosave/5-7-1-2
-# PMAC=$(PRODSUPP)/pmaclib/1-1-5
-TIMELIB=$(PRODSUPP)/timelib/1-9-13
-SLALIB=$(PRODSUPP)/slalib/1-9-7
-TCSLIB=$(PRODSUPP)/tcslib/1-0-6
+GEMUTILS=$(TESTSUPP)/gemUtil
+AUTOSAVE=$(TESTSUPP)/autosave
+# PMAC=$(TESTSUPP)/pmaclib/1-1-5
+TIMELIB=$(TESTSUPP)/timelib
+SLALIB=$(TESTSUPP)/slalib
+TCSLIB=$(TESTSUPP)/tcslib
 PMAC=$(TESTSUPP)/pmaclib
+PROBE=$(TESTSUPP)/timeProbe
+XYCOM=$(TESTSUPP)/xycom
+PVLOAD=$(PRODSUPP)/pvload/1-1-3
+AGSEQ=$(TESTSUPP)/agSeq
+## Not relevant for MK
+OIWFSGW=$(TESTSUPP)/oiwfsgw
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
 EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base

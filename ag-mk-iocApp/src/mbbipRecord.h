@@ -1,4 +1,15 @@
-#include "epicsMutex.h"
+#include "dbDefs.h"
+#include "epicsPrint.h"
+#include "alarm.h"
+#include "dbAccess.h"
+#include "dbEvent.h"
+#include "dbFldTypes.h"
+#include "devSup.h"
+#include "errMdef.h"
+#include "menuSimm.h"
+#include "recSup.h"
+#include "recGbl.h"
+#include "special.h"
 #include "ellLib.h"
 #include "link.h"
 #include "tsDefs.h"
@@ -272,7 +283,7 @@ typedef struct mbbipRecord {
 #define mbbipRecordSIMS	131
 #endif /*INCmbbiH*/
 #ifdef GEN_SIZE_OFFSET
-int agmbbiRecordSizeOffset(dbRecordType *pdbRecordType)
+int mbbipRecordSizeOffset(dbRecordType *pdbRecordType)
 {
   mbbipRecord *prec = 0;
   pdbRecordType->papFldDes[0]->size=sizeof(prec->name);
@@ -542,4 +553,5 @@ int agmbbiRecordSizeOffset(dbRecordType *pdbRecordType)
     pdbRecordType->rec_size = sizeof(*prec);
     return(0);
 }
+epicsExportRegistrar(mbbipRecordSizeOffset);
 #endif /*GEN_SIZE_OFFSET*/

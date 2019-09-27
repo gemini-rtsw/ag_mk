@@ -57,10 +57,9 @@
  *
  *   AUTHOR
  *   ------
- *   Steven Beard     (smb, smb@roe.ac.uk)
- *   Olaf Frischmuth  (ocf, frischmuth@goepel.com)
- *   Ricardo Cardenes (rjc, rcardenes@gemini.edu)
- *
+ *   Steven Beard    (smb, smb@roe.ac.uk)
+ *   Olaf Frischmuth (ocf, frischmuth@goepel.com)
+ * 
  *   HISTORY
  *   -------
  *   28-Mar-1996: Original version with just CADSelect.              (smb)
@@ -104,7 +103,6 @@
  *		  but without LUT-access			     (ocf)
  *   22-Jul-1997: Several CAD routines added and changed.
  *		  Utility routines added.			     (ocf)
- *   27-Feb-2018: Adapted to RTEMS/OSI				     (rjc)
  *
  */
 
@@ -1129,10 +1127,10 @@ long CADDefine( struct cadRecord *pcad )
 	    LUTplusPos[mechindex][count][2] = currpos[mechindex][2];
 	    LUTpluscount [mechindex]++;
 
-	    taskId = epicsThreadCreate(
+	    taskId = epicsThreadMustCreate(
 			    pcad->name,
-			    priorityMedium, // In vxWorks this was 45
-			    epicsThreadGetStackSize(epicsThreadStackSmall),
+			    epicsThreadPriorityMedium, // In vxWorks this was 45
+			    epicsThreadGetStackSize(epicsThreadStackBig),
 			    (EPICSTHREADFUNC)updatemenustr,
 			    (void *)mechindex
 			    );
@@ -1738,3 +1736,12 @@ long CAD_default (struct cadRecord  *pcad, long *pstatus)
 
 /* ===================================================================== */
 /* ===================================================================== */
+epicsRegisterFunction(CADPark);
+epicsRegisterFunction(CADDatum);
+epicsRegisterFunction(CADSel);
+epicsRegisterFunction(CADTest);
+epicsRegisterFunction(CADMove);
+epicsRegisterFunction(CADStop);
+epicsRegisterFunction(CADDefine);
+epicsRegisterFunction(PDsub);
+epicsRegisterFunction(CADEng);

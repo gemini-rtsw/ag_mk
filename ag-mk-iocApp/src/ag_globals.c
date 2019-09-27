@@ -95,7 +95,7 @@ long   LUTplusPos  [MAX_INDEX][MAX_LUTpcnt][3];	/* up to 3 dims	*/
 long   LUTpluscount[MAX_INDEX];
 char   logmenustrs [2][MAXLOGSET][MENUSTRSIZE];	/* max.30 strings a' 20 per logger */
 
-word *pDP1, *pDP2;			/* for tests of DPRam only	*/
+/* word *pDP1, *pDP2; */			/* for tests of DPRam only	*/
 
 
 /*==========================================================================*/
@@ -107,8 +107,8 @@ int i, j;
 
 debugMode[0] = debugMode[0] = DEB_FULL;
 
-pDP1 = (word*)pmacRamAddr (0, 0xd000);	/* Access to DPRAM with pDP[44].. */
-pDP2 = (word*)pmacRamAddr (1, 0xd000);
+/* pDP1 = (word*)pmacRamAddr (0, 0xd000); */	/* Access to DPRAM with pDP[44].. */
+/* pDP2 = (word*)pmacRamAddr (1, 0xd000); */
 
 /*==========================================================================*/
 
@@ -511,4 +511,23 @@ ForPar [p2_probe]       [6] = 400.0;                    /* Probe arm /mm */
 
 return 0;
 }			/* init_globvars */
+
+static const iocshArg *agInitGlobvarsArgs[] = { NULL };
+static const iocshFuncDef agInitGlobvarsFuncDef = 
+         {"init_globvars", 0, agInitGlobvarsArgs};
+static void agInitGlobvarsCallFunc(const iocshArgBuf *args)
+{
+   init_globvars();
+}
+
+static void agRegisterInitGlobvarsCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agInitGlobvarsFuncDef, agInitGlobvarsCallFunc);
+      firstTime = 0;
+   }
+}
+epicsExportRegistrar(agRegisterInitGlobvarsCommands);
+
 
