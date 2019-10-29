@@ -13,28 +13,38 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth  (ocf)
- *  Ricardo Cardenes (rjc)
+ *  Olaf Frischmuth (ocf)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
  *  08-Dec-2000:        Remove all unnecessary declarations     (cjm)
- *  22-Feb-2018:        Made changes adapting to RTEMS/OSI      (rjc)
  */
 
 /* ===================================================================== */
 
+#include  <epicsStdioRedirect.h>
+#include  <registryFunction.h>
+#include  <epicsExport.h>
+#include  <epicsStdioRedirect.h>
+#include  <epicsStdlib.h>
+#include  <epicsEvent.h>
+#include  <epicsPrint.h>
 #include  <ctype.h>
 #include  <math.h>
 #include  <string.h>
-// #include  <taskLib.h>
-// #include  <tickLib.h>
 #include  <time.h>
-#include  <epicsExit.h>
-#include  <epicsStdlib.h>
-#include  <epicsStdio.h>
-#include  <devLibVME.h>
+#include  <iocsh.h>
+/* #include  <db_access.h> */
+#include  <dbBase.h>
+#include  <dbAddr.h>
+#include  <recGbl.h>
+#include  <shareLib.h>
+#include  <dbFldTypes.h>
+#include  <dbDefs.h>
+#include  <dbAccessDefs.h>
+
+#include  <unistd.h>
 
 #include  <dbEvent.h>
 #include  <dbDefs.h>
@@ -44,6 +54,7 @@
 
 #include  <genSubRecord.h>
 #include  <menuCarstates.h>
+#include <subRecord.h>
 #include  <cadRecord.h>
 #include  <cad.h>
 #include  <sirRecord.h>
@@ -54,18 +65,7 @@
 #include  <slamac.h>
 #include  <timesys.h>
 #include  <bc635.h>
-#ifdef ERROR
-# undef ERROR
-# undef OK
-#endif
 #include  <drvPmac.h>
-#ifdef ERROR
-# undef ERROR
-# undef OK
-#endif
-
-#define ERROR (-1)
-#define OK    0
 
 /* ===================================================================== */
 /* The following are compiler switches used in different a&G files to control
@@ -193,13 +193,13 @@ int bc635_event 	(double *prval);
 
 /* from pmacvme.h	*/
 extern volatile short 		*pmacRamAddr(int ctlr,int offset);		
-extern long pmacRamGetHree  ( volatile short * pDpram, long *pVal );
-extern long pmacRamPutHree  ( volatile short * pDpram, long   val );
-extern long pmacRamGetXree  ( volatile short * pDpram, long *pVal );
-extern long pmacRamPutXree  ( volatile short * pDpram, long   val );
-extern long pmacRamGetDPree ( volatile short * pDpram, long *pVal );
-extern long pmacRamPutDPree ( volatile short * pDpram, long   val );
-extern long  pmacRamGetD    ( volatile short * pDpram, double*pVal);
+extern long pmacRamGetH  ( volatile short * pDpram, long *pVal );
+extern long pmacRamPutH  ( volatile short * pDpram, long   val );
+extern long pmacRamGetX  ( volatile short * pDpram, long *pVal );
+extern long pmacRamPutX  ( volatile short * pDpram, long   val );
+extern long pmacRamGetDP ( volatile short * pDpram, long *pVal );
+extern long pmacRamPutDP ( volatile short * pDpram, long   val );
+extern long  pmacRamGetD ( volatile short * pDpram, double*pVal);
 
 
 /* ===================================================================== */
@@ -241,11 +241,13 @@ extern long  pmacRamGetD    ( volatile short * pDpram, double*pVal);
           (pmacRamAddr ((card),	\
 	  limit( (((pmacaddr)-0xd000)<<2) + (offset), 0, 0x3FFF) ))
 
+/*
 #define pmacRamGetX  				pmacRamGetXree  
 #define pmacRamGetDP  				pmacRamGetDPree  
 #define pmacRamPutH  				pmacRamPutHree  
 #define pmacRamPutX  				pmacRamPutXree  
-#define pmacRamPutDP  				pmacRamPutDPree  
+#d#efine pmacRamPutDP  				pmacRamPutDPree  
+*/
 
 #define getDPRam(pmacaddr,card,offset) \
   (((long)*(short*)pmac2hostaddr (card, pmacaddr, offset)) & 0xffff)
@@ -443,90 +445,100 @@ extern long  pmacRamGetD    ( volatile short * pDpram, double*pVal);
 
 /* ===================================================================== */
 
-#define pimg_str		"hrwfs:pimg"
-#define lens_str 		"hrwfs:lens"
-#define clfilter_str 		"hrwfs:clfilter"
-#define ndfilter_str 		"hrwfs:ndfilter"
-#define fldstop_str		"hrwfs:fldstop"
-#define cal_str			"hrwfs:cal"
-#define focus_str		"hrwfs:focus"
+/*
+ * Stringfy TOP_AG and TOP_HRWFS and Concatenate them to strings
+ * to get the right ${top}
+ */
+#define STRINGIFY(s) #s
+#define CONCAT_TOP(top, field) (STRINGIFY(top) field)
 
-#define ag_sf_str		"ag:sf"
-#define ag_hw_str		"ag:hw"
-#define ag_ao_str		"ag:ao"
+#define AG_TOP(field)  CONCAT_TOP(TOP_AG, field)
+#define HRWFS_TOP(field) CONCAT_TOP(TOP_HRWFS, field)
 
-#define p1_probe_str		"ag:p1:probe"
-#define p1_focus_str		"ag:p1:focus"
-#define p1_filter_str		"ag:p1:filter"
-#define p1_fldstop_str		"ag:p1:fldstop"
+#define pimg_str		HRWFS_TOP(":pimg")
+#define lens_str 		HRWFS_TOP(":lens")
+#define clfilter_str 		HRWFS_TOP(":clfilter")
+#define ndfilter_str 		HRWFS_TOP(":ndfilter")
+#define fldstop_str		HRWFS_TOP(":fldstop")
+#define cal_str			HRWFS_TOP(":cal")
+#define focus_str		HRWFS_TOP(":focus")
 
-#define p2_probe_str		"ag:p2:probe"
-#define p2_focus_str		"ag:p2:focus"
-#define p2_filter_str		"ag:p2:filter"
-#define p2_fldstop_str		"ag:p2:fldstop"
+#define ag_sf_str		AG_TOP(":sf")
+#define ag_hw_str		AG_TOP(":hw")
+#define ag_ao_str		AG_TOP(":ao")
 
-#define hrwfs_cc_str		"hrwfs:cc:"
-#define ag_cc_str		"ag:cc:"
+#define p1_probe_str		AG_TOP(":p1:probe")
+#define p1_focus_str		AG_TOP(":p1:focus")
+#define p1_filter_str		AG_TOP(":p1:filter")
+#define p1_fldstop_str		AG_TOP(":p1:fldstop")
 
-#define ag_p1_str		"ag:p1:"
-#define ag_p2_str		"ag:p2:"
+#define p2_probe_str		AG_TOP(":p2:probe")
+#define p2_focus_str		AG_TOP(":p2:focus")
+#define p2_filter_str		AG_TOP(":p2:filter")
+#define p2_fldstop_str		AG_TOP(":p2:fldstop")
+
+#define hrwfs_cc_str		HRWFS_TOP(":cc:")
+#define ag_cc_str		AG_TOP(":cc:")
+
+#define ag_p1_str		AG_TOP(":p1:")
+#define ag_p2_str		AG_TOP(":p2:")
 
 
-#define pimg_sadstr		"hrwfs:pimg"
-#define lens_sadstr 		"hrwfs:lens"
-#define clfilter_sadstr 	"hrwfs:clfilter"
-#define ndfilter_sadstr 	"hrwfs:ndfilter"
-#define fldstop_sadstr		"hrwfs:fldstop"
-#define cal_sadstr		"hrwfs:cal"
-#define focus_sadstr		"hrwfs:focus"
+#define pimg_sadstr		HRWFS_TOP(":pimg")
+#define lens_sadstr 		HRWFS_TOP(":lens")
+#define clfilter_sadstr 	HRWFS_TOP(":clfilter")
+#define ndfilter_sadstr 	HRWFS_TOP(":ndfilter")
+#define fldstop_sadstr		HRWFS_TOP(":fldstop")
+#define cal_sadstr		HRWFS_TOP(":cal")
+#define focus_sadstr		HRWFS_TOP(":focus")
 
-#define ag_sf_sadstr		"ag:sf"
-#define ag_hw_sadstr		"ag:hw"
-#define ag_ao_sadstr		"ag:ao"
+#define ag_sf_sadstr		AG_TOP(":sf")
+#define ag_hw_sadstr		AG_TOP(":hw")
+#define ag_ao_sadstr		AG_TOP(":ao")
 
-#define p1_probe_sadstr		"ag:p1:probe"
-#define p1_focus_sadstr		"ag:p1:focus"
-#define p1_filter_sadstr	"ag:p1:filter"
-#define p1_fldstop_sadstr	"ag:p1:fldstop"
+#define p1_probe_sadstr		AG_TOP(":p1:probe")
+#define p1_focus_sadstr		AG_TOP(":p1:focus")
+#define p1_filter_sadstr	AG_TOP(":p1:filter")
+#define p1_fldstop_sadstr	AG_TOP(":p1:fldstop")
 
-#define p2_probe_sadstr		"ag:p2:probe"
-#define p2_focus_sadstr		"ag:p2:focus"
-#define p2_filter_sadstr	"ag:p2:filter"
-#define p2_fldstop_sadstr	"ag:p2:fldstop"
+#define p2_probe_sadstr		AG_TOP(":p2:probe")
+#define p2_focus_sadstr		AG_TOP(":p2:focus")
+#define p2_filter_sadstr	AG_TOP(":p2:filter")
+#define p2_fldstop_sadstr	AG_TOP(":p2:fldstop")
 
-#define hrwfs_cc_sadstr		"hrwfs:cc:"
-#define ag_cc_sadstr		"ag:cc:"
+#define hrwfs_cc_sadstr		HRWFS_TOP(":cc:")
+#define ag_cc_sadstr		AG_TOP(":cc:")
 
-#define ag_p1_sadstr		"ag:p1:"
-#define ag_p2_sadstr		"ag:p2:"
+#define ag_p1_sadstr		AG_TOP(":p1:")
+#define ag_p2_sadstr		AG_TOP(":p2:")
 
 
 /* definitions for recognizing of the motor names (low level mechanisms)  */
 
-#define p1_RT4_str		"ag:p1:RT34"
-#define p1_PA4_str		"ag:p1:PA34"
+#define p1_RT4_str		AG_TOP(":p1:RT34")
+#define p1_PA4_str		AG_TOP(":p1:PA34")
 
-#define p2_RT3_str		"ag:p2:RT34"
-#define p2_PA3_str		"ag:p2:PA34"
+#define p2_RT3_str		AG_TOP(":p2:RT34")
+#define p2_PA3_str		AG_TOP(":p2:PA34")
 
-#define ag_RT2_str		"ag:RT2"
-#define ag_Tilt_str		"ag:Tilt"
-#define ag_Lin2_str		"ag:Lin2"
+#define ag_RT2_str		AG_TOP(":RT2")
+#define ag_Tilt_str		AG_TOP(":Tilt")
+#define ag_Lin2_str		AG_TOP(":Lin2")
 
-#define ag_PA3AO_str		"ag:PA3AO"
+#define ag_PA3AO_str		AG_TOP(":PA3AO")
 
 
-#define p1_RT4_sadstr		"ag:p1:RT34"
-#define p1_PA4_sadstr		"ag:p1:PA34"
+#define p1_RT4_sadstr		AG_TOP(":p1:RT34")
+#define p1_PA4_sadstr		AG_TOP(":p1:PA34")
 
-#define p2_RT3_sadstr		"ag:p2:RT34"
-#define p2_PA3_sadstr		"ag:p2:PA34"
+#define p2_RT3_sadstr		AG_TOP(":p2:RT34")
+#define p2_PA3_sadstr		AG_TOP(":p2:PA34")
 
-#define ag_RT2_sadstr		"ag:RT2"
-#define ag_Tilt_sadstr		"ag:Tilt"
-#define ag_Lin2_sadstr		"ag:Lin2"
+#define ag_RT2_sadstr		AG_TOP(":RT2")
+#define ag_Tilt_sadstr		AG_TOP(":Tilt")
+#define ag_Lin2_sadstr		AG_TOP(":Lin2")
 
-#define ag_PA3AO_sadstr		"ag:PA3AO"
+#define ag_PA3AO_sadstr		AG_TOP(":PA3AO")
 
 #define dummy_str		"dummy"
 

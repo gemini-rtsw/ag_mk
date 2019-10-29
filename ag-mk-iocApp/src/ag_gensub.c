@@ -44,12 +44,10 @@
  *  AUTHOR
  *  ------
  *  Olaf Frischmuth
- *  Ricardo Cardenes
  *
  *  HISTORY
  *  -------
  *  24-June-1997: Original version 			(ocf)
- *  27-Feb-2018: Adapted to RTEMS/OSI			(rjc)
  */
 /* *INDENT-OFF* */
 /*
@@ -149,7 +147,6 @@
 
 #include <ag_define.h>
 #include "agSimulate.h"
-#include <cadef.h>
 
 /* LUT's */
 char lutstring[26][MAX_STRING_SIZE] =
@@ -1554,7 +1551,7 @@ long managelut( struct genSubRecord *pgsub )
     case 1:
       asklut(pgsub);                             /* ask lut, put strings */
 
-      taskId = epicsThreadCreate(
+      taskId = epicsThreadMustCreate(
 		      pgsub->name,
 		      priorityMedium, // In vxWorks this was 45
 		      epicsThreadGetStackSize(epicsThreadStackSmall),
@@ -1945,37 +1942,56 @@ if (getsimu(mechindex)==SIM_NONE) {
 
   if (mechindex == p1_fldstop) {
 
-    status=cicsDbGet("ag:p1:fldstop:demand.VAL",errmsg,DBF_LONG,&outVal);
-    status=cicsDbGet("ag:p1:fldstopState.VAL",errmsg,DBF_STRING,response);
-    status=cicsDbGet("ag:p1:fldstopName.VAL",errmsg,DBF_STRING,fldName);
+    status=cicsDbGet(AG_TOP(":p1:fldstop:demand.VAL"),errmsg,DBF_LONG,&outVal);
+    status=cicsDbGet(AG_TOP(":p1:fldstopState.VAL"),errmsg,DBF_STRING,response);
+    status=cicsDbGet(AG_TOP(":p1:fldstopName.VAL"),errmsg,DBF_STRING,fldName);
 
     xpos = currpos[mechindex][0];
 
     diff = xpos - outVal;
 
     if (( diff < -5 || diff > 5) && (strcmp(response,"IDLE") == 0 )) {
-        status=cicsDbPut("ag:p1:fldstopEng.A",errmsg,DBF_LONG,&xpos);
-        status=cicsDbPut("ag:p1:fldstopEng.DIR",errmsg,DBF_STRING,"0");
-        status=cicsDbPut("ag:p1:fldstopEng.DIR",errmsg,DBF_STRING,"3");
+        status=cicsDbPut(AG_TOP(":p1:fldstopEng.A"),errmsg,DBF_LONG,&xpos);
+        status=cicsDbPut(AG_TOP(":p1:fldstopEng.DIR"),errmsg,DBF_STRING,"0");
+        status=cicsDbPut(AG_TOP(":p1:fldstopEng.DIR"),errmsg,DBF_STRING,"3");
     }
   }
 
   if (mechindex == p2_fldstop) {
 
-    status=cicsDbGet("ag:p2:fldstop:demand.VAL",errmsg,DBF_LONG,&outVal);
-    status=cicsDbGet("ag:p2:fldstopState.VAL",errmsg,DBF_STRING,response);
-    status=cicsDbGet("ag:p2:fldstopName.VAL",errmsg,DBF_STRING,fldName);
+    status=cicsDbGet(AG_TOP(":p2:fldstop:demand.VAL"),errmsg,DBF_LONG,&outVal);
+    status=cicsDbGet(AG_TOP(":p2:fldstopState.VAL"),errmsg,DBF_STRING,response);
+    status=cicsDbGet(AG_TOP(":p2:fldstopName.VAL"),errmsg,DBF_STRING,fldName);
 
     xpos = currpos[mechindex][0];
 
     diff = xpos - outVal;
 
     if (( diff < -5 || diff > 5) && (strcmp(response,"IDLE") == 0 )) {
-        status=cicsDbPut("ag:p2:fldstopEng.A",errmsg,DBF_LONG,&xpos);
-        status=cicsDbPut("ag:p2:fldstopEng.DIR",errmsg,DBF_STRING,"0");
-        status=cicsDbPut("ag:p2:fldstopEng.DIR",errmsg,DBF_STRING,"3");
+        status=cicsDbPut(AG_TOP(":p2:fldstopEng.A"),errmsg,DBF_LONG,&xpos);
+        status=cicsDbPut(AG_TOP(":p2:fldstopEng.DIR"),errmsg,DBF_STRING,"0");
+        status=cicsDbPut(AG_TOP(":p2:fldstopEng.DIR"),errmsg,DBF_STRING,"3");
     }
   }
 }
   return (0);
 }
+epicsRegisterFunction(DPRead);
+epicsRegisterFunction(CalParm);
+epicsRegisterFunction(xlatmain);
+epicsRegisterFunction(CarHandler);
+epicsRegisterFunction(DPReadMem);
+epicsRegisterFunction(managelut);
+epicsRegisterFunction(present);
+epicsRegisterFunction(encoderRelay);
+epicsRegisterFunction(agCalcStateFlag);
+epicsRegisterFunction(gis);
+epicsRegisterFunction(bc_tod_int);
+epicsRegisterFunction(writetols);
+epicsRegisterFunction(bc_tod);
+epicsRegisterFunction(torque);
+epicsRegisterFunction(agCalcProbeRadii);
+epicsRegisterFunction(DPR_Ini);
+epicsRegisterFunction(CalParmInit);
+epicsRegisterFunction(xlatinit);
+epicsRegisterFunction(managelutinit);
