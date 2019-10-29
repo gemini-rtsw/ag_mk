@@ -1,35 +1,35 @@
 [schematic2]
-uniq 18
+uniq 121
 [tools]
 [detail]
-w 1440 -605 100 0 n#1 elongouts.PushIval.FLNK 1312 -608 1568 -608 outhier.FLNK.p
-w 720 -541 100 0 n#2 ecars.C.FLNK 480 -544 960 -544 960 -384 1056 -384 elongouts.PushClid.SLNK
-w 1440 -413 100 0 n#3 elongouts.PushClid.OUT 1312 -416 1568 -416 outhier.OCID.p
-w 1440 -669 100 0 n#4 elongouts.PushIval.OUT 1312 -672 1568 -672 outhier.OVAL.p
-w 1344 -349 100 0 n#5 elongouts.PushClid.FLNK 1312 -352 1376 -352 1376 -288 928 -288 928 -640 1056 -640 elongouts.PushIval.SLNK
-w 768 -349 100 0 n#6 ecars.C.CLID 480 -352 1056 -352 elongouts.PushClid.DOL
-w -512 323 100 0 n#7 inhier.ICID.P -992 320 -32 320 -32 -352 160 -352 ecars.C.ICID
-w -768 -1085 100 0 n#8 inhier.BSLK.P -992 -1088 -544 -1088 elongouts.BS.SLNK
-w -768 -797 100 0 n#9 inhier.ERLK.P -992 -800 -544 -800 elongouts.ER.SLNK
-w -768 -509 100 0 n#10 inhier.PSLK.P -992 -512 -544 -512 elongouts.PS.SLNK
-w -768 -221 100 0 n#11 inhier.IDLK.P -992 -224 -544 -224 elongouts.ID.SLNK
-w -576 -1053 100 0 n#12 hwin.hwin#79.in -608 -1056 -544 -1056 elongouts.BS.DOL
-w -576 -765 100 0 n#13 hwin.hwin#74.in -608 -768 -544 -768 elongouts.ER.DOL
-w -576 -477 100 0 n#14 hwin.hwin#73.in -608 -480 -544 -480 elongouts.PS.DOL
-w -576 -189 100 0 n#15 hwin.hwin#68.in -608 -192 -544 -192 elongouts.ID.DOL
-w 580 -317 100 0 n#16 ecars.C.VAL 480 -320 680 -320 680 -608 1056 -608 elongouts.PushIval.DOL
-w -64 -189 100 0 n#17 elongouts.ID.FLNK -288 -192 160 -192 hwoutm.hwoutm#80.outp
-w -200 -477 100 0 n#17 elongouts.PS.FLNK -288 -480 -112 -480 -112 -192 junction
-w -200 -765 100 0 n#17 elongouts.ER.FLNK -288 -768 -112 -768 -112 -480 junction
-w -200 -1053 100 0 n#17 elongouts.BS.FLNK -288 -1056 -112 -1056 -112 -768 junction
-s -840 632 200 0 (TBD)
+w 1410 -605 100 0 n#120 elongouts.PushIval.FLNK 1312 -608 1568 -608 outhier.FLNK.p
+w 690 -533 100 0 n#119 ecars.C.FLNK 480 -544 960 -544 960 -384 1056 -384 elongouts.PushClid.SLNK
+w 1410 -405 100 0 n#117 elongouts.PushClid.OUT 1312 -416 1568 -416 outhier.OCID.p
+w 1410 -669 100 0 n#116 elongouts.PushIval.OUT 1312 -672 1568 -672 outhier.OVAL.p
+w -156 -437 100 0 n#115 junction -160 -544 -160 -320 junction
+w -30 -309 100 0 n#115 elongouts.ID.OUT -288 -256 -160 -256 -160 -320 160 -320 ecars.C.IVAL
+w -164 -981 100 0 n#115 elongouts.BS.OUT -288 -1120 -160 -1120 -160 -832 junction
+w -164 -693 100 0 n#115 elongouts.ER.OUT -288 -832 -160 -832 -160 -544 -288 -544 elongouts.PS.OUT
+w 472 -221 100 0 n#115 junction 96 -320 96 -224 896 -224 896 -608 1056 -608 elongouts.PushIval.DOL
+w 1128 -277 100 0 n#104 elongouts.PushClid.FLNK 1312 -352 1376 -352 1376 -288 928 -288 928 -640 1056 -640 elongouts.PushIval.SLNK
+w 744 -349 100 0 n#103 ecars.C.CLID 480 -352 1056 -352 elongouts.PushClid.DOL
+w -536 323 100 0 n#91 inhier.ICID.P -992 320 -32 320 -32 -352 160 -352 ecars.C.ICID
+w -792 -1077 100 0 n#90 inhier.BSLK.P -992 -1088 -544 -1088 elongouts.BS.SLNK
+w -792 -789 100 0 n#88 inhier.ERLK.P -992 -800 -544 -800 elongouts.ER.SLNK
+w -792 -501 100 0 n#87 inhier.PSLK.P -992 -512 -544 -512 elongouts.PS.SLNK
+w -792 -213 100 0 n#86 inhier.IDLK.P -992 -224 -544 -224 elongouts.ID.SLNK
+w -600 -1045 100 0 n#77 hwin.hwin#79.in -608 -1056 -544 -1056 elongouts.BS.DOL
+w -600 -757 100 0 n#76 hwin.hwin#74.in -608 -768 -544 -768 elongouts.ER.DOL
+w -600 -469 100 0 n#71 hwin.hwin#73.in -608 -480 -544 -480 elongouts.PS.DOL
+w -600 -181 100 0 n#70 hwin.hwin#68.in -608 -192 -544 -192 elongouts.ID.DOL
+s -896 560 200 0 (TBD)
 s -800 -1008 100 0 CAR_BUSY = 2
 s -800 -720 100 0 CAR_ERROR = 3
 s -800 -432 100 0 CAR_PAUSED = 1
 s -800 -144 100 0 CAR_IDLE = 0
 s 640 -1536 500 0 carPlus.sch
 s -800 32 100 0 CAR_UNAVAILABLE removed - no longer exists
-n 1584 -1136 1838 -992 100
+n 1584 -1344 1936 -992 100
 This represents the contents
 of a hierarchical symbol
 "carPlus", which is used to
@@ -38,14 +38,6 @@ record by activating one
 of the input links.
 _
 [cell use]
-use bc200tr -1216 -1720 -100 0 frame
-xform 0 464 -416
-p 1360 -1552 100 0 1 author:S.M.Beard
-p 1584 -1552 100 0 -1 border:C
-p 1344 -1584 100 0 1 checked:B.Goodrich
-p 1616 -1552 100 0 -1 date:19 Aug 97
-p 1584 -1440 100 0 -1 project:Core Instrument Control System
-p 1584 -1504 100 0 -1 title:Wrap up for CAR triggered by link
 use outhier 1536 -457 100 0 OCID
 xform 0 1552 -416
 use outhier 1536 -713 100 0 OVAL
@@ -111,11 +103,16 @@ use inhier -1008 -841 100 0 ERLK
 xform 0 -992 -800
 use inhier -1008 279 100 0 ICID
 xform 0 -992 320
+use bc200tr -1216 -1720 -100 0 frame
+xform 0 464 -416
+p 1360 -1552 100 0 1 author:S.M.Beard
+p 1584 -1552 100 0 -1 border:C
+p 1344 -1584 100 0 1 checked:B.Goodrich
+p 1616 -1552 100 0 -1 date:19 Aug 97
+p 1584 -1440 100 0 -1 project:Core Instrument Control System
+p 1584 -1504 100 0 -1 title:Wrap up for CAR triggered by link
 use ecars 160 -601 100 0 C
 xform 0 320 -432
 p 224 -608 100 0 1 DESC:$(car) CAR record
 p 224 -640 100 0 1 PV:$(top)$(car)
-use hwoutm 160 -264 100 0 hwoutm#80
-xform 0 304 -216
-p 258 -201 100 0 -1 val(outp):$(car).IVAL
 [comments]

@@ -1,38 +1,38 @@
 [schematic2]
-uniq 459
+uniq 30
 [tools]
 [detail]
-w 98 -533 100 0 n#458 egenSub.EngPosA.VALG -512 96 -288 96 -288 -544 544 -544 544 -160 688 -160 elutins.relut.INPD
-w -374 1835 100 0 n#456 hwout.hwout#455.outp -320 1824 -368 1824 sir2link.HSirL.FLNK
-w -350 395 100 0 n#454 egenSub.EngPosA.OUTB -512 384 -128 384 -128 416 -64 416 egenSub.PosA.B
-w -350 459 100 0 n#453 egenSub.EngPosA.OUTA -512 448 -128 448 -128 480 -64 480 egenSub.PosA.A
-w -350 139 100 0 n#452 egenSub.EngPosA.OUTF -512 128 -128 128 -128 160 -64 160 egenSub.PosA.F
-w -350 203 100 0 n#451 egenSub.EngPosA.OUTE -512 192 -128 192 -128 224 -64 224 egenSub.PosA.E
-w -350 267 100 0 n#450 egenSub.EngPosA.OUTD -512 256 -128 256 -128 288 -64 288 egenSub.PosA.D
-w -350 331 100 0 n#449 egenSub.EngPosA.OUTC -512 320 -128 320 -128 352 -64 352 egenSub.PosA.C
-w 604 -29 100 0 n#442 efanouts.SADfan.SLNK 1056 208 608 208 608 -256 224 -256 egenSub.PosA.FLNK
-w 1194 -485 100 0 n#441 efanouts.SADfan.LNK4 1296 192 1760 192 1760 -496 688 -496 688 -256 elutins.relut.SLNK
-w 1514 235 100 0 n#431 efanouts.SADfan.LNK3 1296 224 1792 224 1792 -368 2016 -368 esirs.esirs#381.SLNK
-w 1626 267 100 0 n#428 efanouts.SADfan.LNK2 1296 256 2016 256 esirs.$(engsir).SLNK
-w 2458 267 100 0 n#422 esirs.$(engsir).FLNK 2432 416 2464 416 2464 256 2512 256 esirs.$(possir).SLNK
-w 1338 483 100 0 n#416 esirs.$(possir).INP 2512 416 2512 480 224 480 egenSub.PosA.VALA
+w 98 -533 100 0 n#1 egenSub.EngPosA.VALG -512 96 -288 96 -288 -544 544 -544 544 -160 688 -160 elutins.relut.INPD
+w -374 1835 100 0 n#2 hwout.hwout#455.outp -320 1824 -368 1824 sir2link.HSirL.FLNK
+w -350 395 100 0 n#3 egenSub.EngPosA.OUTB -512 384 -128 384 -128 416 -64 416 egenSub.PosA.B
+w -350 459 100 0 n#4 egenSub.EngPosA.OUTA -512 448 -128 448 -128 480 -64 480 egenSub.PosA.A
+w -350 139 100 0 n#5 egenSub.EngPosA.OUTF -512 128 -128 128 -128 160 -64 160 egenSub.PosA.F
+w -350 203 100 0 n#6 egenSub.EngPosA.OUTE -512 192 -128 192 -128 224 -64 224 egenSub.PosA.E
+w -350 267 100 0 n#7 egenSub.EngPosA.OUTD -512 256 -128 256 -128 288 -64 288 egenSub.PosA.D
+w -350 331 100 0 n#8 egenSub.EngPosA.OUTC -512 320 -128 320 -128 352 -64 352 egenSub.PosA.C
+w 604 -29 100 0 n#9 efanouts.SADfan.SLNK 1056 208 608 208 608 -256 224 -256 egenSub.PosA.FLNK
+w 1194 -485 100 0 n#10 efanouts.SADfan.LNK4 1296 192 1760 192 1760 -496 688 -496 688 -256 elutins.relut.SLNK
+w 1514 235 100 0 n#11 efanouts.SADfan.LNK3 1296 224 1792 224 1792 -368 2016 -368 esirs.esirs#381.SLNK
+w 1626 267 100 0 n#12 efanouts.SADfan.LNK2 1296 256 2016 256 esirs.$(engsir).SLNK
+w 2458 267 100 0 n#13 esirs.$(engsir).FLNK 2432 416 2464 416 2464 256 2512 256 esirs.$(possir).SLNK
+w 1338 483 100 0 n#14 esirs.$(possir).INP 2512 416 2512 480 224 480 egenSub.PosA.VALA
 w 2064 1275 100 0 FLNK efanouts.SADfan.FLNK 1296 320 1760 320 1760 1264 2416 1264 outhier.FLNK.p
-w 1514 299 100 0 n#427 efanouts.SADfan.LNK1 1296 288 1792 288 1792 784 2016 784 esirs.Datumed.SLNK
-w 2954 795 100 0 n#405 esirs.Parked.FLNK 2928 944 2960 944 2960 784 3008 784 esirs.inPosition.SLNK
-w 2458 795 100 0 n#404 esirs.Datumed.FLNK 2432 944 2464 944 2464 784 2512 784 esirs.Parked.SLNK
-w 2458 -357 100 0 n#391 esirs.esirs#381.FLNK 2432 -208 2464 -208 2464 -368 2512 -368 esirs.esirs#388.SLNK
-w -582 1835 100 0 n#352 sir2link.HSirL.SLNK -528 1824 -576 1824 esirs.Health.FLNK
-w 1162 571 100 0 n#285 junction 656 560 1728 560 1728 416 2016 416 esirs.$(engsir).INP
-w 130 563 100 0 n#285 elutins.relut.INPA 688 32 656 32 656 560 -336 560 -336 480 -512 480 egenSub.EngPosA.VALA
-w -222 -213 100 0 n#297 egenSub.PosA.SLNK -64 -224 -320 -224 -320 -256 -512 -256 egenSub.EngPosA.FLNK
-w 130 531 100 0 n#253 elutins.relut.INPC 688 -96 624 -96 624 528 -304 528 -304 352 -512 352 egenSub.EngPosA.VALC
-w 130 547 100 0 n#252 elutins.relut.INPB 688 -32 640 -32 640 544 -320 544 -320 416 -512 416 egenSub.EngPosA.VALB
-w -374 1771 100 0 n#212 sir2link.HSirL.OUTB -368 1760 -320 1760 hwout.hwout#183.outp
-w -374 1795 100 0 n#211 hwout.hwout#184.outp -320 1792 -368 1792 sir2link.HSirL.OUTA
-w -582 1771 100 0 n#206 sir2link.HSirL.VALB -528 1760 -576 1760 esirs.Health.OMSS
-w -582 1803 100 0 n#205 esirs.Health.VAL -576 1792 -528 1792 sir2link.HSirL.VALA
-w 978 -181 100 0 n#186 elutins.relut.FLNK 944 -32 960 -32 960 -192 1056 -192 1056 -176 esirs.Name.SLNK
-w 986 -5 100 0 n#185 elutins.relut.VAL 944 -64 976 -64 976 -16 1056 -16 esirs.Name.INP
+w 1514 299 100 0 n#15 efanouts.SADfan.LNK1 1296 288 1792 288 1792 784 2016 784 esirs.Datumed.SLNK
+w 2954 795 100 0 n#16 esirs.Parked.FLNK 2928 944 2960 944 2960 784 3008 784 esirs.inPosition.SLNK
+w 2458 795 100 0 n#17 esirs.Datumed.FLNK 2432 944 2464 944 2464 784 2512 784 esirs.Parked.SLNK
+w 2458 -357 100 0 n#18 esirs.esirs#381.FLNK 2432 -208 2464 -208 2464 -368 2512 -368 esirs.esirs#388.SLNK
+w -582 1835 100 0 n#19 sir2link.HSirL.SLNK -528 1824 -576 1824 esirs.Health.FLNK
+w 1162 571 100 0 n#20 junction 656 560 1728 560 1728 416 2016 416 esirs.$(engsir).INP
+w 130 563 100 0 n#20 elutins.relut.INPA 688 32 656 32 656 560 -336 560 -336 480 -512 480 egenSub.EngPosA.VALA
+w -222 -213 100 0 n#21 egenSub.PosA.SLNK -64 -224 -320 -224 -320 -256 -512 -256 egenSub.EngPosA.FLNK
+w 130 531 100 0 n#22 elutins.relut.INPC 688 -96 624 -96 624 528 -304 528 -304 352 -512 352 egenSub.EngPosA.VALC
+w 130 547 100 0 n#23 elutins.relut.INPB 688 -32 640 -32 640 544 -320 544 -320 416 -512 416 egenSub.EngPosA.VALB
+w -374 1771 100 0 n#24 sir2link.HSirL.OUTB -368 1760 -320 1760 hwout.hwout#183.outp
+w -374 1795 100 0 n#25 hwout.hwout#184.outp -320 1792 -368 1792 sir2link.HSirL.OUTA
+w -582 1771 100 0 n#26 sir2link.HSirL.VALB -528 1760 -576 1760 esirs.Health.OMSS
+w -582 1803 100 0 n#27 esirs.Health.VAL -576 1792 -528 1792 sir2link.HSirL.VALA
+w 978 -181 100 0 n#28 elutins.relut.FLNK 944 -32 960 -32 960 -192 1056 -192 1056 -176 esirs.Name.SLNK
+w 986 -5 100 0 n#29 elutins.relut.VAL 944 -64 976 -64 976 -16 1056 -16 esirs.Name.INP
 s 2032 1968 100 0 $Id: compSad.sch,v 1.4 2002/05/22 03:32:51 cjm Exp $
 s 96 1824 100 0 PP link for triggering the health combination gensub
 s 96 1744 100 0 OMSS
@@ -94,7 +94,7 @@ s 2976 -256 100 0 "Cinp" pulls the flags value out of this record.
 s 624 -656 100 0 N.B. the INPD link is used to read the
 s 624 -688 100 0 dummy 4th coordinate uised by the science
 s 624 -720 100 0 fold.
-n 1360 -1104 1940 -752 100
+n 1360 -1088 1837 -752 100
 This schematic contains the Status/Alarm
 Database for a A&G 2 axis discrete mechanism.
 The records are updated by channel access writes
@@ -119,7 +119,7 @@ xform 0 -224 1760
 p -224 1751 100 0 -1 val(outp):$(mindex)
 use hwout -320 1783 100 0 hwout#455
 xform 0 -224 1824
-p -224 1824 100 0 -1 val(outp):$(trigtop).VAL PP NMS
+p -224 1824 100 0 -1 val(outp):$(trgtop2).VAL PP NMS
 use sir2link -528 1671 100 0 HSirL
 xform 0 -448 1776
 p -528 1632 100 0 1 set1:sir Hlth
@@ -150,7 +150,7 @@ use esirs 2800 176 100 0 $(possir)
 xform 0 2720 320
 p 2608 144 100 0 1 DESC:Mechs real world pos.
 p 2608 80 100 0 1 EGU:units
-p 2608 112 100 0 1 FDSC:$(mechanism) real world position 
+p 2608 112 100 0 1 FDSC:$(mechanism) real world position
 p 2720 416 100 0 1 FTVL:DOUBLE
 p 2608 -16 100 0 1 HHSV:MAJOR
 p 2768 -16 100 0 1 HSV:MINOR
@@ -166,7 +166,7 @@ use esirs 2320 176 100 0 $(engsir)
 xform 0 2224 320
 p 2112 144 100 0 1 DESC:Mechs eng. position
 p 2112 80 100 0 1 EGU:eng.units
-p 2112 112 100 0 1 FDSC:$(mechanism) position 
+p 2112 112 100 0 1 FDSC:$(mechanism) position
 p 2240 416 100 0 1 FTVL:LONG
 p 2112 -16 100 0 1 HHSV:MAJOR
 p 2272 -16 100 0 1 HSV:MINOR
@@ -181,7 +181,7 @@ p 2240 208 100 1024 -1 name:$(sadtop)$(mech)$(engsir)
 use esirs -688 1072 100 0 Label
 xform 0 -560 1184
 p -704 1008 100 0 1 DESC:Component label
-p -817 608 100 0 0 EGU: 
+p -817 608 100 0 0 EGU:
 p -704 976 100 0 1 FDSC:$(mechanism)
 p -704 944 100 0 1 FTVL:STRING
 p -797 588 100 0 0 NELM:1
@@ -203,7 +203,7 @@ p 2608 576 100 0 1 SNAM:
 use esirs -704 1584 100 0 Health
 xform 0 -784 1728
 p -896 1552 100 0 1 DESC:Component health
-p -1041 1152 100 0 0 EGU: 
+p -1041 1152 100 0 0 EGU:
 p -896 1520 100 0 1 FDSC:$(mechanism) health
 p -896 1488 100 0 1 FTVL:STRING
 p -896 1392 100 0 1 HHSV:MAJOR
@@ -222,7 +222,7 @@ p -592 1456 100 0 1 VAL:GOOD
 p -784 1616 100 1024 -1 name:$(sadtop)$(mech)Health
 use esirs 2128 736 100 0 Datumed
 xform 0 2224 848
-p 2112 672 100 0 1 DESC:Mecht datumed? 
+p 2112 672 100 0 1 DESC:Mecht datumed?
 p 2272 912 100 0 1 EGU:0/1
 p 2112 640 100 0 1 FDSC:datumed? [YES=1|NO=0]
 p 2240 944 100 0 1 FTVL:LONG
@@ -234,7 +234,7 @@ p 2112 576 100 0 1 SNAM:
 use esirs -1264 1072 100 0 State
 xform 0 -1152 1168
 p -1264 992 100 0 1 DESC:Component state
-p -1264 832 100 0 0 EGU: 
+p -1264 832 100 0 0 EGU:
 p -1264 960 100 0 1 FDSC:$(mechanism) mech state
 p -1264 928 100 0 1 FTVL:STRING
 p -1384 328 100 0 0 NELM:1
@@ -245,7 +245,7 @@ use esirs 1152 -224 100 0 Name
 xform 0 1264 -112
 p 1152 -288 100 0 1 DESC:Mechs position name
 p 1152 -448 100 0 1 EGU:names
-p 1152 -320 100 0 1 FDSC:Name of $(mechanism) position 
+p 1152 -320 100 0 1 FDSC:Name of $(mechanism) position
 p 1152 -352 100 0 1 FTVL:STRING
 p 1152 -480 100 0 1 NELM:1
 p 1192 -488 100 0 0 NORD:1
@@ -409,17 +409,11 @@ p -736 -352 100 0 1 SNAM:EngPos
 p -512 458 75 0 -1 pproc(OUTA):NPP
 p -512 394 75 0 -1 pproc(OUTB):NPP
 p -512 330 75 0 -1 pproc(OUTC):NPP
+p -1088 94 100 0 1 INAM:EngPossic
 use notes -896 -1049 100 0 notes#269
 xform 0 -640 -864
 p -868 -738 100 0 -1 COMMENT1:This gensub holds the calculated
 p -868 -770 100 0 -1 COMMENT2:real world position for all axes.
-p -868 -800 100 0 -1 COMMENT3:
-p -868 -832 100 0 -1 COMMENT4:
-p -868 -864 100 0 -1 COMMENT5:
-p -576 -896 100 0 -1 COMMENT6:
-p -868 -928 100 0 -1 COMMENT7:
-p -868 -960 100 0 -1 COMMENT8:
-p -868 -992 100 0 -1 COMMENT9:
 use elutins 832 -256 100 0 relut
 xform 0 816 -80
 p 752 -352 100 0 1 FDIR:./data

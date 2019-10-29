@@ -9,7 +9,7 @@ uniq 12
 [tools]
 [attributes]
 p 704 -226 100 0 0 COSV:NO_ALARM
-p 288 443 100 0 0 DESC:npr A&G Specialized multibit binary input record
+p 288 443 100 0 0 DESC:npr A&G Specialized MBBI record
 p 96 94 100 0 0 DISS:NO_ALARM
 p 96 158 100 0 0 DISV:1
 p 414 488 100 0 0 DTYP:Soft Channel

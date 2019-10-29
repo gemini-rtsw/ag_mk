@@ -1,45 +1,45 @@
 [schematic2]
-uniq 276
+uniq 39
 [tools]
 [detail]
-w -734 1131 100 0 n#275 hwout.hwout#274.outp -704 1120 -704 1120 sir2link.sir2link#161.FLNK
-w -1782 -533 100 0 n#242 hwin.hwin#266.in -1840 -544 -1664 -544 egenSubD.egenSubD#273.INPN
-w -1782 -501 100 0 n#239 hwin.hwin#265.in -1840 -512 -1664 -512 egenSubD.egenSubD#273.INPM
-w -1782 -469 100 0 n#238 hwin.hwin#263.in -1840 -480 -1664 -480 egenSubD.egenSubD#273.INPL
-w -1782 -437 100 0 n#235 hwin.hwin#264.in -1840 -448 -1664 -448 egenSubD.egenSubD#273.INPK
-w -1782 -405 100 0 n#234 hwin.hwin#262.in -1840 -416 -1664 -416 egenSubD.egenSubD#273.INPJ
-w -1782 -373 100 0 n#231 hwin.hwin#261.in -1840 -384 -1664 -384 egenSubD.egenSubD#273.INPI
-w -1782 -341 100 0 n#230 hwin.hwin#259.in -1840 -352 -1664 -352 egenSubD.egenSubD#273.INPH
-w -1782 -309 100 0 n#227 hwin.hwin#260.in -1840 -320 -1664 -320 egenSubD.egenSubD#273.INPG
-w -1782 -277 100 0 n#226 hwin.hwin#258.in -1840 -288 -1664 -288 egenSubD.egenSubD#273.INPF
-w -1782 -245 100 0 n#223 hwin.hwin#257.in -1840 -256 -1664 -256 egenSubD.egenSubD#273.INPE
-w -1782 -213 100 0 n#222 hwin.hwin#221.in -1840 -224 -1664 -224 egenSubD.egenSubD#273.INPD
-w -1782 -181 100 0 n#219 hwin.hwin#220.in -1840 -192 -1664 -192 egenSubD.egenSubD#273.INPC
-w -1782 -149 100 0 n#218 hwin.hwin#217.in -1840 -160 -1664 -160 egenSubD.egenSubD#273.INPB
-w -1782 -117 100 0 n#216 hwin.hwin#215.in -1840 -128 -1664 -128 egenSubD.egenSubD#273.INPA
-w -62 -605 100 0 n#214 esirs.esirs#205.SLNK -976 -288 -1024 -288 -1024 -608 960 -608 960 -768 esirs.esirs#206.FLNK
-w -1302 -853 100 0 n#213 egenSubD.egenSubD#273.FLNK -1376 -864 -1168 -864 -1168 -928 -1136 -928 esirs.esirs#209.SLNK
-w 428 -853 100 0 n#210 esirs.esirs#207.FLNK 384 -768 432 -768 432 -928 544 -928 esirs.esirs#206.SLNK
-w -382 -629 100 0 n#198 egenSubD.egenSubD#273.OUTJ -1376 -736 -1232 -736 -1232 -640 528 -640 528 -800 544 -800 esirs.esirs#206.IMSS
-w -382 -613 100 0 n#199 egenSubD.egenSubD#273.VALI -1376 -640 -1248 -640 -1248 -624 544 -624 544 -768 esirs.esirs#206.INP
-w -918 -693 100 0 n#194 egenSubD.egenSubD#273.OUTF -1376 -480 -1184 -480 -1184 -704 -592 -704 -592 -800 -576 -800 esirs.esirs#208.IMSS
-w -662 -661 100 0 n#195 egenSubD.egenSubD#273.OUTH -1376 -608 -1216 -608 -1216 -672 -48 -672 -48 -800 -32 -800 esirs.esirs#207.IMSS
-w -646 -645 100 0 n#191 egenSubD.egenSubD#273.VALG -1376 -512 -1200 -512 -1200 -656 -32 -656 -32 -768 esirs.esirs#207.INP
-w -902 -677 100 0 n#190 egenSubD.egenSubD#273.VALE -1376 -384 -1168 -384 -1168 -688 -576 -688 -576 -768 esirs.esirs#208.INP
-w -1294 -341 100 0 n#196 egenSubD.egenSubD#273.OUTD -1376 -352 -1152 -352 -1152 -800 -1136 -800 esirs.esirs#209.IMSS
-w -1286 -245 100 0 n#189 egenSubD.egenSubD#273.VALC -1376 -256 -1136 -256 -1136 -768 esirs.esirs#209.INP
-w -116 -853 100 0 n#211 esirs.esirs#208.FLNK -160 -768 -112 -768 -112 -928 -32 -928 esirs.esirs#207.SLNK
-w -676 -853 100 0 n#212 esirs.esirs#209.FLNK -720 -768 -672 -768 -672 -928 -576 -928 esirs.esirs#208.SLNK
-w -894 1091 100 0 n#156 esirs.esirs#159.VAL -864 1088 -864 1088 sir2link.sir2link#161.VALA
-w -894 1059 100 0 n#155 esirs.esirs#159.OMSS -864 1056 -864 1056 sir2link.sir2link#161.VALB
-w -734 1091 100 0 n#154 sir2link.sir2link#161.OUTA -704 1088 -704 1088 hwout.hwout#164.outp
-w -734 1059 100 0 n#153 sir2link.sir2link#161.OUTB -704 1056 -704 1056 hwout.hwout#163.outp
-w -894 1123 100 0 n#152 esirs.esirs#159.FLNK -864 1120 -864 1120 sir2link.sir2link#161.SLNK
-w -1376 1123 100 0 n#151 egenSubA.egenSubA#157.VALA -1424 1120 -1280 1120 esirs.esirs#159.INP
-w -1364 667 100 0 n#150 esirs.esirs#159.SLNK -1280 960 -1360 960 -1360 384 -1424 384 egenSubA.egenSubA#157.FLNK
-w -1382 1091 100 0 n#149 egenSubA.egenSubA#157.OUTB -1424 1088 -1280 1088 esirs.esirs#159.IMSS
-w -1206 -125 100 0 n#142 egenSubD.egenSubD#273.VALA -1376 -128 -976 -128 esirs.esirs#205.INP
-w -1286 -213 100 0 n#141 egenSubD.egenSubD#273.OUTB -1376 -224 -1136 -224 -1136 -160 -976 -160 esirs.esirs#205.IMSS
+w -734 1131 100 0 n#1 hwout.hwout#274.outp -704 1120 -704 1120 sir2link.sir2link#161.FLNK
+w -1782 -533 100 0 n#2 hwin.hwin#266.in -1840 -544 -1664 -544 egenSubD.egenSubD#273.INPN
+w -1782 -501 100 0 n#3 hwin.hwin#265.in -1840 -512 -1664 -512 egenSubD.egenSubD#273.INPM
+w -1782 -469 100 0 n#4 hwin.hwin#263.in -1840 -480 -1664 -480 egenSubD.egenSubD#273.INPL
+w -1782 -437 100 0 n#5 hwin.hwin#264.in -1840 -448 -1664 -448 egenSubD.egenSubD#273.INPK
+w -1782 -405 100 0 n#6 hwin.hwin#262.in -1840 -416 -1664 -416 egenSubD.egenSubD#273.INPJ
+w -1782 -373 100 0 n#7 hwin.hwin#261.in -1840 -384 -1664 -384 egenSubD.egenSubD#273.INPI
+w -1782 -341 100 0 n#8 hwin.hwin#259.in -1840 -352 -1664 -352 egenSubD.egenSubD#273.INPH
+w -1782 -309 100 0 n#9 hwin.hwin#260.in -1840 -320 -1664 -320 egenSubD.egenSubD#273.INPG
+w -1782 -277 100 0 n#10 hwin.hwin#258.in -1840 -288 -1664 -288 egenSubD.egenSubD#273.INPF
+w -1782 -245 100 0 n#11 hwin.hwin#257.in -1840 -256 -1664 -256 egenSubD.egenSubD#273.INPE
+w -1782 -213 100 0 n#12 hwin.hwin#221.in -1840 -224 -1664 -224 egenSubD.egenSubD#273.INPD
+w -1782 -181 100 0 n#13 hwin.hwin#220.in -1840 -192 -1664 -192 egenSubD.egenSubD#273.INPC
+w -1782 -149 100 0 n#14 hwin.hwin#217.in -1840 -160 -1664 -160 egenSubD.egenSubD#273.INPB
+w -1782 -117 100 0 n#15 hwin.hwin#215.in -1840 -128 -1664 -128 egenSubD.egenSubD#273.INPA
+w -62 -605 100 0 n#16 esirs.esirs#205.SLNK -976 -288 -1024 -288 -1024 -608 960 -608 960 -768 esirs.esirs#206.FLNK
+w -1302 -853 100 0 n#17 egenSubD.egenSubD#273.FLNK -1376 -864 -1168 -864 -1168 -928 -1136 -928 esirs.esirs#209.SLNK
+w 428 -853 100 0 n#18 esirs.esirs#207.FLNK 384 -768 432 -768 432 -928 544 -928 esirs.esirs#206.SLNK
+w -382 -629 100 0 n#19 egenSubD.egenSubD#273.OUTJ -1376 -736 -1232 -736 -1232 -640 528 -640 528 -800 544 -800 esirs.esirs#206.IMSS
+w -382 -613 100 0 n#20 egenSubD.egenSubD#273.VALI -1376 -640 -1248 -640 -1248 -624 544 -624 544 -768 esirs.esirs#206.INP
+w -918 -693 100 0 n#21 egenSubD.egenSubD#273.OUTF -1376 -480 -1184 -480 -1184 -704 -592 -704 -592 -800 -576 -800 esirs.esirs#208.IMSS
+w -662 -661 100 0 n#22 egenSubD.egenSubD#273.OUTH -1376 -608 -1216 -608 -1216 -672 -48 -672 -48 -800 -32 -800 esirs.esirs#207.IMSS
+w -646 -645 100 0 n#23 egenSubD.egenSubD#273.VALG -1376 -512 -1200 -512 -1200 -656 -32 -656 -32 -768 esirs.esirs#207.INP
+w -902 -677 100 0 n#24 egenSubD.egenSubD#273.VALE -1376 -384 -1168 -384 -1168 -688 -576 -688 -576 -768 esirs.esirs#208.INP
+w -1294 -341 100 0 n#25 egenSubD.egenSubD#273.OUTD -1376 -352 -1152 -352 -1152 -800 -1136 -800 esirs.esirs#209.IMSS
+w -1286 -245 100 0 n#26 egenSubD.egenSubD#273.VALC -1376 -256 -1136 -256 -1136 -768 esirs.esirs#209.INP
+w -116 -853 100 0 n#27 esirs.esirs#208.FLNK -160 -768 -112 -768 -112 -928 -32 -928 esirs.esirs#207.SLNK
+w -676 -853 100 0 n#28 esirs.esirs#209.FLNK -720 -768 -672 -768 -672 -928 -576 -928 esirs.esirs#208.SLNK
+w -894 1091 100 0 n#29 esirs.esirs#159.VAL -864 1088 -864 1088 sir2link.sir2link#161.VALA
+w -894 1059 100 0 n#30 esirs.esirs#159.OMSS -864 1056 -864 1056 sir2link.sir2link#161.VALB
+w -734 1091 100 0 n#31 sir2link.sir2link#161.OUTA -704 1088 -704 1088 hwout.hwout#164.outp
+w -734 1059 100 0 n#32 sir2link.sir2link#161.OUTB -704 1056 -704 1056 hwout.hwout#163.outp
+w -894 1123 100 0 n#33 esirs.esirs#159.FLNK -864 1120 -864 1120 sir2link.sir2link#161.SLNK
+w -1376 1123 100 0 n#34 egenSubA.egenSubA#157.VALA -1424 1120 -1280 1120 esirs.esirs#159.INP
+w -1364 667 100 0 n#35 esirs.esirs#159.SLNK -1280 960 -1360 960 -1360 384 -1424 384 egenSubA.egenSubA#157.FLNK
+w -1382 1091 100 0 n#36 egenSubA.egenSubA#157.OUTB -1424 1088 -1280 1088 esirs.esirs#159.IMSS
+w -1206 -125 100 0 n#37 egenSubD.egenSubD#273.VALA -1376 -128 -976 -128 esirs.esirs#205.INP
+w -1286 -213 100 0 n#38 egenSubD.egenSubD#273.OUTB -1376 -224 -1136 -224 -1136 -160 -976 -160 esirs.esirs#205.IMSS
 s -2320 -688 100 0 so that they are unconnected here.
 s -2320 -656 100 0 the remaining inputs O..U,
 s -2320 -624 100 0 None of HRWFS, GBD or PWFS1/2 uses
@@ -68,7 +68,7 @@ s -1904 1408 100 0 on the left are written by the component health records via c
 s -2064 1232 100 0 more than the visible gensub inputs are used!!
 s -2160 -48 100 0 F: Flag, S: String (IMSS)
 s -1664 -1152 100 0 OUTU gives the resulting index
-n 1104 -1008 1584 -656 100
+n 1104 -992 1488 -656 100
 This schematic contains the systemwide
 Status/Alarm Database for the A&G.
 It contains these universal records:
@@ -85,6 +85,13 @@ WARNING or BAD).
 plus others as shown.
 _
 [cell use]
+use bd200tr -2496 -1640 -100 0 frame
+xform 0 144 64
+p 1136 -1408 200 0 1 author:O.Frischmuth
+p 1136 -1488 200 0 1 checked:O.Frischmuth
+p 1712 -1424 200 0 -1 date:18 Apr 1998
+p 1632 -1152 200 0 -1 project:A&G unit
+p 1632 -1280 200 0 -1 title:A&G system SAD SIR combination records
 use hwout -704 1079 100 0 hwout#274
 xform 0 -608 1120
 p -608 1120 100 0 -1 val(outp):$(trgtop2).VAL PP NMS
@@ -187,17 +194,10 @@ p -2029 -520 100 0 -1 val(in):$(f7)
 use hwin -2032 -585 100 0 hwin#266
 xform 0 -1936 -544
 p -2029 -552 100 0 -1 val(in):$(s7)
-use bd200tr -2496 -1640 -100 0 frame
-xform 0 144 64
-p 1136 -1408 200 0 1 author:O.Frischmuth
-p 1136 -1488 200 0 1 checked:O.Frischmuth
-p 1712 -1424 200 0 -1 date:18 Apr 1998
-p 1632 -1152 200 0 -1 project:A&G unit
-p 1632 -1280 200 0 -1 title:A&G system SAD SIR combination records
 use esirs -1040 -976 100 0 esirs#209
 xform 0 -928 -864
 p -1040 -1040 100 0 1 DESC:inPosition bit
-p -1185 -1440 100 0 0 EGU: 
+p -1185 -1440 100 0 0 EGU:
 p -1040 -1072 100 0 1 FDSC:inPosition
 p -1040 -1104 100 0 1 FTVL:LONG
 p -1040 -1168 100 0 1 HHSV:MAJOR
@@ -215,7 +215,7 @@ p -912 -976 100 1024 1 name:$(sadtop)inPosition
 use esirs -480 -976 100 0 esirs#208
 xform 0 -368 -864
 p -480 -1040 100 0 1 DESC:Datumed bit
-p -625 -1440 100 0 0 EGU: 
+p -625 -1440 100 0 0 EGU:
 p -480 -1072 100 0 1 FDSC:Datumed
 p -480 -1104 100 0 1 FTVL:LONG
 p -480 -1168 100 0 1 HHSV:MAJOR
@@ -233,7 +233,7 @@ p -352 -976 100 1024 1 name:$(sadtop)Datumed
 use esirs 64 -976 100 0 esirs#207
 xform 0 176 -864
 p 64 -1040 100 0 1 DESC:Parked bit
-p -81 -1440 100 0 0 EGU: 
+p -81 -1440 100 0 0 EGU:
 p 64 -1072 100 0 1 FDSC:Parked
 p 64 -1104 100 0 1 FTVL:LONG
 p 64 -1168 100 0 1 HHSV:MAJOR
@@ -251,7 +251,7 @@ p 192 -976 100 1024 1 name:$(sadtop)Parked
 use esirs 640 -976 100 0 esirs#206
 xform 0 752 -864
 p 640 -1040 100 0 1 DESC:inPosMode bit
-p 495 -1440 100 0 0 EGU: 
+p 495 -1440 100 0 0 EGU:
 p 640 -1072 100 0 1 FDSC:inPosMode
 p 640 -1104 100 0 1 FTVL:LONG
 p 640 -1168 100 0 1 HHSV:MAJOR
@@ -269,7 +269,7 @@ p 768 -976 100 1024 1 name:$(sadtop)inPosMode
 use esirs -880 -336 100 0 esirs#205
 xform 0 -768 -224
 p -880 -400 100 0 1 DESC:flagbits for system
-p -1025 -800 100 0 0 EGU: 
+p -1025 -800 100 0 0 EGU:
 p -880 -432 100 0 1 FDSC:flagbits
 p -880 -464 100 0 1 FTVL:LONG
 p -880 -528 100 0 1 HHSV:MAJOR
@@ -287,7 +287,7 @@ p -752 -336 100 1024 1 name:$(sadtop)flags
 use esirs -1184 912 100 0 esirs#159
 xform 0 -1072 1024
 p -1184 848 100 0 1 DESC:PWFS health
-p -1329 448 100 0 0 EGU: 
+p -1329 448 100 0 0 EGU:
 p -1184 816 100 0 1 FDSC:PWFS health
 p -1184 784 100 0 1 FTVL:STRING
 p -1184 720 100 0 1 HHSV:MAJOR
@@ -353,7 +353,7 @@ p -1504 -160 100 0 0 FTVR:DOUBLE
 p -1504 -160 100 0 0 FTVS:DOUBLE
 p -1504 -160 100 0 0 FTVT:DOUBLE
 p -1504 -160 100 0 0 FTVU:DOUBLE
-p -1632 224 100 0 1 INAM:
+p -1632 224 100 0 1 INAM:HealthCombInit
 p -1840 1120 100 0 1 NOA:1
 p -1840 1088 100 0 1 NOB:1
 p -1840 1056 100 0 1 NOC:1
@@ -406,7 +406,7 @@ use notes -1040 135 100 0 notes#140
 xform 0 -784 320
 p -1012 446 100 0 -1 COMMENT1:Attention!
 p -1012 414 100 0 -1 COMMENT2:to use the "name" field of a record,
-p -1012 384 100 0 -1 COMMENT3:"PV" must not be defined.
+p -1012 384 100 0 -1 COMMENT3:PV must not be defined.
 p -1012 352 100 0 -1 COMMENT4:If "PV" is defined, EPICS uses $(PV)$(I)
 p -1012 320 100 0 -1 COMMENT5:instead of $(PV)$(name)!
 [comments]

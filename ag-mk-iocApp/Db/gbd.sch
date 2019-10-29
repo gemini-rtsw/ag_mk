@@ -1,5 +1,5 @@
 [schematic2]
-uniq 139
+uniq 1
 [tools]
 [detail]
 s 160 1216 100 0 global CC command
@@ -17,7 +17,7 @@ s -144 848 100 0 (F)
 s -512 208 100 0 Attention! Redefinition of "top" occurs always first!
 s 544 208 100 0 Attention! Redefinition of "top" occurs always first!
 s 464 1376 100 0 sublevel mech don't point to cindex CCar, because there are not enough inputs.
-n 1760 1984 2240 2336 100
+n 1760 2000 2134 2336 100
 This is the under top level schematic
 for the Acquisition and Guidance
 System Components Controller HRWFS.
@@ -33,7 +33,7 @@ in the srcbase.
 The components are sequenced by
 the top-level "apply" record.
 _
-n 1760 1568 2240 1920 100
+n 1760 1584 2155 1920 100
 The following additional variables are
 defined in this schematic:
 .
@@ -50,6 +50,16 @@ schematic with different values for
 "lens", etc...).
 _
 [cell use]
+use bc200tr -928 8 -100 0 frame
+xform 0 752 1312
+p 1648 176 100 0 1 author:O.Frischmuth
+p 1872 176 100 0 -1 border:C
+p 1648 128 100 0 1 checked:O.Frischmuth
+p 1904 160 100 0 -1 date:12 May 97
+p 2128 160 100 1792 -1 page:
+p 2240 176 100 0 -1 pagenum:
+p 1888 288 100 0 -1 project:A&G unit
+p 1888 224 100 0 -1 title:gbd CC
 use combCar 864 1991 100 0 combCar#118
 xform 0 944 2096
 p 880 1968 100 0 1 set1:top $(systop)
@@ -128,14 +138,4 @@ p 1024 336 100 0 1 set5:systop $(top)
 p 1024 304 100 0 1 set6:sindex H
 p 1024 272 100 0 1 set7:ftop $(ftop)p2_
 p 1024 240 100 0 1 set8:cadtop $(cadtop)p2:
-use bc200tr -928 8 -100 0 frame
-xform 0 752 1312
-p 1648 176 100 0 1 author:O.Frischmuth
-p 1872 176 100 0 -1 border:C
-p 1648 128 100 0 1 checked:O.Frischmuth
-p 1904 160 100 0 -1 date:12 May 97
-p 2128 160 100 1792 -1 page: 
-p 2240 176 100 0 -1 pagenum:
-p 1888 288 100 0 -1 project:A&G unit
-p 1888 224 100 0 -1 title:gbd CC
 [comments]

@@ -1,23 +1,20 @@
 [schematic2]
-uniq 30
+uniq 6
 [tools]
 [detail]
-w 824 2659 100 0 n#26 esirs.esirs#9.VAL 1056 2936 1120 2936 1120 2648 576 2648 576 2504 704 2504 ebis.ebis#24.INP
-w 856 2627 100 0 n#25 esirs.esirs#9.FLNK 1056 2968 1152 2968 1152 2616 608 2616 608 2472 704 2472 ebis.ebis#24.SLNK
-w 2168 3723 100 0 n#21 hwin.hwin#13.in 2144 3712 2240 3712 estringins.estringins#19.INP
-w 2168 4011 100 0 n#20 hwin.hwin#12.in 2144 4000 2240 4000 estringins.estringins#17.INP
-w 1222 3979 100 0 n#8 ebis.ebis#6.VAL 1088 3968 1392 3968 egenSub.egenSub#10.INPA
+w 2168 3723 100 0 n#1 hwin.hwin#13.in 2144 3712 2240 3712 estringins.estringins#19.INP
+w 2168 4011 100 0 n#2 hwin.hwin#12.in 2144 4000 2240 4000 estringins.estringins#17.INP
+w 1222 3979 100 0 n#3 ebis.ebis#6.VAL 1088 3968 1392 3968 egenSub.egenSub#10.INPA
+w 824 2659 100 0 n#4 esirs.esirs#9.VAL 1056 2936 1120 2936 1120 2648 576 2648 576 2504 704 2504 ebis.ebis#24.INP
+w 856 2627 100 0 n#5 esirs.esirs#9.FLNK 1056 2968 1152 2968 1152 2616 608 2616 608 2472 704 2472 ebis.ebis#24.SLNK
 [cell use]
+use bc200tr 208 1816 -100 0 frame
+xform 0 1888 3120
 use ebis 832 3911 100 0 ebis#6
 xform 0 960 3984
 p 904 4048 100 0 1 ONAM:MANUAL
 p 904 4080 100 0 1 ZNAM:AUTOMATIC
 p 944 3904 100 1024 -1 name:$(top)encoderMode
-use ebis 704 2399 100 0 ebis#24
-xform 0 832 2472
-p 1008 2456 100 0 1 ONAM:ON
-p 1008 2488 100 0 1 ZNAM:OFF
-p 816 2392 100 1024 -1 name:$(top)encoderStatusStr
 use estringins 2240 3895 100 0 estringins#17
 xform 0 2368 3968
 p 2352 3888 100 1024 -1 name:$(top)lensOff
@@ -49,12 +46,15 @@ p 2496 3824 100 0 1 def(INPC):$(top)encoderMode
 p 2992 3192 100 1024 -1 name:$(top)encoderOff
 p 2832 3970 75 0 -1 pproc(INPA):CP
 p 2832 3906 75 0 -1 pproc(INPB):CP
+use ebis 704 2399 100 0 ebis#24
+xform 0 832 2472
+p 1008 2456 100 0 1 ONAM:ON
+p 1008 2488 100 0 1 ZNAM:OFF
+p 816 2392 100 1024 -1 name:$(top)encoderStatusStr
 use esirs 640 2719 100 0 esirs#9
 xform 0 848 2872
 p 752 2840 100 0 1 FTVL:LONG
 p 752 2760 100 0 1 SCAN:1 second
 p 752 2800 100 0 1 SNAM:encoderStatus
 p 752 2712 100 1024 -1 name:$(top)encoderStatus
-use bc200tr 208 1816 -100 0 frame
-xform 0 1888 3120
 [comments]

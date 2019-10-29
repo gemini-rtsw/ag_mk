@@ -39,7 +39,7 @@ use esirs 112 -73 100 0 state
 xform 0 320 80
 p 208 -96 100 0 1 DESC:Instrument state
 p 63 -496 100 0 0 EGU: 
-p 63 -192 100 0 0 FDSC:Instrument state [BOOTING|INITIALISING|RUNNING|CONFIGURING]
+p 63 -192 100 0 0 FDSC:Inst. state [BOOT|INIT|RUN|CONF]
 p 208 -128 100 0 1 FTVL:STRING
 p 83 -516 100 0 0 NELM:1
 p 103 -536 100 0 0 NORD:1
@@ -70,7 +70,7 @@ p 192 -608 100 0 -1 Type:sir
 use esirs -576 -57 100 0 historyLog
 xform 0 -368 96
 p -480 -80 100 0 1 DESC:History log record
-p -625 -176 100 0 0 FDSC:History log record (should be BIGSTRING)
+p -625 -176 100 0 0 FDSC:History log record
 p -480 -112 100 0 1 FTVL:STRING
 p -620 -276 100 0 0 NELM:1
 p -600 -296 100 0 0 NORD:1
@@ -85,7 +85,7 @@ p 31 -336 100 0 0 DISS:NO_ALARM
 p 31 208 100 0 0 DISV:1
 p 31 80 100 0 0 EGU:units
 p 31 464 100 0 0 EVNT:0
-p 31 384 100 0 0 FDSC:Heart beat record - shows that CC is still alive
+p 31 384 100 0 0 FDSC:Heartbeat-shows that CC is alive
 p 144 448 100 0 1 FTVL:LONG
 p 31 -80 100 0 0 HHSV:NO_ALARM
 p 31 -16 100 0 0 HIGH:0.0000000e+00 
