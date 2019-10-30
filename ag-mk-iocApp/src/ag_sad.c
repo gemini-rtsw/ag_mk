@@ -412,3 +412,10 @@ long agSimModeSIR( struct sirRecord *psir )
   }
   return ret;
 }
+epicsRegisterFunction(TimeSir);
+epicsRegisterFunction(RecalcPos);
+epicsRegisterFunction(EngPossic);
+epicsRegisterFunction(EngPos);
+epicsRegisterFunction(followSIR);
+epicsRegisterFunction(arraySSIR);
+epicsRegisterFunction(agSimModeSIR);

@@ -57,9 +57,8 @@
  *
  *   AUTHOR
  *   ------
- *   Steven Beard     (smb, smb@roe.ac.uk)
- *   Olaf Frischmuth  (ocf, frischmuth@goepel.com)
- *   Ricardo Cardenes (rjc, rcardenes@gemini.edu)
+ *   Steven Beard    (smb, smb@roe.ac.uk)
+ *   Olaf Frischmuth (ocf, frischmuth@goepel.com)
  *
  *   HISTORY
  *   -------
@@ -104,7 +103,6 @@
  *		  but without LUT-access			     (ocf)
  *   22-Jul-1997: Several CAD routines added and changed.
  *		  Utility routines added.			     (ocf)
- *   27-Feb-2018: Adapted to RTEMS/OSI				     (rjc)
  *
  */
 
@@ -1124,15 +1122,15 @@ long CADDefine( struct cadRecord *pcad )
 	    strncpy (LUTplus[mechindex][count], pcad->a, MENUSTRSIZE-1);
 	    LUTplus[mechindex][count][MENUSTRSIZE-1] = 0;
 
-	    LUTplusPos[mechindex][count][0] = currpos[mechindex][0];	/* write pos.	*/
+	    LUTplusPos[mechindex][count][0] = currpos[mechindex][0];	/* write pos.*/
 	    LUTplusPos[mechindex][count][1] = currpos[mechindex][1];
 	    LUTplusPos[mechindex][count][2] = currpos[mechindex][2];
 	    LUTpluscount [mechindex]++;
 
-	    taskId = epicsThreadCreate(
+	    taskId = epicsThreadMustCreate(
 			    pcad->name,
-			    priorityMedium, // In vxWorks this was 45
-			    epicsThreadGetStackSize(epicsThreadStackSmall),
+			    epicsThreadPriorityMedium, // In vxWorks this was 45
+			    epicsThreadGetStackSize(epicsThreadStackBig),
 			    (EPICSTHREADFUNC)updatemenustr,
 			    (void *)mechindex
 			    );

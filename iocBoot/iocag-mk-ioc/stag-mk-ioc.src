@@ -1,6 +1,7 @@
 $(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-ioc
 
 cd ${INSTALL_LOCATION}
+# cd ${INSTALL}
 
 epicsEnvSet("IOCSH_PS1","$(IOCPROMPT)> ")
 
@@ -22,7 +23,7 @@ dbLoadRecords("db/ag_sadtop.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)
 # Must be called before BCconfigure
 bc635TimeSetTpPrio (50)
 # - Master ? Simulate ? intPerSecond, intPerTick, timeOffset (microsec)
-BCconfigure (0, 1, 80, 1, 0)
+BCconfigure (0, 0, 80, 1, 0)
 
 # configure pmac card:
 var drvPmacDebug 0
@@ -34,22 +35,22 @@ pmacConfig(1, 0x7fa200, 0x704000, 0xa5, 6)
 init_globvars
 init_logglobs
 
-#setsimuHRWFS(3)
-#setsimuAG(3)
-setdebugHRWFS(0)
-setdebugAG(0)
+setsimuHRWFS(0)
+setsimuAG(0)
+#setdebugHRWFS(0)
+#setdebugAG(0)
 
 # Must be called after the setting of the preferred simu-level
 init_DPRam
 
 
 # Load the A&G sequencer records into this IOC
-dbLoadRecords("db/agSeqTop.db","ag=$(AGTOP):")
+dbLoadRecords("db/agSeqTop.db","ag=$(AGTOP):,tcs=$(TCSTOP):,hrwfs=$(HRWFS):")
 dbLoadRecords("db/agSeqSadTop.db","ag=$(AGTOP):")
 
 # Load the OIWFS Gateway records into this IOC
 ## Commented out because we don't use it (yet?) at MK
-dbLoadRecords("db/oiwfsgwTop.db","ag=$(AGTOP):")
+#dbLoadRecords("db/oiwfsgwTop.db","ag=$(AGTOP):")
 
 traceIocInit
 
@@ -78,7 +79,7 @@ putmenustr
 #seq(sncxxx, "user=rrojas")
 
 seq &agcc, "top=$(HRWFS):cc:,   sadtop=$(HRWFS):cc:,  sys=sys"
-seq &agcc, "top=$(AGTOP):cc:,   sadtopb=$(AGTOP):cc:,  sys=sys"
+seq &agcc, "top=$(AGTOP):cc:,   sadtop=$(AGTOP):cc:,  sys=sys"
 
 seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=cal"
 seq &comp1, "top=$(HRWFS):,     sadtop=$(HRWFS):,      sys=cc:, mech=fldstop"

@@ -17,13 +17,11 @@
  *  ------
  *  Olaf Frischmuth (ocf)
  *  Karsten Ottow (ko)
- *  Ricardo Cardenes (rjc)
  *
  *  HISTORY
  *  -------
- *  24-June-1997:     Original version 			(ocf)
- *  25-Dec-97:	      complete renewed			(ocf)
- *  25-February-2018: Removed some warnings             (rjc)
+ *  24-June-1997: Original version 			(ocf)
+ *  25-Dec-97:	complete renewed			(ocf)
  */
 
 #include <float.h>
@@ -1214,3 +1212,10 @@ long monitor ( struct genSubRecord *pgsub )
 }
 
 /* ====================================================================	*/
+epicsRegisterFunction(interpol);
+epicsRegisterFunction(combineFlexCoeffs);
+epicsRegisterFunction(monitor);
+epicsRegisterFunction(DemandSimu);
+epicsRegisterFunction(followA);
+epicsRegisterFunction(calcOffset);
+epicsRegisterFunction(DemandSimuInit);

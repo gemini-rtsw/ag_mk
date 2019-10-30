@@ -13,6 +13,9 @@ DB += simu_top.db
 DB += ag_sadtop.db
 DB += iocAdminRTEMS.db
 DB += timeProbe.db
+DB += agSeqTop.db
+DB += agSeqSadTop.db
+# DB += oiwfsgwTop.db
 
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db

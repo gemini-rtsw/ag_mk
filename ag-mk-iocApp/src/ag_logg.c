@@ -13,13 +13,11 @@
  *
  *  AUTHOR
  *  ------
- *  Olaf Frischmuth  (ocf)
- *  Ricardo Cardenes (rjc)
+ *  Olaf Frischmuth (ocf)
  *
  *  HISTORY
  *  -------
  *  25-Apr-1998:	Original version			(ocf)
- *  26-Feb-2018:        Adapted to RTEMS/OSI			(rjc)
  *
  */
 
@@ -610,7 +608,7 @@ long writelogfile (char* filename, char* mode, struct logsource *logsrc,
     args->logsrc = logsrc;
     args->wrtype = wrtype;
 
-    taskId = epicsThreadCreate(
+    taskId = epicsThreadMustCreate(
 		    taskname,
 		    priorityLow, // In vxWorks this was 75, and they intend it as a background task
 		    epicsThreadGetStackSize(epicsThreadStackSmall),

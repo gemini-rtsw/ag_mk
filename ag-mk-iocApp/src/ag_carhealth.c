@@ -359,6 +359,11 @@ long HealthCombine( struct genSubRecord *pgsub )
   return status;
 }			/* new health combine */
 
+long HealthCombInit( struct genSubRecord *pgsub )
+{
+  return (0);
+}
+
 /* ===================================================================== */
 /* switches all unused inputs to inPos. by default	*/
 
@@ -716,3 +721,9 @@ long cicsStringFilter( struct genSubRecord *pgsub )
 
 /* ===================================================================== */
 
+epicsRegisterFunction(carDrive);
+epicsRegisterFunction(carInit);
+epicsRegisterFunction(inposCombine);
+epicsRegisterFunction(inposCombInit);
+epicsRegisterFunction(HealthCombine);
+epicsRegisterFunction(HealthCombInit);

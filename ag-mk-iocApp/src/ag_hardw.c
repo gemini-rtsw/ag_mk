@@ -42,8 +42,8 @@ long getDPvals (int motor, int card, long *lval, double *dval1,
   	   ((getXY (mota2(motor)+StatWor2,    card, 0) &  0xffff) << 16);	/* 24/lo16->32/hi16 */
   #endif
 
-  pmacRamGetXree (pmac2hostaddr (card, motad(motor)+StatWor1, 0), (long*)dval1);
-  pmacRamGetXree (pmac2hostaddr (card, mota2(motor)+StatWor2, 0), (long*)dval2);
+  pmacRamGetX (pmac2hostaddr (card, motad(motor)+StatWor1, 0), (long*)dval1);
+  pmacRamGetX (pmac2hostaddr (card, mota2(motor)+StatWor2, 0), (long*)dval2);
   *lval  = ((*(long*)dval1 >> 8) & 0xffff) | ((*(long*)dval2 &  0xffff) << 16 );
 
   getDPRamD2 (motad(motor)+ActPos,  card, 0, dval1);

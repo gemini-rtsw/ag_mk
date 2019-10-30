@@ -1155,10 +1155,6 @@ long CarHandler( struct genSubRecord *pgsub )
   if (mindex == p2_probe && p2Slewing)
     CARVALOUT = menuCarstatesBUSY;
 
-  if (mindex == p2_probe) {
-    printf ("CARVALOUT = %ld\n", CARVALOUT);
-    printf ("p2Slewing = %d\n", p2Slewing);
-  }
   return (0);
 }
 

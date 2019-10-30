@@ -21,7 +21,7 @@ CHECK_RELEASE = YES
 #   that Base is built for.
 #CROSS_COMPILER_TARGET_ARCHS = vxWorks-ppc32
 # NOTE: Only for early development. Remove when PMACLIB is available for 3100
-CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme3100
+CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme3100 RTEMS-mvme2307
 
 TESTING = NO
 
@@ -33,9 +33,11 @@ else
   THRWFS = hrwfs
 endif
 
+TTCS=tcs
+
 CNFG_FILES = /gem_sw/etc/rtconfig/ag
 AgSeq_CNFG_FILES = /gem_sw/etc/rtconfig/agSeq
-USR_BOOT_FLAGS = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MCFGFILE=$(CNFG_FILES) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
+USR_BOOT_FLAGS = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MCFGFILE=$(CNFG_FILES) -MTCSTOP=$(TTCS) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
 USR_CFLAGS += -DTOP_AG=$(TAG) -DTOP_HRWFS=$(THRWFS)
 
 ifeq ($(TAG),ag)
@@ -48,8 +50,9 @@ endif
 #   INSTALL_LOCATION here.
 #INSTALL_LOCATION=</absolute/path/to/install/top>
 #INSTALL_LOCATION=/gem_sw/test/rcar/AG/ioc/ag/mk
+#INSTALL_LOCATION=$(INSTALL)
 
-#USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
+USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
 
 # Set this when the IOC and build host use different paths
 #   to the install location. This may be needed to boot from

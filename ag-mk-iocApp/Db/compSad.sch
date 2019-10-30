@@ -416,7 +416,7 @@ p -868 -738 100 0 -1 COMMENT1:This gensub holds the calculated
 p -868 -770 100 0 -1 COMMENT2:real world position for all axes.
 use elutins 832 -256 100 0 relut
 xform 0 816 -80
-p 752 -352 100 0 1 FDIR:./data
+p 752 -352 100 0 1 FDIR:$(CFGFILE)
 p 752 -384 100 0 1 FNAM:$(ftop)$(mech).lut
 p 768 96 100 0 1 FTVA:LONG
 p 768 64 100 0 1 FTVB:LONG

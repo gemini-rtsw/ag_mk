@@ -680,9 +680,11 @@ void agSimCommand (int mechindex, long command, long posn)
   epicsMutexMustLock(agSimSemId);
      agMechSims[mechindex].command = command ;
      agMechSims[mechindex].state = demState ;
-     if (command != C_Foll && command != C_Crude)
+     if ((command != C_Foll) && (command != C_Crude))
        agMechSims[mechindex].target = posn ;
   epicsMutexUnlock(agSimSemId);
 
 }
+epicsRegisterFunction(agMechSimulate);
+epicsRegisterFunction(agMechSimInit);
 
