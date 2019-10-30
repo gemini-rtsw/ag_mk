@@ -17,9 +17,9 @@ ag-mk-ioc_DBD += base.dbd
 ag-mk-ioc_DBD += iocAdmin.dbd
 ag-mk-ioc_DBD += geminiRecords.dbd
 ag-mk-ioc_DBD += pvload.dbd
-ag-mk-ioc_DBD += mbbipRecord.dbd
+#ag-mk-ioc_DBD += mbbipRecord.dbd
 #ag-mk-ioc_DBD += loadRecord.dbd
-ag-mk-ioc_DBD += oiwfsgw.dbd
+#ag-mk-ioc_DBD += oiwfsgw.dbd
 ag-mk-ioc_DBD += agSeq.dbd
 ag-mk-ioc_DBD += pmaclib.dbd
 ag-mk-ioc_DBD += bancomm.dbd
@@ -31,7 +31,7 @@ ag-mk-ioc_DBD += timeProbe.dbd
 ag-mk-ioc_DBD += menuScan.dbd
 ag-mk-ioc_DBD += devIocStats.dbd
 ag-mk-ioc_DBD += ag.dbd
-ag-mk-ioc_DBD += initTrace.dbd
+ag-mk-ioc_DBD += iocInit.dbd
 
 # ag-mk-ioc_registerRecordDeviceDriver.cpp derives from ag-mk-ioc.dbd
 ag-mk-ioc_SRCS += ag-mk-ioc_registerRecordDeviceDriver.cpp
@@ -39,7 +39,6 @@ ag-mk-ioc_SRCS += ag-mk-ioc_registerRecordDeviceDriver.cpp
 # Build the main IOC entry point on workstation OSs.
 ag-mk-ioc_SRCS_DEFAULT += ag-mk-iocMain.cpp
 
-ag-mk-ioc_SRCS += mbbipRecord.c
 ag-mk-ioc_SRCS += ag_cad2.c
 ag-mk-ioc_SRCS += ag_cad.c
 ag-mk-ioc_SRCS += ag_cadcc.c
@@ -51,7 +50,7 @@ ag-mk-ioc_SRCS += ag_logg.c
 ag-mk-ioc_SRCS += ag_mem.c
 ag-mk-ioc_SRCS += ag_sad.c
 ag-mk-ioc_SRCS += agSimulate.c
-ag-mk-ioc_SRCS += ag_test2.c
+#ag-mk-ioc_SRCS += ag_test2.c
 #ag-mk-ioc_SRCS += ag_test.c
 ag-mk-ioc_SRCS += ag_track.c
 ag-mk-ioc_SRCS += ag_utils.c
@@ -71,7 +70,7 @@ ag-mk-ioc_LIBS += geminiRecords
 ag-mk-ioc_LIBS += pvload
 ag-mk-ioc_LIBS += bancomm
 ag-mk-ioc_LIBS += xy240
-ag-mk-ioc_LIBS += oiwfsgw
+# ag-mk-ioc_LIBS += oiwfsgw
 ag-mk-ioc_LIBS += agSeq
 ag-mk-ioc_LIBS += pmaclib
 ag-mk-ioc_LIBS += tcslib

@@ -21,14 +21,6 @@
 # Variables may be used before their values have been set.
 # Build variables that are NOT used in paths should be set in
 # the CONFIG_SITE file.
-#
-EPICS_RELEASE=R3.14.12.8
-
-TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-
-PRODSUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
-WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
-TESTSUPP=/home/rcardene/work/support
 
 # Variables and paths to dependent modules:
 #MODULES = /path/to/modules
@@ -37,21 +29,31 @@ TESTSUPP=/home/rcardene/work/support
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver
 
-BANCOMM=$(PRODSUPP)/bancomm/1-6-10
-IOCSTATS=$(PRODSUPP)/iocStats/3-1-16-4
-GEMREC=$(PRODSUPP)/geminiRec/4-1-9
-SNCSEQ=$(PRODSUPP)/seq/2-2-5-3
-GEMUTILS=$(PRODSUPP)/gemUtil/1-11
-AUTOSAVE=$(PRODSUPP)/autosave/5-7-1-2
-PMAC=$(PRODSUPP)/pmaclib/1-1-10
-TIMELIB=$(PRODSUPP)/timelib/2-0-8
-SLALIB=$(PRODSUPP)/slalib/1-9-10
-TCSLIB=$(PRODSUPP)/tcslib/1-0-15
-TIMEPROBE=$(PRODSUPP)/timeProbe/1-1-13
-AGSEQ=$(PRODSUPP)/agSeq/1-0
-#PMAC=$(TESTSUPP)/pmaclib
-
 # EPICS_BASE should appear last so earlier modules can override stuff:
+EPICS_RELEASE=R3.14.12.8
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+PRODSUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
+WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
+TESTSUPP=/home/rcardene/work/support
+
+BANCOMM=$(PRODSUPP)/bancomm/1-6-10
+TIMELIB=$(PRODSUPP)/timelib/1-9-17
+SLALIB=$(PRODSUPP)/slalib/1-9-8
+IOCSTATS=$(PRODSUPP)/iocStats/3-1-14-6
+GEMREC=$(PRODSUPP)/geminiRec/4-1-6
+XYCOM=$(PRODSUPP)/xycom/2-1-8
+PMAC=$(PRODSUPP)/pmaclib/1-1-8
+SNCSEQ=$(PRODSUPP)/seq/2-2-3-2
+PVLOAD=$(PRODSUPP)/pvload/1-1-4
+GEMUTILS=$(PRODSUPP)/gemUtil/1-9
+TCSLIB=$(PRODSUPP)/tcslib/1-0-10
+TIMEPROBE=$(PRODSUPP)/timeProbe/1-1-7
+#OIWFSGW=$(PRODSUPP)/oiwfsgw/1-0
+AGSEQ=$(PRODSUPP)/agSeq/1-0
+
+# EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base
 
 # Set RULES here if you want to use build rules from somewhere

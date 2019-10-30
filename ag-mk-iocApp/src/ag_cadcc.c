@@ -986,3 +986,12 @@ long checkBusy( struct cadRecord *pcad )
 
 
 /* ===================================================================== */
+epicsRegisterFunction(CADreboot);
+epicsRegisterFunction(CAD_datumCC);
+epicsRegisterFunction(CAD_testCC);
+epicsRegisterFunction(CADinit);
+epicsRegisterFunction(CAD_parkCC);
+epicsRegisterFunction(CADdebug);
+epicsRegisterFunction(rebootsub);
+epicsRegisterFunction(CADdebugInit);
+epicsRegisterFunction(CADinitInit);

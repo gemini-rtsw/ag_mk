@@ -664,3 +664,22 @@ long testlog (int system)
       agprintf ("      &globstr = %d (%x) \n", (long)&globstr, (long)&globstr);
 */
 /* ====================================================================	*/
+epicsRegisterFunction(logging);
+
+static const iocshArg *agInitLogglobsArgs[] = { NULL };
+static const iocshFuncDef agInitLogglobsFuncDef = 
+         {"init_logglobs", 0, agInitLogglobsArgs};
+static void agInitLogglobsCallFunc(const iocshArgBuf *args)
+{
+   init_logglobs();
+}
+
+static void agRegisterInitLogglobsCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agInitLogglobsFuncDef, agInitLogglobsCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterInitLogglobsCommands);
+

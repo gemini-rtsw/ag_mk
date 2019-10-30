@@ -1749,3 +1749,95 @@ long encoderOff( genSubRecord *pgsub )
     encoderSwitch(0);
   return 0;
 }
+epicsRegisterFunction(encoderStatus);
+epicsRegisterFunction(encoderOff);
+
+static const iocshArg agSetSimuLevelArg0 = {"Simulation level", iocshArgInt };
+static const iocshArg *agSetSimuLevelArgs[] = { &agSetSimuLevelArg0 };
+static const iocshFuncDef agSetSimuLevelFuncDef = 
+         {"setsimuAG", 1, agSetSimuLevelArgs};
+static void agSetSimuLevelCallFunc(const iocshArgBuf *args)
+{
+   setsimuAG(args[0].ival);
+}
+
+static void agRegisterSimCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agSetSimuLevelFuncDef, agSetSimuLevelCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterSimCommands);
+
+
+static const iocshArg *agInitDPRArgs[] = { NULL };
+static const iocshFuncDef agInitDPRFuncDef = 
+         {"init_DPRam", 0, agInitDPRArgs};
+static void agInitDPRCallFunc(const iocshArgBuf *args)
+{
+   init_DPRam();
+}
+
+static void agRegisterInitDPRCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agInitDPRFuncDef, agInitDPRCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterInitDPRCommands);
+
+
+static const iocshArg hrSetSimuLevelArg0 = {"Simulation level", iocshArgInt };
+static const iocshArg *hrSetSimuLevelArgs[] = { &hrSetSimuLevelArg0 };
+static const iocshFuncDef hrSetSimuLevelFuncDef = 
+         {"setsimuHRWFS", 1, hrSetSimuLevelArgs};
+static void hrSetSimuLevelCallFunc(const iocshArgBuf *args)
+{
+   setsimuHRWFS(args[0].ival);
+}
+
+static void hrRegisterSimCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&hrSetSimuLevelFuncDef, hrSetSimuLevelCallFunc);
+   }
+}
+epicsExportRegistrar(hrRegisterSimCommands);
+
+
+static const iocshArg *agPutMenuStrArgs[] = { NULL };
+static const iocshFuncDef agPutMenuStrFuncDef = 
+         {"putmenustr", 0, agPutMenuStrArgs};
+static void agPutMenuStrCallFunc(const iocshArgBuf *args)
+{
+   putmenustr();
+}
+
+static void agRegisterPutMenuStrCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agPutMenuStrFuncDef, agPutMenuStrCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterPutMenuStrCommands);
+
+static const iocshArg *agPutSadLimsArgs[] = { NULL };
+static const iocshFuncDef agPutSadLimsFuncDef = 
+         {"putsadlims", 0, agPutSadLimsArgs};
+static void agPutSadLimsCallFunc(const iocshArgBuf *args)
+{
+   putsadlims();
+}
+
+static void agRegisterPutSadLimsCommands(void)
+{
+   static int firstTime = 1;
+   if(firstTime) {
+      iocshRegister(&agPutSadLimsFuncDef, agPutSadLimsCallFunc);
+   }
+}
+epicsExportRegistrar(agRegisterPutSadLimsCommands);

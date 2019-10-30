@@ -1736,3 +1736,12 @@ long CAD_default (struct cadRecord  *pcad, long *pstatus)
 
 /* ===================================================================== */
 /* ===================================================================== */
+epicsRegisterFunction(CADPark);
+epicsRegisterFunction(CADDatum);
+epicsRegisterFunction(CADSel);
+epicsRegisterFunction(CADTest);
+epicsRegisterFunction(CADMove);
+epicsRegisterFunction(CADStop);
+epicsRegisterFunction(CADDefine);
+epicsRegisterFunction(PDsub);
+epicsRegisterFunction(CADEng);
