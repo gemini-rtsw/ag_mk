@@ -135,6 +135,7 @@ void getDPRamD2raw (long adr, double *Val)
 
 long setXYCOM (void)
 {
+  /*
   byte inport, outport;
   static int first = 1 ;
   char dummy ;
@@ -150,15 +151,16 @@ long setXYCOM (void)
 
   } else {
 
-    portDirRegAddr = 0x80;		/* port 7: Output	*/
+    portDirRegAddr = 0x80;		// port 7: Output
     inport = port6addr & GIS_MASK;
-    port7addr = (8	  & (~GIS_MASK)) | outport;	/* set bits to 1 */
+    port7addr = (8	  & (~GIS_MASK)) | outport;	// set bits to 1
   }
 
-  gis_demand_hw = inport;			/* store bits, not meaning*/
+  gis_demand_hw = inport;			// store bits, not meaning
 
   gis_demand =	(inport == GIS_CLEAR)	? GIS_OFF : 
 		(inport == GIS_SET) 	? GIS_ON  : GIS_UNDEFINED;
+  */
 
 
   return (0);
