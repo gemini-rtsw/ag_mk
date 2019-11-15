@@ -1084,7 +1084,6 @@ long CADDefine( struct cadRecord *pcad )
   char messages[80];     /* Message buffer */
   long status = CAD_ACCEPT;         /* Initialise return status */
   long count;
-  epicsThreadId  taskId;
 
   long mechindex = CAD_default(pcad, &status);	/* does all default actions */
 
@@ -1127,14 +1126,13 @@ long CADDefine( struct cadRecord *pcad )
 	    LUTplusPos[mechindex][count][2] = currpos[mechindex][2];
 	    LUTpluscount [mechindex]++;
 
-	    taskId = epicsThreadMustCreate(
+	    epicsThreadMustCreate(
 			    pcad->name,
 			    epicsThreadPriorityMedium, // In vxWorks this was 45
 			    epicsThreadGetStackSize(epicsThreadStackBig),
 			    (EPICSTHREADFUNC)updatemenustr,
 			    (void *)mechindex
 			    );
-    	    taskwdInsert (taskId, NULL, 0L);		/* updatemenustr (mechindex);	*/
 	  }
 
 	sprintf( messages, "\t%s\t- Requested name = %s, curr.pos = %ld %ld %ld", pcad->name, pcad->a, 

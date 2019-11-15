@@ -1522,7 +1522,6 @@ long managelutinit( struct genSubRecord *pgsub )
 long managelut( struct genSubRecord *pgsub )
 {
   char messages[80];                             /* Message buffer */
-  epicsThreadId taskId;
   long mechindex = query_cadname (pgsub->name);
 
   *(long*) pgsub->vale = 0;
@@ -1547,14 +1546,13 @@ long managelut( struct genSubRecord *pgsub )
     case 1:
       asklut(pgsub);                             /* ask lut, put strings */
 
-      taskId = epicsThreadMustCreate(
+      epicsThreadMustCreate(
 		      pgsub->name,
 		      priorityMedium, // In vxWorks this was 45
 		      epicsThreadGetStackSize(epicsThreadStackSmall),
 		      (EPICSTHREADFUNC)updatemenustr,
 		      (void *)mechindex
 		      );
-      taskwdInsert (taskId, NULL, 0L);       /* updatemenustr (mechindex); */
       break;
     case 0:
       break;                                 /* no cmd */
