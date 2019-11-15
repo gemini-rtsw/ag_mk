@@ -39,8 +39,8 @@ pmacConfig(1, 0x7fa200, 0x704000, 0xa5, 6)
 init_globvars
 init_logglobs
 
-setsimuHRWFS(3)
-setsimuAG(3)
+setsimuHRWFS($(SIM_LEVEL))
+setsimuAG($(SIM_LEVEL))
 #setdebugHRWFS(0)
 #setdebugAG(0)
 

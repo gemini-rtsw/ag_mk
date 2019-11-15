@@ -30,16 +30,20 @@ ifeq ($(TESTING),YES)
   TAG = tag
   THRWFS = thrwfs
   CNFG_FILES = /gem_sw/test/rcar/AG/conf/ag
+  AgSeq_CNFG_FILES = /gem_sw/test/rcar/AG/conf/agSeq
+  SIM_LEVEL = 3
 else
   TAG = ag
   THRWFS = hrwfs
   CNFG_FILES = /gem_sw/etc/rtconfig/ag
+  AgSeq_CNFG_FILES = /gem_sw/etc/rtconfig/agSeq
+  SIM_LEVEL = 0
 endif
 
 TTCS=tcs
 
-AgSeq_CNFG_FILES = /gem_sw/etc/rtconfig/agSeq
-USR_BOOT_FLAGS = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MCFGFILE=$(CNFG_FILES) -MTCSTOP=$(TTCS) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
+USR_BOOT_FLAGS  = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MCFGFILE=$(CNFG_FILES) -MTCSTOP=$(TTCS) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
+USR_BOOT_FLAGS += -MSIM_LEVEL=$(SIM_LEVEL)
 USR_CFLAGS += -DTOP_AG=$(TAG) -DTOP_HRWFS=$(THRWFS)
 
 ifeq ($(TAG),ag)
@@ -53,8 +57,8 @@ endif
 #INSTALL_LOCATION=</absolute/path/to/install/top>
 ifeq ($(TESTING),YES)
   INSTALL_LOCATION = /gem_sw/test/rcar/AG/ioc/ag/mk
-  USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
 endif
+USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
 
 # Set this when the IOC and build host use different paths
 #   to the install location. This may be needed to boot from
