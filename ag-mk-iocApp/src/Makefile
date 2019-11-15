@@ -78,7 +78,6 @@ ag-mk-ioc_LIBS += timelib
 ag-mk-ioc_LIBS += slalib
 ag-mk-ioc_LIBS += devIocStats
 ag-mk-ioc_LIBS += timeProbe
-ag-mk-ioc_LIBS += agSupport
 ag-mk-ioc_LIBS += seq pv
 
 # Finally link to the EPICS Base libraries
