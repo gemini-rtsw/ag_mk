@@ -49,7 +49,7 @@ PMAC=$(PRODSUPP)/pmaclib/1-1-12
 PVLOAD=$(PRODSUPP)/pvload/1-1-4
 XYCOM=$(PRODSUPP)/xycom/2-1-8
 TCSLIB=$(PRODSUPP)/tcslib/1-0-16
-AGSEQ=$(PRODSUPP)/agSeq/1-1
+AGSEQ=$(PRODSUPP)/agSeq/2-0
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base
