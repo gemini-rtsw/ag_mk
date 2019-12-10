@@ -1,28 +1,28 @@
 [schematic2]
-uniq 130
+uniq 13
 [tools]
 [detail]
-w 2114 1851 100 0 n#128 esirs.sfEngTilt.FLNK 1968 2000 2064 2000 2064 1840 2224 1840 esirs.sfEngLin.SLNK
-w 2762 1851 100 0 n#127 esirs.sfEngLin.FLNK 2640 2000 2720 2000 2720 1840 2864 1840 esirs.sfTilt.SLNK
-w 3426 1851 100 0 n#126 esirs.sfTilt.FLNK 3280 2000 3392 2000 3392 1840 3520 1840 esirs.sfLin.SLNK
-w 1002 1571 100 0 n#125 compSad.ao.FLNK 192 1984 560 1984 560 1568 1504 1568 1504 1088 1600 1088 esirs.aoEngTilt.SLNK
-w 1058 1987 100 0 n#124 compSad.sf.FLNK 864 1984 1312 1984 1312 1840 1552 1840 esirs.sfEngTilt.SLNK
-w 2100 1171 100 0 n#123 esirs.aoEngTilt.FLNK 2016 1248 2096 1248 2096 1104 2224 1104 esirs.aoTilt.SLNK
-w 2328 2107 100 0 n#118 hwin.hwin#115.in 2480 2064 2480 2096 2224 2096 2224 2000 esirs.sfEngLin.INP
-w 3624 2099 100 0 n#117 hwin.hwin#116.in 3776 2064 3776 2096 3520 2096 3520 2000 esirs.sfLin.INP
-w 1656 2107 100 0 n#112 hwin.hwin#109.in 1808 2064 1808 2096 1552 2096 1552 2000 esirs.sfEngTilt.INP
-w 2968 2099 100 0 n#111 hwin.hwin#110.in 3120 2064 3120 2096 2864 2096 2864 2000 esirs.sfTilt.INP
-w 1704 1355 100 0 n#99 hwin.hwin#96.in 1856 1312 1856 1344 1600 1344 1600 1248 esirs.aoEngTilt.INP
-w 2328 1363 100 0 n#98 hwin.hwin#97.in 2480 1328 2480 1360 2224 1360 2224 1264 esirs.aoTilt.INP
+w 2114 1851 100 0 n#1 esirs.sfEngTilt.FLNK 1968 2000 2064 2000 2064 1840 2224 1840 esirs.sfEngLin.SLNK
+w 2762 1851 100 0 n#2 esirs.sfEngLin.FLNK 2640 2000 2720 2000 2720 1840 2864 1840 esirs.sfTilt.SLNK
+w 3426 1851 100 0 n#3 esirs.sfTilt.FLNK 3280 2000 3392 2000 3392 1840 3520 1840 esirs.sfLin.SLNK
+w 1002 1571 100 0 n#4 compSad.ao.FLNK 192 1984 560 1984 560 1568 1504 1568 1504 1088 1600 1088 esirs.aoEngTilt.SLNK
+w 1058 1987 100 0 n#5 compSad.sf.FLNK 864 1984 1312 1984 1312 1840 1552 1840 esirs.sfEngTilt.SLNK
+w 2100 1171 100 0 n#6 esirs.aoEngTilt.FLNK 2016 1248 2096 1248 2096 1104 2224 1104 esirs.aoTilt.SLNK
+w 2328 2107 100 0 n#7 hwin.hwin#115.in 2480 2064 2480 2096 2224 2096 2224 2000 esirs.sfEngLin.INP
+w 3624 2099 100 0 n#8 hwin.hwin#116.in 3776 2064 3776 2096 3520 2096 3520 2000 esirs.sfLin.INP
+w 1656 2107 100 0 n#9 hwin.hwin#109.in 1808 2064 1808 2096 1552 2096 1552 2000 esirs.sfEngTilt.INP
+w 2968 2099 100 0 n#10 hwin.hwin#110.in 3120 2064 3120 2096 2864 2096 2864 2000 esirs.sfTilt.INP
+w 1704 1355 100 0 n#11 hwin.hwin#96.in 1856 1312 1856 1344 1600 1344 1600 1248 esirs.aoEngTilt.INP
+w 2328 1363 100 0 n#12 hwin.hwin#97.in 2480 1328 2480 1360 2224 1360 2224 1264 esirs.aoTilt.INP
 s 2464 3088 100 0 $Id: gbdSad.sch,v 1.4 2001/05/05 22:41:17 cjm Exp $
-s 224 2320 100 0 This is to dump the results of the combination 
+s 224 2320 100 0 This is to dump the results of the combination
 s 224 2288 100 0 to an unexisting record /$(sadtop)
 s -288 1200 100 0 K,L maybe not valid!
 s -304 2096 100 0 These are the top-level n-D mechanisms from the ICD
 s -528 1472 100 0 These are the real (underlying) 1-D motors
 s -528 1424 100 0 usage only for engineering purposes!
 s 3952 464 500 512 gbdSad.sch
-n 3424 672 3904 1024 100
+n 3424 712 3819 1024 100
 The following additional variables are
 defined in this schematic:
 .
@@ -37,7 +37,7 @@ schematic with different values for
 "mech" (e.g. "filt", "slit", "grat",
 "mask", etc...).
 _
-n 2880 672 3360 1024 100
+n 2880 688 3255 1024 100
 This is the under top level schematic
 for the A&G Control
 System Components Controller
@@ -61,10 +61,10 @@ p 368 2496 100 0 1 set10:f4 $(sadtop2)aoflags.VAL
 p 784 2496 100 0 1 set11:s4 $(sadtop2)aoflags.OMSS
 p 368 2464 100 0 1 set12:f5 $(sadtop2)hwflags.VAL
 p 784 2464 100 0 1 set13:s5 $(sadtop2)hwflags.OMSS
-p 368 2432 100 0 1 set14:f6 $(sadtop)
-p 784 2432 100 0 1 set15:s6 $(sadtop)
-p 368 2400 100 0 1 set16:f7 $(sadtop)
-p 784 2400 100 0 1 set17:s7 $(sadtop)
+p 368 2432 100 0 1 set14:f6 
+p 784 2432 100 0 1 set15:s6 
+p 368 2400 100 0 1 set16:f7
+p 784 2400 100 0 1 set17:s7 
 p 16 2288 100 0 1 set18:trgtop2
 p 16 2352 100 0 1 set2:hindex2
 p 16 2320 100 0 1 set3:mindex2
@@ -96,7 +96,7 @@ use esirs 3616 1792 100 0 sfLin
 xform 0 3728 1904
 p 3616 1728 100 0 1 DESC:Mechs real world pos.
 p 3744 1888 100 0 1 EGU:mm
-p 3616 1696 100 0 1 FDSC:real world position 
+p 3616 1696 100 0 1 FDSC:real world position
 p 3728 1920 100 0 1 FTVL:DOUBLE
 p 3456 1424 100 0 0 HHSV:MAJOR
 p 3456 1328 100 0 0 HSV:MINOR
@@ -112,7 +112,7 @@ use esirs 2320 1792 100 0 sfEngLin
 xform 0 2432 1904
 p 2320 1728 100 0 1 DESC:Mechs eng. pos.
 p 2400 1904 100 0 1 EGU:eng.units
-p 2320 1696 100 0 1 FDSC:eng. position 
+p 2320 1696 100 0 1 FDSC:eng. position
 p 2448 1936 100 0 1 FTVL:LONG
 p 2160 1424 100 0 0 HHSV:MAJOR
 p 2160 1328 100 0 0 HSV:MINOR
@@ -127,7 +127,7 @@ use esirs 2960 1792 100 0 sfTilt
 xform 0 3072 1904
 p 2960 1728 100 0 1 DESC:Mechs real world pos.
 p 3104 1888 100 0 1 EGU:deg
-p 2960 1696 100 0 1 FDSC:real world position 
+p 2960 1696 100 0 1 FDSC:real world position
 p 3072 1920 100 0 1 FTVL:DOUBLE
 p 2800 1424 100 0 0 HHSV:MAJOR
 p 2800 1328 100 0 0 HSV:MINOR
@@ -143,7 +143,7 @@ use esirs 1648 1792 100 0 sfEngTilt
 xform 0 1760 1904
 p 1648 1728 100 0 1 DESC:Mechs eng. pos.
 p 1728 1904 100 0 1 EGU:eng.units
-p 1648 1696 100 0 1 FDSC:eng. position 
+p 1648 1696 100 0 1 FDSC:eng. position
 p 1776 1936 100 0 1 FTVL:LONG
 p 1648 1568 100 0 1 HHSV:MAJOR
 p 1920 1568 100 0 1 HIGH:0.0
@@ -163,7 +163,7 @@ use esirs 2320 1056 100 0 aoTilt
 xform 0 2432 1168
 p 2320 992 100 0 1 DESC:Mechs real world pos.
 p 2464 1168 100 0 1 EGU:deg
-p 2320 960 100 0 1 FDSC:real world position 
+p 2320 960 100 0 1 FDSC:real world position
 p 2432 1200 100 0 1 FTVL:DOUBLE
 p 2160 688 100 0 0 HHSV:MAJOR
 p 2160 592 100 0 0 HSV:MINOR
@@ -178,7 +178,7 @@ use esirs 1696 1040 100 0 aoEngTilt
 xform 0 1808 1152
 p 1696 976 100 0 1 DESC:Mechs eng. pos.
 p 1776 1152 100 0 1 EGU:eng.units
-p 1696 944 100 0 1 FDSC:eng. position 
+p 1696 944 100 0 1 FDSC:eng. position
 p 1808 1184 100 0 1 FTVL:LONG
 p 1536 672 100 0 0 HHSV:MAJOR
 p 1536 576 100 0 0 HSV:MINOR
@@ -270,7 +270,7 @@ p -608 288 100 0 1 set4:trigtop $(sadtop)CHlt
 p -192 384 100 0 1 set5:hindex2 $(trgtop2).G
 p -192 352 100 0 1 set6:mindex2 $(trgtop2).H
 p -192 320 100 0 1 set7:ftop $(ftop)p1_
-p -192 288 100 0 1 seta:sad  $(sad)p1:
+p -192 288 100 0 1 seta:sad $(sad)p1:
 use ccSysSad -392 2423 100 0 system
 xform 0 -312 2528
 p -400 2400 100 0 1 set1:sadtop $(sadtop)cc:

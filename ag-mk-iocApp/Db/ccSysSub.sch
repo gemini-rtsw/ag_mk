@@ -111,9 +111,6 @@ p 803 -24 100 0 -1 val(in):-1
 use hwin 384 999 100 0 hwin#509
 xform 0 480 1040
 p 387 1032 100 0 -1 val(in):2
-use hwin 384 887 100 0 hwin#510
-xform 0 480 928
-p 387 920 100 0 -1 val(in):0
 use eseqs 784 263 100 0 rebootseq
 xform 0 944 512
 p 880 672 100 0 1 DLY1:0
@@ -232,5 +229,5 @@ p -2032 -1170 100 0 1 TWST:FAST
 p -2032 -1106 100 0 1 ZRST:NONE
 use hwout 1288 496 100 0 hwout#522
 xform 0 1384 512
-p 1384 503 100 0 -1 val(outp):$(top)iocStats:SysReset .PP
+p 1384 503 100 0 -1 val(outp):$(ag)iocStats:SysReset .PP
 [comments]

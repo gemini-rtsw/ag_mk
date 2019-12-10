@@ -1,23 +1,23 @@
 [schematic2]
-uniq 272
+uniq 17
 [tools]
 [detail]
-w -70 1531 100 0 n#268 compSad.probe.FLNK -592 1696 -272 1696 -272 1520 192 1520 esirs.tableAngle.SLNK
-w 1700 891 100 0 n#256 esirs.y.FLNK 1664 976 1696 976 1696 816 1760 816 esirs.z.SLNK
-w 1864 1075 100 0 n#255 hwin.hwin#257.in 2016 1040 2016 1072 1760 1072 1760 976 esirs.z.INP
-w 1130 1115 100 0 n#252 esirs.armEngPos.FLNK 2160 1680 2208 1680 2208 1104 112 1104 112 816 192 816 esirs.angle.SLNK
-w 1684 1595 100 0 n#250 esirs.tableEngPos.FLNK 1648 1680 1680 1680 1680 1520 1744 1520 esirs.armEngPos.SLNK
-w 1172 1595 100 0 n#247 esirs.armAngle.FLNK 1120 1680 1168 1680 1168 1520 1232 1520 esirs.tableEngPos.SLNK
-w 1848 1787 100 0 n#244 hwin.hwin#245.in 2000 1744 2000 1776 1744 1776 1744 1680 esirs.armEngPos.INP
-w 660 891 100 0 n#205 esirs.angle.FLNK 608 976 656 976 656 816 736 816 esirs.x.SLNK
-w 296 1075 100 0 n#201 hwin.hwin#203.in 448 1040 448 1072 192 1072 192 976 esirs.angle.INP
-w 1188 891 100 0 n#199 esirs.x.FLNK 1152 976 1184 976 1184 816 1248 816 esirs.y.SLNK
-w 1352 1075 100 0 n#195 hwin.hwin#197.in 1504 1040 1504 1072 1248 1072 1248 976 esirs.y.INP
-w 644 1595 100 0 n#192 esirs.tableAngle.FLNK 608 1680 640 1680 640 1520 704 1520 esirs.armAngle.SLNK
-w 840 1075 100 0 n#189 hwin.hwin#190.in 992 1040 992 1072 736 1072 736 976 esirs.x.INP
-w 296 1779 100 0 n#188 hwin.hwin#187.in 448 1744 448 1776 192 1776 192 1680 esirs.tableAngle.INP
-w 808 1779 100 0 n#115 hwin.hwin#117.in 960 1744 960 1776 704 1776 704 1680 esirs.armAngle.INP
-w 1336 1787 100 0 n#114 hwin.hwin#116.in 1488 1744 1488 1776 1232 1776 1232 1680 esirs.tableEngPos.INP
+w -70 1531 100 0 n#1 compSad.probe.FLNK -592 1696 -272 1696 -272 1520 192 1520 esirs.tableAngle.SLNK
+w 1700 891 100 0 n#2 esirs.y.FLNK 1664 976 1696 976 1696 816 1760 816 esirs.z.SLNK
+w 1864 1075 100 0 n#3 hwin.hwin#257.in 2016 1040 2016 1072 1760 1072 1760 976 esirs.z.INP
+w 1130 1115 100 0 n#4 esirs.armEngPos.FLNK 2160 1680 2208 1680 2208 1104 112 1104 112 816 192 816 esirs.angle.SLNK
+w 1684 1595 100 0 n#5 esirs.tableEngPos.FLNK 1648 1680 1680 1680 1680 1520 1744 1520 esirs.armEngPos.SLNK
+w 1172 1595 100 0 n#6 esirs.armAngle.FLNK 1120 1680 1168 1680 1168 1520 1232 1520 esirs.tableEngPos.SLNK
+w 1848 1787 100 0 n#7 hwin.hwin#245.in 2000 1744 2000 1776 1744 1776 1744 1680 esirs.armEngPos.INP
+w 660 891 100 0 n#8 esirs.angle.FLNK 608 976 656 976 656 816 736 816 esirs.x.SLNK
+w 296 1075 100 0 n#9 hwin.hwin#203.in 448 1040 448 1072 192 1072 192 976 esirs.angle.INP
+w 1188 891 100 0 n#10 esirs.x.FLNK 1152 976 1184 976 1184 816 1248 816 esirs.y.SLNK
+w 1352 1075 100 0 n#11 hwin.hwin#197.in 1504 1040 1504 1072 1248 1072 1248 976 esirs.y.INP
+w 644 1595 100 0 n#12 esirs.tableAngle.FLNK 608 1680 640 1680 640 1520 704 1520 esirs.armAngle.SLNK
+w 840 1075 100 0 n#13 hwin.hwin#190.in 992 1040 992 1072 736 1072 736 976 esirs.x.INP
+w 296 1779 100 0 n#14 hwin.hwin#187.in 448 1744 448 1776 192 1776 192 1680 esirs.tableAngle.INP
+w 808 1779 100 0 n#15 hwin.hwin#117.in 960 1744 960 1776 704 1776 704 1680 esirs.armAngle.INP
+w 1336 1787 100 0 n#16 hwin.hwin#116.in 1488 1744 1488 1776 1232 1776 1232 1680 esirs.tableEngPos.INP
 s 288 1168 100 0 MAJOR/MINOR settings are the same for all records (see tableAngle).
 s 2192 256 500 512 pwfsSad.sch
 s -608 544 100 0 usage only for engineering purposes!
@@ -25,27 +25,35 @@ s -608 592 100 0 These are the real (underlying) 1-D motors
 s -784 1824 100 0 These are the top-level n-D mechanisms from the ICD
 s 288 1136 100 0 The ranges for Hi and Lo (HIHI/LOLO) will be put in later by a c routine.
 [cell use]
+use bc200tr -1024 -104 -100 0 frame
+xform 0 656 1200
+p 1552 64 100 0 1 author:O.Frischmuth
+p 1776 48 100 0 -1 border:C
+p 1552 32 100 0 1 checked:O.Frischmuth
+p 1808 48 100 0 -1 date:15 May 97
+p 1792 176 100 0 -1 project:A&G Control System
+p 1792 112 100 0 -1 title:GBD/PWFS SAD schematic
 use sircomb 240 2071 100 0 sircomb#271
 xform 0 328 2176
 p 448 2240 100 0 1 set1:f1 $(sadtop)probeflags.VAL
-p 880 2112 100 0 1 set10:s5 $(sadtop)
-p 448 2080 100 0 1 set11:f6 $(sadtop)
-p 880 2080 100 0 1 set12:s6 $(sadtop)
-p 448 2048 100 0 1 set13:f7 $(sadtop)
-p 880 2048 100 0 1 set14:s7 $(sadtop)
+p 880 2112 100 0 1 set10:s5 
+p 448 2080 100 0 1 set11:f6 
+p 880 2080 100 0 1 set12:s6 
+p 448 2048 100 0 1 set13:f7
+p 880 2048 100 0 1 set14:s7 
 p 880 2240 100 0 1 set2:s1 $(sadtop)probeflags.OMSS
 p 448 2208 100 0 1 set3:f2 $(sadtop)fldstopflags.VAL
 p 880 2208 100 0 1 set4:s2 $(sadtop)fldstopflags.OMSS
 p 448 2176 100 0 1 set5:f3 $(sadtop)filterflags.VAL
 p 880 2176 100 0 1 set6:s3 $(sadtop)filterflags.OMSS
-p 448 2144 100 0 1 set7:f4 $(sadtop)
-p 880 2144 100 0 1 set8:s4 $(sadtop)
-p 448 2112 100 0 1 set9:f5 $(sadtop)
+p 448 2144 100 0 1 set7:f4 
+p 880 2144 100 0 1 set8:s4 
+p 448 2112 100 0 1 set9:f5 
 use esirs 1856 768 100 0 z
 xform 0 1968 880
 p 1856 704 100 0 1 DESC:Component z position
 p 2016 864 100 0 1 EGU:mm
-p 1856 672 100 0 1 FDSC:real position 
+p 1856 672 100 0 1 FDSC:real position
 p 1968 896 100 0 1 FTVL:DOUBLE
 p 1696 400 100 0 0 HHSV:MAJOR
 p 1696 304 100 0 0 HSV:MINOR
@@ -61,7 +69,7 @@ use esirs 288 768 100 0 angle
 xform 0 400 880
 p 288 704 100 0 1 DESC:Real world probe angle
 p 448 864 100 0 1 EGU:deg
-p 288 672 100 0 1 FDSC:probe angle 
+p 288 672 100 0 1 FDSC:probe angle
 p 400 896 100 0 1 FTVL:DOUBLE
 p 128 400 100 0 0 HHSV:MAJOR
 p 128 304 100 0 0 HSV:MINOR
@@ -77,7 +85,7 @@ use esirs 1344 768 100 0 y
 xform 0 1456 880
 p 1344 704 100 0 1 DESC:Component y position
 p 1504 864 100 0 1 EGU:mm
-p 1344 672 100 0 1 FDSC:real position 
+p 1344 672 100 0 1 FDSC:real position
 p 1456 896 100 0 1 FTVL:DOUBLE
 p 1184 400 100 0 0 HHSV:MAJOR
 p 1184 304 100 0 0 HSV:MINOR
@@ -93,7 +101,7 @@ use esirs 832 768 100 0 x
 xform 0 944 880
 p 832 704 100 0 1 DESC:Component x position
 p 992 880 100 0 1 EGU:mm
-p 832 672 100 0 1 FDSC:real position 
+p 832 672 100 0 1 FDSC:real position
 p 944 912 100 0 1 FTVL:DOUBLE
 p 672 400 100 0 0 HHSV:MAJOR
 p 672 304 100 0 0 HSV:MINOR
@@ -109,7 +117,7 @@ use esirs 1328 1472 100 0 tableEngPos
 xform 0 1440 1584
 p 1328 1408 100 0 1 DESC:table eng. pos.
 p 1424 1584 100 0 1 EGU:eng.units
-p 1328 1376 100 0 1 FDSC:eng. position 
+p 1328 1376 100 0 1 FDSC:eng. position
 p 1456 1616 100 0 1 FTVL:LONG
 p 1168 1104 100 0 0 HHSV:MAJOR
 p 1168 1008 100 0 0 HSV:MINOR
@@ -125,7 +133,7 @@ use esirs 800 1472 100 0 armAngle
 xform 0 912 1584
 p 800 1408 100 0 1 DESC:Real world probe arm pos.
 p 960 1584 100 0 1 EGU:deg
-p 800 1376 100 0 1 FDSC:real world position 
+p 800 1376 100 0 1 FDSC:real world position
 p 912 1616 100 0 1 FTVL:DOUBLE
 p 640 1104 100 0 0 HHSV:MAJOR
 p 640 1008 100 0 0 HSV:MINOR
@@ -141,7 +149,7 @@ use esirs 288 1472 100 0 tableAngle
 xform 0 400 1584
 p 288 1408 100 0 1 DESC:Real world table pos.
 p 448 1584 100 0 1 EGU:deg
-p 288 1376 100 0 1 FDSC:real position 
+p 288 1376 100 0 1 FDSC:real position
 p 400 1616 100 0 1 FTVL:DOUBLE
 p 288 1248 100 0 1 HHSV:MAJOR
 p 672 1248 100 0 1 HIGH:0.0
@@ -161,7 +169,7 @@ use esirs 1840 1472 100 0 armEngPos
 xform 0 1952 1584
 p 1840 1408 100 0 1 DESC:arm eng. pos.
 p 1936 1584 100 0 1 EGU:eng.units
-p 1840 1376 100 0 1 FDSC:eng. position 
+p 1840 1376 100 0 1 FDSC:eng. position
 p 1968 1616 100 0 1 FTVL:LONG
 p 1680 1104 100 0 0 HHSV:MAJOR
 p 1680 1008 100 0 0 HSV:MINOR
@@ -237,12 +245,4 @@ p -800 256 100 0 1 set1:mechanism PA34
 p -800 224 100 0 1 set2:mech PA34
 p -800 192 100 0 1 set3:hindex
 p -800 160 100 0 1 set4:mindex
-use bc200tr -1024 -104 -100 0 frame
-xform 0 656 1200
-p 1552 64 100 0 1 author:O.Frischmuth
-p 1776 48 100 0 -1 border:C
-p 1552 32 100 0 1 checked:O.Frischmuth
-p 1808 48 100 0 -1 date:15 May 97
-p 1792 176 100 0 -1 project:A&G Control System
-p 1792 112 100 0 -1 title:GBD/PWFS SAD schematic
 [comments]
