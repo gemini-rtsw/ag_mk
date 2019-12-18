@@ -30,29 +30,29 @@
 #SNCSEQ = $(MODULES)/seq-ver
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
-EPICS_RELEASE=R3.14.12.8
+EPICS_RELEASE = R3.14.12.8
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-PRODSUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
-WORKSUPP=/gem_sw/work/$(EPICS_RELEASE)/support
+PRODSUP=/gem_sw/prod/$(EPICS_RELEASE)/support
+WORKSUP=/gem_sw/work/$(EPICS_RELEASE)/support
 
-SNCSEQ=$(PRODSUPP)/seq/2-2-5-3
-SLALIB=$(PRODSUPP)/slalib/1-9-10
-BANCOMM=$(PRODSUPP)/bancomm/1-6-10
-TIMELIB=$(PRODSUPP)/timelib/2-0-8
-GEMREC=$(PRODSUPP)/geminiRec/4-1-11
-TIMEPROBE=$(PRODSUPP)/timeProbe/1-1-15
-IOCSTATS=$(PRODSUPP)/iocStats/3-1-16-5
-GEMUTILS=$(PRODSUPP)/gemUtil/1-13
-PMAC=$(PRODSUPP)/pmaclib/1-1-12
-PVLOAD=$(PRODSUPP)/pvload/1-1-4
-XYCOM=$(PRODSUPP)/xycom/2-1-8
-TCSLIB=$(PRODSUPP)/tcslib/1-0-16
-AGSEQ=$(PRODSUPP)/agSeq/1-1
+BANCOMM=$(PRODSUP)/bancomm/1-6-10
+TIMELIB=$(PRODSUP)/timelib/2-0-8
+SLALIB=$(PRODSUP)/slalib/1-9-10
+IOCSTATS=$(PRODSUP)/iocStats/3-1-16-5
+GEMREC=$(PRODSUP)/geminiRec/4-1-11
+XYCOM=$(PRODSUP)/xycom/2-1-8
+PMAC=$(PRODSUP)/pmaclib/1-1-12
+SNCSEQ=$(PRODSUP)/seq/2-2-5-3
+PVLOAD=$(PRODSUP)/pvload/1-1-4
+GEMUTILS=$(PRODSUP)/gemUtil/1-13
+TCSLIB=$(PRODSUP)/tcslib/1-0-16
+TIMEPROBE=$(PRODSUP)/timeProbe/1-1-15
+AGSEQ=$(PRODSUP)/agSeq/2-1
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base
+EPICS_BASE=/gem_sw/epics/$(EPICS_RELEASE)/base
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
@@ -60,5 +60,6 @@ EPICS_BASE = /gem_sw/epics/$(EPICS_RELEASE)/base
 
 # These allow developers to override the RELEASE variable settings
 # without having to modify the configure/RELEASE file itself.
-#-include $(TOP)/../RELEASE.local
-#-include $(TOP)/configure/RELEASE.local
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/configure/RELEASE.local
+
