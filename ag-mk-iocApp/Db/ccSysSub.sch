@@ -1,5 +1,5 @@
 [schematic2]
-uniq 38
+uniq 37
 [tools]
 [detail]
 w -224 -1357 100 0 n#1 efanouts.initFan.LNK2 -272 -1360 -176 -1360 -176 -1216 -592 -1216 -592 -928 -544 -928 cadPlus.initP.STIN
@@ -7,40 +7,38 @@ w -416 -1181 100 0 n#2 ecad2.init.VALB -688 -1184 -144 -1184 -144 -1296 -32 -129
 w -152 -1325 100 0 n#3 efanouts.initFan.LNK1 -272 -1328 -32 -1328 elongouts.initSimLevel.SLNK
 w -600 -1405 100 0 n#4 ecad2.init.STLK -688 -1408 -512 -1408 efanouts.initFan.SLNK
 w 456 -1357 100 0 n#5 elongouts.initSimLevel.OUT 224 -1360 688 -1360 outhier.c#521.p
-w -72 -845 100 0 n#6 hwout.hwout#447.outp -64 -848 -80 -848 cadCar.cadCar#516.OVAL
-w -72 -909 100 0 n#7 hwout.hwout#448.outp -64 -912 -80 -912 cadCar.cadCar#516.FLNK
-w -296 -909 100 0 n#8 cadCar.cadCar#516.SLNK -240 -912 -352 -912 -352 -928 -384 -928 cadPlus.initP.STOUT
-w -456 -877 100 0 n#9 cadCar.cadCar#516.ICID -240 -880 -672 -880 -672 -1024 -688 -1024 ecad2.init.OCID
-w -440 -845 100 0 n#10 cadCar.cadCar#516.STAT -240 -848 -640 -848 -640 -928 junction
-w -664 -925 100 0 n#10 ecad2.init.VAL -688 -928 -640 -928 -640 -992 -544 -992 cadPlus.initP.STAT
-w 1475 643 100 0 n#11 hwout.hwout#457.outp 1472 640 1472 640 carPlus.carPlus#420.FLNK
-w -381 67 100 0 n#12 hwout.hwout#464.outp -384 64 -384 64 cadCar.cadCar#470.FLNK
-w 624 1043 100 0 n#13 hwin.hwin#509.in 576 1040 672 1040 672 672 784 672 eseqs.rebootseq.DOL1
-w 1136 547 100 0 n#14 eseqs.rebootseq.LNK5 1104 544 1168 544 1168 264 1224 264 egenSub.rebootsub.B
-w 1008 -13 100 0 n#15 hwin.hwin#504.in 992 -16 1024 -16 1024 160 704 160 704 544 784 544 eseqs.rebootseq.DOL5
-w 1107 624 100 0 n#16 eseqs.rebootseq.LNK3 1104 608 1104 640 eseqs.rebootseq.LNK2
-w 1144 611 100 0 n#16 junction 1104 608 1184 608 1184 328 1224 328 egenSub.rebootsub.A
-w 1000 35 100 0 n#17 hwin.hwin#495.in 992 32 1008 32 1008 144 688 144 688 608 784 608 eseqs.rebootseq.DOL3
-w 995 104 100 0 n#18 hwin.hwin#496.in 992 80 992 128 672 128 672 640 784 640 eseqs.rebootseq.DOL2
-w 688 355 100 0 n#19 ecad2.reboot.STLK 592 352 784 352 eseqs.rebootseq.SLNK
-w 1152 579 100 0 n#20 eseqs.rebootseq.LNK4 1104 576 1200 576 1200 736 1296 736 carPlus.carPlus#420.IDLK
-w 1144 675 100 0 n#21 eseqs.rebootseq.LNK1 1104 672 1184 672 1184 640 1296 640 carPlus.carPlus#420.BSLK
-w -656 163 100 0 n#22 ecad2.debug.VAL -688 160 -624 160 -624 128 -544 128 cadCar.cadCar#470.STAT
-w -381 131 100 0 n#23 hwout.hwout#466.outp -384 128 -384 128 cadCar.cadCar#470.OVAL
-w 1475 835 100 0 n#24 hwout.hwout#458.outp 1472 832 1472 832 carPlus.carPlus#420.OVAL
-w 944 835 100 0 n#25 ecad2.reboot.VAL 592 832 1296 832 carPlus.carPlus#420.STAT
-w 640 739 100 0 n#26 ecad2.reboot.OCID 592 736 688 736 688 800 1296 800 carPlus.carPlus#420.ICID
-w -1112 -1117 100 0 n#27 estringouts.simuStr.OUT -1216 -1120 -1008 -1120 ecad2.init.A
-w -1712 -1133 100 0 n#28 embbis.simuMenu.FLNK -1904 -1136 -1520 -1136 -1472 -1104 estringouts.simuStr.SLNK
-w -1704 -1165 100 0 n#29 embbis.simuMenu.VAL -1904 -1168 -1504 -1168 -1504 -1072 -1472 -1072 estringouts.simuStr.DOL
-w -656 -1437 100 0 n#30 ecad2.init.SPLK -688 -1440 -624 -1440 -624 -960 -544 -960 cadPlus.initP.SPIN
-w -568 67 100 0 n#31 cadCar.cadCar#470.SLNK -544 64 -592 64 -592 -320 -688 -320 ecad2.debug.STLK
-w -656 67 100 0 n#32 ecad2.debug.OCID -688 64 -624 64 -624 96 -544 96 cadCar.cadCar#470.ICID
-w -640 -61 100 0 n#33 ecad2.debug.OUTA -688 -64 -592 -64 hwout.hwout#349.outp
-w -1088 -29 100 0 n#34 estringouts.debugStr.OUT -1168 -32 -1008 -32 ecad2.debug.A
-w -1712 -109 100 0 n#35 embbis.debugMenu.FLNK -1904 -112 -1520 -112 -1424 -16 estringouts.debugStr.SLNK
-w -1704 -141 100 0 n#36 embbis.debugMenu.VAL -1904 -144 -1504 -144 -1504 16 -1424 16 estringouts.debugStr.DOL
-w 1114 514 -100 0 n#37 eseqs.rebootseq.LNK6 1104 512 1288 512 hwout.hwout#522.outp
+w -300 -877 100 0 n#6 cadCar.cadCar#516.SLNK -248 -880 -352 -880 -352 -928 -384 -928 cadPlus.initP.STOUT
+w -460 -845 100 0 n#7 cadCar.cadCar#516.ICID -248 -848 -672 -848 -672 -1024 -688 -1024 ecad2.init.OCID
+w -664 -925 100 0 n#8 ecad2.init.VAL -688 -928 -640 -928 -640 -992 -544 -992 cadPlus.initP.STAT
+w 1475 643 100 0 n#9 hwout.hwout#457.outp 1472 640 1472 640 carPlus.carPlus#420.FLNK
+w 624 1043 100 0 n#10 hwin.hwin#509.in 576 1040 672 1040 672 672 784 672 eseqs.rebootseq.DOL1
+w 1136 547 100 0 n#11 eseqs.rebootseq.LNK5 1104 544 1168 544 1168 264 1224 264 egenSub.rebootsub.B
+w 1008 -13 100 0 n#12 hwin.hwin#504.in 992 -16 1024 -16 1024 160 704 160 704 544 784 544 eseqs.rebootseq.DOL5
+w 1107 624 100 0 n#13 eseqs.rebootseq.LNK3 1104 608 1104 640 eseqs.rebootseq.LNK2
+w 1144 611 100 0 n#13 junction 1104 608 1184 608 1184 328 1224 328 egenSub.rebootsub.A
+w 1000 35 100 0 n#14 hwin.hwin#495.in 992 32 1008 32 1008 144 688 144 688 608 784 608 eseqs.rebootseq.DOL3
+w 995 104 100 0 n#15 hwin.hwin#496.in 992 80 992 128 672 128 672 640 784 640 eseqs.rebootseq.DOL2
+w 688 355 100 0 n#16 ecad2.reboot.STLK 592 352 784 352 eseqs.rebootseq.SLNK
+w 1152 579 100 0 n#17 eseqs.rebootseq.LNK4 1104 576 1200 576 1200 736 1296 736 carPlus.carPlus#420.IDLK
+w 1144 675 100 0 n#18 eseqs.rebootseq.LNK1 1104 672 1184 672 1184 640 1296 640 carPlus.carPlus#420.BSLK
+w 1475 835 100 0 n#19 hwout.hwout#458.outp 1472 832 1472 832 carPlus.carPlus#420.OVAL
+w 944 835 100 0 n#20 ecad2.reboot.VAL 592 832 1296 832 carPlus.carPlus#420.STAT
+w 640 739 100 0 n#21 ecad2.reboot.OCID 592 736 688 736 688 800 1296 800 carPlus.carPlus#420.ICID
+w -1112 -1117 100 0 n#22 estringouts.simuStr.OUT -1216 -1120 -1008 -1120 ecad2.init.A
+w -1712 -1133 100 0 n#23 embbis.simuMenu.FLNK -1904 -1136 -1520 -1136 -1472 -1104 estringouts.simuStr.SLNK
+w -1704 -1165 100 0 n#24 embbis.simuMenu.VAL -1904 -1168 -1504 -1168 -1504 -1072 -1472 -1072 estringouts.simuStr.DOL
+w -656 -1437 100 0 n#25 ecad2.init.SPLK -688 -1440 -624 -1440 -624 -960 -544 -960 cadPlus.initP.SPIN
+w -572 99 100 0 n#26 cadCar.cadCar#470.SLNK -552 96 -592 96 -592 -320 -688 -320 ecad2.debug.STLK
+w -656 67 100 0 n#27 ecad2.debug.OCID -688 64 -624 64 -624 128 -552 128 cadCar.cadCar#470.ICID
+w -640 -61 100 0 n#28 ecad2.debug.OUTA -688 -64 -592 -64 hwout.hwout#349.outp
+w -1088 -29 100 0 n#29 estringouts.debugStr.OUT -1168 -32 -1008 -32 ecad2.debug.A
+w -1712 -109 100 0 n#30 embbis.debugMenu.FLNK -1904 -112 -1520 -112 -1424 -16 estringouts.debugStr.SLNK
+w -1704 -141 100 0 n#31 embbis.debugMenu.VAL -1904 -144 -1504 -144 -1504 16 -1424 16 estringouts.debugStr.DOL
+w 1196 515 100 0 n#32 eseqs.rebootseq.LNK6 1104 512 1288 512 hwout.hwout#522.outp
+w -389 131 100 0 n#33 hwout.hwout#466.outp -392 128 -392 128 cadCar.cadCar#470.OCID
+w -389 91 100 0 n#34 hwout.hwout#464.outp -392 88 -392 88 cadCar.cadCar#470.FLNK
+w -85 -845 100 0 n#35 hwout.hwout#447.outp -88 -848 -88 -848 cadCar.cadCar#516.OCID
+w -78 -870 -100 0 n#36 hwout.hwout#448.outp -88 -880 -88 -880 cadCar.cadCar#516.FLNK
 s -432 -1664 100 0 record at startup without having to trigger the CAD.
 s -432 -1632 100 0 The fan record allows us to process the initSimLevel
 s 864 1136 100 0 $Id: ccSysSub.sch,v 1.4 2012/09/18 03:32:34 gemvx Exp $
@@ -143,24 +141,24 @@ p 1048 -232 100 0 1 FTI:DOUBLE
 p 1048 -264 100 0 1 FTJ:DOUBLE
 p 1288 -504 100 0 1 PV:$(top)
 p 1288 -536 100 0 1 SNAM:rebootsub
-use hwout -384 87 100 0 hwout#466
-xform 0 -288 128
-p -288 119 100 0 -1 val(outp):$(top)SCar.D
-use hwout -384 23 100 0 hwout#464
-xform 0 -288 64
-p -288 55 100 0 -1 val(outp):$(top)CCar.VAL PP NMS
+use hwout -392 87 100 0 hwout#466
+xform 0 -296 128
+p -296 119 100 0 -1 val(outp):$(top)SCar.D
+use hwout -392 47 100 0 hwout#464
+xform 0 -296 88
+p -296 79 100 0 -1 val(outp):$(top)CCar.VAL PP NMS
 use hwout 1472 791 100 0 hwout#458
 xform 0 1568 832
 p 1568 823 100 0 -1 val(outp):$(top)SCar.F
 use hwout 1472 599 100 0 hwout#457
 xform 0 1568 640
 p 1568 631 100 0 -1 val(outp):$(top)CCar.VAL PP NMS
-use hwout -64 -953 100 0 hwout#448
-xform 0 32 -912
-p 32 -921 100 0 -1 val(outp):$(top)CCar.VAL PP NMS
-use hwout -64 -889 100 0 hwout#447
-xform 0 32 -848
-p 32 -857 100 0 -1 val(outp):$(top)SCar.E
+use hwout -88 -921 100 0 hwout#448
+xform 0 8 -880
+p 8 -889 100 0 -1 val(outp):$(top)CCar.VAL PP NMS
+use hwout -88 -889 100 0 hwout#447
+xform 0 8 -848
+p 8 -857 100 0 -1 val(outp):$(top)SCar.E
 use hwout -592 -105 100 0 hwout#349
 xform 0 -496 -64
 p -496 -73 100 0 -1 val(outp):$(sadtop)cc:debugMode.VAL PP NMS
