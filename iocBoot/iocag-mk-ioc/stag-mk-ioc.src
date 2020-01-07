@@ -8,6 +8,7 @@ cd ${INSTALL}
 
 epicsEnvSet("IOCSH_PS1","$(IOCPROMPT)> ")
 
+nfsMount("$(CFGSERVER)","$(CFGREMOTE)","$(CFGLOCAL)")
 ## Register all support components
 dbLoadDatabase("dbd/ag-mk-ioc.dbd")
 ag_mk_ioc_registerRecordDeviceDriver(pdbbase)
@@ -41,8 +42,8 @@ init_logglobs
 
 setsimuHRWFS($(SIM_LEVEL))
 setsimuAG($(SIM_LEVEL))
-#setdebugHRWFS(0)
-#setdebugAG(0)
+# setdebugHRWFS($(DBG_LEVEL))
+# setdebugAG($(DBG_LEVEL))
 
 # Must be called after the setting of the preferred simu-level
 init_DPRam

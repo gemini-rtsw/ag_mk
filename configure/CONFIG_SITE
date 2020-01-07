@@ -22,28 +22,38 @@ CHECK_RELEASE = YES
 #CROSS_COMPILER_TARGET_ARCHS = vxWorks-ppc32
 # NOTE: Only for early development. Remove when PMACLIB is available for 3100
 #CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme3100 RTEMS-mvme2307
-CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme2307
+CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme2307 RTEMS-mvme3100
 
-# TESTING = YES
+#TESTING = YES
+
+CNFG_SERVER = 10.2.71.11
+CNFG_LOCAL  = /rtconfig
 
 ifeq ($(TESTING),YES)
+#  CNFG_REMOTE  = /gem_sw/test/rcar/AG/conf
+  CNFG_REMOTE = /gem_sw/etc/rtconfig
   TAG = tag
   THRWFS = thrwfs
-  CNFG_FILES = /gem_sw/test/rcar/AG/conf/ag
-  AgSeq_CNFG_FILES = /gem_sw/test/rcar/AG/conf/agSeq
   SIM_LEVEL = 3
+  DBG_LEVEL = 3
 else
+  CNFG_REMOTE = /gem_sw/etc/rtconfig
   TAG = ag
   THRWFS = hrwfs
-  CNFG_FILES = /gem_sw/etc/rtconfig/ag
-  AgSeq_CNFG_FILES = /gem_sw/etc/rtconfig/agSeq
   SIM_LEVEL = 0
+  DBG_LEVEL = 0
 endif
+
+CNFG_FILES = $(CNFG_LOCAL)/ag
+AgSeq_CNFG_FILES = $(CNFG_LOCAL)/agSeq
 
 TTCS=tcs
 
-USR_BOOT_FLAGS  = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MCFGFILE=$(CNFG_FILES) -MTCSTOP=$(TTCS) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
-USR_BOOT_FLAGS += -MSIM_LEVEL=$(SIM_LEVEL)
+USR_BOOT_FLAGS  = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MTCSTOP=$(TTCS) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
+USR_BOOT_FLAGS += -MSIM_LEVEL=$(SIM_LEVEL) -MDBG_LEVEL=$(DBG_LEVEL)
+USR_BOOT_FLAGS += -MCFGSERVER=$(CNFG_SERVER) -MCFGREMOTE=$(CNFG_REMOTE)
+USR_BOOT_FLAGS += -MCFGLOCAL=$(CNFG_LOCAL) -MCFGFILE=$(CNFG_FILES)
+
 USR_CFLAGS += -DTOP_AG=$(TAG) -DTOP_HRWFS=$(THRWFS)
 
 ifeq ($(TAG),ag)
@@ -55,10 +65,10 @@ endif
 # To install files into a location other than $(TOP) define
 #   INSTALL_LOCATION here.
 #INSTALL_LOCATION=</absolute/path/to/install/top>
-ifeq ($(TESTING),YES)
-  INSTALL_LOCATION = /gem_sw/test/rcar/AG/ioc/ag/mk
-endif
-USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
+#ifeq ($(TESTING),YES)
+#  INSTALL_LOCATION = /gem_sw/test/rcar/AG/ioc/ag/mk
+#endif
+#USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
 
 # Set this when the IOC and build host use different paths
 #   to the install location. This may be needed to boot from
