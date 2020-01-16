@@ -1,5 +1,5 @@
 
-#include  <ag_define.h>
+#include  <ag_define.h>		
 /* #include  <usrLib.h> */
 /* #include  <dbgLib.h> */
 
@@ -21,7 +21,7 @@ void writeMbox (long card, char *str)
    return ;
  } else {
    terminator = drvPmacMbxWriteRead (card, str, response, errmsg);
-   if (errmsg[0]) {
+   if (errmsg[0]) { 
      printf ("Write failed: response was %s\n", errmsg);
    } else {
      printf ("Write succeeded: response was %s\n", response);
@@ -141,26 +141,26 @@ long getsw (void)
 
 long checktask (long Id, long Pc)
 {
-printf ("\n==== show (Id,1); ______________________________________________________________________\n\n");
+/* printf ("\n==== show (Id,1); ______________________________________________________________________\n\n");
 
-  show (Id, 1);
+   show (Id, 1);
 
 printf ("\n==== lkAddr (Pc); ______________________________________________________________________\n\n");
 
-  lkAddr (Pc);				/* find name to Address	*/
-/*  i    (Id);
- *  ti   (Id);
-*/  
+  lkAddr (Pc); 				 find name to Address	
+  i    (Id);
+  ti   (Id);
+  
 printf ("\n==== checkStack (Id); ______________________________________________________________________\n\n");
 
    checkStack (Id);
-/* checkStack ((long)"scan0.2000");
- */
-printf ("\n===== (d) display mem (Pc-16) ______________________________________________________________________\n\n");
+ checkStack ((long)"scan0.2000");
+ 
+ printf ("\n===== (d) display mem (Pc-16) ______________________________________________________________________\n\n");
 
-   d ((byte*) Pc - 0x10, 0x10, 2);
+    d ((byte*) Pc - 0x10, 0x10, 2); 
 
-/*  pwd();	*/
+  pwd();	
 
 printf ("\n===== disassemble mem (Pc-16): l (%x, 0x10) ______________________________________________________________________\n\n",
 (unsigned int) Pc-0x08);
@@ -177,7 +177,7 @@ printf ("\n===== tt (Id); ______________________________________________________
   tt (Id);
 
 printf ("\n===== End of checktask ______________________________________________________________________\n\n");
-
+ */
   return (0);
 }
 
@@ -202,7 +202,7 @@ printf ("\n");
 for (i=0; i<10; i++)
 {
   printf ("StackAddress %#x: value = %#x = Pointer to: ", (unsigned int) addr-4*i, (unsigned int) *(long*)(addr-4*i)); 
-  lkAddr (*(long*)(addr-4*i));			/* find name to Address	*/
+  /* lkAddr (*(long*)(addr-4*i)); */		/* find name to Address	*/
   printf ("\n");
 }
 
