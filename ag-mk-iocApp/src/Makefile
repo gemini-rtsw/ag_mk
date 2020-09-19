@@ -32,6 +32,7 @@ ag-mk-ioc_DBD += menuScan.dbd
 ag-mk-ioc_DBD += devIocStats.dbd
 ag-mk-ioc_DBD += ag.dbd
 ag-mk-ioc_DBD += iocInit.dbd
+ag-mk-ioc_DBD += listAlarmRecords.dbd
 
 # ag-mk-ioc_registerRecordDeviceDriver.cpp derives from ag-mk-ioc.dbd
 ag-mk-ioc_SRCS += ag-mk-ioc_registerRecordDeviceDriver.cpp
@@ -78,6 +79,7 @@ ag-mk-ioc_LIBS += timelib
 ag-mk-ioc_LIBS += slalib
 ag-mk-ioc_LIBS += devIocStats
 ag-mk-ioc_LIBS += timeProbe
+ag-mk-ioc_LIBS += listAlarmRecords
 ag-mk-ioc_LIBS += seq pv
 
 # Finally link to the EPICS Base libraries
