@@ -1,3 +1,9 @@
+2020-01-07  TCCiocBoot/iocag-mk-ioc/stag-mk-ioc.src
+  A&G/MK 1-12 fixes problems with eoffsetting and astigmatism. Some
+  code was left out of the agSeq that was unique to GN/GS. This release
+  changes iocBoot/iocag-mk-ioc/stag-mk-ioc.src to load a site-specific
+  agSeq top level module. See http://jira.gemini.edu:8080/browse/RTUPG-972
+
 2020-01-07  RJC
   A&G/MK 1-11 is released as the commissioning version. Further changes
   will be documented here.

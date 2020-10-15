@@ -8,13 +8,16 @@ include $(TOP)/configure/CONFIG
 # of paths output by "convertGemRelease.pl dbPaths"
 vpath %.db $(SYS_DB_PATHS)
 
-DB = ag_top.db
+DB  = ag_top.db
 DB += simu_top.db
 DB += ag_sadtop.db
 DB += iocAdminRTEMS.db
 DB += timeProbe.db
-DB += agSeqTop.db
+DB += agSeqTopGN.db
+DB += agSeqTopGS.db
 DB += agSeqSadTop.db
+#DB += agSeqSiteDepGN.db
+#DB += agSeqSiteDepGS.db
 # DB += oiwfsgwTop.db
 
 #----------------------------------------------------
