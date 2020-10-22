@@ -37,10 +37,9 @@ configure-ioc -t prod \
   -s /gem_sw/work/R3.14.12.8/ioc/ag/mk/bin/RTEMS-mvme2307/stag-mk-ioc.boot \
   ag-mk-ioc
 
-# Boot back to original ag code
+# Boot back to new 1-12-1 code
 
 configure-ioc -t prod \
-  -b /gem_sw/prod/R3.14.12.8/ioc/ag/mk/1-11/bin/RTEMS-mvme2307/ag-mk-ioc.boot \
-  -s /gem_sw/prod/R3.14.12.8/ioc/ag/mk/1-11/bin/RTEMS-mvme2307/stag-mk-ioc.boot \
+  -b /gem_sw/prod/R3.14.12.8/ioc/ag/mk/1-12-1/bin/RTEMS-mvme2307/ag-mk-ioc.boot \
+  -s /gem_sw/prod/R3.14.12.8/ioc/ag/mk/1-12-1/bin/RTEMS-mvme2307/stag-mk-ioc.boot \
   ag-mk-ioc
-
