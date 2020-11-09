@@ -230,7 +230,7 @@ s 2768 752 100 0 1=Update CAR!
 s 1792 1296 100 0 may have caused task crashes
 s 1792 1264 100 0 therefore connection cut.
 s 2096 1264 100 0 (OUTC)
-n 2816 2464 3215 2800 100
+n 2816 2464 3186 2800 100
 This schematic contains all the
 CADrecords responsible for moving
 amechanism. All commandsare channeled
@@ -298,6 +298,8 @@ p 1648 320 100 0 1 PREC:2
 p 1456 256 100 0 1 PV:$(top)$(mech)
 p 1456 320 100 0 1 SCAN:2 second
 p 1456 224 100 0 1 SNAM:DPRead
+p 1185 -139 100 0 1 FTVL:LONG
+p 1185 -139 100 0 1 FTVM:LONG
 use egenSubB -480 -48 100 0 CalParm
 xform 0 -432 336
 p -864 446 100 0 0 BRSV:NO_ALARM

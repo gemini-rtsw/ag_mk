@@ -1,3 +1,7 @@
+2020-11-09  TCC
+  A&G/MK 1-13 Added "SFLinear Position encode ECT count" (vall) and
+  "SFLinear Skew encode ECT count" (valm) to ag:Lin2DPRead for Stan.
+
 2020-10-15  TCC
   A&G/MK 1-12 fixes problems with eoffsetting and astigmatism. Some
   code was left out of the agSeq that was unique to GN/GS. This release
