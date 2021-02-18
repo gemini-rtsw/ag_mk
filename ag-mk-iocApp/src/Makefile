@@ -33,6 +33,7 @@ ag-mk-ioc_DBD += devIocStats.dbd
 ag-mk-ioc_DBD += ag.dbd
 ag-mk-ioc_DBD += iocInit.dbd
 ag-mk-ioc_DBD += listAlarmRecords.dbd
+ag-mk-ioc_DBD += net_config.dbd
 
 # ag-mk-ioc_registerRecordDeviceDriver.cpp derives from ag-mk-ioc.dbd
 ag-mk-ioc_SRCS += ag-mk-ioc_registerRecordDeviceDriver.cpp
@@ -58,7 +59,7 @@ ag-mk-ioc_SRCS += ag_utils.c
 ag-mk-ioc_SRCS += cicsCALib.c
 ag-mk-ioc_SRCS += cicsDBLib.c
 ag-mk-ioc_SRCS += cicsLib.c
-
+ag-mk-ioc_SRCS += net_config.c
 ag-mk-ioc_SRCS += initTrace.c
 
 LIBRARY_IOC += agSupport
@@ -81,6 +82,7 @@ ag-mk-ioc_LIBS += devIocStats
 ag-mk-ioc_LIBS += timeProbe
 ag-mk-ioc_LIBS += listAlarmRecords
 ag-mk-ioc_LIBS += seq pv
+ag-mk-ioc_LIBS += netConfig
 
 # Finally link to the EPICS Base libraries
 ag-mk-ioc_LIBS += agSupport

@@ -377,6 +377,13 @@ long combineFlexCoeffs( struct genSubRecord *pgsub )
 	STRING, TNEW, T1, T2, T3, copymark); 				\
     	agprintf ("%s\n", messages);		}
 
+  #define       PRINTTIMESNC(STRING)                                    \
+        if (fastdebug)  {                       \
+        sprintf( messages,                              \
+        "%s tn=%16.12g, T1=%16.12g, T2=%16.12g, T3=%16.12g, m=%d",     \
+        STRING, TNEW, T1, T2, T3, copymark);                          \
+        agprintfnc ("%s\n", messages);          }
+
   #define	PRINTALLCOEFF						\
     sprintf( messages, "Fol: A=%10.4g, B=%10.4g, C=%10.4g, D=%10.4g, 	\
 		E=%10.4g, F=%10.4g, G=%10.4g, H=%10.4g, I=%10.4g, 	\
@@ -490,6 +497,10 @@ long followA( struct genSubRecord *pgsub )
     }
   }
 
+
+  static unsigned int tnew_count = 0;
+  static int old_copymark = 0; 
+
   if (IDNEW != ID3) {                                   /* new track */
     if (fastdebug) {
       sprintf (	messages, "\t%s\t- new track %d -> %d", 
@@ -498,13 +509,21 @@ long followA( struct genSubRecord *pgsub )
     } 
     copymark = 0;
   }
-  else if (TNEW >  T3) { copymark = 1; }		/* new dem. is newest */  
-  else if (TNEW == T3) { copymark = 2; PRINTTIMES ("Fol: TNEW replaces T3 !") }
-  else if (TNEW >  T2) { copymark = 3; PRINTTIMES ("Fol: TNEW older than T3 !") }
-  else if (TNEW == T2) { copymark = 4; PRINTTIMES ("Fol: TNEW replaces T2 !") }
-  else if (TNEW >  T1) { copymark = 5; PRINTTIMES ("Fol: TNEW older than T2 !") }
-  else if (TNEW == T1) { copymark = 6; PRINTTIMES ("Fol: TNEW replaces T1 !") }
-  else 		       { copymark = 7; PRINTTIMES ("Fol: TNEW older than T1 !") }
+  else if (TNEW >  T3) { copymark = 1; }                /* new dem. is newest */
+  else if (TNEW == T3) { copymark = 2; if (tnew_count++ % 1000 == 0 || old_copymark != copymark)
+      {PRINTTIMES("Fol: TNEW replaces T3 !")} else {PRINTTIMESNC("Fol: TNEW replaces T3 !")} }
+  else if (TNEW >  T2) { copymark = 3; if (tnew_count++ % 1000 == 0 || old_copymark != copymark)
+      {PRINTTIMES("Fol: TNEW older than T3 !")} else {PRINTTIMESNC("Fol: TNEW older than T3 !")} }
+  else if (TNEW == T2) { copymark = 4; if (tnew_count++ % 1000 == 0 || old_copymark != copymark)
+      {PRINTTIMES("Fol: TNEW replaces T2 !")} else {PRINTTIMESNC("Fol: TNEW replaces T2 !")} }
+  else if (TNEW >  T1) { copymark = 5; if (tnew_count++ % 1000 == 0 || old_copymark != copymark)
+      {PRINTTIMES("Fol: TNEW older than T2 !")} else {PRINTTIMESNC("Fol: TNEW older than T2 !")} }
+  else if (TNEW == T1) { copymark = 6; if (tnew_count++ % 1000 == 0 || old_copymark != copymark)
+      {PRINTTIMES("Fol: TNEW replaces T1 !")} else {PRINTTIMESNC("Fol: TNEW replaces T1 !")} }
+  else                     { copymark = 7; if (tnew_count++ % 1000 == 0 || old_copymark != copymark)
+      {PRINTTIMES("Fol: TNEW older than T1 !")} else {PRINTTIMESNC("Fol: TNEW older than T1 !")} }
+
+  old_copymark = copymark;
 
   switch (copymark)	/* 1st: shifting of values	*/
   {			/* 2nd: copying Input J in place, updating xyz */

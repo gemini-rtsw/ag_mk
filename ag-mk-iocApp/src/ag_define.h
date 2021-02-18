@@ -231,8 +231,10 @@ extern long  pmacRamGetD ( volatile short * pDpram, double*pVal);
 	     (getdebug (mechindex) >  DEB_ERROR))  cicsLogMessage (message)
 
 #define agprintf(formstr,message)			\
-      if (getdebug (ag_cc) > DEB_ERROR)  printf (formstr,message)
+      if (getdebug (ag_cc) > DEB_ERROR)  errlogPrintf (formstr,message)
 
+#define agprintfnc(formstr,message)			\
+      if (getdebug (ag_cc) > DEB_ERROR)  errlogPrintfNoConsole (formstr,message)
 
 #define mod(a,b)		dmod ((a),(b))
 
