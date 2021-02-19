@@ -1,3 +1,7 @@
+2020-02-17  HS
+  A&G/MK 1-15 Moved gemUtil to 1-14, increased mbuff size, fixed TNEW
+  10Hz console error by slowing prinout, see bug RTUPG-932. 
+
 2020-11-09  TCC
   A&G/MK 1-13 Added "SFLinear Position encode ECT count" (vall) and
   "SFLinear Skew encode ECT count" (valm) to ag:Lin2DPRead for Stan.
