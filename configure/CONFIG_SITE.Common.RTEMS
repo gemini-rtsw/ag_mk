@@ -1,0 +1,21 @@
+# Define this one. It will add a function to monitor mbufs,
+# whether you change the MBUF pool size or not.
+ARCH_DEP_CFLAGS += -DEPICS_RTEMS
+
+# To change the pool size, uncomment the following and adjust
+# as needed. The values are in kB. The default values are:
+#
+#   180kB for mbufs     (1440 mbufs, 128 bytes each)
+#   350kB for clusters  (175 clusters, 2048 bytes each)
+#
+# The final numbers should be balanced. With the default values,
+# there are ~8.4x more mbufs than clusters. With the example below
+# (taken from MVME6100), there are 6.2x more mbufs than clusters.
+#
+# Most network operations fit on 1, maybe 2 regular mbufs.
+# Clusters are used only with larger (> 208 bytes) payloads. So,
+# having smaller mbuf/cluster ratio would make sense only on the
+# base of actual traffic, if we know it's needed.
+#
+ARCH_DEP_CFLAGS += -DRTEMS_NETWORK_CONFIG_MBUF_SPACE=2048
+ARCH_DEP_CFLAGS += -DRTEMS_NETWORK_CONFIG_CLUSTER_SPACE=5120
