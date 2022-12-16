@@ -1,7 +1,7 @@
 $(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-ioc
 
 # ******* Production
-cd ${INSTALL}
+cd ../..
 
 # ******* Testing
 # cd $(INSTALL_LOCATION)
@@ -17,7 +17,7 @@ ag_mk_ioc_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 #dbLoadTemplate("db/ag-mk-ioc.substitutions")
 #dbLoadRecords("db/ag-mk-ioc.db", "user=rcardene")
-dbLoadRecords("db/iocAdminRTEMS.db"," IOC=$(AGTOP):iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
+#dbLoadRecords("db/iocAdminRTEMS.db"," IOC=$(AGTOP):iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
 dbLoadRecords("db/timeProbe.db","top=$(AGTOP):")
 dbLoadRecords("db/ag_top.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)")
 dbLoadRecords("db/ag_sadtop.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)")

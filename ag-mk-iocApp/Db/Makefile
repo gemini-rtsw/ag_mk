@@ -11,7 +11,7 @@ vpath %.db $(SYS_DB_PATHS)
 DB  = ag_top.db
 DB += simu_top.db
 DB += ag_sadtop.db
-DB += iocAdminRTEMS.db
+#DB += iocAdminRTEMS.db
 DB += timeProbe.db
 DB += agSeqTopGN.db
 DB += agSeqTopGS.db
@@ -32,5 +32,5 @@ include $(TOP)/configure/RULES
 $(COMMON_DIR)/%.db: %.db
 	cp $< $@
 
-clean::
+clean:
 	$(RM) *.dat *.bak
