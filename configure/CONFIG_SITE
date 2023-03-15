@@ -1,0 +1,83 @@
+# CONFIG_SITE
+
+# Make any application-specific changes to the EPICS build
+#   configuration variables in this file.
+#
+# Host/target specific settings can be specified in files named
+#   CONFIG_SITE.$(EPICS_HOST_ARCH).Common
+#   CONFIG_SITE.Common.$(T_A)
+#   CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
+
+# CHECK_RELEASE controls the consistency checking of the support
+#   applications pointed to by the RELEASE* files.
+# Normally CHECK_RELEASE should be set to YES.
+# Set CHECK_RELEASE to NO to disable checking completely.
+# Set CHECK_RELEASE to WARN to perform consistency checking but
+#   continue building even if conflicts are found.
+CHECK_RELEASE = YES
+
+# Set this when you only want to compile this application
+#   for a subset of the cross-compiled target architectures
+#   that Base is built for.
+#CROSS_COMPILER_TARGET_ARCHS = vxWorks-ppc32
+# NOTE: Only for early development. Remove when PMACLIB is available for 3100
+#CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme3100 RTEMS-mvme2307
+CROSS_COMPILER_TARGET_ARCHS = RTEMS-mvme2307 RTEMS-mvme3100
+
+TESTING = YES
+
+CNFG_SERVER = 10.2.71.11
+CNFG_LOCAL  = /rtconfig
+
+ifeq ($(TESTING),YES)
+#  CNFG_REMOTE  = /gem_sw/test/rcar/AG/conf
+  CNFG_REMOTE = /gem_sw/etc/rtconfig
+  TAG = tag
+  THRWFS = thrwfs
+  #Below sim level to zero for Stan to talk to PMAC
+  SIM_LEVEL = 0
+  DBG_LEVEL = 0
+else
+  CNFG_REMOTE = /gem_sw/etc/rtconfig
+  TAG = ag
+  THRWFS = hrwfs
+  SIM_LEVEL = 0
+  DBG_LEVEL = 0
+endif
+
+CNFG_FILES = $(CNFG_LOCAL)/ag
+AgSeq_CNFG_FILES = $(CNFG_LOCAL)/agSeq
+
+TTCS=tcs
+
+USR_BOOT_FLAGS  = -MAGTOP=$(TAG) -MHRWFS=$(THRWFS) -MTCSTOP=$(TTCS) -MAgSeqCFGFILE=$(AgSeq_CNFG_FILES)
+USR_BOOT_FLAGS += -MSIM_LEVEL=$(SIM_LEVEL) -MDBG_LEVEL=$(DBG_LEVEL)
+USR_BOOT_FLAGS += -MCFGSERVER=$(CNFG_SERVER) -MCFGREMOTE=$(CNFG_REMOTE)
+USR_BOOT_FLAGS += -MCFGLOCAL=$(CNFG_LOCAL) -MCFGFILE=$(CNFG_FILES)
+
+USR_CFLAGS += -DTOP_AG=$(TAG) -DTOP_HRWFS=$(THRWFS)
+
+ifeq ($(TAG),ag)
+	USR_BOOT_FLAGS += -MIOCPROMPT=ag-mk-ioc
+else
+	USR_BOOT_FLAGS += -MIOCPROMPT=ag-TEST-ioc
+endif
+
+# To install files into a location other than $(TOP) define
+#   INSTALL_LOCATION here.
+#INSTALL_LOCATION=</absolute/path/to/install/top>
+#ifeq ($(TESTING),YES)
+#  INSTALL_LOCATION = /gem_sw/test/rcar/AG/ioc/ag/mk
+#endif
+#USR_BOOT_FLAGS += -MINSTALL_LOCATION=$(INSTALL_LOCATION)
+
+# Set this when the IOC and build host use different paths
+#   to the install location. This may be needed to boot from
+#   a Microsoft FTP server say, or on some NFS configurations.
+#IOCS_APPL_TOP = </IOC's/absolute/path/to/install/top>
+
+# These allow developers to override the CONFIG_SITE variable
+# settings without having to modify the configure/CONFIG_SITE
+# file itself.
+-include $(TOP)/../CONFIG_SITE.local
+-include $(TOP)/configure/CONFIG_SITE.local

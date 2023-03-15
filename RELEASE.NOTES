@@ -1,0 +1,6 @@
+2020-01-07  RJC
+  A&G/MK 1-11 is released as the commissioning version. Further changes
+  will be documented here.
+
+2018-01-29  RJC
+  Generated an skeleton IOC tree, to start porting the code to RTEMS.

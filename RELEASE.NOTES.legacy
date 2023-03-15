@@ -1,0 +1,187 @@
+3 December 1999		V1-0
+	Current A&G.
+
+22 December 1999        V1-1
+        New routines to predict rotary table angles
+
+10 March 2000           V3-0
+        Health and CAR propagation changed (now with event processing)
+        SNL changed, sequencer problems discovered/removed (delay function)
+        Version is final version for software acceptance tests
+
+31 March 2000           V3-1
+	Applied counter torque ramp visualized in dm screen
+	pimg made invisible and disabled (it is not to be used any more)
+
+25 April 2000 until 05 May 2000		V3-2
+	startup files changed (named N for North and S for South)
+	parameter file (lut/pv) changes merged from Jena and Hawaii versions
+	version number of PLC files jumped from V3.1 to V7.1 due to Hawaii 	
+	  version system
+	Probe arm PLC programs for PA3 and PA4 park further outside now.
+	Chris Mayer's changes to capfast and c code implemented.
+	Software ported from Epics Gem5 to Gem6 and Gem6T (Power PC)
+	Put effort into avoiding warning messages from the strict PPC compiler
+	"undefined" string created in look up table for all unknown positions
+	"park-pos", "datum-pos" and "undefined" strings hidden from menus
+
+25 October 2000        V3-4
+        Orient the A&G x and y frame to the rest of the telescope. Do not
+        use this release with versions of the TCS prior to V1-9.
+
+04 February 2001       V4-0
+        New accurate probe positioning code that removes the need for work
+        rounds in the TCS plus a full simulation mode for testing new versions
+        of the A&G off-line. Must be used with V2-0 or later of the TCS.
+        Full details of the new features etc. can be found in ag_cjm_005.fm
+
+05 May 2001            V4-1
+        There is now only one set of calibration parameters for the probes and
+        their subsystems rather than different sets depending on whether you
+        consider individual mechanisms or the probe as one unit. The previous
+        implementation could lead to the bizarre situation where a mechanism
+        was apparently at two different places at the same time ! The new
+        method removes this confusion and also means calibration parameters
+        need only be specified once.
+
+13 June 2001           V4-1-1
+        Fix bug discovered by Roberto that loading the calibration display
+        screens can give unconnected channels. The problem was using the
+        incoorect display file in certain hierarchies.
+
+17 June 2001           V4-2
+        Reorganise and rename the LUT files. This was done to solve the 
+        problem that the A&G always loaded the Gemini North files first. 
+        For Gemini South this meant that often on a reboot all the LUT 
+        tables had to be loaded by hand. Temporary work rounds were
+        partially succesful but increased the boot time at Gemini South.
+        Internally the CAD records are now named by new macros in 
+        preparation for interfacing the hrwfs database to the OCS.
+
+24 June 2001          V4-3
+        HRWFS Mechanism CADs for Sel, Park and Datum renamed from
+        hrwfs: to hrwfs:cc: This allows the new HRWFS software to 
+        use the original names and thus preserve the OCS ICD. 
+
+25 September 2001     V5-0
+	Ported to EPICS 3.13.4GEM7. Tested on the hardware without the
+	A&G Sequencer at the end of August.
+
+05 October 2001       V5-1
+        Updated LUT's and PV files with latest calibrations from Hilo and 
+        La Serena. First operational version of A&G under 3.13 to
+        coincide with release V3-1 of the A&G Sequencer.
+
+04 December 2001      V5-2
+        Important bug fix in ag_track.c that was setting the position and
+        velocity demand to 0.0 for 0.2s whenever a new trackid was
+        received. Also updated LUT's etc. with latest operational files
+        and bash scripts to replace previous csh scripts.
+
+13 December 2001      V5-3
+        Implementation of the automatic sequencing of the optical encoders for
+        the HRWFS Lens and Fieldstop mechanisms. In automatic mode, the encoders
+        will be switched on before any command that moves the mechanism and off
+        afterwards. In manual mode, the operator still needs to switch the
+        encoders on before a move and off afterwards.
+
+21 May 2002          V5-4
+        Use dummy 4th coordinate to distinguish SF names that map to the 
+        same x,y,z. Update the corresponding LUT files.
+
+13 March 2003        V5-5
+        Relatively minor changes to update lut and pv files and tidy code.
+        Mainly built to coincide with release V3-4 of Sequencer and hence
+        use GEM8.4
+
+10 November 2003     V5-6
+        Updates to get busy/idle working when following
+
+21 November 2004     V5-7
+	M304 and M1004 PMAC variables readout
+	Code to keep small A&G Mechanism in position (like fieldstops)
+	updated CP lut files and pv file.
+
+02 December 2004     V5-8
+        Added the following mech's p1_filter, p2_filter, clfilter and 
+        ndfilter.
+
+17 December 2004   (AWE: not V5-9 ... this was never tagged as a version
+	I just noticed this after preparing and tagging V5-9 in April 2007.
+	This must have been incorporated into V5-8 without a tag by Roberto??)
+	Remove small bug in the algoritm to keep mech's in position.
+	Added Reset Small Mechanism option to reset the amplifier
+	Added a Dm-Screen to handle it
+
+18 April 2007       V5-9  (AWE)
+	Change In Position Logic for RT2.  It now holds position in closed loop
+	and no longer requires the brakes to be on in order to report being In Position.
+
+06 October 2009  V5-8-1 (PG)
+	Branch from V5-8 (V5-8_F2AT1). The reason for having a branch is
+	that V5-9 has been reported to have a bug and is not in use.
+	V5-8-1 deals with the fact that Flamingos-2 lives on a separate
+	subnet. The install script was modified to edit resource.def on
+	the fly. Lookup table and pvload file were updated with the versions
+	in use at the telescope.
+
+24 January 2010  V5-8-2 (CUR)
+	Added a new record (mbbip) with the same behaviour as mbbi,
+	but with up to 24 values.
+
+September, 2012  V5-10 (AWE)
+	Merge the F2 branch back into trunk (the bug was removed in V5-9)
+	Implement flexure compensation for PWFS1 and PWFS2.
+	The compensation is initially off by default until the models are determined.
+	Changes:
+	capfast/ag/Makefile.Host
+	capfast/ag/ccSysSub.sch
+	capfast/ag/compCad.sch
+	capfast/ag/pwfsSys.sch
+	capfast/ag/simu_top.sch
+	capfast/ag/specials.sch
+	capfast/ag/tracking.sch
+	capfast/ag/edb.def
+	capfast/ag/embbip.sym
+	capfast/ag/embbips.s
+	src/CP/pv/gbd.pv
+	src/CP/pv/pwfs1.pv
+	src/CP/pv/pwfs2.pv
+	src/MK/pv/pwfs1.pv
+	src/MK/pv/pwfs2.pv
+	src/ag/Makefile.Vx
+	src/ag/ag_cad.c
+	src/ag/ag_define.h
+	src/ag/ag_gensub.c
+	src/ag/ag_track.c
+	src/ag/ag_utils.c
+	src/ag/mbbipRecord.c
+	src/ag/mbbipRecord.dbd
+	src/ag/mbbipRecord.h
+	startup/startup.vws
+	startup/startupSim.vws
+	(plus a merge of lut changes)
+
+April, 2013  V5-11 (CUR)
+        Added new SF positions in A&G for visitor instrumet (REL-788)
+        src/MK/lut/ag_sf.lut
+        src/CP/lut/ag_sf.lut
+
+	Fixed calculation for probe rotary table and premature PWFS2 RT unwrap (REL-466)
+
+April, 2013  V5-11-2 (CUR)
+
+	REL-466 reversed. This still has some bugs.
+
+August, 2013  V5-11-3 (CUR)
+
+	Modified tracking algorithm.taking into consideration also the PA (REL-466)
+	M src/CP/pv/pwfs2.pv
+	M src/MK/pv/pwfs2.pv
+	M src/ag/ag_utils.c
+
+September, 2013 V5-11-4 (TCC)
+	Added reading SF linear stage skew.
+
+November, 2015 V5-11-5 (TCC)
+	REL-2319: Added the GateWay EPICS database for multiple OI's.
