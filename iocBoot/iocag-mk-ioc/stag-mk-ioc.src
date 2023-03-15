@@ -1,7 +1,7 @@
 $(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/ag-mk-ioc
 
 # ******* Production
-cd ../..
+cd ${INSTALL}
 
 # ******* Testing
 # cd $(INSTALL_LOCATION)
@@ -17,7 +17,7 @@ ag_mk_ioc_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 #dbLoadTemplate("db/ag-mk-ioc.substitutions")
 #dbLoadRecords("db/ag-mk-ioc.db", "user=rcardene")
-#dbLoadRecords("db/iocAdminRTEMS.db"," IOC=$(AGTOP):iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
+dbLoadRecords("db/iocAdminRTEMS.db"," IOC=$(AGTOP):iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
 dbLoadRecords("db/timeProbe.db","top=$(AGTOP):")
 dbLoadRecords("db/ag_top.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)")
 dbLoadRecords("db/ag_sadtop.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)")
@@ -26,10 +26,9 @@ dbLoadRecords("db/ag_sadtop.db","ag=$(AGTOP):,hrwfs=$(HRWFS):,CFGFILE=$(CFGFILE)
 # - set the bc635 Time Provider priority to something other than the default
 # or set it to a negative value to disable the bc635 Time Provider
 # Must be called before BCconfigure
-bc635TimeSetTpPrio (50)
+bc635TimeSetTpPrio (-1)
 # - Master ? Simulate ? intPerSecond, intPerTick, timeOffset (microsec)
-#BCconfigure (0, 1, 80, 1, 0)
-BCconfigure (0, 0, 80, 1, 0)
+#BCconfigure (0, 0, 80, 1, 0)
 
 # configure pmac card:
 var drvPmacDebug 0
@@ -51,8 +50,7 @@ init_DPRam
 
 
 # Load the A&G sequencer records into this IOC
-dbLoadRecords("db/agSeqTopGN.db","ag=$(AGTOP):,tcs=$(TCSTOP):,hrwfs=$(HRWFS):")
-# dbLoadRecords("db/agSeqTop.db","ag=$(AGTOP):,tcs=$(TCSTOP):,hrwfs=$(HRWFS):")
+dbLoadRecords("db/agSeqTop.db","ag=$(AGTOP):,tcs=$(TCSTOP):,hrwfs=$(HRWFS):")
 dbLoadRecords("db/agSeqSadTop.db","ag=$(AGTOP):")
 
 # Load the OIWFS Gateway records into this IOC
@@ -70,12 +68,15 @@ pvload "$(CFGFILE)/pwfs2.pv", "top=$(AGTOP):p2:, sadtop=$(AGTOP):p2:"
 
 pvload "$(AgSeqCFGFILE)/agSeq.pv",      "top=$(AGTOP):,    sadtop=$(AGTOP):"
 pvload "$(AgSeqCFGFILE)/agSeqPorts.pv", "top=$(AGTOP):,    sadtop=$(AGTOP):"
-
-pvload "$(AgSeqCFGFILE)/agSeqF2.pv",    "top=f2Sim:wfs:"
-pvload "$(AgSeqCFGFILE)/agSeqNici.pv",  "top=niciSim:wfs:"
+# pvload "$(AgSeqCFGFILE)/agSeqF2.pv",  "top=f2Sim:wfs:"
+# pvload "$(AgSeqCFGFILE)/agSeqNici.pv",  "top=niciSim:wfs:"
+## NOTE, relevant at 2019/06/27 (rjc)
+##       The following is GNIRS. It's simulated in the legacy A&G.
+##       It probably never stopped being simulated when the
+##       instrument moved to MK. Leaving it like that because
+##       it's never used! (And to reproduce current behavior)
 pvload "$(AgSeqCFGFILE)/agSeqNirs.pv",  "top=nirsSim:wfs:"
 
-pvload "$(AgSeqCFGFILE)/agSeqDisable.pv", "top=$(AGTOP):"
 
 putmenustr
 

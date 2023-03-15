@@ -231,10 +231,8 @@ extern long  pmacRamGetD ( volatile short * pDpram, double*pVal);
 	     (getdebug (mechindex) >  DEB_ERROR))  cicsLogMessage (message)
 
 #define agprintf(formstr,message)			\
-      if (getdebug (ag_cc) > DEB_ERROR)  errlogPrintf (formstr,message)
+      if (getdebug (ag_cc) > DEB_ERROR)  printf (formstr,message)
 
-#define agprintfnc(formstr,message)			\
-      if (getdebug (ag_cc) > DEB_ERROR)  errlogPrintfNoConsole (formstr,message)
 
 #define mod(a,b)		dmod ((a),(b))
 
@@ -319,8 +317,6 @@ extern long  pmacRamGetD ( volatile short * pDpram, double*pVal);
   #define FOLLOW_ON2 	209		/* crude tracking		*/
 
 #define LinSkewOffset	0xDB3F		/* Offset to linear stage skew	*/
-#define PosECTCntOffset	0xDB40		/* SFLinear position encode ECT count */
-#define SkwECTCntOffset	0xDB41		/* SFLinear skew encode ECT count */
 #define CalcTargStart	0xDBC0		/* calc. target pos. from PLC 28 */
 #define CalcDemStart	0xDC30		/* calc. demand pos. from PLC 28 */
 #define CalcMSWStart	0xDB60		/* freezed MSW1/2 from PLC 28; Y:MSW1, X:MSW2  */

@@ -652,7 +652,7 @@ long torque ( struct genSubRecord *pgsub )
     v[i][0] = (*(long*)pgsub->k & (1<<i)) ? v[i][0]: fval[i];	
     if (abs(v[i][0])>8000) v[i][0]= v[i][0]<0 ? -8000 : 8000; 	/* limit to x %	*/
 
-    if (getsimu(ag_cc) == SIM_NONE)
+    if (getsimu(ag_cc) == SIM_NONE) 
     {
       putDPRam         (TorqValStart+v[i][1], v[i][0], v[i][2], 0);	/* Write Torque value	*/
       ena    = getDPRam (TorqEnStart+v[i][1], v[i][2], 0);		/* Get enabled response	*/
@@ -931,9 +931,7 @@ long present( struct genSubRecord *pgsub )
  * valg,h:	datumed/parked flags, pulled out by SAD SIRs	long	no array
  * vali:	PLC demanded position				long	array[4]
  * valj:	PLC number (PMAC2, if>16)			long	array[4]
- * valk:	Linear skew					long    no array
- * vall:	Stan requested pmac var @offset db40		long    no array
- * valm:	Stan requested pmac var @offset db41		long    no array
+ * valk:	Linear skew					long	array[4]
  * 
  * note: getDPRamDP can be used, but hi 8b must be cut.
  *	  better is getDPRamXY.
@@ -953,14 +951,12 @@ long present( struct genSubRecord *pgsub )
 #define MSWX		( (long *)pgsub->vald)	/* NELM=4		*/
 #define RESP		( (long *)pgsub->vale)
 #define FLAG		( (long *)pgsub->valf)
-#define DATFLOUT	(*(long *)pgsub->valg)
-#define PARFLOUT	(*(long *)pgsub->valh)
 #define PDEM		( (long *)pgsub->vali)
 #define PLCNROUT	( (long *)pgsub->valj)	/* NELM=8		*/
 
 #define LINSKEW		(*(long *)pgsub->valk)  /* Linear stage skew	*/
-#define POS_ECT_CNT	(*(long *)pgsub->vall)  /* SFLinear Position encode ECT count */
-#define SKW_ECT_CNT	(*(long *)pgsub->valm)  /* SFLinear Skew encode ECT count */
+#define DATFLOUT	(*(long *)pgsub->valg)
+#define PARFLOUT	(*(long *)pgsub->valh)
 
 
 long DPRead( struct genSubRecord *pgsub )
@@ -975,10 +971,6 @@ long DPRead( struct genSubRecord *pgsub )
 
   get2DPRamDP(LinSkewOffset, 0, 0, &lassign);  
   LINSKEW = lassign;
-  get2DPRamDP(PosECTCntOffset, 0, 0, &lassign);  
-  POS_ECT_CNT = lassign;
-  get2DPRamDP(SkwECTCntOffset, 0, 0, &lassign);  
-  SKW_ECT_CNT = lassign;
 
  /* printf("linear skew %ld\n", lassign); */
 

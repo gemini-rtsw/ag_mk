@@ -129,7 +129,8 @@
 
 #include  <ag_define.h>
 // To include "reboot"
-// #include  <devIocStatsOSD.h>
+#include  <devIocStatsOSD.h>
+
 /* ===================================================================== */
 
 /*+
@@ -880,10 +881,10 @@ long rebootsub ( struct genSubRecord *pgsub )
 
   if (getsimu(mechindex)==SIM_NONE)
   {
-  //  if (*(long*)pgsub->a == 0)		/* note: function is called twice:	*/
+    if (*(long*)pgsub->a == 0)		/* note: function is called twice:	*/
     					/* once for printing a message (a=-1)	*/
-   //   reboot( BOOT_QUICK_AUTOBOOT );	/* once for reboot  + printing (a=0)	*/
-   // else
+      reboot( BOOT_QUICK_AUTOBOOT );	/* once for reboot  + printing (a=0)	*/
+    else
       agprintf("\n\n    %s\n\n", "*** give reboot command ***" );
   }
   else
@@ -891,7 +892,7 @@ long rebootsub ( struct genSubRecord *pgsub )
     if (*(long*)pgsub->a == 0)
       agLogMessage( mechindex, DEB_NONE,
          "\n\n    *** give reboot command - Simulated ***\n\n" );
-  } 
+  }
 
   return status;
 }

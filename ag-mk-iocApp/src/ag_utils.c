@@ -478,7 +478,7 @@ long doPLCcomm (int mechindex, long command, long *Pos)
 *  following section before installing there.
 */
 
-#ifdef GEMINI_NORTH
+#ifdef NOTDEF
     if (command) {
       long terminator ;
       char response[MAX_STRING_SIZE];
