@@ -49,7 +49,7 @@ PVLOAD=$(PRODSUP)/pvload/1-1-4
 GEMUTILS=$(PRODSUP)/gemUtil/1-14
 TCSLIB=$(PRODSUP)/tcslib/1-0-16
 TIMEPROBE=$(PRODSUP)/timeProbe/1-1-15
-AGSEQ=$(PRODSUP)/agSeq/2-11
+AGSEQ=$(PRODSUP)/agSeq/3-1
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE=/gem_sw/epics/$(EPICS_RELEASE)/base
