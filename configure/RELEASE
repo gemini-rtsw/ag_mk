@@ -38,7 +38,7 @@ PRODSUP=/gem_sw/prod/$(EPICS_RELEASE)/support
 WORKSUP=/gem_sw/work/$(EPICS_RELEASE)/support
 
 BANCOMM=$(PRODSUP)/bancomm/1-6-10
-TIMELIB=$(PRODSUP)/timelib/2-1-6
+TIMELIB=$(PRODSUP)/timelib/2-0-8
 SLALIB=$(PRODSUP)/slalib/1-9-10
 IOCSTATS=$(PRODSUP)/iocStats/3-1-16-5
 GEMREC=$(PRODSUP)/geminiRec/4-1-11
@@ -47,7 +47,7 @@ PMAC=$(PRODSUP)/pmaclib/1-1-12
 SNCSEQ=$(PRODSUP)/seq/2-2-5-3
 PVLOAD=$(PRODSUP)/pvload/1-1-4
 GEMUTILS=$(PRODSUP)/gemUtil/1-14
-TCSLIB=$(PRODSUP)/tcslib/1-0-23
+TCSLIB=$(PRODSUP)/tcslib/1-0-16
 TIMEPROBE=$(PRODSUP)/timeProbe/1-1-15
 AGSEQ=$(PRODSUP)/agSeq/3-1
 
