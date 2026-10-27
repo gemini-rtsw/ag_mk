@@ -1,0 +1,32 @@
+record(ai, "tcs:currentEl") {
+    field(DESC, "Simulated telescope elevation")
+    field(SCAN, "1 second")
+    field(DTYP, "Soft Channel")
+    field(VAL, "45.0")
+    field(HOPR, "92.73")
+    field(LOPR, "0.0")
+    field(PREC, "3")
+    field(EGU, "grd")
+}
+
+record(ai, "tcs:currentRma") {
+    field(DESC, "Simulated Cass rotator angle")
+    field(SCAN, "1 second")
+    field(DTYP, "Soft Channel")
+    field(VAL, "0.0")
+    field(HOPR, "450.0")
+    field(LOPR, "-90.0")
+    field(PREC, "3")
+    field(EGU, "grd")
+}
+
+record(ai, "tcs:om:tt:temp") {
+    field(DESC, "Simulated telescope temperature")
+    field(SCAN, "1 second")
+    field(DTYP, "Soft Channel")
+    field(VAL, "20.0")
+    field(HOPR, "50.0")
+    field(LOPR, "-999.0")
+    field(PREC, "3")
+    field(EGU, "C")
+}

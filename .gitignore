@@ -1,0 +1,35 @@
+# --- EPICS build products (were svn:ignore'd; never commit) ---
+O.*
+bin/
+db/
+dbd/
+lib/
+include/
+data/
+envPaths
+cdCommands
+
+# --- editor / scratch ---
+*.swp
+*.swo
+.*.swp
+.*.swo
+*.bak
+*BAK.adl
+
+# --- schematics side-products ---
+*.edf
+*.dat
+
+# --- RPM build output (build_rpm.sh writes here) ---
+rpms/
+
+# --- legacy VCS ---
+.svn/
+
+# --- local developer overrides (deliberately untracked) ---
+# NB: configure/CONFIG_SITE.local IS tracked -- it carries -DGEMINI_NORTH,
+# which selects the site build. Do not add it here.
+configure/RELEASE.local
+configure/RELEASE.work
+custom_env_setup.sh

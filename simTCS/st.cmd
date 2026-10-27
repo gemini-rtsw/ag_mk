@@ -1,0 +1,13 @@
+#!/epics/base/bin/linux-x86_64/softIoc
+
+epicsEnvSet("TOP","/opt/ioc")
+epicsEnvSet("DB_TOP","${TOP}")
+
+## Register all support components
+dbLoadDatabase("${EPICS_BASE}/dbd/softIoc.dbd")
+softIoc_registerRecordDeviceDriver(pdbbase)
+
+## Load record instances
+dbLoadRecords("${TOP}/simTCS.db")
+
+iocInit()

@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    # EL9 only. epics-base-314 and rtems410 are published for el9, and this IOC
+    # is one of a handful of remaining EPICS 3.14 systems -- a second EL leg
+    # would double the rpm-repo footprint of two large packages for no consumer.
+    uses: gemini-rtsw/gemini-rtsw-ci/.github/workflows/ci.yml@main
+    secrets: inherit
+    with:
+      scripts_dir: gemini-rtsw-ci
+      el_version: '9'
+
+  publish:
+    needs: build
+    uses: gemini-rtsw/gemini-rtsw-ci/.github/workflows/publish.yml@main
+    secrets: inherit
