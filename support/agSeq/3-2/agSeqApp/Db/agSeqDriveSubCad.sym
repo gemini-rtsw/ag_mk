@@ -1,0 +1,27 @@
+[symbol2]
+bbox 224 352 832 704
+port 336 512 100 1792 INPB symbol 1 224 512 0
+port 336 576 100 1792 INPA symbol 1 224 576 0
+port 336 640 100 1792 SDIS symbol 1 224 640 0
+port 336 384 100 1792 SLNK symbol 1 224 384 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 448 544 Drive an A&G subsystem
+l 100 0 0 544 480 CAD
+r 0 288 704 832 352
+v 0 224 512
+288 512
+_
+v 0 224 576
+288 576
+_
+v 0 224 640
+288 640
+_
+v 0 224 384
+288 384
+_
+[comments]

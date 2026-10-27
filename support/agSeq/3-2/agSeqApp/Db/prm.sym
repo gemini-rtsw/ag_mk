@@ -1,0 +1,9 @@
+[symbol2]
+bbox -224 -152 224 152
+uniq 18
+[tools]
+[attributes]
+[layers]
+<symbol>
+r 0 -224 -152 224 152
+l 100 0 0 -18 -5 prm

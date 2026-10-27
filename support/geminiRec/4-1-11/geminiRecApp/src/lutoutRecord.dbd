@@ -1,0 +1,190 @@
+recordtype(lutout) {
+	include "dbCommon.dbd" 
+        field(VERS,DBF_DOUBLE) {
+                prompt("Version Number")
+                promptgroup(GUI_DISPLAY)
+                special(SPC_NOMOD)
+                interest(1)
+        }
+	field(VAL,DBF_STRING) {
+		prompt("Input String")
+		promptgroup(GUI_COMMON)
+		asl(ASL0)
+		pp(TRUE)
+		size(40)
+	}
+	field(OVAL,DBF_STRING) {
+		prompt("Old Input String")
+		promptgroup(GUI_COMMON)
+		asl(ASL0)
+		special(SPC_NOMOD)
+		interest(4)
+		size(40)
+	}
+	field(NVAL,DBF_LONG) {
+		prompt("Number of Values")
+		asl(ASL0)
+		special(SPC_NOMOD)
+	}
+	field(ONVL,DBF_LONG) {
+		prompt("Old Number")
+		asl(ASL0)
+		special(SPC_NOMOD)
+		interest(4)
+	}
+	field(SELB,DBF_LONG) {
+		prompt("Selection Bits")
+		asl(ASL0)
+		interest(15)
+	}
+	field(PREC,DBF_LONG) {
+		prompt("Precision")
+		asl(ASL0)
+		interest(2)
+	}
+	field(FDIR,DBF_STRING) {
+		prompt("Init File Directory")
+		interest(2)
+		size(40)
+	}
+	field(FNAM,DBF_STRING) {
+		prompt("Init File Name")
+		interest(2)
+		size(40)
+	}
+	field(LTBL,DBF_NOACCESS) {
+		prompt("Lookup Table")
+		special(SPC_NOMOD)
+		interest(4)
+		size(4)
+		extra("void * ltbl")
+	}
+	field(LLNK,DBF_INLINK) {
+		prompt("Lookup Table Link")
+		promptgroup(GUI_SELECT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(LOAD,DBF_LONG) {
+		prompt("Reload Table")
+		asl(ASL0)
+		special(SPC_MOD)
+		pp(TRUE)
+	}
+	field(OUTA,DBF_OUTLINK) {
+		prompt("Output A")
+		promptgroup(GUI_SELECT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTB,DBF_OUTLINK) {
+		prompt("Output B")
+		promptgroup(GUI_SELECT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTC,DBF_OUTLINK) {
+		prompt("Output C")
+		promptgroup(GUI_SELECT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTD,DBF_OUTLINK) {
+		prompt("Output D")
+		promptgroup(GUI_SELECT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(VALA,DBF_NOACCESS) {
+		prompt("Value of Output A")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(1)
+		size(4)
+		extra("void *vala")
+	}
+	field(VALB,DBF_NOACCESS) {
+		prompt("Value of Output B")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(1)
+		size(4)
+		extra("void *valb")
+	}
+	field(VALC,DBF_NOACCESS) {
+		prompt("Value of Output C")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(1)
+		size(4)
+		extra("void *valc")
+	}
+	field(VALD,DBF_NOACCESS) {
+		prompt("Value of Output D")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(1)
+		size(4)
+		extra("void *vald")
+	}
+	field(OLDA,DBF_NOACCESS) {
+		prompt("Old Value of Output A")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(4)
+		size(4)
+		extra("void *olda")
+	}
+	field(OLDB,DBF_NOACCESS) {
+		prompt("Old Value of Output B")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(4)
+		size(4)
+		extra("void *oldb")
+	}
+	field(OLDC,DBF_NOACCESS) {
+		prompt("Old Value of Output C")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(4)
+		size(4)
+		extra("void *oldc")
+	}
+	field(OLDD,DBF_NOACCESS) {
+		prompt("Old Value of Output D")
+		asl(ASL0)
+		special(SPC_DBADDR)
+		interest(4)
+		size(4)
+		extra("void *oldd")
+	}
+	field(FTVA,DBF_MENU) {
+		prompt("Type of Value A")
+		promptgroup(GUI_WAVE)
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuFtype)
+	}
+	field(FTVB,DBF_MENU) {
+		prompt("Type of Value B")
+		promptgroup(GUI_WAVE)
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuFtype)
+	}
+	field(FTVC,DBF_MENU) {
+		prompt("Type of Value C")
+		promptgroup(GUI_WAVE)
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuFtype)
+	}
+	field(FTVD,DBF_MENU) {
+		prompt("Type of Value D")
+		promptgroup(GUI_WAVE)
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuFtype)
+	}
+}

@@ -1,0 +1,21 @@
+/* osdClocksFuncs.h
+ * Header file for wrapper functions to operating system dependant clock functions
+ * Created 4 Mar 2016, mdw
+ */
+
+#ifndef OSDCLOCKFUNCS_H
+#define OSDCLOCKFUNCS_H
+
+#if defined (__rtems__)
+#include <rtems.h>
+#include <bsp.h>
+#endif
+
+extern void sysClockOn(void);
+extern void sysClockOff(void);
+extern void clock_tick(void);
+extern int clock_rate_get(void);
+extern int clock_rate_set(int);
+
+
+#endif /* OSDCLOCKFUNCS_H */

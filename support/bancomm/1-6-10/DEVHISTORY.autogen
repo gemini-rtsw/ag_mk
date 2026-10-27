@@ -1,0 +1,76 @@
+Log Messages:
+mikew      (r3956): Released version 1-6-10. (Release dir 1-6-10)
+mikew      (r3956): Bracketed definitions of ERROR a[Cnd OK with #ifndef to avoid conflicts with other modules that also define ERROR and OK.
+mikew      (r3756): updated configure/RELEASE
+mikew      (r3662): fixed issue with records not installing interrupt handlers if initial SCAN parameter wasn't 'I/O Intr'
+mikew      (r3617): added vxWorks support to osdClockFuncs.c
+mikew      (r3279): Released version 1-6-9. (Release dir 1-6-9)
+mikew      (r3279): merged in microseconds fix
+rcardenes  (r3277): Small fix when setting RTC time & date
+mrippa     (r3261): New RTC Master Mode allows manually setting time on a 635 resulting in a locked reference
+mrippa     (r3260): New RTC Master Mode allows manually setting time on a 635 resulting in a locked reference
+mrippa     (r3259): updated ignore files
+rcardenes  (r2994): Removing an accidental release.
+
+ (Release dir 1-9-8-bf2018)
+rcardenes  (r2943): Fix NTPGetTime to make sure it returns GMT/UTC time
+mrippa     (r2928): Released version 1-6-8. (Release dir 1-6-8)
+mrippa     (r2928): merge bancomm2018_bfix branch from 2899:2927 to trunk
+rcardenes  (r2906): Released version 1-6-7-bf2018. (Release dir 1-6-7-bf2018)
+rcardenes  (r2902): Released version 1-9-8-bf2018. (Release dir 1-9-8-bf2018)
+rcardenes  (r2890): :Added
+mrippa     (r2869): Released version 1-6-7. (Release dir 1-6-7)
+mrippa     (r2869): New patch for mktime() inside the bcSetEpoch()
+rcardenes  (r2863): Released version 1-6-6. (Release dir 1-6-6)
+rcardenes  (r2863): Merge Bancomm module branch fixup-mike 2797:2848 into trunk
+rcardenes  (r2862): Quick cleanup
+rcardenes  (r2860): Fix the bancomm driver to make sure that it gets time from OTHER providers when needed
+rcardenes  (r2859): Merged tzbug branch back into trunk
+rcardenes  (r2858): Rolled back to r2741
+rcardenes  (r2829): fix NTPgetTime returning error inconditionally; and drop using tpPrio, which is useless here
+mikew      (r2798): fixed some oopses
+mikew      (r2797): RTUPG-300: fixed some minor bugs in drvBc635.c
+mrippa     (r2741): Released version 1-6-5. (Release dir 1-6-5)
+mrippa     (r2741): Merge Bancomm module Branch R314 1931:2740 into trunk
+mrippa     (r2740): New EPICS 3.14.12.7 Release
+mrippa     (r2739): Removed settings here, they are defined elsewhere.
+mrippa     (r2738): New epicsThreadPriorityLow for BCYearMonitor thread
+tgagg      (r2498): Released version 1-6-4-BR314-2. (Release dir 1-6-4-BR314-2)
+mikew      (r2218): Released version 1-6-4-BR314-1. used EPICS 3.14.12.6 this time (Release dir 1-6-4-BR314-1)
+mikew      (r2212): Released version 1-6-4-BR314. (Release dir 1-6-4-BR314)
+mrippa     (r1930): New ignore file
+mrippa     (r1692): Released version 1-6-4. (Release dir 1-6-4)
+mrippa     (r1692): Turned on the default optimization level.
+mikew       (r829): Released version 1-6-3. Release 1-6-3 (Release dir 1-6-3)
+mikew       (r829): Fixed bugs apparently introduced when bancomm-br1 was merged back into main line
+mikew       (r827): Released version 1-6-2. (Release dir 1-6-2)
+mrippa      (r743): Released version 1-5-2. Removed prints... (Release dir 1-5-2)
+mrippa      (r743): Removed printf
+mrippa      (r741): Released version 1-5-1. New major bugfix merge and release to trunk (Release dir 1-5-1)
+mrippa      (r741): Merge branch br1 back to trunk
+mrippa      (r740): Removed ostNTPTime.c
+mrippa      (r626): Moved bancomm.dbd to bancommDev.dbd and changed Makefile accordingly
+mrippa      (r625): Moved bancomm.dbd to bancommDev.dbd and changed Makefile accordingly
+mrippa      (r624): Changes tested and NTP ClockTick stable with local osiNTPTime.c
+mrippa      (r623): Bancomm test harness.
+mikew       (r618): cleanup
+mikew       (r612): added NTPTime Provider from base with custom function to inform it of updated tick rate
+mikew       (r609): minor cleanup
+mikew       (r608): minor cleanup
+mikew       (r607): added time provider code and fixed clock_tick() issues
+mrippa      (r606): New bctest.sch mods
+mrippa      (r603): Released version 1-6-1. (Release dir 1-6-1)
+mrippa      (r601): Added new bc_tick to ensure the ISR and clock_tick() were equaivalent and matching the required frequency.
+mrippa      (r599): Added new bc_tick to ensure the ISR and clock_tick() were equaivalent and matching the required frequency.
+mrippa      (r597): Released version 1-6. (Release dir 1-6)
+mrippa      (r597): Exported BCconfigure() to iocsh
+mrippa      (r595): Released version 1-5. (Release dir 1-5)
+mrippa      (r595): Fixed build rules to use Gemini rules and added bctest.sch test harness.
+mrippa      (r408): Released version 1-4. First import of Bancomm into ADE. Version 1-4 (Release dir 1-4)
+mrippa      (r408): Created: http://sbfsvn02/gemini-sw/gem/release/support/bancomm (Release dir )
+mrippa      (r371): Release candidate changes for 2016 March 1st OSI and CCB Sprint.
+mikew       (r325): minor cleanup
+mikew       (r323): 
+mikew       (r322): Removed vxWorks support from src/osdClockFuncs.[ch]
+mikew       (r321): renamed bc635App to bancommApp
+mikew       (r320): Changing name of module

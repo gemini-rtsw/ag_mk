@@ -1,0 +1,6 @@
+menu(menuCarstates) {
+	choice(menuCarstatesIDLE,   "IDLE")
+	choice(menuCarstatesPAUSED, "PAUSED")
+	choice(menuCarstatesBUSY,   "BUSY")
+	choice(menuCarstatesERROR,  "ERROR")
+}

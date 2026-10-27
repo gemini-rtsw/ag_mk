@@ -1,0 +1,12 @@
+[symbol2]
+bbox 384 240 640 656
+uniq 1
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 432 512 subsystem
+l 150 0 0 432 560 Dummy A&G 
+l 150 0 0 432 464 command
+r 0 384 240 640 656
+[comments]

@@ -1,0 +1,70 @@
+[symbol2]
+bbox -416 48 0 464
+port -64 448 100 0 FLNK symbol 2 0 448 0
+port -400 368 100 0 SELL symbol 1 -416 352 0
+port -400 144 100 0 SLNK symbol 1 -416 128 0
+port -64 416 100 0 LNK1 symbol 2 0 416 0
+port -64 384 100 0 LNK2 symbol 2 0 384 0
+port -64 352 100 0 LNK3 symbol 2 0 352 0
+port -64 320 100 0 LNK4 symbol 2 0 320 0
+port -64 288 100 0 LNK5 symbol 2 0 288 0
+port -64 256 100 0 LNK6 symbol 2 0 256 0
+port -64 224 100 0 LNK7 symbol 2 0 224 0
+port -64 192 100 0 LNK8 symbol 2 0 192 0
+port -64 160 100 0 LNK9 symbol 2 0 160 0
+port -64 128 100 0 LNK10 symbol 2 0 128 0
+port -64 96 100 0 LNK11 symbol 2 0 96 0
+port -64 64 100 0 LNK12 symbol 2 0 64 0
+uniq 1
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -272 368 Super FanOut
+r 0 -336 48 -80 464
+v 0 0 448
+-80 448
+_
+v 0 0 416
+-80 416
+_
+v 0 0 384
+-80 384
+_
+v 0 0 352
+-80 352
+_
+v 0 0 320
+-80 320
+_
+v 0 0 288
+-80 288
+_
+v 0 0 256
+-80 256
+_
+v 0 0 224
+-80 224
+_
+v 0 0 192
+-80 192
+_
+v 0 0 160
+-80 160
+_
+v 0 0 128
+-80 128
+_
+v 0 0 96
+-80 96
+_
+v 0 0 64
+-80 64
+_
+v 0 -416 128
+-336 128
+_
+v 0 -416 352
+-336 352
+_
+[comments]

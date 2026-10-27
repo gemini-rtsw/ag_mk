@@ -1,0 +1,145 @@
+Log Messages:
+rcardenes  (r4567): Released version 1-1-12. (Release dir 1-1-12)
+rcardenes  (r4567): Bump versions to build against geminiRec 4-1-11 and gemUtil 1-13
+rcardenes  (r4510): Released version 1-1-11. (Release dir 1-1-11)
+rcardenes  (r4510): Bump versions to build against geminiRec 4-1-10
+rcardenes  (r4444): Released version 1-1-10. Updated RELEASE (Release dir 1-1-10)
+rcardenes  (r4444): Update geminiRec and gemUtil dependencies
+mikew      (r4235): Released version 1-1-9. (Release dir 1-1-9)
+mikew      (r4235): converted VxWorks priority levels to EPICS OSI priority levels in drvPmac.c
+mikew      (r4220): Released version 1-1-8. added RTEMS-mvme3100 as a cross-compile target (Release dir 1-1-8)
+mikew      (r4220): added RTEMS-mvme3100 as cross-compile target.
+mikew      (r3954): Released version 1-1-7. (Release dir 1-1-7)
+mikew      (r3954): bracketed ERROR and OK definitions with #ifndef to avoid conflice with other modules that also defne ERROR and OK
+mikew      (r3944): Released version 1-1-6. (Release dir 1-1-6)
+mikew      (r3944): updated to EPIS R3.14.12.8
+iarriagada (r2820): Released version 1-1-5. (Release dir 1-1-5)
+iarriagada (r2820): MERGE pmaclib/R314 1971:2819 into trunk
+tgagg      (r2505): Released version 1-1-4-BR314-3. (Release dir 1-1-4-BR314-3)
+mikew      (r2361): Released version 1-1-4-BR314-2. (Release dir 1-1-4-BR314-2)
+mikew      (r2356): Released version 1-1-4-BR314-1. (Release dir 1-1-4-BR314-1)
+mikew      (r2309): Released version 1-1-4-BR314. (Release dir 1-1-4-BR314)
+mrippa     (r1969): New svnigore
+mrippa     (r1966): New ignore file
+mrippa     (r1909): Install counter variables.
+mikew      (r1487): Released version 1-1-4. (Release dir 1-1-4)
+mikew      (r1487): Matt's latest changes
+mrippa     (r1486): Fixed calls to devReadProbe() which failed to set the correct width to char. N.B. devReadProbe() can return success on the 2700 CPU even when it fails. That's due to an error in the libbspEXT package.
+mikew      (r1461): Released version 1-1-3. removed pmaclibTest IOC, now depends on Geminirec/4-1-5 (Release dir 1-1-3)
+mikew      (r1461): removed pmaclibTest ioc (moved to new IOC module)
+mikew      (r1451): (Release dir 1-1-3)
+mikew      (r1449): Released version 1-1-3. (Release dir 1-1-3)
+mikew      (r1449): 
+mikew      (r1447): debug code cleanup
+mikew      (r1446): debug code cleanup
+mikew      (r1444): debugging code cleanup
+mrippa     (r1436): Use Gemini Records 4-1-5
+mikew      (r1427): (Release dir 1-1-2)
+mikew      (r1427): Released version 1-1-2. (Release dir 1-1-2)
+mikew      (r1426): test code cleanup
+mikew      (r1424): Released version 1-1-2. (Release dir 1-1-2)
+mikew      (r1424): test code cleanup
+mikew      (r1423): (Release dir 1-1-2)
+mikew      (r1416): Released version 1-1-2. (Release dir 1-1-2)
+mikew      (r1416): test code cleanup
+mikew      (r1407): made pmaclibTest into an IOC
+mikew      (r1320): (Release dir 1-1-1)
+mikew      (r1320): Released version 1-1-1. (Release dir 1-1-1)
+mikew      (r1317): set debug level to o in drvPmacGat.c
+mikew      (r1304): (Release dir 1-1-1)
+mikew      (r1304): Released version 1-1-1. (Release dir 1-1-1)
+mikew      (r1303): updated geminiRec dependency
+mikew      (r1301): Released version 1-1-1. (Release dir 1-1-1)
+mikew      (r1301): moved test harness stuff to separate App directory
+mikew      (r1300): (Release dir 1-1-3)
+mikew      (r1299): (Release dir 1-1-2)
+mikew      (r1298): (Release dir 1-1-1)
+mikew      (r1297): moved test library stuff to separate directory
+mikew      (r1280): Released version 1-1-3. (Release dir 1-1-3)
+mikew      (r1280): minor edit in pmacpDOwn.c
+mikew      (r1279): added some generic schematics
+mikew      (r1266): Released version 1-1-2. (Release dir 1-1-2)
+mikew      (r1266): updated .../src/Makefile to put drvPmacGat.h into $(top)/include
+mikew      (r1263): Released version 1-1-1. (Release dir 1-1-1)
+mikew      (r1263): minor modification of #includes
+mikew      (r1258): Released version 1-1-0. pmaclib: moved load record from geminiRec to here (Release dir 1-1-0)
+mikew      (r1021): M    pmaclibApp/Db/setPositions.sch: Changed scan rate to ".01 second"
+mikew      (r1019): Added missing files.
+A    pmaclibApp/Db/setPositions.sch
+A    pmaclibApp/Db/setPositions.sym
+mikew      (r1018): Added missing files.
+A    pmaclibApp/Db/pmacUpDown.sym
+A    pmaclibApp/Db/setTimeInterrupt.sym
+A    pmaclibApp/Db/setTimeInterrupt.sch
+mikew      (r1017): Added missing file.
+
+A    pmaclibApp/src/pmaclibTest.dbd
+mikew      (r1015): Added files for move/follow pmac test.
+
+A    pmaclibApp/Db/pmacMABBotVel.sch
+A    pmaclibApp/Db/pmacMABBotPos.sch
+A    pmaclibApp/Db/pmacMABTopVel.sch
+A    pmaclibApp/Db/trackingOn.sym
+A    pmaclibApp/Db/trackingOff.sch
+A    pmaclibApp/Db/pmacMAB.sch
+A    pmaclibApp/Db/tracking.sch
+A    pmaclibApp/Db/pmacMABTopPos.sch
+A    pmaclibApp/Db/pmacMABBotVel.sym
+A    pmaclibApp/Db/pmacMABBotPos.sym
+A    pmaclibApp/Db/pmacMABTopVel.sym
+A    pmaclibApp/Db/trackingOff.sym
+A    pmaclibApp/Db/pmacMAB.sym
+A    pmaclibApp/Db/tracking.sym
+A    pmaclibApp/Db/trackingOn.sch
+A    pmaclibApp/Db/pmacMABTopPos.sym
+A    pmaclibApp/src/follow.c
+mikew       (r950): changes to test database
+currutia    (r921): Mike's last changes
+mikew       (r892): minor cleanup
+mikew       (r890): added load record support (moved from geminiRec module)
+mikew       (r871): Updated test harness schematics
+mikew       (r862): updated test harness schematics and tdct.cfg
+mikew       (r861): updated tdct.cfg
+mikew       (r860): updated test harness schematic
+mikew       (r859): updated tdct.cfg
+mikew       (r858): test harness database modifications
+mikew       (r857): Modified test harness database
+mrippa      (r852): Released version 1-0-1. (Release dir 1-0-1)
+mrippa      (r852): Add debug counters for ISR's
+mrippa      (r851): Fix compile warnings
+mrippa      (r850): Fix compile warnings
+mrippa      (r793): Released version 1-0-0. First release of pmaclib into production (Release dir 1-0-0)
+mrippa      (r793): Created: http://sbfsvn02/gemini-sw/gem/release/support/pmaclib (Release dir )
+mrippa      (r792): removed
+mrippa      (r791): New test harness for pmac
+mrippa      (r790): First release of pmaclib into production
+mikew       (r554): debugging and test modifications
+mrippa      (r553): Register functions
+mrippa      (r552): Register functions
+mrippa      (r551): Version of firmware now supports 1.17C
+mikew       (r550): Changes to make pmacUpDown.c compile for EPICS/RTEMS
+mrippa      (r549): New pmacUpDown database
+mrippa      (r548): New pmacUpDown database
+mikew       (r547): cleanup
+mikew       (r546): debugging
+mikew       (r545): added debugging code
+mrippa      (r544): mbx debug patches
+mrippa      (r543): 1. Boots with out suspending any tasks.
+2. Successfully initializes PmacMailBox.
+3. Successfully uses epicsRingPointer to transfer pMbxIO structure through FIFO.
+4. Successfully processes epics stringin and stringout records to request version from PMAC mailbox.
+
+Adds debug variables for all tasks.
+mikew       (r542): modification to tdct.cfg and src/Makefile
+mrippa      (r539): MRIPPA changes trying to debug lockup on pmacConfig(). Just disabled all features except mailbox.
+mrippa      (r538): Mike's last changes
+mrippa      (r537): Mike's last changes
+mrippa      (r536): Mike's latest changes
+mrippa      (r511): Mike W. latest changes...
+mikew       (r504): added code to make pmacConfig() available to the iocshell
+mikew       (r503): Updated drvPmacGat.c to be OSI compliant
+mikew       (r502): drvPmac.[ch] edited for OSI compliance
+mikew       (r473): More progress on drvPmac.c
+mrippa      (r426): Yes!
+mrippa      (r365): changed contact and set svn:ignore
+mrippa      (r364): Initial structure of new pmaclib

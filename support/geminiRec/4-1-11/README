@@ -1,0 +1,43 @@
+The Gemini Records collection for EPICS 3.14
+--------------------------------------------
+
+The geminiRec module provides the following records:
+-  apply       Command Apply Record
+-  cad         Command Action Directive Record
+-  car         Command Action Response Record
+-  cmdTimeout  Command Time Out Record
+-  genSub      General Subroutine Record
+-  lutin       Lookup Table Input Record
+-  lutout      Lookup Table Output Record
+-  sir         Status Information Record  
+-  status      Status Record
+
+The geminiRec module provides soft device support for following input/output records:
+-  lutin
+-  lutout
+-  status
+
+The geminiRec/geminRecApp/Db  directory contains: 
+                 The capfast symbols for the various Gemini records.
+                 The file "gemrec-edb.def" containing additional entries to
+                      be added to the system edb.def file.
+                 The file "gemrec-tdct.cfg" contianing additional entries to
+                      be added to the system tdct.cfg file.
+
+                 If the following hasn't already been done at your site:
+                 (1) Copy the symbols capfast/*.sym to the relevant location.
+                     - capfast: Probably $EPICS/extensions/src/edif/lib/sym
+                     - tdct: Probably $(TDCT_INSTALL_LOCATION)/library/epics
+                 (2) Add the lines in capfast/gemrec-edb.def to your edb.def file.
+                     - capfast: Probably at $EPICS/extensions/src/edif/lib/edb.def
+                     - tdct: Probably at $(TDCT_INSTALL_LOCATION)/edb.def
+                 (3) If using TDCT, insert the lines in capfast/gem-tdct-cfg 
+                     into your tdct.cfg file just before the [endcfg] directive.
+                     - tdct.cfg is probably located at ~/.tdct/tdct.cfg
+
+===========================================================================
+Mike Westfall
+Gemini Observatory         Email: mwestfal@gemini.edu
+Colina El Pino s/n         Tel:   +56 51 2205 259
+Casilla 603                http://www.gemini.edu
+La Serena, Chile

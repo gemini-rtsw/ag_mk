@@ -1,0 +1,120 @@
+include "menuSimulation.dbd"
+include "menuCarstates.dbd"
+recordtype(car) {
+	include "dbCommon.dbd" 
+        field(VERS,DBF_DOUBLE) {
+                prompt("Version Number")
+                promptgroup(GUI_DISPLAY)
+                special(SPC_NOMOD)
+                interest(1)
+        }
+	field(VAL,DBF_MENU) {
+		prompt("State")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuCarstates)
+	}
+	field(CLID,DBF_LONG) {
+		prompt("Client ID")
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OMSS,DBF_STRING) {
+		prompt("Message (out)")
+		interest(1)
+		size(40)
+	}
+	field(OERR,DBF_LONG) {
+		prompt("Error Code (out)")
+		interest(1)
+	}
+	field(IVAL,DBF_MENU) {
+		prompt("State (in)")
+		pp(TRUE)
+		interest(1)
+		menu(menuCarstates)
+	}
+	field(ICID,DBF_INLINK) {
+		prompt("Client ID (in)")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(IMSS,DBF_STRING) {
+		prompt("Message (in)")
+		interest(1)
+		size(40)
+	}
+	field(IERR,DBF_LONG) {
+		prompt("Error Code (in)")
+		interest(1)
+	}
+	field(AVAL,DBF_LONG) {
+		prompt("Last State Archived")
+		interest(1)
+	}
+	field(MVAL,DBF_LONG) {
+		prompt("Last State Monitored")
+		interest(1)
+	}
+	field(ACID,DBF_LONG) {
+		prompt("Last Client ID Archived")
+		interest(1)
+	}
+	field(MCID,DBF_LONG) {
+		prompt("Last Client ID Monitore")
+		interest(1)
+	}
+	field(AMSS,DBF_STRING) {
+		prompt("Last Message Archived")
+		interest(1)
+		size(40)
+	}
+	field(MMSS,DBF_STRING) {
+		prompt("Last Message Monitored")
+		interest(1)
+		size(40)
+	}
+	field(AERR,DBF_LONG) {
+		prompt("Last Error Code Archive")
+		interest(1)
+	}
+	field(MERR,DBF_LONG) {
+		prompt("Last Error Code Monitor")
+		interest(1)
+	}
+	field(ERSV,DBF_MENU) {
+		prompt("Error Alarm Severity")
+		promptgroup(GUI_SUB)
+		pp(TRUE)
+		interest(1)
+		menu(menuAlarmSevr)
+	}
+	field(SIOL,DBF_INLINK) {
+		prompt("Simulation Error Link")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(SVAL,DBF_LONG) {
+		prompt("Simulation Error")
+	}
+	field(SIML,DBF_INLINK) {
+		prompt("Simulation Mode Link")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(SIMM,DBF_MENU) {
+		prompt("Simulation Mode")
+		interest(1)
+		menu(menuSimulation)
+	}
+	field(SIMS,DBF_MENU) {
+		prompt("Sim Mode Alarm Severity")
+		promptgroup(GUI_INPUTS)
+		interest(2)
+		menu(menuAlarmSevr)
+	}
+}

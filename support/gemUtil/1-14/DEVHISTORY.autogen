@@ -1,0 +1,67 @@
+Log Messages:
+iarriagada (r5808): Released version 1-14. (Release dir 1-14)
+iarriagada (r5807): Added netconfig for mbuf mem allocation
+mikew      (r5638): Released version 1-13-R315-2. (Release dir 1-13-R315-2)
+mikew      (r5637): (Release dir 1-13-R315-2)
+mikew      (r5635): Released version 1-13-R315-2. (Release dir 1-13-R315-2)
+mikew      (r5634): Released version 1-13-R315-1. (Release dir 1-13-R315-1)
+mikew      (r5207): Released version 1-13-R315. (Release dir 1-13-R315)
+mikew      (r5206): (Release dir 1-14)
+mikew      (r5205): (Release dir 1-15)
+mikew      (r4856): Released version 1-15. (Release dir 1-15)
+mikew      (r4776): Released version 1-14. (Release dir 1-14)
+rcardenes  (r4565): Bump versions to build against geminiRec 4-1-11
+rcardenes  (r4565): Released version 1-13. (Release dir 1-13)
+rcardenes  (r4506): Bump versions to build against geminiRec 4-1-10
+rcardenes  (r4506): Released version 1-12. (Release dir 1-12)
+rcardenes  (r4438): Update geminiRec dependency
+rcardenes  (r4438): Released version 1-11. Updated RELEASE (Release dir 1-11)
+mrippa     (r4292): Updated geminiRec dependency support
+mrippa     (r4292): Released version 1-10. (Release dir 1-10)
+mrippa     (r4290): Released version 1-9. (Release dir 1-9)
+mikew      (r4001): Updated to EPICS R3.14.12.8
+mrippa     (r3475): moved systemTickTest to systemTickTools
+mrippa     (r3475): Released version 1-8. (Release dir 1-8)
+mrippa     (r3474): systemTickTools added to Makefile
+mrippa     (r3473): 
+mrippa     (r3472): moved systemTickTest to systemTickTools
+mrippa     (r3471): moved systemTickTest to systemTickTools
+mrippa     (r3455): New systemTickTest library
+mrippa     (r3455): Released version 1-7. (Release dir 1-7)
+tgagg      (r3385): Merge module gemUtil from branch initTrace [3095]:[3384] to trunk
+tgagg      (r3385): Released version 1-6. (Release dir 1-6)
+mikew      (r3246): modified Makefiles to avoid building timer.sch and hb2health.sch as top level schematics
+mrippa     (r2784): EPICS 3.14.12.7 redefined for consistency.
+mrippa     (r2784): Released version 1-5. (Release dir 1-5)
+mrippa     (r2782): EPICS 3.14.12.7 Release, and Merge gemUtil Branch R314 1968:2781 into trunk
+mrippa     (r2782): Released version 1-4. (Release dir 1-4)
+tgagg      (r2503): Released version 1-3-BR314-2. (Release dir 1-3-BR314-2)
+iarriagada (r2315): Released version 1-3-BR314-1. (Release dir 1-3-BR314-1)
+mikew      (r2262): Released version 1-3-BR314. (Release dir 1-3-BR314)
+mrippa     (r1965): New electricFenceApp
+mrippa     (r1964): New svnignore
+mrippa     (r1963): New svnignore
+mrippa     (r1962): New gitignore
+mrippa     (r1961): New svnignore file
+mikew      (r1790): updated tdct.cfg
+mikew      (r1790): Released version 1-3. (Release dir 1-3)
+mrippa     (r1787): Added local templates/schematics directory to find timer.sym
+mrippa     (r1787): Released version 1-2. (Release dir 1-2)
+mikew      (r1781): fixed bug in calc expression in hb2health.sch
+mrippa     (r1773): Updated GEMREC to latest
+mikew      (r1773): Released version 1-1. (Release dir 1-1)
+mrippa     (r1772): Added new listAlarmsRecords library
+mrippa     (r1771): Added new listAlarmsRecords library
+mikew      (r1213): Released version 1-0. (Release dir 1-0)
+mikew      (r1213): Created: http://sbfsvn02/gemini-sw/gem/release/support/gemUtil (Release dir )
+mikew      (r1211): fixed dependency bug
+mikew      (r1207): last commit before initial release
+mikew      (r1092): fixed problem in hb2health schematic
+rrojas     (r1088): Small changes to schematics
+mikew      (r1071): added timer utility
+mikew      (r1066): hb2health: Replaced genSub record with standard EPICS records, removed associated source code
+mikew      (r1052): GemUtil: updated hb2health schematic
+mikew      (r1033): Updated hb2health submodule
+mikew      (r1029): Added hb2health utility schematic & source code
+mikew      (r1027): changed contact and set svn:ignore
+mikew      (r1026): Initial structure of new gemUtil

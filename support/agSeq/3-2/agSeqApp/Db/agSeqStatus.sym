@@ -1,0 +1,35 @@
+[symbol2]
+bbox -272 -256 160 224
+port -176 -128 100 0 HRWFS symbol 1 -272 -128 0
+port -176 -192 100 0 OIWFS symbol 1 -272 -192 0
+port -176 -64 100 0 PWFS2 symbol 1 -272 -64 0
+port -176 0 100 0 PWFS1 symbol 1 -272 0 0
+port -176 64 100 0 OIDC symbol 1 -272 64 0
+port -176 160 100 0 CC symbol 1 -272 160 0
+uniq 4
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -32 0 Status
+l 100 0 0 -64 32 A&G Sequencer
+r 0 -192 -256 160 224
+v 0 -272 -128
+-192 -128
+_
+v 0 -272 -192
+-192 -192
+_
+v 0 -272 -64
+-192 -64
+_
+v 0 -272 0
+-192 0
+_
+v 0 -272 64
+-192 64
+_
+v 0 -272 160
+-192 160
+_
+[comments]

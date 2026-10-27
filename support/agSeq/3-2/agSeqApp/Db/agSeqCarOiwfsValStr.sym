@@ -1,0 +1,31 @@
+[symbol2]
+bbox -320 -128 96 96
+port -248 -7 100 0 MESS symbol 1 -320 0 0
+port -248 57 100 0 CAR symbol 1 -320 64 0
+port -19 55 100 0 OCAR symbol 2 96 64 0
+port -31 -7 100 0 OMESS symbol 2 96 0 0
+port -250 -103 100 0 SLNK symbol 1 -320 -96 0
+uniq 1
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -163 -29 Val & Mess
+l 100 0 0 -125 0 CAR
+r 0 -256 -128 32 96
+v 0 -320 0
+-256 0
+_
+v 0 -320 64
+-256 64
+_
+v 0 32 64
+96 64
+_
+v 0 32 0
+96 0
+_
+v 0 -320 -96
+-256 -96
+_
+[comments]

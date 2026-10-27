@@ -1,0 +1,44 @@
+Log Messages:
+rcardenes  (r4561): This was an accidental release
+
+ (Release dir 1-1-10)
+rcardenes  (r4559): Released version 4-1-11. (Release dir 4-1-11)
+rcardenes  (r4558): Released version 1-1-10. (Release dir 1-1-10)
+rcardenes  (r4558): Add debugging levels to the LUT record
+rcardenes  (r4504): Released version 4-1-10. (Release dir 4-1-10)
+rcardenes  (r4436): Released version 4-1-9. New version fixing LUT table reading bug (Release dir 4-1-9)
+rcardenes  (r4415): Fix the same LUT file bug... in lutin this time
+rcardenes  (r4414): Fix a corner case that ends up reading an LUT file ad infinitum...
+mrippa     (r4285): Released version 4-1-8. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 4-1-8)
+mrippa     (r4090): Released version 4-1-7. (Release dir 4-1-7)
+mikew      (r3993): updated to EPICS R3.14.12.8
+mrippa     (r2747): Released version 4-1-6. (Release dir 4-1-6)
+mrippa     (r2747): Merge geminiRec Branch R314 1946:2746 into trunk
+tgagg      (r2499): Released version 4-1-5-BR314-1. (Release dir 4-1-5-BR314-1)
+mikew      (r2254): Released version 4-1-5-BR314. (Release dir 4-1-5-BR314)
+mrippa     (r1943): New svnignore file
+mrippa     (r1434): Released version 4-1-5. (Release dir 4-1-5)
+mrippa     (r1201): Released version 4-1-4. (Release dir 4-1-4)
+mrippa      (r938): Released version 4-0-4. Fixed the extra spaces error at the line-end for egenSubF (Release dir 4-0-4)
+mrippa      (r938): Fixed parsing bug with extra spaces at line ends. Deleted the spaces to fix.
+mikew       (r891): geminRec: minor cleanup
+mikew       (r888): Released version 4-0-3. (Release dir 4-0-3)
+mikew       (r888): Moved load record to PMAC module; merged in soft device support from gemSoftDev module
+mikew       (r866): Released version 4-0-2. (Release dir 4-0-2)
+mikew       (r866): minor change to load record symbol
+mrippa      (r834): Removed testHarness
+mrippa      (r833): Removed
+mikew       (r832): geminiRecords: incorporated the test harness into the module
+mrippa      (r781): Released version 4-0-1. Rebuild for dependencies (Release dir 4-0-1)
+mrippa      (r781): Updated dependencies
+mrippa      (r780): Remove testSrc from GeminiRecords
+mrippa      (r718): Test harness included
+mrippa      (r717): remove geminii
+mrippa      (r716): Test harness included
+mrippa      (r715): Test harness included
+mrippa      (r572): Released version 4-1-3. (Release dir 4-1-3)
+mikew       (r310): Released version 4-0. (Release dir 4-0)
+mikew       (r310): Created: http://sbfsvn02/gemini-sw/gem/release/support/geminiRec (Release dir )
+mikew       (r309): Added RELEASE.NOTES
+mikew       (r308): Import into ADE
+mikew       (r307): Initial structure of new geminiRec

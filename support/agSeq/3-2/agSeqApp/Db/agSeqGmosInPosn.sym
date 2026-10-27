@@ -1,0 +1,26 @@
+[symbol2]
+bbox -288 -64 160 96
+port -208 -32 100 0 SLNK symbol 1 -288 -32 0
+port -208 64 100 0 LOADED symbol 1 -288 64 0
+port 16 64 100 0 INPOSN symbol 2 160 64 0
+port 16 -32 100 0 FLNK symbol 2 160 -32 0
+uniq 1
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -160 16 GMOS in position
+r 0 -224 -64 96 96
+v 0 -288 -32
+-224 -32
+_
+v 0 -288 64
+-224 64
+_
+v 0 96 64
+160 64
+_
+v 0 96 -32
+160 -32
+_
+[comments]

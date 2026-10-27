@@ -1,0 +1,61 @@
+Log Messages:
+ekurz      (r6860): Released version 3-2. (Release dir 3-2)
+ekurz      (r6859): matching support directory versions with ag
+ekurz      (r6856): matching Release versions with A&G
+ekurz      (r6855): matching Release versions with A&G
+ekurz      (r6849): changes for IGRINS, why is svn so difficult
+ekurz      (r6849): Released version 3-1. (Release dir 3-1)
+ekurz      (r6847): Released version 2-17. (Release dir 2-17)
+ekurz      (r6847): IGRINS changes (Release dir 2-9/agSeqApp/src/agSeq.c)
+ekurz      (r6845): Released version 2-16. (Release dir 2-16)
+ekurz      (r6845): changes for IGRINS (Release dir 2-9/agSeqApp/src/agSeq.c)
+ekurz      (r6843): Released version 2-15. (Release dir 2-15)
+ekurz      (r6842): Released version 2-14. (Release dir 2-14)
+hstecher   (r6841): Released version 2-13. (Release dir 2-13)
+hstecher   (r6840): Released version 2-12. (Release dir 2-12)
+hstecher   (r6837): changes for IGRINS2 (Release dir 2-9/agSeqApp/src/agSeq.c)
+framos     (r5994): Dynamic configuration for F2 and its simulator. GHOST is enabled to be configured as a port. Updating to the lastest libraries
+framos     (r5994): Released version 2-11. (Release dir 2-11)
+mrippa     (r5811): Update to include timelib2-1-5 and tcslib1-0-22
+mrippa     (r5811): Released version 2-10. New agSeq updates timelib and tcslib (Release dir 2-10)
+iarriagada (r5733): Changed site dep schematic to agSeqSiteDepGS.sch
+iarriagada (r5733): Released version 2-9. CAUTION: This is another temporary patch release. This one from rev5733 (Release dir 2-9)
+iarriagada (r5729): Added janky patch to use F2 simulator, this is temporary IA20201027
+iarriagada (r5729): Released version 2-8. CAUTION: This is a temporary patch release from rev5728 (Release dir 2-8)
+tcumming   (r5725): Add RELEASE.NOTES.RTEMS
+tcumming   (r5723): Released version 2-7. Fix REL-972 agSeq support for GN (Release dir 2-7)
+tcumming   (r5713): Added simulators to simulate wfs's that don't exist at this site (but does at the other) for multi-site support.
+rcardenes  (r5712): RTUPG-972 Temporary fix to generate distinct GS/GN top DBs
+rrojas     (r4880): agSeqInitTransformCommand removed
+iarriagada (r4880): Released version 2-6. (Release dir 2-6)
+iarriagada (r4872): Defined an init routine INAM for the agseqInitTransform record
+iarriagada (r4872): Released version 2-5. (Release dir 2-5)
+tgagg      (r4837): agSeqInitTransform exported to shell so it can be initialized on time
+tgagg      (r4837): Released version 2-4. Release for 2nd RTEMS ENT (Release dir 2-4)
+rcardenes  (r4834): Reproduce legacy code behavior when calculating OIWFS transforms.
+rcardenes  (r4834): Released version 2-3. (Release dir 2-3)
+rrojas     (r4821): Added missing OIWFS initialization values
+rcardenes  (r4699): The different <instrument>SigOutput channels do not exist. Replaced with the combined detSigOutput
+rcardenes  (r4699): Released version 2-2. (Release dir 2-2)
+rcardenes  (r4698): Fix the input links to ag:oiProcSysNamecalcSel that prevented processing
+rcardenes  (r4697): Fix the inputs to ag:state:combine
+rrojas     (r4661): Amount of OIWFS supported updated from 8 to 9, because GPI(9) crashed the VME
+rrojas     (r4661): Released version 2-1. (Release dir 2-1)
+rrojas     (r4584): modules version aligned in RELEASE file
+rrojas     (r4584): Released version 2-0. (Release dir 2-0)
+rcardenes  (r4578): Add .svnignore and apply it to the propset for directories
+rcardenes  (r4575): Bump versions to build against latest slalib, timelib, geminiRec and tcslib
+rcardenes  (r4575): Released version 1-1. (Release dir 1-1)
+rcardenes  (r4522): Reverting the changes - should have gone to a branch
+rcardenes  (r4519): Released version 1-0-BRag_mk-1. (Release dir 1-0-BRag_mk-1)
+rcardenes  (r4517): Bump versions to build against geminiRec 4-1-10
+rcardenes  (r4517): Released version 1-0-BRag_mk. (Release dir 1-0-BRag_mk)
+rrojas     (r4481): Released version 1-0. (Release dir 1-0)
+rrojas     (r4481): Created: http://sbfsvn02/gemini-sw/gem/release/support/agSeq (Release dir )
+iarriagada (r4478): Commit for version release, trusting Roberto's 
+changes, Tim scared
+rrojas     (r4217): OIWFS Car Tree record TOP variable redefined
+rrojas     (r4213): oiwfs selection CAD4 replaced by a CAD8 record
+rrojas     (r4211): Base version of the agSeq  module
+rrojas     (r4206): changed contact and set svn:ignore
+rrojas     (r4205): Initial structure of new agSeq

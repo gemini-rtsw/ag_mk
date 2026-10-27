@@ -1,0 +1,18 @@
+[symbol2]
+bbox -320 -128 96 96
+port -53 54 100 0 FOLLOWS symbol 2 96 64 0
+port -250 -103 100 0 SLNK symbol 1 -320 -96 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -208 -22 Follow to FollowS
+r 0 -256 -128 32 96
+v 0 32 64
+96 64
+_
+v 0 -320 -96
+-256 -96
+_
+[comments]

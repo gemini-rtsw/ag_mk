@@ -1,0 +1,50 @@
+Log Messages:
+mikew      (r4396): Released version 2-1-8. (Release dir 2-1-8)
+mikew      (r3994): Updated to EPICS R3.14.12.8
+iarriagada (r3556): Released version 2-1-7. (Release dir 2-1-7)
+mrippa     (r3501): Released version 2-1-6rc1. (Release dir 2-1-6rc1)
+mrippa     (r3064): Released version 2-1-6br. (Release dir 2-1-6br)
+mrippa     (r2802): Released version 2-1-5. (Release dir 2-1-5)
+mrippa     (r2802): Merge xycom module Branch R314 1993:2801 into trunk
+iarriagada (r2494): Released version 2-1-4-BR314-1. (Release dir 2-1-4-BR314-1)
+mikew      (r2345): (Release dir 2-2-BR314)
+mikew      (r2329): deleted because it had wrong version number (Release dir 2-2-BR314)
+iarriagada (r2329): Released version 2-2-BR314. (Release dir 2-2-BR314)
+mikew      (r2328): Deleted because it had wrong version number (Release dir 2-2)
+mikew      (r2326): Released version 2-1-4-BR314. (Release dir 2-1-4-BR314)
+iarriagada (r2249): Released version 2-2-BR314. (Release dir 2-2-BR314)
+iarriagada (r2219): Released version 2-2. (Release dir 2-2)
+mrippa     (r1992): New .svnignore
+mrippa     (r1991): Reverted to old R3.14.12.4
+mrippa     (r1990): New Epics release
+mrippa     (r1989): New ignore file
+mrippa      (r874): Released version 2-1-4. (Release dir 2-1-4)
+mrippa      (r874): Set SCAN to .1 second and MDEL to -1 so we trigger monitors on every scan
+mikew       (r824): Released version 2-1-3. (Release dir 2-1-3)
+mikew       (r824): xy240: added multiple card support to the test harness database schematic
+mikew       (r822): Released version 2-1-2. (Release dir 2-1-2)
+mikew       (r822): xy240: added records to test harness schematic
+mikew       (r820): Released version 2-1-1. (Release dir 2-1-1)
+mikew       (r820): drvXy240.c: fixed io_report routines
+mrippa      (r794): Released version 2-1-0. XYCOM 240/566 production release (Release dir 2-1-0)
+mrippa      (r556): Added new testharness
+mikew       (r535): minor code chages
+mikew       (r534): added xy566_set_gain() routine to src/drvXy566.c
+mikew       (r533): updated test databases
+mikew       (r532): added test databases
+mikew       (r531): clanup
+mikew       (r530): cleanup
+mikew       (r529): cleanup
+mikew       (r528): cleanup
+mikew       (r527): cleanup
+mikew       (r517): removed xy240_io_report() from list of exported functions
+mikew       (r515): minor code correction
+mikew       (r514): code cleanup
+mikew       (r513): fixed xy240_dio_out() routine
+mikew       (r509): xy566 completed OSI edits
+mrippa      (r507): Released version 2-1. Add iocshRegister commands to drvXy240.c (Release dir 2-1)
+mikew       (r507): added iocshell command registration for 3 xy240 commands
+mikew       (r431): Released version 2-0. (Release dir 2-0)
+mikew       (r431): Created: http://sbfsvn02/gemini-sw/gem/release/support/xycom (Release dir )
+mikew       (r430): Updated README
+mikew       (r428): Make it so.

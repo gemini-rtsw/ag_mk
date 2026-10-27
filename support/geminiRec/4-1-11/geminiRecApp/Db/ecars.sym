@@ -1,0 +1,92 @@
+[symbol2]
+bbox -96 576 224 864
+port 192 800 100 1024 CLID symbol 3 224 800 0
+port -64 800 100 1024 ICID symbol 1 -96 800 0
+port 192 736 100 1024 OERR symbol 3 224 736 0
+port 192 768 100 1024 OMSS symbol 3 224 768 0
+port 192 832 100 1024 VAL symbol 3 224 832 0
+port 192 608 100 1024 FLNK symbol 2 224 608 0
+port -64 608 100 1024 SDIS symbol 1 -96 608 0
+port -64 640 100 1024 SLNK symbol 1 -96 640 0
+port -64 672 100 1024 SIOL symbol 1 -96 672 0
+port -64 704 100 1024 SIML symbol 1 -96 704 0
+port -64 736 100 1024 IERR symbol 3 -96 736 0
+port -64 768 100 1024 IMSS symbol 3 -96 768 0
+port -64 832 100 1024 IVAL symbol 3 -96 832 0
+uniq 0
+[tools]
+[attributes]
+p 0 768 100 0 0 DESC:Gemini CAR record
+p 0 736 100 0 0 DISS:NO_ALARM
+p 0 704 100 0 0 DISV:1
+p 0 672 100 0 0 ERSV:NO_ALARM
+p 0 640 100 0 0 EVNT:0
+p 0 608 100 0 0 PHAS:0
+p 0 576 100 0 0 PINI:NO
+p 0 544 100 0 0 PRIO:LOW
+p 0 512 100 0 0 SCAN:Passive
+p 0 480 100 0 0 SIMS:NO_ALARM
+p 16 544 100 1024 0 name:$(top)$(I)
+p 64 800 100 256 -1 Type:car
+p -128 448 100 0 0 def(FLNK):0.0
+p -128 416 100 0 0 def(ICID):0.0
+p -128 384 100 0 0 def(SDIS):0.0
+p -128 352 100 0 0 def(SIML):0.0
+p -128 320 100 0 0 def(SIOL):0.0
+p -112 800 75 1024 -1 palrm(ICID):NMS
+p -112 608 75 1024 -1 palrm(SDIS):NMS
+p -112 704 75 1024 -1 palrm(SIML):NMS
+p -112 672 75 1024 -1 palrm(SIOL):NMS
+p -144 800 75 1024 -1 pproc(ICID):NPP
+p -144 608 75 1024 -1 pproc(SDIS):NPP
+p -144 704 75 1024 -1 pproc(SIML):NPP
+p -144 672 75 1024 -1 pproc(SIOL):NPP
+p 0 832 100 0 0 primitive:car
+p 64 448 100 0 0 typ(FLNK):path
+p 64 416 100 0 0 typ(ICID):path
+p 64 384 100 0 0 typ(SDIS):path
+p 64 352 100 0 0 typ(SIML):path
+p 64 320 100 0 0 typ(SIOL):path
+[layers]
+<symbol>
+r 0 -32 576 160 864
+v 0 160 800
+224 800
+_
+v 0 -96 800
+-32 800
+_
+v 0 -96 832
+-32 832
+_
+v 0 -96 768
+-32 768
+_
+v 0 -96 640
+-32 640
+_
+v 0 -96 672
+-32 672
+_
+v 0 -96 704
+-32 704
+_
+v 0 -96 736
+-32 736
+_
+v 0 -96 608
+-32 608
+_
+v 0 160 608
+224 608
+_
+v 0 160 832
+224 832
+_
+v 0 160 768
+224 768
+_
+v 0 160 736
+224 736
+_
+[comments]

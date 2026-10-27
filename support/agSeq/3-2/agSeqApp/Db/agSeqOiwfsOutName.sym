@@ -1,0 +1,11 @@
+[symbol2]
+bbox 256 288 640 640
+uniq 3
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 384 480 Name of Processing
+l 100 0 0 384 448 System for OIWFS
+r 0 256 288 640 640
+[comments]

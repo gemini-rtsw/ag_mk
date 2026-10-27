@@ -1,0 +1,90 @@
+[symbol2]
+bbox -320 96 -32 320
+port -288 288 100 1024 DIR symbol 1 -320 288 0
+port -64 160 100 1024 ODIR symbol 2 -32 160 0
+port -64 200 100 1792 OMSS symbol 2 -32 192 0
+port -64 232 100 1792 OVAL symbol 2 -32 224 0
+port -64 256 100 1024 FLNK symbol 2 -32 256 0
+port -288 128 100 1024 ICRM symbol 1 -320 128 0
+port -288 160 100 1024 ICRV symbol 1 -320 160 0
+port -288 200 100 1792 ICDM symbol 1 -320 192 0
+port -288 232 100 1792 ICDV symbol 1 -320 224 0
+port -288 256 100 1024 SLNK symbol 1 -320 256 0
+uniq 17
+[tools]
+[attributes]
+p -256 -64 100 0 0 DESC:Gemini cmdTimeout Record
+p -256 -96 100 0 0 DISV:1
+p -256 -128 100 0 0 EVNT:0
+p -256 -160 100 0 0 PHAS:0
+p -256 -192 100 0 0 PINI:NO
+p -256 -224 100 0 0 PRIO:LOW
+p -256 -256 100 0 0 SCAN:Passive
+p -256 -288 100 0 0 TOUT:0.0
+p -176 248 100 256 -1 Type:cmdTimeout
+p -416 -448 100 0 0 def(FLNK):0.0
+p -346 -990 100 0 0 def(ICDM):0.0
+p -396 -980 100 0 0 def(ICDV):0.0
+p -336 -1040 100 0 0 def(ICRM):0.0
+p -356 -1020 100 0 0 def(ICRV):0.0
+p -276 -1100 100 0 0 def(ODIR):0.0
+p -296 -1080 100 0 0 def(OMSS):0.0
+p -316 -1060 100 0 0 def(OVAL):0.0
+p -136 64 100 1280 0 name:$(top)$(I)
+p -328 192 75 1280 -1 palrm(ICDM):NMS
+p -328 224 75 1280 -1 palrm(ICDV):NMS
+p -328 128 75 1280 -1 palrm(ICRM):NMS
+p -328 160 75 1280 -1 palrm(ICRV):NMS
+p 32 160 75 1280 -1 palrm(ODIR):NMS
+p 32 192 75 1280 -1 palrm(OMSS):NMS
+p 32 224 75 1280 -1 palrm(OVAL):NMS
+p -360 192 75 1280 -1 pproc(ICDM):NPP
+p -360 224 75 1280 -1 pproc(ICDV):NPP
+p -360 128 75 1280 -1 pproc(ICRM):NPP
+p -360 160 75 1280 -1 pproc(ICRV):NPP
+p 0 160 75 1280 -1 pproc(ODIR):NPP
+p 0 192 75 1280 -1 pproc(OMSS):NPP
+p 0 224 75 1280 -1 pproc(OVAL):NPP
+p -256 -288 100 0 0 primitive:cmdTimeout
+p -96 -448 100 0 0 typ(FLNK):path
+p 44 -1420 100 0 0 typ(ICDM):path
+p 24 -1400 100 0 0 typ(ICDV):path
+p 84 -1460 100 0 0 typ(ICRM):path
+p 64 -1440 100 0 0 typ(ICRV):path
+p 144 -1520 100 0 0 typ(ODIR):path
+p 104 -1480 100 0 0 typ(OMSS):path
+p 124 -1500 100 0 0 typ(OVAL):path
+[layers]
+<symbol>
+r 0 -256 96 -96 320
+v 0 -320 288
+-256 288
+_
+v 0 -320 192
+-256 192
+_
+v 0 -320 224
+-256 224
+_
+v 0 -96 192
+-32 192
+_
+v 0 -96 224
+-32 224
+_
+v 0 -320 256
+-256 256
+_
+v 0 -320 160
+-256 160
+_
+v 0 -320 128
+-256 128
+_
+v 0 -96 160
+-32 160
+_
+v 0 -96 256
+-32 256
+_
+[comments]

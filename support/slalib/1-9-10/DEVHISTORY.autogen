@@ -1,0 +1,30 @@
+Log Messages:
+mrippa     (r4278): Released version 1-9-10. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 1-9-10)
+mrippa     (r4248): Released version 1-9-9. Updated RELEASE file to EPICSR3.14.12.8 (Release dir 1-9-9)
+mikew      (r3990): updated to EPICS R3.14.12.8
+pgigoux    (r3453): Released version 1-9-8. 2017 and 2015 leap seconds (Release dir 1-9-8)
+pgigoux    (r3453): Added the January 2017 and the July 2015 leap seconds.
+The total number of accumulated leap seconds is now 37.
+rrojas     (r2944): slaDs2tp function check ra,dec,raz and decz input values
+pgigoux    (r2944): Released version 1-9-7. (Release dir 1-9-7)
+mrippa     (r2736): Released version 1-9-6. (Release dir 1-9-6)
+mrippa     (r2736): Merge slalib module Branch R314 1928:2734 into trunk
+mrippa     (r2735): Update to EPICS 3.14.12.7
+tgagg      (r2497): Released version 1-9-5-BR314-2. (Release dir 1-9-5-BR314-2)
+mikew      (r2219): Released version 1-9-5-BR314-1. used EPICS 3.14.12.6 this time (Release dir 1-9-5-BR314-1)
+mikew      (r2214): Released version 1-9-5-BR314. (Release dir 1-9-5-BR314)
+mikew      (r2170): (Release dir 1-9-5-R314)
+mikew      (r2168): Released version 1-9-5-R314. (Release dir 1-9-5-R314)
+mrippa     (r1927): New svnignore file
+mrippa     (r1134): Released version 1-1-0. Test build from R315 branch (Release dir 1-1-0)
+mrippa      (r771): The was a mistake on the command line... should have been astlib 1-6-1, not slalib.
+ (Release dir 1-6-1)
+mrippa      (r769): Released version 1-6-1. Rebuild for dependencies (Release dir 1-6-1)
+mrippa      (r767): Released version 1-9-5. Rebuild for dependencies (Release dir 1-9-5)
+mrippa      (r737): Released version 1-9-4. Export slalib 1-9 as gemini release 4 (Release dir 1-9-4)
+mrippa      (r737): Released 1-9 into prod as Gemini release 4
+mikew       (r303): Released version 1-9-3. (Release dir 1-9-3)
+mikew       (r303): Created: http://sbfsvn02/gemini-sw/gem/release/support/slalib (Release dir )
+mikew       (r302): import into ADE
+mikew       (r301): changed contact and set svn:ignore
+mikew       (r300): Initial structure of new slalib

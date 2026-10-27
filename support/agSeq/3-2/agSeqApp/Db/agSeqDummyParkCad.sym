@@ -1,0 +1,20 @@
+[symbol2]
+bbox 384 128 704 624
+port 576 288 100 0 XPARK symbol 2 704 288 0
+port 576 224 100 0 YPARK symbol 2 704 224 0
+uniq 5
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 448 464 command
+l 150 0 0 432 560 Dummy A&G 
+l 150 0 0 480 512 park
+r 0 384 128 640 624
+v 0 640 288
+704 288
+_
+v 0 640 224
+704 224
+_
+[comments]

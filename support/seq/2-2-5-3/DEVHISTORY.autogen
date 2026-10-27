@@ -1,0 +1,28 @@
+Log Messages:
+mrippa     (r4277): Released version 2-2-5-3. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 2-2-5-3)
+mrippa     (r4277): update svn:ignore
+mrippa     (r4247): Released version 2-2-5-2. (Release dir 2-2-5-2)
+mrippa     (r4247): Fixed more errors in previous merge. Attempting final update to 2-2-5 Release.
+mrippa     (r4246): Fixed more errors in previous merge. Attempting final update to 2-2-5 Release.
+mrippa     (r4244): Released version 2-2-5-1. (Release dir 2-2-5-1)
+mrippa     (r4244): Fixed errors in previous merge. Fully updated to official 2-2-5 Release.
+mrippa     (r4243): Update the trunk vendor version to Seq-2-2-5. Followed procedure for gem-vendor-update.py as described on page 41 of ADE User Manual.
+mikew      (r3991): updated to EPICS R3.14.12.8
+mrippa     (r2733): Released version 2-2-3-2. (Release dir 2-2-3-2)
+mrippa     (r2733): Update to EPICS 3.14.12.7
+mrippa     (r2732): Merge seq module R314 1921:2731 into trunk
+tgagg      (r2491): Released version 2-2-3-1-BR314-1. (Release dir 2-2-3-1-BR314-1)
+mikew      (r2224): deleting extraneous version (Release dir 2-2-5)
+mikew      (r2224): Released version 2-2-3-1-BR314. (Release dir 2-2-3-1-BR314)
+mikew      (r2223): (Release dir 2-2-4)
+mrippa     (r1920): New ignore
+mrippa      (r731): Released version 2-2-3-1. Rebuild of Seq 2.2.3, gemini release 1 (Release dir 2-2-3-1)
+mrippa      (r582): Released version 2-2-5. (Release dir 2-2-5)
+mrippa      (r582): New demo additions
+mrippa      (r581): New demo additions
+mrippa      (r579): Released version 2-2-4. (Release dir 2-2-4)
+mrippa      (r579): Fix the demo program to build the demo.db and set the demo.adl file prefix to snctest
+mikew       (r287): Released version 2-2-3. (Release dir 2-2-3)
+mikew       (r287): Created: http://sbfsvn02/gemini-sw/gem/release/support/seq (Release dir )
+mikew       (r286): changed configure/RELEASE to reflect Gemini paths
+mikew       (r285): Importing vendor source from: ../seq-2.2.3

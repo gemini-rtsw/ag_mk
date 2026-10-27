@@ -1,0 +1,18 @@
+[symbol2]
+bbox -320 -64 96 96
+port -32 64 100 0 OUT symbol 2 96 64 0
+port -240 64 100 0 OIWFS symbol 1 -320 64 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -160 0 OIWFS Limit
+r 0 -256 -64 32 96
+v 0 32 64
+96 64
+_
+v 0 -320 64
+-256 64
+_
+[comments]

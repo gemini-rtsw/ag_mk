@@ -1,0 +1,7 @@
+menu(menuDirective) {
+	choice(menuDirectiveMARK,   "MARK")
+	choice(menuDirectiveCLEAR,  "CLEAR")
+	choice(menuDirectivePRESET, "PRESET")
+	choice(menuDirectiveSTART,  "START")
+	choice(menuDirectiveSTOP,   "STOP")
+}

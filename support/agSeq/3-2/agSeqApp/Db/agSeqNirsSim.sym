@@ -1,0 +1,10 @@
+[symbol2]
+bbox 256 384 896 704
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 368 576 Simulated NIRS WFS database
+r 0 256 704 896 384
+[comments]

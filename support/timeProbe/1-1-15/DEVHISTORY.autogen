@@ -1,0 +1,45 @@
+Log Messages:
+rcardenes  (r4563): Released version 1-1-15. (Release dir 1-1-15)
+rcardenes  (r4563): Bump versions to build against geminiRec 4-1-11
+rcardenes  (r4508): Released version 1-1-14. (Release dir 1-1-14)
+rcardenes  (r4508): Bump versions to build against geminiRec 4-1-10
+mrippa     (r4493): Released version 1-1-13. (Release dir 1-1-13)
+rcardenes  (r4442): Released version 1-1-12. Updated RELEASE (Release dir 1-1-12)
+rcardenes  (r4442): Update geminiRec dependency
+mrippa     (r4319): Released version 1-1-11. (Release dir 1-1-11)
+mrippa     (r4308): Released version 1-1-10. (Release dir 1-1-10)
+mrippa     (r4287): Released version 1-1-9. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 1-1-9)
+mrippa     (r4270): Released version 1-1-8. (Release dir 1-1-8)
+mikew      (r3960): Released version 1-1-7. (Release dir 1-1-7)
+mikew      (r3960): updated bancomm dependency to 1-6-10
+mikew      (r3296): Released version 1-1-6. (Release dir 1-1-6)
+mikew      (r3296): Now depends on bancomm 1-6-9
+mikew      (r3295): Forgot to check in changes before release, need to delete this and release 
+
+ (Release dir 1-1-6)
+mikew      (r3281): Released version 1-1-6. (Release dir 1-1-6)
+mrippa     (r2935): Released version 1-1-5. (Release dir 1-1-5)
+mrippa     (r2935): Build against new bancomm 1-6-8
+mrippa     (r2934): Build against new bancomm
+rcardenes  (r2897): Added release notes for the last few releases
+rcardenes  (r2874): Released version 1-1-4. (Release dir 1-1-4)
+rcardenes  (r2873): Use latest bancomm driver, with fixed timezone bug!
+mrippa     (r2749): Released version 1-1-3. (Release dir 1-1-3)
+mrippa     (r2749): New EPICS 3.14.12.7 Release
+tgagg      (r2651): Released version 1-1-2-BR314-1. (Release dir 1-1-2-BR314-1)
+mrippa     (r2633): Released version 1-1-2-BR314. (Release dir 1-1-2-BR314)
+mrippa     (r2633): New svnignore all directories
+mrippa     (r2632): New svnignore
+pgigoux    (r2614): Released version 1-1-1-BR314. (Release dir 1-1-1-BR314)
+pgigoux    (r2614): Created: http://sbfsvn02/gemini-sw/gem/release/support/timeProbe (Release dir )
+pgigoux    (r2584): Added comments and more debug code. Fixed two minor bugs.
+-#define DEBUG_MODE     *((int *) (pgsub->a))
++#define DEBUG_FLAG     *((long *) (pgsub->a))
+-#define CARD_FOUND     *((int *) (pgsub->valb))
++#define CARD_FOUND     *((long *) (pgsub->valb))
+pgigoux    (r2583): Moved timeProbeFuncs.dbd to the right section of the file
+-DBD += timeProbeFuncs.dbd
++timeProbe_DBD += timeProbeFuncs.dbd
+pgigoux    (r2573): First version of the support module files
+pgigoux    (r2572): changed contact and set svn:ignore
+pgigoux    (r2571): Initial structure of new timeProbe

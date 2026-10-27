@@ -1,0 +1,5 @@
+# Gemini soft device support
+
+device(lutin,  CONSTANT, devLutinSoft,  "Soft Channel")
+device(lutout, CONSTANT, devLutoutSoft, "Soft Channel")
+device(status, CONSTANT, devStatusSoft, "Soft Channel")

@@ -1,0 +1,50 @@
+Log Messages:
+rcardenes  (r4569): Released version 1-0-16. (Release dir 1-0-16)
+rcardenes  (r4569): Bump versions to build against geminiRec 4-1-11
+rcardenes  (r4513): Released version 1-0-10-BRag_mk. (Release dir 1-0-10-BRag_mk)
+rcardenes  (r4440): Released version 1-0-15. Updated RELEASE (Release dir 1-0-15)
+rcardenes  (r4440): Update geminiRec dependency
+mrippa     (r4321): Released version 1-0-14. (Release dir 1-0-14)
+mrippa     (r4321): Updated timelib and astlib versions
+mrippa     (r4312): Released version 1-0-13. Updated timelib release (Release dir 1-0-13)
+mrippa     (r4312): Updated astlib release
+mrippa     (r4310): Released version 1-0-12. Updated timelib release (Release dir 1-0-12)
+mrippa     (r4309): Updated timelib release
+mrippa     (r4294): Released version 1-0-11. Update for R3.14.12.8 (Release dir 1-0-11)
+mrippa     (r4294): Update to R3.14.12.8 releases
+mikew      (r3965): Released version 1-0-10. (Release dir 1-0-10)
+mikew      (r3965): updated timelib dependency to 1-9-17, and astlib dependency to 1-6-8
+mikew      (r3962): updated timelib depencency to 1-9-17
+mikew      (r3487): Released version 1-0-9. (Release dir 1-0-9)
+mikew      (r3487): updated .../configure /RELEASE to use new versions of slalib, timelib and astlib
+mikew      (r3286): Released version 1-0-8. (Release dir 1-0-8)
+mikew      (r3286): now depends on timelib 1-9-14 and astlib 1-6-6
+iarriagada (r3218): Released version 1-0-7. (Release dir 1-0-7)
+iarriagada (r3218): Changed MAXRV param to fix non-sidereal tracking issue
+rcardenes  (r3012): Replace deprecated CA functions
+rrojas     (r2960): Released version 1-0-6. (Release dir 1-0-6)
+rrojas     (r2959): update support modules version
+mrippa     (r2825): Released version 1-0-5. (Release dir 1-0-5)
+mrippa     (r2825): Merge tcslib module branch R314 2293:2824  to trunk
+rrojas     (r2718): Released version 1-0-5-BR314. (Release dir 1-0-5-BR314)
+rrojas     (r2715): Build Failed
+ (Release dir 1-0-4-BR314)
+rrojas     (r2715): Released version 1-0-4-BR314. (Release dir 1-0-4-BR314)
+rrojas     (r2710): Bad version
+ (Release dir 1-0-4-BR314)
+rrojas     (r2710): Released version 1-0-4-BR314. (Release dir 1-0-4-BR314)
+rrojas     (r2702): Released version 1-0-4-BR314. (Release dir 1-0-4-BR314)
+mikew      (r2296): Released version 1-0-3-BR314. (Release dir 1-0-3-BR314)
+mrippa      (r936): Released version 1-0-3. (Release dir 1-0-3)
+mrippa      (r936): Fixed Makefile to build all c files
+mikew       (r893): Released version 1-0-2. (Release dir 1-0-2)
+mikew       (r893): Now depends on gemeiniRec 4-0-3
+mikew       (r868): Released version 1-0-1. (Release dir 1-0-1)
+mikew       (r868): now depends on geminiRec 4-0-2
+mrippa      (r784): Released version 1-0-0. Rebuild for dependencies (Release dir 1-0-0)
+mrippa      (r784): Created: http://sbfsvn02/gemini-sw/gem/release/support/tcslib (Release dir )
+mrippa      (r783): Updated dependencies
+mrippa      (r720): Import tcslib support
+mrippa      (r719): Import tcslib support
+mrippa      (r585): changed contact and set svn:ignore
+mrippa      (r584): Initial structure of new tcslib

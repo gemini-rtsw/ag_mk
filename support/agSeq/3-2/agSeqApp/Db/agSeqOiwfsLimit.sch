@@ -1,0 +1,147 @@
+[schematic2]
+uniq 150
+[tools]
+[detail]
+w 1522 2091 100 0 n#148 superfout.fan.LNK1 976 1680 1280 1680 1280 2080 1824 2080 eaos.none.SLNK
+w 2450 891 100 0 OUT eaos.nifs.OUT 2368 880 2592 880 2592 1088 junction
+w 2450 1099 100 0 OUT eaos.f2.OUT 2368 1088 2592 1088 2592 1296 junction
+w 2450 1307 100 0 OUT eaos.niri.OUT 2368 1296 2592 1296 2592 1536 junction
+w 2450 1547 100 0 OUT eaos.nirs.OUT 2368 1536 2592 1536 2592 2048 2080 2048 eaos.none.OUT
+w 2450 1819 100 0 OUT eaos.gmos.OUT 2368 1808 2592 1808 junction
+w 2450 667 100 0 OUT eaos.nici.OUT 2368 656 2592 656 2592 880 junction
+w 2686 1611 100 0 OUT junction 2592 1600 2816 1600 outhier.OUT.p
+w 1954 699 100 0 n#146 eais.niciIn.FLNK 1856 688 2112 688 eaos.nici.SLNK
+w 2002 731 100 0 n#145 eais.niciIn.VAL 1856 656 1952 656 1952 720 2112 720 eaos.nici.DOL
+w 1386 683 100 0 n#144 superfout.fan.LNK7 976 1488 1232 1488 1232 672 1600 672 eais.niciIn.SLNK
+w 1402 907 100 0 n#141 superfout.fan.LNK6 976 1520 1264 1520 1264 896 1600 896 eais.nifsIn.SLNK
+w 1106 1563 100 0 n#140 superfout.fan.LNK5 976 1552 1296 1552 1296 1104 1600 1104 eais.f2In.SLNK
+w 1122 1595 100 0 n#139 superfout.fan.LNK4 976 1584 1328 1584 1328 1312 1600 1312 eais.niriIn.SLNK
+w 1130 1627 100 0 n#138 superfout.fan.LNK3 976 1616 1344 1616 1344 1552 1600 1552 eais.nirsIn.SLNK
+w 514 1531 100 0 n#137 ecalcs.calc.FLNK 528 1520 560 1520 560 1392 superfout.fan.SLNK
+w 506 1499 100 0 n#136 ecalcs.calc.VAL 528 1488 544 1488 544 1616 560 1616 superfout.fan.SELL
+w 2002 955 100 0 n#132 eais.nifsIn.VAL 1856 880 1952 880 1952 944 2112 944 eaos.nifs.DOL
+w 1954 923 100 0 n#131 eais.nifsIn.FLNK 1856 912 2112 912 eaos.nifs.SLNK
+w 2002 1163 100 0 n#128 eais.f2In.VAL 1856 1088 1952 1088 1952 1152 2112 1152 eaos.f2.DOL
+w 1954 1131 100 0 n#127 eais.f2In.FLNK 1856 1120 2112 1120 eaos.f2.SLNK
+w 2002 1883 100 0 n#123 eais.gmosIn.VAL 1856 1808 1952 1808 1952 1872 2112 1872 eaos.gmos.DOL
+w 1954 1851 100 0 n#122 eais.gmosIn.FLNK 1856 1840 2112 1840 eaos.gmos.SLNK
+w 1114 1659 100 0 n#121 superfout.fan.LNK2 976 1648 1312 1648 1312 1824 1600 1824 eais.gmosIn.SLNK
+w 2002 1611 100 0 n#119 eais.nirsIn.VAL 1856 1536 1952 1536 1952 1600 2112 1600 eaos.nirs.DOL
+w 1954 1579 100 0 n#118 eais.nirsIn.FLNK 1856 1568 2112 1568 eaos.nirs.SLNK
+w 2002 1371 100 0 n#112 eais.niriIn.VAL 1856 1296 1952 1296 1952 1360 2112 1360 eaos.niri.DOL
+w 1954 1339 100 0 n#111 eais.niriIn.FLNK 1856 1328 2112 1328 eaos.niri.SLNK
+w 128 1691 100 0 n#79 inhier.OIWFS.P 64 1680 240 1680 ecalcs.calc.INPA
+s 1552 144 100 0 ao record doesn't work between IOCs
+s 1552 176 100 0 around the bug that the DOL field of an
+s 1552 208 100 0 The ai records are solely present to get
+s 2720 80 100 0 Fetch OIWFS limit value
+s 2432 32 100 0 Chris Mayer
+s 2704 128 200 0 A&G Sequencer
+s 2432 2336 100 0 $Id: agSeqOiwfsLimit.sch,v 1.7 2009/09/24 22:18:25 gemvx Exp $
+s 2432 144 100 0 Copyright
+s 2432 112 100 0 Observatory
+s 2432 80 100 0 Sciences Ltd.
+[cell use]
+use eaos 2112 1031 100 0 f2
+xform 0 2240 1120
+p 2112 1200 100 0 -1 DESC:Flamingos2 Limit
+p 1856 1102 100 0 0 OMSL:closed_loop
+p 2368 1088 75 768 -1 pproc(OUT):PP
+use eaos 2112 823 100 0 nifs
+xform 0 2240 912
+p 2192 992 100 0 -1 DESC:NIFS Limit
+p 2080 638 100 0 0 EGU:mm
+p 1856 894 100 0 0 OMSL:closed_loop
+p 1840 944 100 0 0 def(DOL):0.0
+p 2112 944 75 1280 -1 palrm(DOL):MS
+p 2400 880 75 768 -1 palrm(OUT):MS
+p 2368 880 75 768 -1 pproc(OUT):PP
+use eaos 2112 1479 100 0 nirs
+xform 0 2240 1568
+p 2112 1664 100 0 -1 DESC:NIRS Limit
+p 2080 1294 100 0 0 EGU:mm
+p 1856 1550 100 0 0 OMSL:closed_loop
+p 1904 1600 100 0 0 def(DOL):0.0
+p 2112 1600 75 1280 -1 palrm(DOL):MS
+p 2400 1536 75 768 -1 palrm(OUT):MS
+p 2368 1536 75 768 -1 pproc(OUT):PP
+use eaos 2112 1751 100 0 gmos
+xform 0 2240 1840
+p 2112 1936 100 0 -1 DESC:GMOS Limit
+p 2080 1566 100 0 0 EGU:mm
+p 1856 1822 100 0 0 OMSL:closed_loop
+p 1840 1872 100 0 0 def(DOL):0.0
+p 2112 1872 75 1280 -1 palrm(DOL):MS
+p 2400 1808 75 768 -1 palrm(OUT):MS
+p 2368 1808 75 768 -1 pproc(OUT):PP
+use eaos 1824 1991 100 0 none
+xform 0 1952 2080
+p 1888 2176 100 0 -1 DESC:\"None\" Limit
+p 1792 1806 100 0 0 EGU:mm
+p 1568 2062 100 0 0 OMSL:closed_loop
+p 1552 2112 100 0 -1 def(DOL):$(nonedol)
+p 1824 2112 75 1280 -1 palrm(DOL):MS
+p 2112 2048 75 768 -1 palrm(OUT):MS
+p 2080 2048 75 768 -1 pproc(OUT):PP
+use eaos 2112 1239 100 0 niri
+xform 0 2240 1328
+p 2112 1424 100 0 -1 DESC:NIRI Limit
+p 2080 1054 100 0 0 EGU:mm
+p 1856 1310 100 0 0 OMSL:closed_loop
+p 1840 1360 100 0 0 def(DOL):0.0
+p 2112 1360 75 1280 -1 palrm(DOL):MS
+p 2400 1296 75 768 -1 palrm(OUT):MS
+p 2368 1296 75 768 -1 pproc(OUT):PP
+use eaos 2112 599 100 0 nici
+xform 0 2240 688
+p 2176 768 100 0 -1 DESC:NICI limit
+p 2080 414 100 0 0 EGU:mm
+p 1856 670 100 0 0 OMSL:closed_loop
+p 2368 656 75 768 -1 pproc(OUT):PP
+use eais 1600 823 100 0 nifsIn
+xform 0 1728 896
+p 1616 976 100 0 -1 DESC:NIFS limit
+p 1344 638 100 0 0 EGU:mm
+p 1376 960 100 0 -1 def(INP):$(nifsdol)
+p 1600 928 75 1280 -1 palrm(INP):MS
+use eais 1600 1751 100 0 gmosIn
+xform 0 1728 1824
+p 1616 1904 100 0 -1 DESC:GMOS limit
+p 1344 1566 100 0 0 EGU:mm
+p 1376 1888 100 0 -1 def(INP):$(gmdol)
+p 1600 1856 75 1280 -1 palrm(INP):MS
+use eais 1600 1479 100 0 nirsIn
+xform 0 1728 1552
+p 1616 1632 100 0 -1 DESC:NIRS limit
+p 1344 1294 100 0 0 EGU:mm
+p 1376 1616 100 0 -1 def(INP):$(nirsdol)
+p 1600 1584 75 1280 -1 palrm(INP):MS
+use eais 1600 1239 100 0 niriIn
+xform 0 1728 1312
+p 1616 1392 100 0 -1 DESC:NIRI limit
+p 1344 1054 100 0 0 EGU:mm
+p 1376 1376 100 0 -1 def(INP):$(niridol)
+p 1600 1344 75 1280 -1 palrm(INP):MS
+use eais 1600 1031 100 0 f2In
+xform 0 1728 1104
+p 1616 1184 100 0 -1 DESC:Flamingos-2 limit
+p 1344 846 100 0 0 EGU:mm
+p 1392 1136 100 0 -1 def(INP):$(f2dol)
+p 1600 1136 75 1280 -1 palrm(INP):MS
+use eais 1600 599 100 0 niciIn
+xform 0 1728 672
+p 1616 752 100 0 -1 DESC:NICI limit
+p 1408 720 100 0 -1 def(INP):$(nicidol)
+use superfout 640 1280 100 0 fan
+xform 0 768 1520
+use outhier 2784 1559 100 0 OUT
+xform 0 2800 1600
+use ecalcs 240 1207 100 0 calc
+xform 0 384 1472
+p 352 1408 100 0 1 CALC:A+1
+p 416 1296 100 0 1 SCAN:.2 second
+use inhier 48 1639 100 0 OIWFS
+xform 0 64 1680
+use bc200tr -160 -136 -100 0 frame
+xform 0 1520 1168
+[comments]

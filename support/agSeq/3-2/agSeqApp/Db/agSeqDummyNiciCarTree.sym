@@ -1,0 +1,11 @@
+[symbol2]
+bbox 256 384 896 704
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 512 512 CAR tree
+l 150 0 0 416 576 Dummy NICI subsystem
+r 0 256 704 896 384
+[comments]

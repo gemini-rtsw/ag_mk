@@ -1,0 +1,111 @@
+include "menuDirective.dbd"
+include "menuCarstates.dbd"
+menu(menuCTOState) {
+	choice(menuCTOStateMARK_CMD,    "MARK_CMD")
+	choice(menuCTOStateMARK_RESP,   "MARK_RESP")
+	choice(menuCTOStatePRESET_RESP, "PRESET_RESP")
+	choice(menuCTOStateSTART_RESP,  "START_RESP")
+	choice(menuCTOStateSTOP_RESP,   "STOP_RESP")
+	choice(menuCTOStateCAR_RESP,    "CAR_RESP")
+}
+recordtype(cmdTimeout) {
+	include "dbCommon.dbd" 
+        field(VERS,DBF_DOUBLE) {
+                prompt("Version Number")
+                promptgroup(GUI_DISPLAY)
+                special(SPC_NOMOD)
+                interest(1)
+        }
+        field(PFLG,DBF_LONG) {
+                prompt("Process flag")
+                special(SPC_NOMOD)
+                interest(1)
+        }
+        field(CNT,DBF_LONG) {
+                prompt("Number of processes")
+                special(SPC_NOMOD)
+                interest(1)
+        }
+        field(LPRO,DBF_LONG) {
+                prompt("Link Processing")
+                special(SPC_NOMOD)
+                interest(1)
+        }
+        field(VAL,DBF_LONG) {
+                prompt("Holds CAD/CAR value")
+                special(SPC_NOMOD)
+                interest(1)
+        }
+        field(STTE,DBF_MENU) {
+                prompt("State")
+                special(SPC_NOMOD)
+                interest(1)
+                menu(menuCTOState)
+        }
+	field(DIR,DBF_MENU) {
+		prompt("CAD Directive")
+                promptgroup(GUI_OUTPUT)
+                asl(ASL0)
+                pp(TRUE)
+                special(SPC_MOD)
+		interest(1)
+                menu(menuDirective)
+	}
+	field(TOUT,DBF_FLOAT) {
+		prompt("Timeout (sec)")
+		interest(1)
+	}
+        field(RPVT,DBF_NOACCESS) {
+		prompt("Record Private")
+		special(SPC_NOMOD)
+		interest(4)
+		extra("void *rpvt")
+        }
+	field(MESS,DBF_STRING) {
+		prompt("Current CAD/CAR Message")
+		interest(1)
+		size(40)
+	}
+	field(ICDV,DBF_INLINK) {
+		prompt("Input Link From CAD Val")
+		promptgroup(GUI_INPUTS)
+		special(SPC_MOD)
+		interest(1)
+	}
+	field(ICDM,DBF_INLINK) {
+		prompt("Input Link From CAD Message")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(ICRV,DBF_INLINK) {
+		prompt("Input Link From CAR Val")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(ICRM,DBF_INLINK) {
+		prompt("Input Link From CAR Message")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OMSS,DBF_OUTLINK) {
+		prompt("Output Message Link")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OVAL,DBF_OUTLINK) {
+		prompt("Output Value Link")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(ODIR,DBF_OUTLINK) {
+		prompt("Output Directive Link")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+}

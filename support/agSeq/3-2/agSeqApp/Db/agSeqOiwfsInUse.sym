@@ -1,0 +1,25 @@
+[symbol2]
+bbox 320 288 672 832
+port 560 320 100 0 FLNK symbol 2 672 320 0
+port 416 416 100 1792 OIWFS symbol 1 320 416 0
+port 416 320 100 1792 SLNK symbol 1 320 320 0
+uniq 6
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 464 640 OIWFS
+l 100 0 0 448 672 Sequencer
+l 100 0 0 480 704 A&G
+l 100 0 0 432 608 In use flags
+r 0 384 832 608 288
+v 0 608 320
+672 320
+_
+v 0 320 416
+384 416
+_
+v 0 320 320
+384 320
+_
+[comments]

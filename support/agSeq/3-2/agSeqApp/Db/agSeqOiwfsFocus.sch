@@ -1,0 +1,176 @@
+[schematic2]
+uniq 167
+[tools]
+[detail]
+w 1874 555 100 0 n#166 superfout.fan.LNK7 1008 2128 1152 2128 1152 544 2656 544 2656 1632 3104 1632 eais.niciZIn.SLNK
+w 3282 2795 100 0 n#161 eaos.focus.SLNK 4544 2784 2080 2784 eaos.noneZ.OUT
+w 2394 731 100 0 n#161 eaos.f2Z.OUT 2336 720 2512 720 2512 2784 junction
+w 2394 2491 100 0 n#161 eaos.gmosZ.OUT 2336 2480 2512 2480 junction
+w 2394 1947 100 0 n#161 eaos.nirsZ.OUT 2336 1936 2512 1936 junction
+w 2410 1739 100 0 n#161 egenSub.niriZ2Tcs.OUTA 2368 1728 2512 1728 junction
+w 3898 2635 100 0 n#161 egenSub.nifsZ2Tcs.OUTA 3856 2624 4000 2624 4000 2784 junction
+w 3890 1627 100 0 n#161 eaos.niciZ.OUT 3840 1616 4000 1616 4000 2624 junction
+w 3442 1659 100 0 n#165 eais.niciZIn.FLNK 3360 1648 3584 1648 eaos.niciZ.SLNK
+w 3490 1691 100 0 n#164 eais.niciZIn.VAL 3360 1616 3456 1616 3456 1680 3584 1680 eaos.niciZ.DOL
+w 1874 587 100 0 n#162 superfout.fan.LNK6 1008 2160 1184 2160 1184 576 2624 576 2624 2336 3120 2336 eais.nifsZIn.SLNK
+w 1522 2827 100 0 n#156 superfout.fan.LNK1 1008 2320 1280 2320 1280 2816 1824 2816 eaos.noneZ.SLNK
+w 1130 2299 100 0 n#154 superfout.fan.LNK2 1008 2288 1312 2288 1312 2496 1600 2496 eais.gmosZIn.SLNK
+w 1386 747 100 0 n#153 superfout.fan.LNK5 1008 2192 1216 2192 1216 736 1616 736 eais.f2ZIn.SLNK
+w 1394 1451 100 0 n#152 superfout.fan.LNK4 1008 2224 1248 2224 1248 1440 1600 1440 eais.niriZIn.SLNK
+w 1410 1963 100 0 n#151 superfout.fan.LNK3 1008 2256 1280 2256 1280 1952 1600 1952 eais.nirsZIn.SLNK
+w 3466 1963 100 0 n#144 eais.nifsZIn.FLNK 3376 2352 3424 2352 3424 1952 3568 1952 egenSub.nifsZ2Tcs.SLNK
+w 3394 2331 100 0 n#143 eais.nifsZIn.VAL 3376 2320 3472 2320 3472 2624 3568 2624 egenSub.nifsZ2Tcs.INPA
+w 514 2187 100 0 n#139 ecalcs.calc.VAL 512 2176 576 2176 576 2256 592 2256 superfout.fan.SELL
+w 538 2043 100 0 n#138 ecalcs.calc.FLNK 512 2208 544 2208 544 2032 592 2032 superfout.fan.SLNK
+w 1986 795 100 0 n#131 eais.f2ZIn.VAL 1872 720 1952 720 1952 784 2080 784 eaos.f2Z.DOL
+w 1946 763 100 0 n#129 eais.f2ZIn.FLNK 1872 752 2080 752 eaos.f2Z.SLNK
+w 1882 1435 100 0 n#126 eais.niriZIn.VAL 1856 1424 1968 1424 1968 1728 2080 1728 egenSub.niriZ2Tcs.INPA
+w 1978 1067 100 0 n#124 eais.niriZIn.FLNK 1856 1456 1936 1456 1936 1056 2080 1056 egenSub.niriZ2Tcs.SLNK
+w 1978 2555 100 0 n#118 eais.gmosZIn.VAL 1856 2480 1936 2480 1936 2544 2080 2544 eaos.gmosZ.DOL
+w 1938 2523 100 0 n#117 eais.gmosZIn.FLNK 1856 2512 2080 2512 eaos.gmosZ.SLNK
+w 1978 2011 100 0 n#113 eais.nirsZIn.VAL 1856 1936 1936 1936 1936 2000 2080 2000 eaos.nirsZ.DOL
+w 1938 1979 100 0 n#112 eais.nirsZIn.FLNK 1856 1968 2080 1968 eaos.nirsZ.SLNK
+w 120 2379 100 0 n#79 inhier.OIWFS.P 64 2368 224 2368 ecalcs.calc.INPA
+s 272 1552 100 0 nirs and niri are still to be defined.
+s 272 1584 100 0 N.B. The names of the input records for
+s 3616 240 100 0 Sciences Ltd.
+s 3616 272 100 0 Observatory
+s 3616 304 100 0 Copyright
+s 3856 3104 100 0 $Id: agSeqOiwfsFocus.sch,v 1.12 2007/05/18 22:29:22 pedro Exp $
+s 4336 416 200 0 A&G Sequencer
+s 3600 96 100 0 Chris Mayer
+s 4304 192 100 0 Fetch OIWFS focus positions
+s 464 2944 100 0 Note that the two records noneZ and gmosZ
+s 464 2912 100 0 deliberately have their DOL links connected
+s 464 2880 100 0 to non-existent records. This puts the records
+s 464 2848 100 0 in an invalid state which is required
+s 464 2816 100 0 for the colour rule "subsysalarm"
+[cell use]
+use eaos 1824 2727 100 0 noneZ
+xform 0 1952 2816
+p 1824 2912 100 0 -1 DESC:Z position of OIWFS \"None\"
+p 1792 2542 100 0 0 EGU:mm
+p 1568 2382 100 0 0 IVOA:Set output to IVOV
+p 1568 2798 100 0 0 OMSL:closed_loop
+p 1552 2848 100 0 -1 def(DOL):$(ag)noRecord
+p 1824 2848 75 1280 -1 palrm(DOL):MS
+p 2112 2784 75 768 -1 palrm(OUT):MS
+p 2080 2784 75 768 -1 pproc(OUT):PP
+use eaos 4544 2695 100 0 focus
+xform 0 4672 2784
+p 4288 2254 100 0 0 ADEL:0.0005
+p 4592 2864 100 0 -1 DESC:Probe focus position
+p 4512 2510 100 0 0 EGU:mm
+p 4288 2222 100 0 0 MDEL:0.0005
+p 4288 2638 100 0 0 PREC:3
+p 4656 2688 100 1024 0 name:$(top)$(I)
+use eaos 2080 2423 100 0 gmosZ
+xform 0 2208 2512
+p 2080 2608 100 0 -1 DESC:Z position of GMOS OIWFS
+p 2048 2238 100 0 0 EGU:mm
+p 1824 2078 100 0 0 IVOA:Set output to IVOV
+p 1824 2494 100 0 0 OMSL:closed_loop
+p 1808 2544 100 0 0 def(DOL):0.0
+p 2080 2544 75 1280 -1 palrm(DOL):MS
+p 2368 2480 75 768 -1 palrm(OUT):MS
+p 2336 2480 75 768 -1 pproc(OUT):PP
+use eaos 2080 1879 100 0 nirsZ
+xform 0 2208 1968
+p 2080 2064 100 0 -1 DESC:Z position of NIRS OIWFS
+p 2048 1694 100 0 0 EGU:mm
+p 1824 1950 100 0 0 OMSL:closed_loop
+p 1808 2000 100 0 0 def(DOL):0.0
+p 2080 2000 75 1280 -1 palrm(DOL):MS
+p 2368 1936 75 768 -1 palrm(OUT):MS
+p 2336 1936 75 768 -1 pproc(OUT):PP
+use eaos 2080 663 100 0 f2Z
+xform 0 2208 752
+p 2016 848 100 0 -1 DESC:Z position of Flamingos-2 OIWFS
+p 2048 478 100 0 0 EGU:mm
+p 1824 318 100 0 0 IVOA:Set output to IVOV
+p 1824 734 100 0 0 OMSL:closed_loop
+p 1824 300 100 0 0 def(DOL):0.0
+p 2080 784 75 1280 -1 palrm(DOL):MS
+p 2368 720 75 768 -1 palrm(OUT):MS
+p 2336 720 75 768 -1 pproc(OUT):PP
+use eaos 3584 1559 100 0 niciZ
+xform 0 3712 1648
+p 3552 1744 100 0 -1 DESC:Z position of NICI OIWFS
+p 3552 1374 100 0 0 EGU:mm
+p 3328 1630 100 0 0 OMSL:closed_loop
+p 3840 1616 75 768 -1 pproc(OUT):PP
+use eais 3120 2263 100 0 nifsZIn
+xform 0 3248 2336
+p 2864 1886 100 0 0 ADEL:0.0005
+p 3120 2416 100 0 -1 DESC:Focus of NIFS OIWFS
+p 2864 2078 100 0 0 EGU:mm
+p 2864 1854 100 0 0 MDEL:0.0005
+p 2864 2174 100 0 0 PREC:3
+p 2944 2368 100 0 -1 def(INP):1.0
+p 3120 2368 75 1280 -1 palrm(INP):MS
+use eais 1600 2423 100 0 gmosZIn
+xform 0 1728 2496
+p 1344 2046 100 0 0 ADEL:0.0005
+p 1600 2576 100 0 -1 DESC:Focus of GMOS OIWFS
+p 1344 2238 100 0 0 EGU:mm
+p 1344 2014 100 0 0 MDEL:0.0005
+p 1344 2334 100 0 0 PREC:3
+p 1360 2528 100 0 -1 def(INP):$(ag)noRecord
+p 1600 2528 75 1280 -1 palrm(INP):MS
+use eais 1600 1879 100 0 nirsZIn
+xform 0 1728 1952
+p 1344 1502 100 0 0 ADEL:0.0005
+p 1600 2032 100 0 -1 DESC:Focus of NIRS OIWFS
+p 1344 1694 100 0 0 EGU:mm
+p 1344 1470 100 0 0 MDEL:0.0005
+p 1344 1790 100 0 0 PREC:3
+p 1296 1984 100 0 -1 def(INP):$(nirs)wfs:focPos
+p 1600 1984 75 1280 -1 palrm(INP):MS
+use eais 1600 1367 100 0 niriZIn
+xform 0 1728 1440
+p 1344 990 100 0 0 ADEL:0.0005
+p 1600 1520 100 0 -1 DESC:Focus of NIRI OIWFS
+p 1344 1182 100 0 0 EGU:mm
+p 1344 958 100 0 0 MDEL:0.0005
+p 1344 1278 100 0 0 PREC:3
+p 1312 1472 100 0 -1 def(INP):$(niri)wfs:focPos
+p 1600 1472 75 1280 -1 palrm(INP):MS
+use eais 1616 663 100 0 f2ZIn
+xform 0 1744 736
+p 1360 286 100 0 0 ADEL:0.0005
+p 1568 816 100 0 -1 DESC:Focus of Flamingos-2 OIWFS
+p 1360 478 100 0 0 EGU:mm
+p 1360 254 100 0 0 MDEL:0.0005
+p 1360 574 100 0 0 PREC:3
+p 1360 768 100 0 -1 def(INP):$(ag)noRecord
+p 1616 768 75 1280 -1 palrm(INP):MS
+use eais 3104 1559 100 0 niciZIn
+xform 0 3232 1632
+p 3136 1712 100 0 -1 DESC:Focus of NICI OIWFS
+p 2848 1374 100 0 0 EGU:mm
+p 2832 1664 100 0 -1 def(INP):$(ag)noRecord
+use egenSub 3568 1863 100 0 nifsZ2Tcs
+xform 0 3712 2288
+p 3411 2603 100 0 0 DESC:Convert NIFS focus to TCS scale
+p 3728 1840 100 0 1 SNAM:agSeqNifsZ2Tcs
+p 3552 2634 75 0 -1 palrm(INPA):MS
+p 3888 2634 75 0 -1 palrm(OUTA):MS
+p 3856 2634 75 0 -1 pproc(OUTA):PP
+use egenSub 2080 967 100 0 niriZ2Tcs
+xform 0 2224 1392
+p 1923 1707 100 0 0 DESC:Convert NIRI focus to TCS scale
+p 2240 944 100 0 1 SNAM:agSeqNiriZ2Tcs
+p 2064 1738 75 0 -1 palrm(INPA):MS
+p 2400 1738 75 0 -1 palrm(OUTA):MS
+p 2368 1738 75 0 -1 pproc(OUTA):PP
+use superfout 656 1920 100 0 fan
+xform 0 800 2160
+use bd200tr -160 -136 -100 0 frame
+xform 0 2480 1568
+use ecalcs 224 1895 100 0 calc
+xform 0 368 2160
+p 336 2096 100 0 1 CALC:A+1
+p 400 1984 100 0 1 SCAN:.2 second
+use inhier 48 2327 100 0 OIWFS
+xform 0 64 2368
+[comments]

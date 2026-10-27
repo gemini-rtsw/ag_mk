@@ -1,0 +1,28 @@
+[symbol2]
+bbox 320 128 640 624
+port 400 192 100 0 YMAX symbol 1 320 192 0
+port 400 256 100 0 YMIN symbol 1 320 256 0
+port 400 320 100 0 XMAX symbol 1 320 320 0
+port 400 384 100 0 XMIN symbol 1 320 384 0
+uniq 4
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 448 464 command
+l 150 0 0 432 560 Dummy A&G 
+l 150 0 0 480 512 move
+r 0 384 128 640 624
+v 0 320 192
+384 192
+_
+v 0 320 256
+384 256
+_
+v 0 320 320
+384 320
+_
+v 0 320 384
+384 384
+_
+[comments]

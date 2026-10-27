@@ -1,0 +1,24 @@
+[symbol2]
+bbox -256 -256 224 224
+port 80 -192 100 0 COEFFS symbol 2 224 -192 0
+port -160 -192 100 0 PORT symbol 1 -256 -192 0
+port -160 -112 100 0 AOSTATE symbol 1 -256 -128 0
+uniq 4
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -64 -64 Specific Data
+l 100 0 0 -64 32 A&G Sequencer
+l 100 0 0 -16 -16 NICI
+r 0 -192 -256 160 224
+v 0 160 -192
+224 -192
+_
+v 0 -256 -192
+-192 -192
+_
+v 0 -256 -128
+-192 -128
+_
+[comments]

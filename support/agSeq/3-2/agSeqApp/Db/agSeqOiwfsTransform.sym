@@ -1,0 +1,22 @@
+[symbol2]
+bbox -192 -320 192 96
+port 64 -272 100 0 FLNK symbol 2 192 -288 0
+port -112 -272 100 0 SLNK symbol 1 -192 -288 0
+uniq 4
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -16 -160 Data
+l 100 0 0 -48 -112 Conversion
+l 100 0 0 -48 -64 Coordinate
+l 100 0 0 -64 32 A&G Sequencer
+l 100 0 0 -16 -16 OIWFS
+r 0 -128 -320 128 96
+v 0 128 -288
+192 -288
+_
+v 0 -192 -288
+-128 -288
+_
+[comments]

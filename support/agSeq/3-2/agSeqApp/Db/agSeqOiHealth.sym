@@ -1,0 +1,31 @@
+[symbol2]
+bbox -256 -64 224 128
+port -176 96 100 0 OIWFS symbol 1 -256 96 0
+port -176 -32 100 0 SLNK symbol 1 -256 -32 0
+port 80 96 100 0 MESS symbol 2 224 96 0
+port 80 32 100 0 HEALTH symbol 2 224 32 0
+port 80 -32 100 0 FLNK symbol 2 224 -32 0
+uniq 3
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -64 48 OIWFS
+l 100 0 0 -64 16 health
+r 0 -192 -64 160 128
+v 0 -256 96
+-192 96
+_
+v 0 -256 -32
+-192 -32
+_
+v 0 160 96
+224 96
+_
+v 0 160 32
+224 32
+_
+v 0 160 -32
+224 -32
+_
+[comments]

@@ -1,0 +1,39 @@
+[symbol2]
+bbox -320 -128 96 96
+port -20 -101 100 0 FLNK symbol 2 96 -96 0
+port -248 57 100 0 OIWFS symbol 1 -320 64 0
+port 14 55 100 0 X symbol 2 96 64 0
+port 14 25 100 0 Y symbol 2 96 32 0
+port -23 -7 100 0 XRAW symbol 2 96 0 0
+port -23 -39 100 0 YRAW symbol 2 96 -32 0
+port -250 -103 100 0 SLNK symbol 1 -320 -96 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 70 0 0 -160 -1 OIWFS to TCS
+l 70 0 0 -156 -16 coordinates
+r 0 -256 -128 32 96
+v 0 32 -96
+96 -96
+_
+v 0 -320 64
+-256 64
+_
+v 0 32 64
+96 64
+_
+v 0 32 32
+96 32
+_
+v 0 32 0
+96 0
+_
+v 0 32 -32
+96 -32
+_
+v 0 -320 -96
+-256 -96
+_
+[comments]

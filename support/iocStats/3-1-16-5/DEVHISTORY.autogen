@@ -1,0 +1,80 @@
+Log Messages:
+rcardenes  (r4537): Released version 3-1-15-4-BR8_3-1-15. (Release dir 3-1-15-4-BR8_3-1-15)
+tgagg      (r4375): Released version 3-1-16-5. MSI dependency removed, now part of EPICS BASE (Release dir 3-1-16-5)
+tgagg      (r4375): MSI dependency removed, now part of EPICS BASE
+mrippa     (r4298): Released version 3-1-16-4. Update for R3.14.12.8 (Release dir 3-1-16-4)
+mrippa     (r4298): Update to R3.14.12.8 releases
+mrippa     (r4288): Released version 3-1-16-3. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 3-1-16-3)
+mrippa     (r4275): Released version 3-1-16-2. (Release dir 3-1-16-2)
+mrippa     (r4275): For Gemini Release 3-1-16-2. See RELEASE_NOTES.
+mrippa     (r4274): R3.1.16. Imported by ANJ on April 30th, 2019. See README
+mrippa     (r4273): R3.1.16. Imported by ANJ on April 30th, 2019. See README
+tgagg      (r4140): Released version 3-1-14-6. (Release dir 3-1-14-6)
+tgagg      (r4138): Released version 3-1-14-5. (Release dir 3-1-14-5)
+mikew      (r3992): updated to EPICS R3.14.12.8
+mikew      (r3688): Released version 3-1-15-4. (Release dir 3-1-15-4)
+mikew      (r3688): changed a Makefile
+mikew      (r3687): (Release dir 3-1-15-4)
+mikew      (r3685): Released version 3-1-15-4. (Release dir 3-1-15-4)
+mikew      (r3685): modified python scripts to define EDMDATAFILES envirenment variable
+mikew      (r3684): (Release dir 3-1-15-4)
+mikew      (r3682): Released version 3-1-15-4. (Release dir 3-1-15-4)
+mikew      (r3682): updated python scripts ro define EDMDATAFILES environment variable
+mikew      (r3681): (Release dir 3-1-15-4)
+mikew      (r3679): (Release dir 3-1-15-4)
+mikew      (r3679): Released version 3-1-15-4. (Release dir 3-1-15-4)
+mikew      (r3678): modified python scripts to define EDMDATAFILES environment variable
+mikew      (r3676): (Release dir 3-1-15-4)
+mikew      (r3676): Released version 3-1-15-4. (Release dir 3-1-15-4)
+mikew      (r3674): Released version 3-1-15-4. (Release dir 3-1-15-4)
+mikew      (r3673): (Release dir 3-15-3)
+mikew      (r3673): Released version 3-1-15-3. (Release dir 3-1-15-3)
+mikew      (r3671): Released version 3-15-3. (Release dir 3-15-3)
+mikew      (r3671): corrected pathname in iocstasSoft.py
+mikew      (r3669): Released version 3-1-15-2. (Release dir 3-1-15-2)
+mikew      (r3669): modified scripts and edm screens to show name of system in larger font
+rcardenes  (r3572): Released version 3-1-15-1. Upgrade to the latest upstream version (Release dir 3-1-15-1)
+rcardenes  (r3571): Integrated changes 3.1.14 -> 3.1.15
+mrippa     (r2753): Released version 3-1-14-4. (Release dir 3-1-14-4)
+mrippa     (r2753): New EPICS 3.14.12.7 Release
+mrippa     (r2752): New EPICS 3.14.12.7 Release
+mrippa     (r2751): Merge iocStats module Branch R314 1951:2750 into trunk
+tgagg      (r2502): Released version 3-1-14-3-BR314-1. (Release dir 3-1-14-3-BR314-1)
+mikew      (r2346): (Release dir 3-2-BR314)
+iarriagada (r2332): Released version 3-2-BR314. (Release dir 3-2-BR314)
+mikew      (r2326): Deleting because it got wrong version number (Release dir 4-1-14-3-BR314)
+mikew      (r2325): Deleting because it got wrong version number (Release dir 3-2-BR314)
+mikew      (r2323): Released version 3-1-14-3-BR314. (Release dir 3-1-14-3-BR314)
+mikew      (r2322): (Release dir 3-2)
+mikew      (r2322): Released version 4-1-14-3-BR314. (Release dir 4-1-14-3-BR314)
+iarriagada (r2273): Released version 3-2-BR314. (Release dir 3-2-BR314)
+iarriagada (r2221): Released version 3-2. (Release dir 3-2)
+mrippa     (r1948): New ignore file
+mikew      (r1675): Released version 3-1-14-3. (Release dir 3-1-14-3)
+mikew      (r1675): Added iocstatsSoft.py
+mikew      (r1569): added iocstatsSoft.py script
+mikew      (r1539): Deleting non-existant version
+ (Release dir 3-1-15)
+mikew      (r1538): Deleting non-existant version...
+ (Release dir 3-1-16)
+mikew      (r1537): Deleting non-existant version. Who knows why it was here...
+ (Release dir 3-1-17)
+mikew      (r1258): updated .../configure/RELEASE
+mrippa     (r1090): New command line arg for iocstats.py
+mrippa      (r735): Released version 3-1-14-2. Rebuild of iocStats 3.1.14, gemini release 2 (Release dir 3-1-14-2)
+mrippa      (r735): Cleanly exit iocstats.py if hostname not found.
+mrippa      (r733): Released version 3-1-14-1. Rebuild of iocStats 3.1.14, gemini release 1 (Release dir 3-1-14-1)
+mrippa      (r733): Use Sequence version 2-2-3-1
+mrippa      (r731): msi is an EPIC extension, not a support module. Correction applied.
+mrippa      (r602): Released version 3-1-17. (Release dir 3-1-17)
+mrippa      (r602): Added iocstats.py script
+mrippa      (r600): Added iocstats.py script
+mrippa      (r574): Released version 3-1-16. (Release dir 3-1-16)
+mrippa      (r574): Include tests
+mrippa      (r569): Released version 3-1-15. (Release dir 3-1-15)
+mrippa      (r569): Include SNCSEQ for test harness
+mikew       (r522): fixed configure/RELEASE
+mrippa      (r489): Released version 3-1-14. (Release dir 3-1-14)
+mrippa      (r489): Created: http://sbfsvn02/gemini-sw/gem/release/support/iocStats (Release dir )
+mrippa      (r488): Vendor import changes for Gemini Paths
+mrippa      (r487): Importing vendor source from: iocStatsR3-1-14

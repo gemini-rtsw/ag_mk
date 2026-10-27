@@ -1,0 +1,15 @@
+[symbol2]
+bbox 320 256 768 688
+port 416 384 100 0 XTOL symbol 1 320 384 0
+uniq 2
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 464 576 Dummy F2 WFS
+l 150 0 0 512 512 simulation
+r 0 384 256 768 688
+v 0 320 384
+384 384
+_
+[comments]

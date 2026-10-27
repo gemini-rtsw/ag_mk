@@ -1,0 +1,17 @@
+[symbol2]
+bbox 320 288 608 832
+port 416 320 100 1792 OIWFS symbol 1 320 320 0
+uniq 3
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 464 640 OIWFS
+l 100 0 0 480 608 CAD
+l 100 0 0 448 672 Sequencer
+l 100 0 0 480 704 A&G
+r 0 384 832 608 288
+v 0 320 320
+384 320
+_
+[comments]

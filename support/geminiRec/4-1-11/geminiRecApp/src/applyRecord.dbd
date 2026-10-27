@@ -1,0 +1,276 @@
+include "menuDirective.dbd"
+menu(menuApplyState) {
+	choice(menuApplyStateIN,  "IN")
+	choice(menuApplyStateOUT, "OUT")
+}
+recordtype(apply) {
+	include "dbCommon.dbd" 
+        field(VERS,DBF_DOUBLE) {
+                prompt("Version Number")
+                promptgroup(GUI_DISPLAY)
+                special(SPC_NOMOD)
+                interest(1)
+        }
+        field(STTE,DBF_MENU) {
+                prompt("State")
+                special(SPC_NOMOD)
+                interest(1)
+                menu(menuApplyState)
+        }
+	field(NPRC,DBF_LONG) {
+		prompt("Num. Proc.")
+                special(SPC_NOMOD)
+		interest(1)
+	}
+	field(STFG,DBF_LONG) {
+		prompt("Start Flag")
+                special(SPC_NOMOD)
+		interest(1)
+	}
+        field(MARK,DBF_SHORT) {
+                prompt("Mark")
+                special(SPC_NOMOD)
+                interest(1)
+        }
+	field(LPRO,DBF_LONG) {
+		prompt("Link Processing")
+                special(SPC_NOMOD)
+		interest(1)
+	}
+	field(TOP,DBF_LONG) {
+		prompt("Top of tree")
+                special(SPC_NOMOD)
+		interest(1)
+	}
+	field(TOUT,DBF_FLOAT) {
+		prompt("Timeout (sec)")
+		interest(1)
+	}
+        field(RPVT,DBF_NOACCESS) {
+		prompt("Record Private")
+		special(SPC_NOMOD)
+		interest(4)
+		extra("void *rpvt")
+        }
+	field(VAL,DBF_LONG) {
+		prompt("Return Error Code")
+		interest(1)
+	}
+	field(DIR,DBF_MENU) {
+		prompt("CAD Directive")
+		promptgroup(GUI_OUTPUT)
+		asl(ASL0)
+		pp(TRUE)
+                special(SPC_MOD)
+		interest(1)
+		menu(menuDirective)
+	}
+	field(CLID,DBF_LONG) {
+		prompt("Client ID")
+                special(SPC_MOD)
+		interest(1)
+	}
+	field(MESS,DBF_STRING) {
+		prompt("Message")
+		interest(1)
+		size(40)
+	}
+	field(OMSS,DBF_STRING) {
+		prompt("Old Message")
+		special(SPC_NOMOD)
+		interest(1)
+		size(40)
+	}
+	field(OUTA,DBF_OUTLINK) {
+		prompt("Output Link A")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTB,DBF_OUTLINK) {
+		prompt("Output Link B")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTC,DBF_OUTLINK) {
+		prompt("Output Link C")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTD,DBF_OUTLINK) {
+		prompt("Output Link D")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTE,DBF_OUTLINK) {
+		prompt("Output Link E")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTF,DBF_OUTLINK) {
+		prompt("Output Link F")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTG,DBF_OUTLINK) {
+		prompt("Output Link G")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OUTH,DBF_OUTLINK) {
+		prompt("Output Link H")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLA,DBF_OUTLINK) {
+		prompt("Output CLID Link A")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLB,DBF_OUTLINK) {
+		prompt("Output CLID Link B")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLC,DBF_OUTLINK) {
+		prompt("Output CLID Link C")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLD,DBF_OUTLINK) {
+		prompt("Output CLID Link D")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLE,DBF_OUTLINK) {
+		prompt("Output CLID Link E")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLF,DBF_OUTLINK) {
+		prompt("Output CLID Link F")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLG,DBF_OUTLINK) {
+		prompt("Output CLID Link G")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(OCLH,DBF_OUTLINK) {
+		prompt("Output CLID Link H")
+		promptgroup(GUI_OUTPUT)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPA,DBF_INLINK) {
+		prompt("Input Link A")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPB,DBF_INLINK) {
+		prompt("Input Link B")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPC,DBF_INLINK) {
+		prompt("Input Link C")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPD,DBF_INLINK) {
+		prompt("Input Link D")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPE,DBF_INLINK) {
+		prompt("Input Link E")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPF,DBF_INLINK) {
+		prompt("Input Link F")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPG,DBF_INLINK) {
+		prompt("Input Link G")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INPH,DBF_INLINK) {
+		prompt("Input Link H")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMA,DBF_INLINK) {
+		prompt("Input Msg Link A")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMB,DBF_INLINK) {
+		prompt("Input Msg Link B")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMC,DBF_INLINK) {
+		prompt("Input Msg Link C")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMD,DBF_INLINK) {
+		prompt("Input Msg Link D")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INME,DBF_INLINK) {
+		prompt("Input Msg Link E")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMF,DBF_INLINK) {
+		prompt("Input Msg Link F")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMG,DBF_INLINK) {
+		prompt("Input Msg Link G")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+	field(INMH,DBF_INLINK) {
+		prompt("Input Msg Link H")
+		promptgroup(GUI_INPUTS)
+		special(SPC_NOMOD)
+		interest(1)
+	}
+}

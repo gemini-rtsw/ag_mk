@@ -1,0 +1,80 @@
+Log Messages:
+mrippa     (r4315): Released version 2-0-8. (Release dir 2-0-8)
+mrippa     (r4304): Released version 2-0-7. (Release dir 2-0-7)
+mrippa     (r4303): Released version 2-0-6. (Release dir 2-0-6)
+mrippa     (r4282): Released version 2-0-5. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 2-0-5)
+mrippa     (r4281): Released version 2-0-4. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 2-0-4)
+mrippa     (r4279): Released version 2-0-3. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 2-0-3)
+mrippa     (r4262): Released version 2-0-2. Test release 2-0-2 (Release dir 2-0-2)
+mrippa     (r4261): Released version 2-0-1. Test release 2-0-1 (Release dir 2-0-1)
+mikew      (r3958): Released version 1-9-17. (Release dir 1-9-17)
+mikew      (r3958): updated bancomm dependency to 1-6-10
+mikew      (r3479): Released version 1-9-16. (Release dir 1-9-16)
+mikew      (r3470): Updated timeSeq.st to use the correct number of leap seconds.
+mikew      (r3462): removed dead code that was causing compiler warnings
+mikew      (r3460): Released version 1-9-15. (Release dir 1-9-15)
+mikew      (r3460): updated slalib dependency in .../configure/RELEASE
+mikew      (r3282): Released version 1-9-14. (Release dir 1-9-14)
+mikew      (r3281): Now depends on bancomm 1-6-9
+pgigoux    (r2946): Released version 1-9-13. (Release dir 1-9-13)
+pgigoux    (r2946): Changed to newer version of slalib that fixes a problem detected in the TCS.
+-SLALIB=$(PROD_SUPP)/slalib/1-9-6
++SLALIB=$(PROD_SUPP)/slalib/1-9-7
+mrippa     (r2930): Released version 1-9-12. (Release dir 1-9-12)
+mrippa     (r2930): Merge the timelib module bancomm2018_bfix branch [2904]:[2929], back to trunk
+rcardenes  (r2908): Released version 1-9-11-1-bf2018. (Release dir 1-9-11-1-bf2018)
+rcardenes  (r2905): Released version 1-9-11-bf2018. (Release dir 1-9-11-bf2018)
+rcardenes  (r2896): Added release notes for the last few releases
+mrippa     (r2882): Released version 1-9-11. (Release dir 1-9-11)
+mrippa     (r2882): Fixup the correct timelib bug patches and corresponding PROD versions
+mrippa     (r2880): Released version 1-9-10. (Release dir 1-9-10)
+mrippa     (r2880): Fixed up missing time bug patch fixing Bad Bancomm Time Health Warning
+rcardenes  (r2871): Released version 1-9-9. (Release dir 1-9-9)
+rcardenes  (r2871): Use latest bancomm driver, with fixed timezone bug!
+rcardenes  (r2865): Released version 1-9-8. (Release dir 1-9-8)
+rcardenes  (r2865): Bump configure/RELEASE to use the latest bancomm driver
+mrippa     (r2743): Released version 1-9-7. (Release dir 1-9-7)
+mrippa     (r2743): Merge timelib Branch time-bug 2457:2742 into trunk
+pgigoux    (r2679): Released version 1-9-5-BR314-3. (Release dir 1-9-5-BR314-3)
+pgigoux    (r2675): Removed direcgtory
+pgigoux    (r2674): Moved timelib code to the parent directory.
+Modified Makefile (TOP=../.. now)
+pgigoux    (r2673): Removed timeProbe
+pgigoux    (r2672): Removed unused file
+mrippa     (r2622): Released version 1-9-6-bfix. (Release dir 1-9-6-bfix)
+mrippa     (r2621): Released version 1-9-6-bugfix. (Release dir 1-9-6-bugfix)
+tgagg      (r2514): Released version 1-9-5-BR314-2. (Release dir 1-9-5-BR314-2)
+mrippa     (r2510): Released version 1-9-5-BR314-1. (Release dir 1-9-5-BR314-1)
+mikew      (r2226): Released version 1-9-5-BR314. (Release dir 1-9-5-BR314)
+mrippa     (r1876): Reverted release back to 3.14.12.4
+mrippa     (r1875): Reverted release back to 3.14.12.4
+mrippa     (r1871): New ignore file
+mrippa     (r1870): New EPICS R3.15.5 build
+mrippa     (r1869): New ignore file
+mrippa     (r1695): Released version 1-9-5. (Release dir 1-9-5)
+mrippa     (r1695): Removed debug line from timeNow routine.
+mrippa     (r1694): New updated for bancomm 1-6-4
+mrippa      (r884): Released version 1-9-4. (Release dir 1-9-4)
+mrippa      (r841): Update bancomm to 1-6-3
+mrippa      (r772): Released version 1-9-3. Rebuild for dependencies (Release dir 1-9-3)
+mrippa      (r772): Update dependencies
+mrippa      (r747): Released version 1-9-2. New patch release for fixed warnings (Release dir 1-9-2)
+mrippa      (r747): Fixed warnings for printf and strcmp
+mrippa      (r745): Released version 1-9-1. New release for updated dependencies (Release dir 1-9-1)
+mrippa      (r745): Updated dependencies
+mrippa      (r421): Released version 1-8-9. New astlib release (Release dir 1-8-9)
+mrippa      (r421): new change for Linux dependency
+mrippa      (r410): Released version 1-8-8. Release new timelib based on production bancomm 1-4 (Release dir 1-8-8)
+mrippa      (r410): Patch timelib to use production bancomm driver 1-4
+mrippa      (r369): Released version 1-8-7. 2016 March 1st CCB Sprint (Release dir 1-8-7)
+mrippa      (r369): Created: http://sbfsvn02/gemini-sw/gem/release/support/timelib (Release dir )
+mrippa      (r368): * Includes basic functionality for OSI and RTEMS, yet includes severl OSD calls due to taking over the system clock which is BSP dependent.
+* Includes examples of exporting useful timelib functions to the iocsh (see timeClockInit.c).
+mrippa      (r367): No need to move timeSeq.st to timeSeq.stt
+mrippa      (r366): Fix Makefile to include slalib for RTEMS and the snc code timeSeq.stt.
+mrippa      (r344): defined the j integer variable
+mrippa      (r343): New generalTime updates for RTEMS OSI stuff
+mikew       (r324): convert to EPICS OSI and cleanup.
+mrippa       (r98): Initial import of timelib for ADE
+mrippa       (r97): changed contact and set svn:ignore
+mrippa       (r96): Initial structure of new timelib

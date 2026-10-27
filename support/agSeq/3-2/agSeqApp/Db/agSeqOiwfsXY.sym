@@ -1,0 +1,15 @@
+[symbol2]
+bbox 192 288 640 480
+port 304 320 100 1792 OIWFS symbol 1 192 320 0
+uniq 3
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 400 416 OIWFS probe
+l 100 0 0 416 384 positions
+r 0 256 288 640 480
+v 0 192 320
+256 320
+_
+[comments]

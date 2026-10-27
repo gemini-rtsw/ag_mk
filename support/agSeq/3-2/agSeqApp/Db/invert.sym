@@ -1,0 +1,35 @@
+[symbol2]
+bbox -224 96 96 224
+port 96 198 100 0 FLNK symbol 2 96 192 0
+port 96 166 100 0 OUT symbol 2 96 160 0
+port 96 134 100 0 VAL symbol 2 96 128 0
+port -224 198 100 0 SLNK symbol 1 -224 192 0
+port -224 166 100 0 INP symbol 1 -224 160 0
+port -224 134 100 0 IVAL symbol 1 -224 128 0
+uniq 0
+[tools]
+[attributes]
+p -160 64 100 0 -1 seta:signal XXXX
+[layers]
+<symbol>
+l 100 0 0 -96 160 Invert
+r 0 -160 96 32 224
+v 0 32 192
+96 192
+_
+v 0 32 160
+96 160
+_
+v 0 32 128
+96 128
+_
+v 0 -224 192
+-160 192
+_
+v 0 -224 160
+-160 160
+_
+v 0 -224 128
+-160 128
+_
+[comments]

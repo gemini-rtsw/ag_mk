@@ -1,0 +1,47 @@
+Log Messages:
+mrippa     (r4317): Released version 1-6-12. (Release dir 1-6-12)
+mrippa     (r4317): Updated timelib version
+mrippa     (r4306): Released version 1-6-11. Update for R3.14.12.8 (Release dir 1-6-11)
+mrippa     (r4306): Update to R3.14.12.8 releases
+mrippa     (r4284): Released version 1-6-10. Rebuild includes RTEMS-mvme5500 CROSS_COMPILER_TARGET_ARCH (Release dir 1-6-10)
+mrippa     (r4284): Updated timelib and slalib which build RTEMS-mvme5500 support
+mrippa     (r4264): Released version 1-6-9. Update for R3.14.12.8 (Release dir 1-6-9)
+mrippa     (r4264): Update to R3.14.12.8 releases
+mikew      (r3963): Released version 1-6-8. (Release dir 1-6-8)
+mikew      (r3963): updated timelib dependency to 1-9-17
+mikew      (r3486): (Release dir 1-1-7)
+mikew      (r3484): Released version 1-6-7. (Release dir 1-6-7)
+mikew      (r3482): Released version 1-1-7. (Release dir 1-1-7)
+mikew      (r3482): reverted changes to astCtx2tr.c, astCocoR.c and astlib.dbd
+mikew      (r3481): updated RELEASE to use new versions of slalib and timelib, also incorporated Pedro's changes to astCtx2tr.c and astCocoR.c
+mikew      (r3284): Released version 1-6-6. (Release dir 1-6-6)
+mikew      (r3284): Now depends on timelib 1-9-14
+pgigoux    (r2948): Released version 1-6-5. (Release dir 1-6-5)
+pgigoux    (r2948): Switched to newer versions of slalib and timelib
+-SLALIB=$(PROD_SUPP)/slalib/1-9-6
+-TIMELIB=$(PROD_SUPP)/timelib/1-9-9
++SLALIB=$(PROD_SUPP)/slalib/1-9-7
++TIMELIB=$(PROD_SUPP)/timelib/1-9-13
+mikew      (r2891): astlib now depends on timelib 1-9-9
+mrippa     (r2745): Released version 1-6-4. (Release dir 1-6-4)
+mrippa     (r2745): 1. Release for EPICS 3.14.12.7 2. Merge astlib module Branch R314 1941:2744 into trunk
+rrojas     (r2716): Released version 1-6-4-BR314. (Release dir 1-6-4-BR314)
+mikew      (r2229): Released version 1-6-3-BR314. (Release dir 1-6-3-BR314)
+mrippa     (r1938): New ignore file
+mrippa      (r886): Released version 1-6-3. (Release dir 1-6-3)
+mrippa      (r886): Update timelib release
+mrippa      (r776): Broken build (Release dir 1-6-2)
+mrippa      (r776): Released version 1-6-2. Rebuild for dependencies (Release dir 1-6-2)
+mrippa      (r775): Update dependencies
+mrippa      (r773): Released version 1-6-2. Rebuild for dependencies (Release dir 1-6-2)
+mrippa      (r769): Update dependencies
+mrippa      (r749): Updated dependencies
+mrippa      (r571): Released version 1-6-1. (Release dir 1-6-1)
+mrippa      (r571): Update dependency of TIMELIB version
+mrippa      (r418): Released version 1-6. New astlib release (Release dir 1-6)
+mrippa      (r418): Created: http://sbfsvn02/gemini-sw/gem/release/support/astlib (Release dir )
+mikew       (r327): removed unneded Db directory
+mikew       (r326): Replace vxWorks semLib with EPICS OSI epicsMutex
+mrippa      (r101): Initial import of astlib for ADE
+mrippa       (r86): changed contact and set svn:ignore
+mrippa       (r85): Initial structure of new astlib

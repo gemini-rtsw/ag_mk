@@ -1,0 +1,11 @@
+[symbol2]
+bbox 256 384 896 704
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 0 0 368 576 Dummy F2 WFS database
+l 150 0 0 416 512 for test purposes
+r 0 256 704 896 384
+[comments]

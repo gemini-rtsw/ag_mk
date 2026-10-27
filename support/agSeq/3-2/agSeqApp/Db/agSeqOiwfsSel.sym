@@ -1,0 +1,19 @@
+[symbol2]
+bbox -192 0 160 192
+port -16 144 100 0 OIWFS symbol 2 160 160 0
+port -112 160 100 0 OIDC symbol 1 -192 160 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -64 48 OIWFS
+l 100 0 0 -64 80 Select 
+r 0 -128 0 64 192
+v 0 64 160
+160 160
+_
+v 0 -192 160
+-128 160
+_
+[comments]

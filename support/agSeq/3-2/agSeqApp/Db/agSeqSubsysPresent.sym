@@ -1,0 +1,18 @@
+[symbol2]
+bbox 192 480 832 704
+port 720 512 100 1792 DISV symbol 2 832 512 0
+port 320 640 100 1792 LOADED symbol 1 192 640 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 336 592 Check presence of A&G subsystem
+r 0 256 480 768 704
+v 0 768 512
+832 512
+_
+v 0 192 640
+256 640
+_
+[comments]

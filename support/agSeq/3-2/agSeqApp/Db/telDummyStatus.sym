@@ -1,0 +1,12 @@
+[symbol2]
+bbox -128 -32 128 160
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -48 96 Telescope
+l 100 0 0 -32 64 System
+l 100 0 0 -32 32 Status
+r 0 -128 -32 128 160
+[comments]

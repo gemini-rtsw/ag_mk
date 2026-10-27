@@ -1,0 +1,6 @@
+menu(menuSimulation) {
+	choice(menuSimulationNONE, "NONE")
+	choice(menuSimulationVSM,  "VSM")
+	choice(menuSimulationFAST, "FAST")
+	choice(menuSimulationFULL, "FULL")
+}
