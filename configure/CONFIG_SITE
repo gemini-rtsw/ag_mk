@@ -56,6 +56,12 @@ USR_BOOT_FLAGS += -MCFGLOCAL=$(CNFG_LOCAL) -MCFGFILE=$(CNFG_FILES)
 
 USR_CFLAGS += -DTOP_AG=$(TAG) -DTOP_HRWFS=$(THRWFS)
 
+# pmaclib's drvPmac.h defines (not declares) drvPmacCard, so every file that
+# includes it emits a copy. GCC < 10 merged these as common symbols; GCC 10+
+# (EL9's host compiler) defaults to -fno-common and fails the host link of
+# libagSupport. The RTEMS cross gcc 4.4.7 is unaffected. Host builds only.
+USR_CFLAGS_linux-x86_64 += -fcommon
+
 ifeq ($(TAG),ag)
 	USR_BOOT_FLAGS += -MIOCPROMPT=ag-mk-ioc
 else

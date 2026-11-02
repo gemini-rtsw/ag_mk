@@ -107,6 +107,12 @@ build_spec() {
     mkdir -p "$WORK"/{SPECS,SOURCES,RPMS,BUILD,BUILDROOT,SRPMS,PREINSTALL}
     cp "$HERE/$spec" "$WORK/SPECS/"
     cp "$TARBALLS/$src" "$WORK/SOURCES/"
+    # Any further SourceN the spec names (epics-base-314's host source) must be
+    # in the tarball directory under exactly that name.
+    for extra in $(sed -nE 's/^Source[1-9][0-9]*:[[:space:]]*//p' "$HERE/$spec"); do
+        [ -f "$TARBALLS/$extra" ] || { echo "ERROR: $spec needs $TARBALLS/$extra" >&2; exit 1; }
+        cp "$TARBALLS/$extra" "$WORK/SOURCES/"
+    done
     # The spec names one Source0; point it at the file we actually resolved so
     # the two cannot drift apart.
     sed -i -E "s|^(Source0:[[:space:]]*).*|\\1$src|" "$WORK/SPECS/$spec"

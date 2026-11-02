@@ -33,14 +33,47 @@ TOP="$(cd "$(dirname "$0")" && pwd)"
 SUPPORT_SRC="$TOP/support"
 PRODSUP="/gem_sw/prod/R3.14.12.8/support"
 
+# The Gemini build hosts set this in the login environment, and
+# gemUtil/1-14's configure/CONFIG_SITE reads it:
+#     EPICS_RELEASE = $(shell echo "${GEM_EPICS_RELEASE}")
+# Unset, that overrides the R3.14.12.8 its RELEASE gives, PROD_SUPP collapses to
+# /gem_sw/prod//support, and gemUtil cannot find geminiRecords.dbd. Set it here
+# rather than edit the vendored source, which stays as production built it.
+export GEM_EPICS_RELEASE=R3.14.12.8
+
 [ -d "$SUPPORT_SRC" ] || { echo "ERROR: $SUPPORT_SRC not found" >&2; exit 1; }
 
-# Build order. The leaves have no inter-module dependencies; tcslib needs
-# astlib/geminiRec/slalib/timelib, and agSeq needs tcslib on top of those.
-# Derived from each module's configure/RELEASE -- see the dependency scan in
-# PORTING.md. Anything not listed here is a leaf.
-LEAVES="astlib geminiRec slalib timelib bancomm xycom pmaclib seq pvload iocStats timeProbe gemUtil"
-ORDERED_TAIL="tcslib agSeq"
+# Build order is DERIVED from each module's configure/RELEASE rather than
+# hand-maintained: an earlier hand-written list missed that astlib needs
+# slalib, because half the modules spell the variable PROD_SUPP and the other
+# half PRODSUP. Any reference to $(VAR)/<mod>/<ver> counts as a
+# dependency, whatever the variable is called. References to modules that are
+# not vendored (pmaclib's stale gemUtil/1-13 line, which nothing uses) are
+# ignored here; a real missing dependency still fails at compile time.
+build_order() {
+    local done="" left m deps d ok progress
+    left=$(ls "$SUPPORT_SRC" | xargs)
+    while [ -n "$left" ]; do
+        progress=0
+        for m in $left; do
+            deps=$(grep -hvE '^[[:space:]]*#' "$SUPPORT_SRC"/$m/*/configure/RELEASE* 2>/dev/null \
+                   | grep -oE '\)/[A-Za-z0-9_]+/[0-9]' | cut -d/ -f2 \
+                   | sort -u | grep -vx "$m" || true)
+            ok=1
+            for d in $deps; do
+                [ -d "$SUPPORT_SRC/$d" ] || continue          # not vendored: ignore
+                echo " $done " | grep -q " $d " || { ok=0; break; }
+            done
+            if [ $ok = 1 ]; then
+                done="$done $m"; left=$(echo $left | tr ' ' '\n' | grep -vx "$m" | xargs)
+                progress=1
+            fi
+        done
+        [ $progress = 1 ] || { echo "ERROR: dependency cycle among: $left" >&2; exit 1; }
+    done
+    echo $done
+}
+ORDER=$(build_order)
 
 modver() {
     # modver <name> -> "<name>/<version>", failing loudly rather than silently
@@ -53,7 +86,7 @@ modver() {
 
 echo "=== staging vendored modules into $PRODSUP ==="
 mkdir -p "$PRODSUP"
-for m in $LEAVES $ORDERED_TAIL; do
+for m in $ORDER; do
     mv=$(modver "$m")
     mkdir -p "$PRODSUP/${mv%%/*}"
     # -n so a real NFS mount (a developer's workstation) is never shadowed.
@@ -69,7 +102,7 @@ fi
 
 echo
 echo "=== building ==="
-for m in $LEAVES $ORDERED_TAIL; do
+for m in $ORDER; do
     mv=$(modver "$m")
     echo
     echo "---- $mv ----"
@@ -80,7 +113,7 @@ done
 
 echo
 echo "=== support modules built ==="
-for m in $LEAVES $ORDERED_TAIL; do
+for m in $ORDER; do
     mv=$(modver "$m")
     n=$(ls "$SUPPORT_SRC/$mv/lib/RTEMS-mvme2307" 2>/dev/null | wc -l)
     printf "  %-24s %s RTEMS-mvme2307 libs\n" "$mv" "$n"

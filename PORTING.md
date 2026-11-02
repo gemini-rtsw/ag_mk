@@ -1,7 +1,9 @@
 # Porting ag/mk to the gemini-rtsw GitHub pipeline
 
-Status: **shared RPMs built, verified and published.** The IOC itself is not
-built yet. See [Still open](#still-open).
+Status: **the IOC builds** against `epics-base-314-3.14.12.8-2.gem20190703`.
+Both boot images match production 1-20 to within a few bytes (the dropped
+`/1-20` in paths), and all 8 generated databases have record sets identical to
+production. See [Build findings](#build-findings) and [Still open](#still-open).
 
 ## Published to rpm-repo (2026-08-28)
 
@@ -248,26 +250,36 @@ Once they land:
 then **Actions -> rebuild-latest -> Run workflow** on `gemini-rtsw-repo`, with
 `allow_shrink = false` since we are only adding.
 
+## Build findings
+
+What getting the IOC to build turned up, and where each fix lives:
+
+- **Host tools linked `libreadline.so.6`** (absent on Rocky 9), so dbExpand,
+  msi and every other host tool was dead. `epics-base-314` release 1 rebuilds
+  the host half from the 3.14.12.8 source; the RTEMS half is still the
+  production repackage.
+- **msi** is an extension in 3.14, not base. Release 2 builds it and sets
+  `MSI` in base's `CONFIG_SITE`.
+- **TDCT silently dropped sub-sheets** (`ag_top.db` had 12 of 2009 records):
+  tdct 2.18.6 keeps its symbols in `library/`. Release 2 adds those dirs to
+  `SYS_TDCT_PATHS` in `CONFIG.Gem`.
+- **`INSTALL_LOCATION` goes in `configure/RELEASE.local`**, not on the make
+  command line — passed to make it broke the TDCT rules.
+- **`-fcommon`** for linux-x86_64 (`configure/CONFIG_SITE`): pmaclib's
+  `drvPmac.h` defines `drvPmacCard`, a multiple definition under GCC 10+.
+- **Support build order is derived** from each module's `configure/RELEASE`
+  (`build-support.sh`); a hand-written list missed astlib -> slalib.
+- pmaclib's RELEASE names `gemUtil/1-13`, which is not vendored and not used.
+
 ## Still open
 
-These do not block collection — answer whenever.
+Resolved: history (GitLab master + the five 2024 SVN commits), agSeq (vendored
+as support), EL9 only, `listAlarmRecords`/`netConfig` (from `gemUtil/1-14`),
+TDCT (works; see above).
 
-1. **SVN history: keep or start clean?** Keeping it means `git svn clone` of
-   `http://sbfsvn02/gemini-sw/gem/trunk/ioc/ag/mk`, which I cannot reach from
-   here — you would run it, or send an `svnrdump`. Starting clean at r6918 is
-   one commit and available now.
-2. **Is `agSeq` the second 3.14 repo?** It is a separate SVN checkout
-   (`~/work/agSeq`, R3.14.12.8) *and* a build dependency of this IOC. It can be
-   its own repo or vendored here, not cleanly both. The collection script tars
-   it either way.
-3. **EL8, EL9, or both?** The scripts default to el9. Building both doubles the
-   rpm-repo footprint of two large packages.
-4. **`listAlarmRecords` and `netConfig`** — linked in `src/Makefile` with no
-   `RELEASE` variable. Section 4 of the script hunts for them; if you know the
-   module offhand it saves a round trip.
-5. **Does TDCT 2.18.6 read these 3.14-era schematics?** Section 6 collects the
-   version. The real test is opening one, and it is the biggest remaining
-   unknown after the toolchain — `db/` is generated, so if TDCT cannot read
-   `ag_top.sch` there is no build.
-6. **GHCR access** — `gemini-rtsw/ag_mk` needs Write on the `rpm-repo` package
-   (*Manage Actions access -> Add Repository*).
+1. **GHCR access** — `gemini-rtsw/ag_mk` needs Write on the `rpm-repo` package
+   (*Manage Actions access -> Add Repository*) before a merge to `main` can
+   publish.
+2. **Never install `rtems410` or `epics-base-314` on the boot server** — they
+   own the live `/gem_sw` trees and would overwrite them, and delete them on
+   removal. A `%pre` guard is worth adding.

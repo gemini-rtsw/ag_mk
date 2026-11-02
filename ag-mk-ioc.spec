@@ -54,7 +54,7 @@ Prefix:  %{_prefix}
 
 ## Pinned exactly, with %{?dist}: the rpm-repo is flat, so an unversioned
 ## dependency resolves to the highest EVR and .el9 sorts above .el8.
-BuildRequires: epics-base-314-devel = 3.14.12.8-0.gem20190703%{?dist}
+BuildRequires: epics-base-314-devel = 3.14.12.8-2.gem20190703%{?dist}
 BuildRequires: rtems410             = 4.10-0.gem20190703%{?dist}
 ## db/ is NOT source -- it is generated from the .sch schematics by TDCT, a
 ## Java tool, at build time. Without these the build produces an IOC with no
@@ -63,7 +63,7 @@ BuildRequires: tdct
 BuildRequires: java-1.8.0-openjdk-headless
 ## The sequencer (seq 2-2-5-3) and its SNL compiler need these.
 BuildRequires: re2c bison flex
-BuildRequires: gcc gcc-c++ make perl-interpreter
+BuildRequires: gcc gcc-c++ make
 
 ## No runtime Requires. Everything shipped here is cross-compiled for the VME
 ## target and network-booted by the board; nothing in this package executes on
@@ -97,23 +97,40 @@ more than it saves.
 # the dev container runs the same script via /etc/profile.d/ag-mk-ioc.sh.
 ./build-support.sh
 
-# INSTALL_LOCATION is what ends up inside the startup script. convertGemRelease.pl
-# maps INSTALL_LOCATION -> TOP (line 155) and emits -MINSTALL="<abs_path>"
-# (line 340), which msi substitutes into stag-mk-ioc.boot's `cd ${INSTALL}`.
-# Building with the default ($(TOP), the rpmbuild BUILD dir) would bake a path
-# that does not exist on the boot server, and the IOC would fail after loading.
-make INSTALL_LOCATION=%{instdir}
+# The startup script's `cd ${INSTALL}` must name the deployed path, not this
+# BUILD dir. convertGemRelease.pl reads the RELEASE files, treats an
+# INSTALL_LOCATION line there as TOP (line 155) and emits -MINSTALL=<abs_path>
+# (line 340), so it goes in RELEASE.local. make itself is unaffected --
+# configure/CONFIG resets INSTALL_LOCATION = $(TOP) after including RELEASE --
+# which matters: TDCT finds ag-mk-ioc.dbd through tdct.cfg's ../../../dbd, so
+# the build must install into TOP. (Passing INSTALL_LOCATION to make broke TDCT.)
+# abs_path needs the directory to exist.
+mkdir -p %{instdir}
+echo "INSTALL_LOCATION = %{instdir}" > configure/RELEASE.local
+
+make
 
 %install
 export DONT_STRIP=1
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{instdir} $RPM_BUILD_ROOT%{bootdir}
 
-# The build installed into %{instdir} (see INSTALL_LOCATION above); take the
-# tree from there so what we package is exactly what the boot script's baked-in
-# paths refer to.
+# make installed into TOP (this BUILD dir); ship that tree at %{instdir}, the
+# path the startup script was built to cd into. RELEASE.local is build-time
+# only and stays out.
 for d in bin db dbd lib configure iocBoot; do
-    [ -d %{instdir}/$d ] && cp -r %{instdir}/$d $RPM_BUILD_ROOT%{instdir}/
+    [ -d $d ] && cp -r $d $RPM_BUILD_ROOT%{instdir}/
+done
+rm -f $RPM_BUILD_ROOT%{instdir}/configure/RELEASE.local
+
+# Every database must be complete. TDCT does not fail when it cannot resolve a
+# sub-schematic -- it writes a partial .db and exits 0 -- which is how ag_top.db
+# once came out with 12 of its 2009 records. The floors are production release
+# 1-20's counts: adding records is fine, losing them fails the build.
+for spec in ag_top:2009 ag_sadtop:536 agSeqTopGN:4271 agSeqTopGS:4332 agSeqSadTop:20; do
+    f=$RPM_BUILD_ROOT%{instdir}/db/${spec%%%%:*}.db; want=${spec##*:}
+    got=$(grep -c '^record' "$f" 2>/dev/null || echo 0)
+    [ "$got" -ge "$want" ] || { echo "ERROR: ${spec%%%%:*}.db has $got records, expected at least $want" >&2; exit 1; }
 done
 
 B=$RPM_BUILD_ROOT%{instdir}/bin/RTEMS-mvme2307

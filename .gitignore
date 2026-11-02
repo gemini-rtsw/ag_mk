@@ -33,3 +33,5 @@ rpms/
 configure/RELEASE.local
 configure/RELEASE.work
 custom_env_setup.sh
+.debug/
+ioc-debug.log
